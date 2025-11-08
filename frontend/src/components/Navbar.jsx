@@ -30,29 +30,14 @@ const Navbar = ({ isDark = true }) => {
           {/* Logo */}
           <a href="/" className="flex items-center space-x-2 group">
             <div className="relative">
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 32 32"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="transition-transform duration-300 group-hover:scale-110"
-              >
-                <path
-                  d="M16 2L2 16L16 30L30 16L16 2Z"
-                  stroke={isScrolled ? '#000' : '#fff'}
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M16 10L10 16L16 22L22 16L16 10Z"
-                  stroke={isScrolled ? '#000' : '#fff'}
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <img 
+                src="https://customer-assets.emergentagent.com/job_neo-copier/artifacts/ke4s6nwo_4633C819.svg"
+                alt="1X Logo"
+                className="h-8 w-8 transition-transform duration-300 group-hover:scale-110"
+                style={{
+                  filter: isScrolled ? 'none' : 'brightness(0) invert(1)'
+                }}
+              />
             </div>
           </a>
 
