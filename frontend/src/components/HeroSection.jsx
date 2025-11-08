@@ -18,11 +18,11 @@ const HeroSection = () => {
       <div className="relative h-full flex items-center justify-center">
         <div className="text-center space-y-6 px-4">
           <div className="space-y-2">
-            <h1 className="text-7xl md:text-8xl font-light text-white tracking-tight">
-              NEO
+            <h1 className="text-5xl md:text-6xl font-light text-white tracking-tight leading-tight">
+              Let go of your rental headaches
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 font-light tracking-wide">
-              Home Robot
+            <p className="text-lg md:text-xl text-white/90 font-light tracking-wide max-w-3xl mx-auto">
+              DigiHome delivers Data-driven property management. Human service.
             </p>
           </div>
 
