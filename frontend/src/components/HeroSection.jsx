@@ -22,15 +22,14 @@ const HeroSection = () => {
               Let go of your rental headaches
             </h1>
             <p className="text-lg md:text-xl text-white/90 font-light tracking-wide max-w-3xl mx-auto">
-              DigiHome delivers Data-driven property management. Human service.
+              DigiHome delivers data-driven property management with human service
             </p>
           </div>
 
           <div className="space-y-3 pt-4">
             <button className="group relative px-8 py-3 bg-white text-black rounded-full text-base font-medium transition-all duration-300 hover:bg-gray-100 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1">
-              <span className="relative z-10">Order Now</span>
+              <span className="relative z-10">Get started</span>
             </button>
-            <p className="text-sm text-white/80 font-light tracking-wide">$200 Deposit</p>
           </div>
         </div>
       </div>
