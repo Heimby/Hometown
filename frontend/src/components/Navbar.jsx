@@ -33,7 +33,7 @@ const Navbar = ({ isDark = true }) => {
               <img 
                 src="https://customer-assets.emergentagent.com/job_neo-copier/artifacts/ke4s6nwo_4633C819.svg"
                 alt="1X Logo"
-                className="h-8 w-8 transition-transform duration-300 group-hover:scale-110"
+                className="h-24 w-24 transition-transform duration-300 group-hover:scale-110"
                 style={{
                   filter: isScrolled ? 'none' : 'brightness(0) invert(1)'
                 }}
