@@ -6,12 +6,12 @@ const HeroSection = () => {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src="https://cdn.sanity.io/images/qka6yvsc/production/c1a93f30beb4c513da832bcd886db94419e06be2-4096x2731.webp?q=100&fit=max&auto=format"
-          alt="NEO Robot"
+          src="https://images.unsplash.com/photo-1515263487990-61b07816b324?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBhcGFydG1lbnQlMjBidWlsZGluZ3xlbnwwfHx8fDE3NjI2MTkzMTR8MA&ixlib=rb-4.1.0&q=85"
+          alt="Modern Property Management"
           className="w-full h-full object-cover"
         />
         {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50"></div>
       </div>
 
       {/* Content */}
