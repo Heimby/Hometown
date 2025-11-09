@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
@@ -10,15 +11,11 @@ import ProfessionalServicesSection from './components/ProfessionalServicesSectio
 import OurPresenceSection from './components/OurPresenceSection';
 import ExpansionMarketsSection from './components/ExpansionMarketsSection';
 import PioneerBenefitsSection from './components/PioneerBenefitsSection';
+import OwnerPortalDashboard from './components/OwnerPortalDashboard';
 
-function App() {
-  useEffect(() => {
-    // Smooth scroll behavior
-    document.documentElement.style.scrollBehavior = 'smooth';
-  }, []);
-
+function HomePage() {
   return (
-    <div className="App">
+    <>
       {/* Main Navbar */}
       <Navbar />
 
@@ -48,6 +45,27 @@ function App() {
 
       {/* Pioneer Benefits Section */}
       <PioneerBenefitsSection />
+    </>
+  );
+}
+
+function App() {
+  useEffect(() => {
+    // Smooth scroll behavior
+    document.documentElement.style.scrollBehavior = 'smooth';
+  }, []);
+
+  return (
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/owner-portal" element={<OwnerPortalDashboard />} />
+        </Routes>
+      </div>
+    </Router>
+  );
+}
     </div>
   );
 }
