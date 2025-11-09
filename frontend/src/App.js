@@ -4,7 +4,6 @@ import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import LeadGenSection from './components/LeadGenSection';
 import WhatWeAreSection from './components/WhatWeAreSection';
-import TransformSection from './components/TransformSection';
 
 function App() {
   useEffect(() => {
@@ -25,9 +24,6 @@ function App() {
 
       {/* What We Are Section */}
       <WhatWeAreSection />
-
-      {/* Transform Your Home Section */}
-      <TransformSection />
     </div>
   );
 }
