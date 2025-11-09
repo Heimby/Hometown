@@ -25,13 +25,14 @@ const WhyOwnersChooseSection = () => {
     <section className="relative py-24 px-6 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left Side - Title */}
+          {/* Left Side - Image */}
           <div className="relative">
-            <div className="bg-gradient-to-br from-gray-50 to-white rounded-3xl p-12 shadow-xl border border-gray-100">
-              <h2 className="text-5xl md:text-6xl font-light text-gray-900 tracking-tight leading-tight">
-                Owners
-              </h2>
-              <div className="mt-6 w-20 h-1 bg-gray-900 rounded-full"></div>
+            <div className="bg-gradient-to-br from-gray-50 to-white rounded-3xl overflow-hidden shadow-xl border border-gray-100">
+              <img
+                src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1973&auto=format&fit=crop"
+                alt="Property Owner"
+                className="w-full h-[500px] object-cover"
+              />
             </div>
           </div>
 
@@ -57,13 +58,6 @@ const WhyOwnersChooseSection = () => {
                 </div>
               );
             })}
-
-            {/* CTA Button */}
-            <div className="pt-6">
-              <button className="px-8 py-4 bg-gray-900 text-white rounded-2xl text-base font-medium hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
-                Discover solutions
-              </button>
-            </div>
           </div>
         </div>
       </div>
