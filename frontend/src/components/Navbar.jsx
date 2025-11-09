@@ -58,7 +58,7 @@ const Navbar = ({ isDark = true }) => {
             ))}
           </div>
 
-          {/* Order Button */}
+          {/* I'm a tenant Button */}
           <button
             className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
               isScrolled
@@ -66,7 +66,7 @@ const Navbar = ({ isDark = true }) => {
                 : 'bg-white text-black hover:bg-gray-100'
             } shadow-lg hover:shadow-xl transform hover:-translate-y-0.5`}
           >
-            ORDER
+            I'm a tenant
           </button>
         </div>
       </div>
