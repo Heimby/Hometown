@@ -35,7 +35,7 @@ async def create_owner_portal(owner_data: OwnerCreate):
         owner = Owner(**owner_dict)
         
         # Find corresponding lead and link it
-        lead = await db.leads.find_one({"email": owner_data.email})
+        lead = await db.leads.find_one({"email": owner_data.email}, {"_id": 0})
         if lead:
             owner.lead_id = lead.get('id')
             # Update lead status
