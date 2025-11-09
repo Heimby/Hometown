@@ -57,7 +57,7 @@ const Navbar = ({ isDark = true }) => {
             ))}
           </div>
 
-          {/* Tenant Button */}
+          {/* Login Button */}
           <a
             href="#"
             className={`text-[11px] font-medium uppercase tracking-wider transition-all duration-300 hover:opacity-50 ${
@@ -66,7 +66,7 @@ const Navbar = ({ isDark = true }) => {
                 : 'text-white'
             }`}
           >
-            I'm a tenant
+            Log in
           </a>
         </div>
       </div>
