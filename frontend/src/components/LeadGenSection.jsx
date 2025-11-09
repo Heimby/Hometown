@@ -237,6 +237,11 @@ const LeadGenSection = () => {
               </div>
 
               <form onSubmit={handleOwnerPortalSubmit} className="max-w-xl mx-auto space-y-6">
+                {error && (
+                  <div className="p-4 bg-red-50 border border-red-200 rounded-xl text-red-600 text-sm">
+                    {error}
+                  </div>
+                )}
                 <div className="relative">
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Create Your Owner Portal Password
