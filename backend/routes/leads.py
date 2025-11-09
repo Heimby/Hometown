@@ -22,7 +22,7 @@ async def create_lead(lead_data: LeadCreate):
         lead = Lead(**lead_data.dict())
         
         # Check if lead with this email already exists
-        existing_lead = await db.leads.find_one({"email": lead.email})
+        existing_lead = await db.leads.find_one({"email": lead.email}, {"_id": 0})
         if existing_lead:
             # Update existing lead
             await db.leads.update_one(
