@@ -21,32 +21,30 @@ const Navbar = ({ isDark = true }) => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-sm' : 'bg-transparent'
+        isScrolled ? 'bg-white/95 backdrop-blur-sm border-b border-gray-200' : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-5 lg:px-8 h-[52px] lg:h-[60px]">
+        <div className="flex items-center justify-between h-full">
           {/* Logo */}
-          <a href="/" className="flex items-center space-x-2 group">
-            <div className="relative">
-              <img 
-                src="https://customer-assets.emergentagent.com/job_neo-copier/artifacts/ke4s6nwo_4633C819.svg"
-                alt="1X Logo"
-                className="h-24 w-24 transition-transform duration-300 group-hover:scale-110"
-                style={{
-                  filter: isScrolled ? 'none' : 'brightness(0) invert(1)'
-                }}
-              />
-            </div>
+          <a href="/" className="flex items-center">
+            <img 
+              src="https://customer-assets.emergentagent.com/job_neo-copier/artifacts/ke4s6nwo_4633C819.svg"
+              alt="1X Logo"
+              className="h-5 w-5 transition-transform duration-300 hover:scale-110"
+              style={{
+                filter: isScrolled ? 'none' : 'brightness(0) invert(1)'
+              }}
+            />
           </a>
 
-          {/* Center Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          {/* Center Navigation - Desktop only */}
+          <div className="hidden lg:flex items-center space-x-10">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className={`text-sm font-medium tracking-wide transition-all duration-300 relative group ${
+                className={`text-[11px] font-medium uppercase tracking-wider transition-all duration-300 relative group ${
                   isScrolled
                     ? 'text-gray-600 hover:text-black'
                     : 'text-white/70 hover:text-white'
@@ -58,16 +56,17 @@ const Navbar = ({ isDark = true }) => {
             ))}
           </div>
 
-          {/* I'm a tenant Button */}
-          <button
-            className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+          {/* Tenant Button */}
+          <a
+            href="#"
+            className={`text-[11px] font-medium uppercase tracking-wider transition-all duration-300 hover:opacity-50 ${
               isScrolled
-                ? 'bg-black text-white hover:bg-gray-800'
-                : 'bg-white text-black hover:bg-gray-100'
-            } shadow-lg hover:shadow-xl transform hover:-translate-y-0.5`}
+                ? 'text-gray-900'
+                : 'text-white'
+            }`}
           >
             I'm a tenant
-          </button>
+          </a>
         </div>
       </div>
     </nav>
