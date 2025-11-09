@@ -170,10 +170,7 @@ metadata:
   run_ui: false
 
 test_plan:
-  current_focus:
-    - "Lead submission API endpoint"
-    - "Owner portal creation API endpoint"
-    - "MongoDB connection and models"
+  current_focus: []
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
