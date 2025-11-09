@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Globe } from 'lucide-react';
 
 const ExpansionMarketsSection = () => {
   const countries = [
@@ -54,6 +54,23 @@ const ExpansionMarketsSection = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Open to Other Markets */}
+        <div className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl border-2 border-dashed border-gray-200 mb-12">
+          <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
+            <div className="w-14 h-14 bg-gray-100 rounded-full flex items-center justify-center">
+              <Globe className="w-7 h-7 text-gray-700" />
+            </div>
+            <div className="text-center md:text-left">
+              <p className="text-lg font-medium text-gray-900">
+                Interested in bringing DigiHome to your market?
+              </p>
+              <p className="text-sm text-gray-600 font-light">
+                We're open to expansion in other European markets. Get in touch to pioneer DigiHome in your region.
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* CTA */}
