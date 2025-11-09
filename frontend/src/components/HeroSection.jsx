@@ -6,9 +6,10 @@ const HeroSection = () => {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src="https://customer-assets.emergentagent.com/job_neo-copier/artifacts/ab1iqx7o_a_bright_minimal_image%20%281%29.jpeg"
+          src="https://customer-assets.emergentagent.com/job_neo-copier/artifacts/ccskjduo_a_bright_minimal_image%20%282%29.jpeg"
           alt="Modern Property Management"
           className="w-full h-full object-cover"
+          style={{ objectPosition: 'center bottom' }}
         />
         {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50"></div>
