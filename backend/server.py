@@ -70,6 +70,10 @@ async def get_status_checks():
     
     return status_checks
 
+# Include feature routers
+api_router.include_router(leads_router, tags=["leads"])
+api_router.include_router(owners_router, tags=["owners"])
+
 # Include the router in the main app
 app.include_router(api_router)
 
