@@ -6,6 +6,7 @@ import LeadGenSection from './components/LeadGenSection';
 import WhatWeAreSection from './components/WhatWeAreSection';
 import HowItWorksSection from './components/HowItWorksSection';
 import ResultsSection from './components/ResultsSection';
+import ProfessionalServicesSection from './components/ProfessionalServicesSection';
 import OurPresenceSection from './components/OurPresenceSection';
 import ExpansionMarketsSection from './components/ExpansionMarketsSection';
 import PioneerBenefitsSection from './components/PioneerBenefitsSection';
@@ -35,6 +36,9 @@ function App() {
 
       {/* Results From Real Properties Section */}
       <ResultsSection />
+
+      {/* Professional Services Section */}
+      <ProfessionalServicesSection />
 
       {/* Our Presence Section */}
       <OurPresenceSection />
