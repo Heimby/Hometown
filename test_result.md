@@ -101,3 +101,74 @@
 #====================================================================================================
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
+
+user_problem_statement: "DigiHome property management platform with lead generation form and owner portal onboarding flow. Backend API endpoints for lead submission and owner portal creation need testing and verification."
+
+backend:
+  - task: "Lead submission API endpoint"
+    implemented: true
+    working: "NA"
+    file: "/app/backend/routes/leads.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "POST /api/leads endpoint created. Accepts address, name, phone, email. Returns lead object with UUID. Needs testing."
+  
+  - task: "Owner portal creation API endpoint"
+    implemented: true
+    working: "NA"
+    file: "/app/backend/routes/owners.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "POST /api/owner-portal endpoint created. Accepts lead data + password. Hashes password with bcrypt. Links to lead if exists. Needs testing."
+
+  - task: "MongoDB connection and models"
+    implemented: true
+    working: "NA"
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "MongoDB connected using motor. Lead and Owner models defined with Pydantic. Using UUID for IDs (not ObjectID). Needs verification."
+
+frontend:
+  - task: "Lead generation multi-step form"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/components/LeadGenSection.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Multi-step form with address expand animation. Step 1: Lead form, Step 2: Password for owner portal, Step 3: Loading, Step 4: Success. API integration complete."
+
+metadata:
+  created_by: "main_agent"
+  version: "1.0"
+  test_sequence: 1
+  run_ui: false
+
+test_plan:
+  current_focus:
+    - "Lead submission API endpoint"
+    - "Owner portal creation API endpoint"
+    - "MongoDB connection and models"
+  stuck_tasks: []
+  test_all: false
+  test_priority: "high_first"
+
+agent_communication:
+  - agent: "main"
+    message: "Initial backend implementation complete. Ready for comprehensive backend testing of lead and owner portal APIs. Both endpoints use UUID for IDs. Lead endpoint checks for existing email and updates if exists. Owner portal endpoint hashes password with bcrypt and links to lead. MongoDB connection established. Please test POST /api/leads and POST /api/owner-portal endpoints with proper test data."
