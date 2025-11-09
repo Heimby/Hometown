@@ -2,17 +2,17 @@ import React from 'react';
 
 const WhatWeAreSection = () => {
   return (
-    <section className="relative py-24 px-6 bg-gray-100">
+    <section className="relative py-0 px-6 bg-gray-100">
       <div className="relative min-h-[600px] mx-auto" style={{ maxWidth: '95%' }}>
         {/* Background Image */}
         <img
           src="https://customer-assets.emergentagent.com/job_neo-copier/artifacts/6utvdueb_the_image_carries_image.jpeg"
           alt="Property Management"
-          className="absolute inset-0 w-full h-full object-cover rounded-3xl"
+          className="absolute inset-0 w-full h-full object-cover"
         />
         
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/30 rounded-3xl"></div>
+        <div className="absolute inset-0 bg-black/30"></div>
 
         {/* Content */}
         <div className="relative max-w-6xl mx-auto py-16 px-6">
