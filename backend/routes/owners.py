@@ -70,7 +70,7 @@ async def get_all_owners(skip: int = 0, limit: int = 100):
     Get all owners (for admin dashboard)
     """
     try:
-        owners = await db.owners.find().skip(skip).limit(limit).to_list(limit)
+        owners = await db.owners.find({}, {"_id": 0}).skip(skip).limit(limit).to_list(limit)
         # Remove password hashes from response
         for owner in owners:
             owner.pop('password_hash', None)
