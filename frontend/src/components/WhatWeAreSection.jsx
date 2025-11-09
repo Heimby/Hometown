@@ -2,7 +2,7 @@ import React from 'react';
 
 const WhatWeAreSection = () => {
   return (
-    <section className="relative py-0 px-6 bg-gray-100">
+    <section className="relative py-0 px-6 bg-white">
       <div className="relative min-h-[600px] mx-auto" style={{ maxWidth: '95%' }}>
         {/* Background Image */}
         <img
