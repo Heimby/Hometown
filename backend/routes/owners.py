@@ -84,7 +84,7 @@ async def get_owner(owner_id: str):
     Get a specific owner by ID
     """
     try:
-        owner = await db.owners.find_one({"id": owner_id})
+        owner = await db.owners.find_one({"id": owner_id}, {"_id": 0})
         if not owner:
             raise HTTPException(status_code=404, detail="Owner not found")
         owner.pop('password_hash', None)
