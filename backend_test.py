@@ -72,7 +72,7 @@ test_lead_data_2 = {
     "address": "Karl Johans gate 22, 0159 Oslo, Norway",
     "name": "Astrid Hansen",
     "phone": "+47 456 78 901",
-    "email": "astrid.hansen@example.no"
+    "email": f"astrid.hansen.{test_timestamp}@example.no"
 }
 
 def test_api_root():
