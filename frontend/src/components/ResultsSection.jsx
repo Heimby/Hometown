@@ -25,7 +25,7 @@ const ResultsSection = () => {
 
   return (
     <section className="relative py-24 px-6 bg-white">
-      <div className="max-w-6xl mx-auto">
+      <div className="mx-auto" style={{ maxWidth: '95%' }}>
         {/* Heading */}
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-4xl md:text-5xl font-light text-gray-900 tracking-tight">
