@@ -25,7 +25,7 @@ const ResultsSection = () => {
       <div className="relative min-h-[600px] mx-auto" style={{ maxWidth: '95%' }}>
         {/* Background Image */}
         <img
-          src="https://customer-assets.emergentagent.com/job_neo-copier/artifacts/gym0j7e1_image.png"
+          src="https://customer-assets.emergentagent.com/job_neo-copier/artifacts/f0coiy18_image_of_a_norwegi_image.jpeg"
           alt="Property Results"
           className="absolute inset-0 w-full h-full object-cover"
         />
