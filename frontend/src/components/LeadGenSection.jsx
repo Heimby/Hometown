@@ -75,6 +75,15 @@ const LeadGenSection = () => {
       const response = await axios.post(`${API}/owner-portal`, ownerData);
       console.log('Owner portal created:', response.data);
       
+      // Save property data to localStorage
+      localStorage.setItem('ownerProperty', JSON.stringify({
+        address: formData.address,
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        ownerId: response.data.id,
+      }));
+      
       // After 1.5 seconds, show success
       setTimeout(() => {
         setStep(4);
@@ -87,7 +96,7 @@ const LeadGenSection = () => {
   };
 
   const handleGoToPortal = () => {
-    // TODO: Redirect to actual owner portal dashboard
+    // Redirect to owner portal dashboard
     window.location.href = '/owner-portal';
   };
 
