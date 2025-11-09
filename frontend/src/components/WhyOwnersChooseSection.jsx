@@ -1,63 +1,70 @@
 import React from 'react';
-import { TrendingUp, HandMetal, MapPin } from 'lucide-react';
+import { Shield, TrendingUp, Users, CheckCircle } from 'lucide-react';
 
 const WhyOwnersChooseSection = () => {
   const benefits = [
     {
+      icon: Shield,
+      title: 'Regulatory Compliance & Property Enhancement',
+    },
+    {
+      icon: Users,
+      title: '24/7 Customer Support',
+    },
+    {
       icon: TrendingUp,
-      title: 'Higher earnings',
-      description: 'Smart pricing and zero vacancy juggling',
+      title: 'Revenue Maximization',
     },
     {
-      icon: HandMetal,
-      title: 'Hands-off management',
-      description: 'For both Airbnb and long-term rental',
-    },
-    {
-      icon: MapPin,
-      title: 'Real local teams',
-      description: 'Handle everything on-site and maintain high standards',
+      icon: CheckCircle,
+      title: 'Routine Maintenance & Smart Energy Management',
     },
   ];
 
   return (
     <section className="relative py-24 px-6 bg-white">
-      <div className="max-w-6xl mx-auto">
-        {/* Heading */}
-        <div className="text-center mb-16 space-y-4">
-          <h2 className="text-4xl md:text-5xl font-light text-gray-900 tracking-tight">
-            Why Owners Choose DigiHome
-          </h2>
-          <p className="text-lg text-gray-600 font-light max-w-3xl mx-auto">
-            DigiHome consistently outperforms the market by focusing on what matters most to property owners:
-          </p>
-        </div>
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Left Side - Title */}
+          <div className="relative">
+            <div className="bg-gradient-to-br from-gray-50 to-white rounded-3xl p-12 shadow-xl border border-gray-100">
+              <h2 className="text-5xl md:text-6xl font-light text-gray-900 tracking-tight leading-tight">
+                Owners
+              </h2>
+              <div className="mt-6 w-20 h-1 bg-gray-900 rounded-full"></div>
+            </div>
+          </div>
 
-        {/* Benefits Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {benefits.map((benefit, index) => {
-            const Icon = benefit.icon;
-            return (
-              <div
-                key={index}
-                className="group bg-gray-50 p-8 rounded-2xl hover:bg-white hover:shadow-xl transition-all duration-300 border border-transparent hover:border-gray-100"
-              >
-                <div className="flex flex-col items-start space-y-4">
-                  <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center group-hover:bg-gray-900 transition-colors duration-300 shadow-sm">
-                    <Icon className="w-6 h-6 text-gray-700 group-hover:text-white transition-colors duration-300" />
+          {/* Right Side - Benefits */}
+          <div className="space-y-6">
+            {benefits.map((benefit, index) => {
+              const Icon = benefit.icon;
+              return (
+                <div
+                  key={index}
+                  className="group flex items-start space-x-4 p-6 rounded-2xl hover:bg-gray-50 transition-all duration-300"
+                >
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <Icon className="w-6 h-6 text-white" />
+                    </div>
                   </div>
-                  <div className="space-y-2">
-                    <h3 className="text-xl font-medium text-gray-900">
+                  <div className="flex-1">
+                    <h3 className="text-xl font-medium text-gray-900 leading-relaxed">
                       {benefit.title}
                     </h3>
-                    <p className="text-base text-gray-600 font-light leading-relaxed">
-                      {benefit.description}
-                    </p>
                   </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+
+            {/* CTA Button */}
+            <div className="pt-6">
+              <button className="px-8 py-4 bg-gray-900 text-white rounded-2xl text-base font-medium hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                Discover solutions
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
