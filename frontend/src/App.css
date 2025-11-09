@@ -74,3 +74,14 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+/* Responsive hero background positioning */
+.hero-background-image {
+  object-position: center bottom;
+}
+
+@media (min-width: 768px) {
+  .hero-background-image {
+    object-position: center 65%;
+  }
+}
