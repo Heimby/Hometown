@@ -30,14 +30,14 @@ const HowItWorksSection = () => {
   ];
 
   return (
-    <section className="relative py-24 px-6 bg-white">
+    <section className="relative py-16 px-6 bg-white">
       <div className="max-w-3xl mx-auto" style={{ maxWidth: '95%' }}>
         {/* Heading */}
-        <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-light text-gray-900 tracking-tight mb-6">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-light text-gray-900 tracking-tight mb-4">
             How It Works
           </h2>
-          <p className="text-lg text-gray-600 font-light max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base text-gray-600 font-light max-w-2xl mx-auto">
             A simple, transparent process designed for speed and clarity
           </p>
         </div>
@@ -48,40 +48,39 @@ const HowItWorksSection = () => {
           <div className="absolute left-8 top-0 bottom-0 w-px bg-gray-200"></div>
 
           {/* Steps */}
-          <div className="space-y-12">
+          <div className="space-y-8">
             {steps.map((step, index) => {
               const Icon = step.icon;
-              const isLast = index === steps.length - 1;
               
               return (
                 <div key={index} className="relative">
                   {/* Timeline Dot */}
-                  <div className="absolute left-8 top-6 transform -translate-x-1/2">
+                  <div className="absolute left-8 top-4 transform -translate-x-1/2">
                     <div className="w-4 h-4 bg-white border-2 border-gray-900 rounded-full shadow-sm"></div>
                   </div>
 
                   {/* Content Card */}
                   <div className="ml-20">
-                    <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100">
-                      <div className="flex items-start space-x-6">
+                    <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100">
+                      <div className="flex items-start space-x-4">
                         {/* Icon */}
                         <div className="flex-shrink-0">
-                          <div className="w-12 h-12 bg-gray-50 rounded-xl flex items-center justify-center border border-gray-100">
-                            <Icon className="w-6 h-6 text-gray-700" />
+                          <div className="w-10 h-10 bg-gray-50 rounded-lg flex items-center justify-center border border-gray-100">
+                            <Icon className="w-5 h-5 text-gray-700" />
                           </div>
                         </div>
 
                         {/* Text Content */}
-                        <div className="flex-1 space-y-2">
-                          <div className="flex items-center space-x-3">
-                            <span className="text-sm font-medium text-gray-400">
+                        <div className="flex-1 space-y-1">
+                          <div className="flex items-center space-x-2">
+                            <span className="text-xs font-medium text-gray-400">
                               Step {step.number}
                             </span>
                           </div>
-                          <h3 className="text-xl font-medium text-gray-900">
+                          <h3 className="text-lg font-medium text-gray-900">
                             {step.title}
                           </h3>
-                          <p className="text-base text-gray-600 leading-relaxed font-light">
+                          <p className="text-sm text-gray-600 leading-relaxed font-light">
                             {step.description}
                           </p>
                         </div>
@@ -95,8 +94,8 @@ const HowItWorksSection = () => {
         </div>
 
         {/* Bottom Note */}
-        <div className="text-center mt-16">
-          <p className="text-base text-gray-500 font-light italic">
+        <div className="text-center mt-10">
+          <p className="text-sm text-gray-500 font-light italic">
             Digital where it helps. Local where it matters.
           </p>
         </div>
