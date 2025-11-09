@@ -62,13 +62,11 @@ const ProfessionalServicesSection = () => {
           <h2 className="text-4xl md:text-5xl font-light text-gray-900 tracking-tight">
             The DigiHome Ecosystem
           </h2>
-          <p className="text-xl text-gray-700 font-light">
-            A fully integrated network of local professionals powering reliable property performance
-          </p>
-          <p className="text-base text-gray-600 font-light leading-relaxed pt-4">
-            The DigiHome Ecosystem is built to ensure every property receives the highest standard of care, 
-            no matter the city. We integrate certified service partners, digital monitoring, and local teams 
-            into one seamless operational engine.
+          <p className="text-lg text-gray-700 font-light leading-relaxed">
+            The DigiHome Ecosystem ensures every property receives the highest standard of care, in every city. 
+            We combine certified service partners, digital monitoring, and local on-the-ground teams into one 
+            seamless operational engine. Our vision is simple: accessing professional property services should 
+            feel as effortless as ordering an Uber.
           </p>
         </div>
 
