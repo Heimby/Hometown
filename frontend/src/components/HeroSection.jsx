@@ -15,7 +15,7 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative h-full flex items-start md:items-center justify-center pt-32 md:pt-0">
+      <div className="relative h-full flex items-center justify-center">
         <div className="text-center space-y-6 px-4">
           <div className="space-y-2">
             <h1 className="text-5xl md:text-6xl font-light text-white tracking-tight leading-tight">
