@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 import { MapPin, User, Phone, Mail, Lock, Eye, EyeOff, CheckCircle } from 'lucide-react';
+import axios from 'axios';
+
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API = `${BACKEND_URL}/api`;
 
 const LeadGenSection = () => {
   const [step, setStep] = useState(1); // 1: lead form, 2: owner portal, 3: loading, 4: success
   const [isExpanded, setIsExpanded] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState('');
   const [formData, setFormData] = useState({
     address: '',
     name: '',
@@ -24,30 +29,61 @@ const LeadGenSection = () => {
     setFormData({ ...formData, [field]: e.target.value });
   };
 
-  const handleLeadSubmit = (e) => {
+  const handleLeadSubmit = async (e) => {
     e.preventDefault();
-    console.log('Lead form submitted:', formData);
-    // TODO: Send email notification here
+    setError('');
     
-    // Transition to owner portal step
-    setTimeout(() => {
-      setStep(2);
-    }, 300);
+    try {
+      // Submit lead data to backend
+      const leadData = {
+        address: formData.address,
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+      };
+      
+      const response = await axios.post(`${API}/leads`, leadData);
+      console.log('Lead created:', response.data);
+      
+      // Transition to owner portal step
+      setTimeout(() => {
+        setStep(2);
+      }, 300);
+    } catch (err) {
+      console.error('Error creating lead:', err);
+      setError('Failed to submit. Please try again.');
+    }
   };
 
-  const handleOwnerPortalSubmit = (e) => {
+  const handleOwnerPortalSubmit = async (e) => {
     e.preventDefault();
-    console.log('Owner portal created:', formData);
+    setError('');
     
     // Show loading
     setStep(3);
     
-    // TODO: Create owner portal and send confirmation email
-    
-    // After 1.5 seconds, show success
-    setTimeout(() => {
-      setStep(4);
-    }, 1500);
+    try {
+      // Create owner portal account
+      const ownerData = {
+        address: formData.address,
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        password: formData.password,
+      };
+      
+      const response = await axios.post(`${API}/owner-portal`, ownerData);
+      console.log('Owner portal created:', response.data);
+      
+      // After 1.5 seconds, show success
+      setTimeout(() => {
+        setStep(4);
+      }, 1500);
+    } catch (err) {
+      console.error('Error creating owner portal:', err);
+      setError(err.response?.data?.detail || 'Failed to create owner portal. Please try again.');
+      setStep(2); // Go back to form
+    }
   };
 
   const handleGoToPortal = () => {
