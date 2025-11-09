@@ -30,8 +30,8 @@ const HowItWorksSection = () => {
   ];
 
   return (
-    <section className="relative py-24 px-6 bg-gradient-to-b from-gray-50 to-white">
-      <div className="max-w-3xl mx-auto">
+    <section className="relative py-24 px-6 bg-white">
+      <div className="max-w-3xl mx-auto" style={{ maxWidth: '95%' }}>
         {/* Heading */}
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-light text-gray-900 tracking-tight mb-6">
