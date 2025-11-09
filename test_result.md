@@ -197,7 +197,10 @@ metadata:
   run_ui: false
 
 test_plan:
-  current_focus: []
+  current_focus:
+    - "Owner Portal Dashboard"
+    - "Lead generation multi-step form"
+    - "Global Presence Section Image Update"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
@@ -207,3 +210,5 @@ agent_communication:
     message: "Initial backend implementation complete. Ready for comprehensive backend testing of lead and owner portal APIs. Both endpoints use UUID for IDs. Lead endpoint checks for existing email and updates if exists. Owner portal endpoint hashes password with bcrypt and links to lead. MongoDB connection established. Please test POST /api/leads and POST /api/owner-portal endpoints with proper test data."
   - agent: "testing"
     message: "✅ BACKEND TESTING COMPLETE - ALL SYSTEMS OPERATIONAL: Comprehensive testing of all backend APIs completed successfully. All 11 test cases passed including: Lead creation/validation, Owner portal creation/security, MongoDB integration, Lead-to-Owner conversion flow. Fixed critical MongoDB ObjectId serialization issues and database configuration. Backend is production-ready. Created comprehensive test suite at /app/backend_test.py for future regression testing."
+  - agent: "main"
+    message: "Frontend updates complete: 1) Created Owner Portal Dashboard at /owner-portal route with full navigation, summary cards, property listing with Draft status. 2) Fixed lead generation flow to save property data to localStorage and properly redirect. 3) Updated Global Presence section with Norwegian landscape image. Ready for comprehensive frontend E2E testing with Playwright. Test flow: Fill lead form -> Create owner portal -> Verify redirect to dashboard -> Verify property shown with Draft status."
