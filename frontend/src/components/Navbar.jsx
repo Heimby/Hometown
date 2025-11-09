@@ -24,10 +24,10 @@ const Navbar = ({ isDark = true }) => {
         isScrolled ? 'bg-white/95 backdrop-blur-sm border-b border-gray-200' : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-5 lg:px-8 h-[52px] lg:h-[60px]">
+      <div className="max-w-7xl mx-auto px-5 lg:px-8 h-[44px] lg:h-[52px]">
         <div className="flex items-center justify-between h-full">
           {/* Logo */}
-          <a href="/" className="flex items-center h-full py-2">
+          <a href="/" className="flex items-center h-full py-1.5">
             <img 
               src="https://customer-assets.emergentagent.com/job_neo-copier/artifacts/ke4s6nwo_4633C819.svg"
               alt="1X Logo"
