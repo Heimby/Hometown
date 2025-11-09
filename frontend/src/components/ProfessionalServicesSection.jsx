@@ -28,7 +28,7 @@ const ProfessionalServicesSection = () => {
     {
       icon: Users,
       title: 'Local Specialists in Every Market',
-      description: 'From inspectors to photographers to linen suppliers, every partner is carefully vetted and continuously evaluated to maintain DigiHome's national standard.',
+      description: 'From inspectors to photographers to linen suppliers, every partner is carefully vetted and continuously evaluated to maintain DigiHome\'s national standard.',
     },
     {
       icon: MessageSquare,
