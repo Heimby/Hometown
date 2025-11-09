@@ -46,7 +46,7 @@ async def get_all_leads(skip: int = 0, limit: int = 100):
     Get all leads (for admin dashboard)
     """
     try:
-        leads = await db.leads.find().skip(skip).limit(limit).to_list(limit)
+        leads = await db.leads.find({}, {"_id": 0}).skip(skip).limit(limit).to_list(limit)
         return leads
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Failed to fetch leads: {str(e)}")
