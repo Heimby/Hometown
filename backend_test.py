@@ -47,19 +47,23 @@ class TestResults:
 
 results = TestResults()
 
+# Generate unique test data for each test run
+import time
+test_timestamp = int(time.time())
+
 # Test data
 test_lead_data = {
     "address": "Storgata 15, 0155 Oslo, Norway",
     "name": "Erik Nordahl",
     "phone": "+47 987 65 432",
-    "email": "erik.nordahl@example.no"
+    "email": f"erik.nordahl.{test_timestamp}@example.no"
 }
 
 test_owner_data = {
     "address": "Storgata 15, 0155 Oslo, Norway", 
     "name": "Erik Nordahl",
     "phone": "+47 987 65 432",
-    "email": "erik.nordahl@example.no",
+    "email": f"erik.nordahl.{test_timestamp}@example.no",
     "password": "SecurePassword123!"
 }
 
