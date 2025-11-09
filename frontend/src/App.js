@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import LeadGenSection from './components/LeadGenSection';
+import WhatWeAreSection from './components/WhatWeAreSection';
 import TransformSection from './components/TransformSection';
 
 function App() {
@@ -21,6 +22,9 @@ function App() {
 
       {/* Lead Generation Section */}
       <LeadGenSection />
+
+      {/* What We Are Section */}
+      <WhatWeAreSection />
 
       {/* Transform Your Home Section */}
       <TransformSection />
