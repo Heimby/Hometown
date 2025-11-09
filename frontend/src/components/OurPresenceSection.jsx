@@ -22,7 +22,7 @@ const OurPresenceSection = () => {
       <div className="relative min-h-[600px] mx-auto" style={{ maxWidth: '95%' }}>
         {/* Background Image */}
         <img
-          src="https://images.unsplash.com/photo-1601970243374-069b5f957a9e?q=80&w=2000&auto=format&fit=crop"
+          src="https://customer-assets.emergentagent.com/job_homeeasy-app/artifacts/o346zaa7_create_a_mix_of_no_image%20%281%29.jpeg"
           alt="Norway Properties"
           className="absolute inset-0 w-full h-full object-cover"
         />
