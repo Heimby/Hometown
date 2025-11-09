@@ -12,7 +12,6 @@ const Navbar = ({ isDark = true }) => {
   }, []);
 
   const navLinks = [
-    { name: 'NEO', href: '#' },
     { name: 'AI', href: '#' },
     { name: 'STORIES', href: '#' },
     { name: 'CAREERS', href: '#' },
