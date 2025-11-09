@@ -72,8 +72,18 @@ const LeadGenSection = () => {
         password: formData.password,
       };
       
-      const response = await axios.post(`${API}/owner-portal`, ownerData);
+      const response = await axios.post(`${API}/owner-portal`, ownerData, {
+        validateStatus: function (status) {
+          return status >= 200 && status < 300; // Only accept 2xx status codes
+        }
+      });
+      
       console.log('Owner portal created:', response.data);
+      
+      // Check if response has the expected structure
+      if (!response.data || !response.data.id) {
+        throw new Error('Invalid response from server');
+      }
       
       // Save property data to localStorage
       localStorage.setItem('ownerProperty', JSON.stringify({
@@ -90,7 +100,7 @@ const LeadGenSection = () => {
       }, 1500);
     } catch (err) {
       console.error('Error creating owner portal:', err);
-      setError(err.response?.data?.detail || 'Failed to create owner portal. Please try again.');
+      setError(err.response?.data?.detail || err.message || 'Failed to create owner portal. Please try again.');
       setStep(2); // Go back to form
     }
   };
