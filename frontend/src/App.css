@@ -56,6 +56,10 @@ html {
   animation: fadeIn 0.8s ease-out forwards;
 }
 
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
 /* Prevent text selection on interactive elements */
 button {
   user-select: none;
