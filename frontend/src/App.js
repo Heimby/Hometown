@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
+import LeadGenSection from './components/LeadGenSection';
 import TransformSection from './components/TransformSection';
 
 function App() {
@@ -17,6 +18,9 @@ function App() {
 
       {/* Hero Section */}
       <HeroSection />
+
+      {/* Lead Generation Section */}
+      <LeadGenSection />
 
       {/* Transform Your Home Section */}
       <TransformSection />
