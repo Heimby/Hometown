@@ -99,7 +99,7 @@ const ProfessionalServicesSection = () => {
                 <div
                   key={index}
                   className="relative rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
-                  style={{ aspectRatio: '9/16' }}
+                  style={{ aspectRatio: '3/4' }}
                 >
                   {/* Background Image */}
                   <img
@@ -112,11 +112,11 @@ const ProfessionalServicesSection = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                   
                   {/* Content */}
-                  <div className="relative h-full flex flex-col justify-end p-8">
-                    <h3 className="text-2xl font-medium text-white mb-3">
+                  <div className="relative h-full flex flex-col justify-end p-6">
+                    <h3 className="text-xl font-medium text-white mb-2">
                       {service.title}
                     </h3>
-                    <p className="text-sm text-white/90 leading-relaxed font-light">
+                    <p className="text-xs text-white/90 leading-relaxed font-light">
                       {service.description}
                     </p>
                   </div>
@@ -134,7 +134,7 @@ const ProfessionalServicesSection = () => {
                   className={`relative rounded-2xl shadow-lg transition-all duration-300 overflow-hidden ${
                     index === currentIndex ? 'block' : 'hidden'
                   }`}
-                  style={{ aspectRatio: '9/16' }}
+                  style={{ aspectRatio: '3/4' }}
                 >
                   {/* Background Image */}
                   <img
@@ -147,11 +147,11 @@ const ProfessionalServicesSection = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                   
                   {/* Content */}
-                  <div className="relative h-full flex flex-col justify-end p-8">
-                    <h3 className="text-2xl font-medium text-white mb-3">
+                  <div className="relative h-full flex flex-col justify-end p-6">
+                    <h3 className="text-xl font-medium text-white mb-2">
                       {service.title}
                     </h3>
-                    <p className="text-sm text-white/90 leading-relaxed font-light">
+                    <p className="text-xs text-white/90 leading-relaxed font-light">
                       {service.description}
                     </p>
                   </div>
