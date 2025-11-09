@@ -1,80 +1,63 @@
 import React from 'react';
-import { Home, Users, TrendingUp, Shield } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const WhatWeAreSection = () => {
-  const features = [
-    {
-      icon: Home,
-      title: 'Airbnb Management',
-      description: 'Dynamic pricing and guest communication',
-    },
-    {
-      icon: Users,
-      title: 'Long-term Rentals',
-      description: 'Tenant management and lease administration',
-    },
-    {
-      icon: TrendingUp,
-      title: 'Smart Pricing',
-      description: 'Maximize earnings across both rental types',
-    },
-    {
-      icon: Shield,
-      title: 'Property Care',
-      description: 'Maintenance and quality assurance',
-    },
-  ];
-
   return (
-    <section className="relative py-24 px-6 bg-gray-50">
-      <div className="max-w-6xl mx-auto">
-        {/* Main Content */}
-        <div className="text-center mb-16 space-y-6">
-          <h2 className="text-4xl md:text-5xl font-light text-gray-900 tracking-tight">
-            What We Are
-          </h2>
-          <div className="max-w-4xl mx-auto">
-            <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-light">
+    <section className="relative py-24 px-6 min-h-[600px]">
+      {/* Background Image */}
+      <img
+        src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1973&auto=format&fit=crop"
+        alt="Property Management"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+      
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/30"></div>
+
+      {/* Content */}
+      <div className="relative max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2">
+          <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-12 flex flex-col gap-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+              What We Are
+            </h2>
+            
+            <p className="text-lg text-gray-700 leading-relaxed">
               DigiHome is Norway's only full-stack property management company offering both 
-              Airbnb management and long-term rental management under one roof. We handle pricing, 
-              guest communication, tenant management, and property care, so owners earn more with 
-              less stress. Everything is supported by a simple Owner Portal that keeps them fully informed.
+              Airbnb management and long-term rental management under one roof.
             </p>
-          </div>
-        </div>
 
-        {/* Feature Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-          {features.map((feature, index) => {
-            const Icon = feature.icon;
-            return (
-              <div
-                key={index}
-                className="group bg-white p-6 rounded-2xl hover:shadow-lg transition-all duration-300 border border-gray-100"
-              >
-                <div className="flex flex-col items-center text-center space-y-4">
-                  <div className="w-14 h-14 bg-gray-100 rounded-xl flex items-center justify-center group-hover:bg-gray-900 transition-colors duration-300">
-                    <Icon className="w-7 h-7 text-gray-700 group-hover:text-white transition-colors duration-300" />
-                  </div>
-                  <div className="space-y-2">
-                    <h3 className="text-base font-medium text-gray-900">
-                      {feature.title}
-                    </h3>
-                    <p className="text-sm text-gray-600 font-light">
-                      {feature.description}
-                    </p>
-                  </div>
-                </div>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
+                  Complete Management
+                </h3>
+                <p className="text-base text-gray-700 leading-relaxed">
+                  We handle pricing, guest communication, tenant management, and property care, 
+                  so owners earn more with less stress.
+                </p>
               </div>
-            );
-          })}
-        </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-12">
-          <p className="text-base text-gray-600 font-light">
-            One partner. Complete property management. Maximum returns.
-          </p>
+              <div>
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
+                  Full Transparency
+                </h3>
+                <p className="text-base text-gray-700 leading-relaxed">
+                  Everything is supported by a simple Owner Portal that keeps you fully informed 
+                  about your property performance and operations.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-auto pt-4">
+              <button className="group flex items-center justify-between w-full md:w-auto px-6 py-4 bg-gray-900 text-white rounded-full text-lg font-medium hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl">
+                <span className="mr-6">Get started with DigiHome</span>
+                <div className="bg-white rounded-full w-10 h-10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <ArrowRight className="w-5 h-5 text-gray-900" />
+                </div>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
