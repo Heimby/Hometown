@@ -1,39 +1,39 @@
 import React, { useState } from 'react';
-import { Sparkles, Wrench, Package, Shield, Users, MessageSquare, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const ProfessionalServicesSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const services = [
     {
-      icon: Sparkles,
       title: 'Certified Cleaners',
       description: 'Professionally trained, quality-controlled cleaners deliver consistent hotel-grade standards. Every clean is logged, photographed, and verified in our system for full transparency.',
+      image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&auto=format&fit=crop',
     },
     {
-      icon: Wrench,
       title: 'Maintenance & Technical Services',
       description: 'Licensed technicians handle everything from routine repairs to emergency callouts. Preventive maintenance schedules ensure properties stay in top condition and minimize downtime.',
+      image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=800&auto=format&fit=crop',
     },
     {
-      icon: Package,
       title: 'Consumables & Supply Management',
       description: 'Automated stock tracking and locally sourced suppliers keep every unit fully equipped with essentials. Owners never overpay and guests never run out.',
+      image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=800&auto=format&fit=crop',
     },
     {
-      icon: Shield,
       title: 'Security & Safety Services',
       description: 'Integrated smart-lock systems, compliance checks, and safety inspections protect both your property and occupants. We partner with local security providers for rapid on-site response when needed.',
+      image: 'https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=800&auto=format&fit=crop',
     },
     {
-      icon: Users,
       title: 'Local Specialists in Every Market',
       description: 'From inspectors to photographers to linen suppliers, every partner is carefully vetted and continuously evaluated to maintain DigiHome\'s national standard.',
+      image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800&auto=format&fit=crop',
     },
     {
-      icon: MessageSquare,
       title: '24/7 Communication & Analytics',
       description: '24/7 communication, investment & pricing analysts ensure your property performs optimally with data-driven insights and constant support.',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop',
     },
   ];
 
@@ -94,21 +94,28 @@ const ProfessionalServicesSection = () => {
           {/* Cards Container - Desktop */}
           <div className="hidden md:grid md:grid-cols-3 gap-6 px-8">
             {getVisibleServices().map((service, index) => {
-              const Icon = service.icon;
               return (
                 <div
                   key={index}
-                  className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+                  className="relative rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
                   style={{ aspectRatio: '9/16' }}
                 >
-                  <div className="p-8 h-full flex flex-col">
-                    <div className="w-14 h-14 bg-gray-900 rounded-xl flex items-center justify-center mb-6">
-                      <Icon className="w-7 h-7 text-white" />
-                    </div>
-                    <h3 className="text-2xl font-medium text-gray-900 mb-4">
+                  {/* Background Image */}
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                  
+                  {/* Content */}
+                  <div className="relative h-full flex flex-col justify-end p-8">
+                    <h3 className="text-2xl font-medium text-white mb-3">
                       {service.title}
                     </h3>
-                    <p className="text-base text-gray-600 leading-relaxed font-light flex-1">
+                    <p className="text-sm text-white/90 leading-relaxed font-light">
                       {service.description}
                     </p>
                   </div>
@@ -120,23 +127,30 @@ const ProfessionalServicesSection = () => {
           {/* Cards Container - Mobile (single card) */}
           <div className="md:hidden px-8">
             {services.map((service, index) => {
-              const Icon = service.icon;
               return (
                 <div
                   key={index}
-                  className={`bg-white rounded-2xl shadow-lg transition-all duration-300 overflow-hidden ${
+                  className={`relative rounded-2xl shadow-lg transition-all duration-300 overflow-hidden ${
                     index === currentIndex ? 'block' : 'hidden'
                   }`}
                   style={{ aspectRatio: '9/16' }}
                 >
-                  <div className="p-8 h-full flex flex-col">
-                    <div className="w-14 h-14 bg-gray-900 rounded-xl flex items-center justify-center mb-6">
-                      <Icon className="w-7 h-7 text-white" />
-                    </div>
-                    <h3 className="text-2xl font-medium text-gray-900 mb-4">
+                  {/* Background Image */}
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                  
+                  {/* Content */}
+                  <div className="relative h-full flex flex-col justify-end p-8">
+                    <h3 className="text-2xl font-medium text-white mb-3">
                       {service.title}
                     </h3>
-                    <p className="text-base text-gray-600 leading-relaxed font-light flex-1">
+                    <p className="text-sm text-white/90 leading-relaxed font-light">
                       {service.description}
                     </p>
                   </div>
@@ -165,3 +179,4 @@ const ProfessionalServicesSection = () => {
 };
 
 export default ProfessionalServicesSection;
+
