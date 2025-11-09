@@ -107,39 +107,48 @@ user_problem_statement: "DigiHome property management platform with lead generat
 backend:
   - task: "Lead submission API endpoint"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/routes/leads.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "POST /api/leads endpoint created. Accepts address, name, phone, email. Returns lead object with UUID. Needs testing."
+      - working: true
+        agent: "testing"
+        comment: "✅ COMPREHENSIVE TESTING COMPLETE: POST /api/leads endpoint working perfectly. Tests passed: (1) Valid lead creation with proper UUID, status='new', all required fields (2) Duplicate email handling - correctly updates existing lead (3) Email validation - properly rejects invalid email formats with 422 (4) Missing fields validation - properly rejects incomplete data with 422 (5) GET /api/leads returns proper list format. Fixed MongoDB ObjectId serialization issue by excluding _id field."
   
   - task: "Owner portal creation API endpoint"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/routes/owners.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "POST /api/owner-portal endpoint created. Accepts lead data + password. Hashes password with bcrypt. Links to lead if exists. Needs testing."
+      - working: true
+        agent: "testing"
+        comment: "✅ COMPREHENSIVE TESTING COMPLETE: POST /api/owner-portal endpoint working perfectly. Tests passed: (1) Valid owner creation with proper UUID, password hashing, no password_hash in response (2) Duplicate owner prevention - correctly returns 400 error (3) Missing password validation - properly rejects with 422 (4) GET /api/owners returns proper list without password_hash fields (5) Lead status conversion - correctly updates linked lead status to 'converted'. All security measures working correctly."
 
   - task: "MongoDB connection and models"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "MongoDB connected using motor. Lead and Owner models defined with Pydantic. Using UUID for IDs (not ObjectID). Needs verification."
+      - working: true
+        agent: "testing"
+        comment: "✅ MONGODB CONNECTION VERIFIED: Database connection working correctly. Fixed DB_NAME from 'test_database' to 'digihome'. UUID generation working properly. Fixed MongoDB ObjectId serialization issues by excluding _id field in all queries. All CRUD operations functioning correctly with proper data persistence and retrieval."
 
 frontend:
   - task: "Lead generation multi-step form"
