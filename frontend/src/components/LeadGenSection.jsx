@@ -112,6 +112,11 @@ const LeadGenSection = () => {
             </div>
 
             <form onSubmit={handleLeadSubmit} className="relative">
+              {error && (
+                <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-xl text-red-600 text-sm">
+                  {error}
+                </div>
+              )}
               <div
                 className={`grid gap-4 transition-all duration-500 ease-in-out ${
                   isExpanded
