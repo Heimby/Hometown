@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { MapPin, User, Phone, Mail, Lock, Eye, EyeOff } from 'lucide-react';
+import { MapPin, User, Phone, Mail, Lock, Eye, EyeOff, CheckCircle } from 'lucide-react';
 
 const LeadGenSection = () => {
-  const [step, setStep] = useState(1); // 1: lead form, 2: owner portal
+  const [step, setStep] = useState(1); // 1: lead form, 2: owner portal, 3: loading, 4: success
   const [isExpanded, setIsExpanded] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
@@ -38,8 +38,21 @@ const LeadGenSection = () => {
   const handleOwnerPortalSubmit = (e) => {
     e.preventDefault();
     console.log('Owner portal created:', formData);
+    
+    // Show loading
+    setStep(3);
+    
     // TODO: Create owner portal and send confirmation email
-    alert('Owner portal created successfully!');
+    
+    // After 1.5 seconds, show success
+    setTimeout(() => {
+      setStep(4);
+    }, 1500);
+  };
+
+  const handleGoToPortal = () => {
+    // TODO: Redirect to actual owner portal dashboard
+    window.location.href = '/owner-portal';
   };
 
   return (
@@ -157,7 +170,7 @@ const LeadGenSection = () => {
               )}
             </form>
           </>
-        ) : (
+        ) : step === 2 ? (
           <>
             {/* Step 2: Owner Portal Creation */}
             <div className="animate-fade-in">
@@ -224,6 +237,53 @@ const LeadGenSection = () => {
                   </div>
                 </div>
               </form>
+            </div>
+          </>
+        ) : step === 3 ? (
+          <>
+            {/* Step 3: Loading */}
+            <div className="text-center py-16 animate-fade-in">
+              <div className="flex flex-col items-center space-y-6">
+                <div className="relative">
+                  <div className="w-16 h-16 border-4 border-gray-200 border-t-gray-900 rounded-full animate-spin"></div>
+                </div>
+                <p className="text-lg text-gray-600 font-light">
+                  Creating your owner portal...
+                </p>
+              </div>
+            </div>
+          </>
+        ) : (
+          <>
+            {/* Step 4: Success */}
+            <div className="text-center py-8 animate-fade-in">
+              <div className="flex flex-col items-center space-y-8">
+                <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center animate-scale-in">
+                  <CheckCircle className="w-12 h-12 text-green-600" />
+                </div>
+                
+                <div className="space-y-3">
+                  <h2 className="text-4xl md:text-5xl font-light text-gray-900 tracking-tight">
+                    Owner portal created
+                  </h2>
+                  <p className="text-xl text-gray-600 font-light">
+                    Your account is ready.
+                  </p>
+                </div>
+
+                <button
+                  onClick={handleGoToPortal}
+                  className="px-10 py-4 bg-gray-900 text-white rounded-2xl text-base font-medium hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                >
+                  Go to Owner Portal
+                </button>
+
+                <div className="mt-8 p-6 bg-gray-50 rounded-2xl max-w-md">
+                  <p className="text-sm text-gray-600">
+                    A confirmation email has been sent to <span className="font-medium">{formData.email}</span>
+                  </p>
+                </div>
+              </div>
             </div>
           </>
         )}
