@@ -157,11 +157,38 @@ frontend:
     file: "/app/frontend/src/components/LeadGenSection.jsx"
     stuck_count: 0
     priority: "high"
-    needs_retesting: false
+    needs_retesting: true
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Multi-step form with address expand animation. Step 1: Lead form, Step 2: Password for owner portal, Step 3: Loading, Step 4: Success. API integration complete."
+      - working: "NA"
+        agent: "main"
+        comment: "Updated to save property data to localStorage on successful owner portal creation. Fixed redirect to /owner-portal route."
+  
+  - task: "Owner Portal Dashboard"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/components/OwnerPortalDashboard.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Created complete owner portal dashboard with header navigation (Properties, Analytics, Calendar, Settings, Sign Out), summary metric cards (Total Properties: 1, Active Listings: 0, Monthly Revenue: $0, Total Bookings: 0), property listing with Draft status, search bar, and Add New Property button. Reads property data from localStorage."
+  
+  - task: "Global Presence Section Image Update"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/components/OurPresenceSection.jsx"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Updated background image to Norwegian landscape (palm tree with fjord and mountains) as requested by user."
 
 metadata:
   created_by: "main_agent"
