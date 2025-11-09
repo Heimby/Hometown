@@ -7,6 +7,9 @@ import WhatWeAreSection from './components/WhatWeAreSection';
 import WhyOwnersChooseSection from './components/WhyOwnersChooseSection';
 import HowItWorksSection from './components/HowItWorksSection';
 import ResultsSection from './components/ResultsSection';
+import OurPresenceSection from './components/OurPresenceSection';
+import ExpansionMarketsSection from './components/ExpansionMarketsSection';
+import PioneerBenefitsSection from './components/PioneerBenefitsSection';
 
 function App() {
   useEffect(() => {
@@ -36,6 +39,15 @@ function App() {
 
       {/* Results From Real Properties Section */}
       <ResultsSection />
+
+      {/* Our Presence Section */}
+      <OurPresenceSection />
+
+      {/* Expansion Markets Section */}
+      <ExpansionMarketsSection />
+
+      {/* Pioneer Benefits Section */}
+      <PioneerBenefitsSection />
     </div>
   );
 }
