@@ -27,11 +27,11 @@ const Navbar = ({ isDark = true }) => {
       <div className="max-w-7xl mx-auto px-5 lg:px-8 h-[52px] lg:h-[60px]">
         <div className="flex items-center justify-between h-full">
           {/* Logo */}
-          <a href="/" className="flex items-center">
+          <a href="/" className="flex items-center h-full py-2">
             <img 
               src="https://customer-assets.emergentagent.com/job_neo-copier/artifacts/ke4s6nwo_4633C819.svg"
               alt="1X Logo"
-              className="h-12 w-12 lg:h-14 lg:w-14 transition-transform duration-300 hover:scale-110"
+              className="h-full w-auto transition-transform duration-300 hover:scale-110"
               style={{
                 filter: isScrolled ? 'none' : 'brightness(0) invert(1)'
               }}
