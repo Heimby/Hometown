@@ -57,7 +57,7 @@ async def get_lead(lead_id: str):
     Get a specific lead by ID
     """
     try:
-        lead = await db.leads.find_one({"id": lead_id})
+        lead = await db.leads.find_one({"id": lead_id}, {"_id": 0})
         if not lead:
             raise HTTPException(status_code=404, detail="Lead not found")
         return lead
