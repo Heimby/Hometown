@@ -20,7 +20,7 @@ async def create_owner_portal(owner_data: OwnerCreate):
     """
     try:
         # Check if owner with this email already exists
-        existing_owner = await db.owners.find_one({"email": owner_data.email})
+        existing_owner = await db.owners.find_one({"email": owner_data.email}, {"_id": 0})
         if existing_owner:
             raise HTTPException(status_code=400, detail="Owner portal already exists for this email")
         
