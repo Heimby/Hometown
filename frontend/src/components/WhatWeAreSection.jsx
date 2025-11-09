@@ -1,12 +1,11 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
 
 const WhatWeAreSection = () => {
   return (
     <section className="relative py-24 px-6 min-h-[600px]">
       {/* Background Image */}
       <img
-        src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1973&auto=format&fit=crop"
+        src="https://customer-assets.emergentagent.com/job_neo-copier/artifacts/6utvdueb_the_image_carries_image.jpeg"
         alt="Property Management"
         className="absolute inset-0 w-full h-full object-cover"
       />
@@ -47,15 +46,6 @@ const WhatWeAreSection = () => {
                   about your property performance and operations.
                 </p>
               </div>
-            </div>
-
-            <div className="mt-auto pt-4">
-              <button className="group flex items-center justify-between w-full md:w-auto px-6 py-4 bg-gray-900 text-white rounded-full text-lg font-medium hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl">
-                <span className="mr-6">Get started with DigiHome</span>
-                <div className="bg-white rounded-full w-10 h-10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <ArrowRight className="w-5 h-5 text-gray-900" />
-                </div>
-              </button>
             </div>
           </div>
         </div>
