@@ -34,7 +34,7 @@ const Navbar = ({ isDark = true }) => {
               className="h-full w-auto transition-transform duration-300 hover:scale-110"
               style={{
                 filter: isScrolled ? 'none' : 'brightness(0) invert(1)',
-                transform: 'scale(0.5)'
+                transform: 'scale(0.6)'
               }}
             />
           </a>
