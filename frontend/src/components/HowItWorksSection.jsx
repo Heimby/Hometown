@@ -8,7 +8,7 @@ const HowItWorksSection = () => {
       icon: MapPin,
       title: 'Share Your Property',
       subtitle: 'Quick & Easy',
-      description: 'Tell us your address and we'll instantly analyze your earning potential.',
+      description: 'Tell us your address and we will instantly analyze your earning potential.',
       color: 'emerald',
     },
     {
