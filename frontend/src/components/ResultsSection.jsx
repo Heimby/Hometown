@@ -1,20 +1,16 @@
 import React from 'react';
-import { TrendingUp, Clock, PieChart } from 'lucide-react';
 
 const ResultsSection = () => {
   const results = [
     {
-      icon: TrendingUp,
       title: '30% increased rent',
       description: 'Smart pricing and dual-rental strategy maximizes your property income',
     },
     {
-      icon: Clock,
       title: '100% less time spent on tenant management',
       description: 'We handle all guest and tenant interactions, freeing your time completely',
     },
     {
-      icon: PieChart,
       title: 'Better overview on property costs',
       description: 'Full transparency through your Owner Portal with detailed reporting',
     },
