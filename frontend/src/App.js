@@ -4,6 +4,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import LeadGenSection from './components/LeadGenSection';
+import LeadGenSectionSecondary from './components/LeadGenSectionSecondary';
 import WhatWeAreSection from './components/WhatWeAreSection';
 import HowItWorksSection from './components/HowItWorksSection';
 import ResultsSection from './components/ResultsSection';
@@ -39,6 +40,9 @@ function HomePage() {
 
       {/* Our Presence Section */}
       <OurPresenceSection />
+
+      {/* Second Lead Generation Section */}
+      <LeadGenSectionSecondary />
 
       {/* Expansion Markets Section */}
       <ExpansionMarketsSection />
