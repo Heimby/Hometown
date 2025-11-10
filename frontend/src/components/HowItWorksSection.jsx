@@ -113,10 +113,10 @@ const HowItWorksSection = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center">
-          <div className="inline-flex items-center gap-3 px-6 py-3 bg-gray-900 text-white rounded-full shadow-lg">
-            <Zap className="w-5 h-5" />
-            <span className="font-medium">Get started in less than 5 minutes</span>
+        <div className="text-center px-4">
+          <div className="inline-flex items-center gap-2 sm:gap-3 px-5 sm:px-6 py-2.5 sm:py-3 bg-gray-900 text-white rounded-full shadow-lg">
+            <Zap className="w-4 h-4 sm:w-5 sm:h-5" />
+            <span className="text-sm sm:text-base font-medium">Get started in less than 5 minutes</span>
           </div>
         </div>
       </div>
