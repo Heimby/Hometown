@@ -16,18 +16,18 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative h-full flex items-center justify-center">
-        <div className="text-center space-y-6 px-4">
-          <div className="space-y-2">
-            <h1 className="text-5xl md:text-6xl font-light text-white tracking-tight leading-tight">
+        <div className="text-center space-y-6 px-6 sm:px-8">
+          <div className="space-y-3 sm:space-y-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-white tracking-tight leading-tight">
               Let go of your rental headaches
             </h1>
-            <p className="text-lg md:text-xl text-white/90 font-light tracking-wide max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-white/90 font-light tracking-wide max-w-3xl mx-auto px-4">
               DigiHome delivers data-driven property management with human service
             </p>
           </div>
 
           <div className="space-y-3 pt-4">
-            <button className="group relative px-8 py-3 bg-white text-black rounded-full text-base font-medium transition-all duration-300 hover:bg-gray-100 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1">
+            <button className="group relative px-8 py-3.5 bg-white text-black rounded-full text-sm sm:text-base font-medium transition-all duration-300 hover:bg-gray-100 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1">
               <span className="relative z-10">Get started</span>
             </button>
           </div>
