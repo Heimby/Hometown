@@ -46,9 +46,14 @@ const LeadGenSectionSecondary = () => {
     setError('');
     
     try {
-      await axios.post(`${API}/leads`, formData);
+      const leadData = {
+        ...formData,
+        phone: `${countryCode} ${formData.phone}`,
+      };
+      await axios.post(`${API}/leads`, leadData);
       setSuccess(true);
       setFormData({ address: '', name: '', phone: '', email: '' });
+      setCountryCode('+47');
       setIsExpanded(false);
       
       setTimeout(() => {
