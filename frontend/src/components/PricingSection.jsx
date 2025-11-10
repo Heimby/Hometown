@@ -130,69 +130,75 @@ const PricingSection = () => {
             )}
 
             <form onSubmit={handleSubmit} className="space-y-3">
-              {/* Address */}
-              <div className="relative">
-                <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
-                <input
-                  type="text"
-                  value={formData.address}
-                  onChange={handleChange('address')}
-                  placeholder="Property address"
-                  className="w-full pl-10 pr-3 py-3 text-sm border border-gray-300 rounded-xl focus:border-gray-900 focus:outline-none transition-all bg-white"
-                  required
-                />
-              </div>
-
-              {/* Name */}
-              <div className="relative">
-                <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
-                <input
-                  type="text"
-                  value={formData.name}
-                  onChange={handleChange('name')}
-                  placeholder="Your name"
-                  className="w-full pl-10 pr-3 py-3 text-sm border border-gray-300 rounded-xl focus:border-gray-900 focus:outline-none transition-all bg-white"
-                  required
-                />
-              </div>
-
-              {/* Phone with Country Code */}
-              <div className="flex gap-2">
-                <select
-                  value={countryCode}
-                  onChange={(e) => setCountryCode(e.target.value)}
-                  className="w-24 pl-2 pr-1 py-3 text-xs border border-gray-300 rounded-xl focus:border-gray-900 focus:outline-none transition-all bg-white"
-                >
-                  {countryCodes.map((country) => (
-                    <option key={country.code} value={country.code}>
-                      {country.flag} {country.code}
-                    </option>
-                  ))}
-                </select>
-                <div className="relative flex-1">
-                  <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+              {/* Row 1: Address & Name */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                {/* Address */}
+                <div className="relative">
+                  <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
                   <input
-                    type="tel"
-                    value={formData.phone}
-                    onChange={handleChange('phone')}
-                    placeholder="Phone number"
+                    type="text"
+                    value={formData.address}
+                    onChange={handleChange('address')}
+                    placeholder="Property address"
+                    className="w-full pl-10 pr-3 py-3 text-sm border border-gray-300 rounded-xl focus:border-gray-900 focus:outline-none transition-all bg-white"
+                    required
+                  />
+                </div>
+
+                {/* Name */}
+                <div className="relative">
+                  <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+                  <input
+                    type="text"
+                    value={formData.name}
+                    onChange={handleChange('name')}
+                    placeholder="Your name"
                     className="w-full pl-10 pr-3 py-3 text-sm border border-gray-300 rounded-xl focus:border-gray-900 focus:outline-none transition-all bg-white"
                     required
                   />
                 </div>
               </div>
 
-              {/* Email */}
-              <div className="relative">
-                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
-                <input
-                  type="email"
-                  value={formData.email}
-                  onChange={handleChange('email')}
-                  placeholder="Email address"
-                  className="w-full pl-10 pr-3 py-3 text-sm border border-gray-300 rounded-xl focus:border-gray-900 focus:outline-none transition-all bg-white"
-                  required
-                />
+              {/* Row 2: Phone & Email */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                {/* Phone with Country Code */}
+                <div className="flex gap-2">
+                  <select
+                    value={countryCode}
+                    onChange={(e) => setCountryCode(e.target.value)}
+                    className="w-24 pl-2 pr-1 py-3 text-xs border border-gray-300 rounded-xl focus:border-gray-900 focus:outline-none transition-all bg-white"
+                  >
+                    {countryCodes.map((country) => (
+                      <option key={country.code} value={country.code}>
+                        {country.flag} {country.code}
+                      </option>
+                    ))}
+                  </select>
+                  <div className="relative flex-1">
+                    <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+                    <input
+                      type="tel"
+                      value={formData.phone}
+                      onChange={handleChange('phone')}
+                      placeholder="Phone number"
+                      className="w-full pl-10 pr-3 py-3 text-sm border border-gray-300 rounded-xl focus:border-gray-900 focus:outline-none transition-all bg-white"
+                      required
+                    />
+                  </div>
+                </div>
+
+                {/* Email */}
+                <div className="relative">
+                  <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+                  <input
+                    type="email"
+                    value={formData.email}
+                    onChange={handleChange('email')}
+                    placeholder="Email address"
+                    className="w-full pl-10 pr-3 py-3 text-sm border border-gray-300 rounded-xl focus:border-gray-900 focus:outline-none transition-all bg-white"
+                    required
+                  />
+                </div>
               </div>
 
               {/* Submit Button */}
