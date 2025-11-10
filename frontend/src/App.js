@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import LeadGenSection from './components/LeadGenSection';
 import LeadGenSectionSecondary from './components/LeadGenSectionSecondary';
+import PricingSection from './components/PricingSection';
 import WhatWeAreSection from './components/WhatWeAreSection';
 import HowItWorksSection from './components/HowItWorksSection';
 import ResultsSection from './components/ResultsSection';
@@ -13,6 +14,7 @@ import OurPresenceSection from './components/OurPresenceSection';
 import ExpansionMarketsSection from './components/ExpansionMarketsSection';
 import PioneerBenefitsSection from './components/PioneerBenefitsSection';
 import OwnerPortalDashboard from './components/OwnerPortalDashboard';
+import InvestorPage from './components/InvestorPage';
 
 function HomePage() {
   return (
@@ -43,6 +45,9 @@ function HomePage() {
 
       {/* Second Lead Generation Section */}
       <LeadGenSectionSecondary />
+
+      {/* Pricing Section */}
+      <PricingSection />
 
       {/* Expansion Markets Section */}
       <ExpansionMarketsSection />
