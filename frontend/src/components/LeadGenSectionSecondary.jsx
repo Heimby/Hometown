@@ -9,12 +9,26 @@ const LeadGenSectionSecondary = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
+  const [countryCode, setCountryCode] = useState('+47');
   const [formData, setFormData] = useState({
     address: '',
     name: '',
     phone: '',
     email: '',
   });
+
+  const countryCodes = [
+    { code: '+47', country: 'Norway', flag: '🇳🇴' },
+    { code: '+1', country: 'USA/Canada', flag: '🇺🇸' },
+    { code: '+44', country: 'UK', flag: '🇬🇧' },
+    { code: '+49', country: 'Germany', flag: '🇩🇪' },
+    { code: '+33', country: 'France', flag: '🇫🇷' },
+    { code: '+34', country: 'Spain', flag: '🇪🇸' },
+    { code: '+31', country: 'Netherlands', flag: '🇳🇱' },
+    { code: '+46', country: 'Sweden', flag: '🇸🇪' },
+    { code: '+45', country: 'Denmark', flag: '🇩🇰' },
+    { code: '+358', country: 'Finland', flag: '🇫🇮' },
+  ];
 
   const handleAddressChange = (e) => {
     setFormData({ ...formData, address: e.target.value });
