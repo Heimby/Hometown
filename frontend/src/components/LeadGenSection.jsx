@@ -48,11 +48,11 @@ const LeadGenSection = () => {
     setError('');
     
     try {
-      // Submit lead data to backend
+      // Submit lead data to backend with country code
       const leadData = {
         address: formData.address,
         name: formData.name,
-        phone: formData.phone,
+        phone: `${countryCode} ${formData.phone}`,
         email: formData.email,
       };
       
