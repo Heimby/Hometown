@@ -77,11 +77,11 @@ const LeadGenSection = () => {
     setStep(3);
     
     try {
-      // Create owner portal account
+      // Create owner portal account with country code
       const ownerData = {
         address: formData.address,
         name: formData.name,
-        phone: formData.phone,
+        phone: `${countryCode} ${formData.phone}`,
         email: formData.email,
         password: formData.password,
       };
