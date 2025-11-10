@@ -111,16 +111,16 @@ const LeadGenSection = () => {
   };
 
   return (
-    <section className="relative py-24 px-6 bg-white">
+    <section className="relative py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-white">
       <div className="mx-auto" style={{ maxWidth: '95%' }}>
         {step === 1 ? (
           <>
             {/* Step 1: Lead Generation Form */}
-            <div className="text-center mb-12 space-y-4">
-              <h2 className="text-4xl md:text-5xl font-light text-gray-900 tracking-tight">
+            <div className="text-center mb-8 sm:mb-10 md:mb-12 space-y-3 sm:space-y-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 tracking-tight px-2">
                 The only provider offering both
               </h2>
-              <div className="flex flex-wrap items-center justify-center gap-3 text-2xl md:text-3xl font-medium">
+              <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xl sm:text-2xl md:text-3xl font-medium px-2">
                 <span className="text-gray-900">Airbnb management</span>
                 <span className="text-gray-400">&</span>
                 <span className="text-gray-900">long-term rentals</span>
