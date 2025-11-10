@@ -9,7 +9,7 @@ const HowItWorksSection = () => {
       title: 'Share Your Property',
       subtitle: 'Quick & Easy',
       description: 'Tell us your address and we will instantly analyze your earning potential.',
-      color: 'emerald',
+      color: 'gray',
     },
     {
       number: '02',
@@ -17,7 +17,7 @@ const HowItWorksSection = () => {
       title: 'Strategy Call',
       subtitle: '15-Minute Chat',
       description: 'We review your property and recommend the best rental strategy for maximum returns.',
-      color: 'blue',
+      color: 'gray',
     },
     {
       number: '03',
@@ -25,7 +25,7 @@ const HowItWorksSection = () => {
       title: 'Fast Digital Setup',
       subtitle: 'Same Week Launch',
       description: 'Our local team handles photos, setup, and checks while you relax.',
-      color: 'amber',
+      color: 'gray',
     },
     {
       number: '04',
@@ -38,33 +38,19 @@ const HowItWorksSection = () => {
   ];
 
   const colorClasses = {
-    emerald: {
-      bg: 'bg-emerald-50',
-      border: 'border-emerald-200',
-      icon: 'bg-emerald-500',
-      text: 'text-emerald-700',
-      number: 'text-emerald-600',
-    },
-    blue: {
-      bg: 'bg-blue-50',
-      border: 'border-blue-200',
-      icon: 'bg-blue-500',
-      text: 'text-blue-700',
-      number: 'text-blue-600',
-    },
-    amber: {
-      bg: 'bg-amber-50',
-      border: 'border-amber-200',
-      icon: 'bg-amber-500',
-      text: 'text-amber-700',
-      number: 'text-amber-600',
+    gray: {
+      bg: 'bg-gray-50',
+      border: 'border-gray-200',
+      icon: 'bg-gray-900',
+      text: 'text-gray-600',
+      number: 'text-gray-300',
     },
     purple: {
       bg: 'bg-purple-50',
       border: 'border-purple-200',
       icon: 'bg-purple-500',
       text: 'text-purple-700',
-      number: 'text-purple-600',
+      number: 'text-purple-300',
     },
   };
 
