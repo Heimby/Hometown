@@ -46,24 +46,16 @@ const ResultsSection = () => {
               </p>
 
               <div className="space-y-6">
-                {results.map((result, index) => {
-                  const Icon = result.icon;
-                  return (
-                    <div key={index} className="space-y-2">
-                      <div className="flex items-center space-x-3">
-                        <div className="w-10 h-10 bg-gray-900 rounded-lg flex items-center justify-center">
-                          <Icon className="w-5 h-5 text-white" />
-                        </div>
-                        <h3 className="text-xl md:text-2xl font-bold text-gray-900">
-                          {result.title}
-                        </h3>
-                      </div>
-                      <p className="text-base text-gray-700 leading-relaxed pl-13">
-                        {result.description}
-                      </p>
-                    </div>
-                  );
-                })}
+                {results.map((result, index) => (
+                  <div key={index} className="space-y-2">
+                    <h3 className="text-xl md:text-2xl font-bold text-gray-900">
+                      {result.title}
+                    </h3>
+                    <p className="text-base text-gray-700 leading-relaxed">
+                      {result.description}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
