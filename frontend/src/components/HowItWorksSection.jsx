@@ -83,23 +83,23 @@ const HowItWorksSection = () => {
                 )}
 
                 {/* Card */}
-                <div className={`${colors.bg} ${colors.border} border-2 rounded-2xl p-6 h-full transition-all duration-300 hover:shadow-xl hover:-translate-y-1`}>
+                <div className={`${colors.bg} ${colors.border} border-2 rounded-2xl p-5 sm:p-6 h-full transition-all duration-300 hover:shadow-xl hover:-translate-y-1`}>
                   {/* Icon and Number */}
-                  <div className="flex items-center justify-between mb-4">
-                    <div className={`${colors.icon} w-14 h-14 rounded-xl flex items-center justify-center shadow-lg`}>
-                      <Icon className="w-7 h-7 text-white" />
+                  <div className="flex items-center justify-between mb-3 sm:mb-4">
+                    <div className={`${colors.icon} w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center shadow-lg`}>
+                      <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                     </div>
-                    <span className={`${colors.number} text-4xl font-bold opacity-50`}>
+                    <span className={`${colors.number} text-3xl sm:text-4xl font-bold opacity-50`}>
                       {step.number}
                     </span>
                   </div>
 
                   {/* Content */}
-                  <div className="space-y-2">
-                    <span className={`${colors.text} text-xs font-semibold uppercase tracking-wider`}>
+                  <div className="space-y-1.5 sm:space-y-2">
+                    <span className={`${colors.text} text-[10px] sm:text-xs font-semibold uppercase tracking-wider`}>
                       {step.subtitle}
                     </span>
-                    <h3 className="text-xl font-bold text-gray-900">
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900">
                       {step.title}
                     </h3>
                     <p className="text-sm text-gray-700 leading-relaxed">
