@@ -125,7 +125,7 @@ const LeadGenSection = () => {
                 <span className="text-gray-400">&</span>
                 <span className="text-gray-900">long-term rentals</span>
               </div>
-              <p className="text-lg text-gray-600 font-light pt-4">
+              <p className="text-base sm:text-lg text-gray-600 font-light pt-2 sm:pt-4 px-4">
                 Check how much you can earn with us
               </p>
             </div>
