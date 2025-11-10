@@ -107,9 +107,103 @@ const PricingSection = () => {
             </div>
           </div>
 
-          <p className="text-sm text-gray-500 text-center">
+          <p className="text-sm text-gray-500 text-center mb-8">
             Only pay when your property generates income
           </p>
+
+          {/* Inline Lead Gen Form */}
+          <div className="border-t-2 border-gray-200 pt-8">
+            <h3 className="text-lg font-semibold text-gray-900 text-center mb-6">
+              Get started today
+            </h3>
+
+            {success && (
+              <div className="mb-4 p-3 bg-green-50 border border-green-200 rounded-xl text-green-600 text-sm text-center">
+                Thank you! We will contact you shortly.
+              </div>
+            )}
+
+            {error && (
+              <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-xl text-red-600 text-sm text-center">
+                {error}
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit} className="space-y-3">
+              {/* Address */}
+              <div className="relative">
+                <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+                <input
+                  type="text"
+                  value={formData.address}
+                  onChange={handleChange('address')}
+                  placeholder="Property address"
+                  className="w-full pl-10 pr-3 py-3 text-sm border border-gray-300 rounded-xl focus:border-gray-900 focus:outline-none transition-all bg-white"
+                  required
+                />
+              </div>
+
+              {/* Name */}
+              <div className="relative">
+                <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+                <input
+                  type="text"
+                  value={formData.name}
+                  onChange={handleChange('name')}
+                  placeholder="Your name"
+                  className="w-full pl-10 pr-3 py-3 text-sm border border-gray-300 rounded-xl focus:border-gray-900 focus:outline-none transition-all bg-white"
+                  required
+                />
+              </div>
+
+              {/* Phone with Country Code */}
+              <div className="flex gap-2">
+                <select
+                  value={countryCode}
+                  onChange={(e) => setCountryCode(e.target.value)}
+                  className="w-24 pl-2 pr-1 py-3 text-xs border border-gray-300 rounded-xl focus:border-gray-900 focus:outline-none transition-all bg-white"
+                >
+                  {countryCodes.map((country) => (
+                    <option key={country.code} value={country.code}>
+                      {country.flag} {country.code}
+                    </option>
+                  ))}
+                </select>
+                <div className="relative flex-1">
+                  <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+                  <input
+                    type="tel"
+                    value={formData.phone}
+                    onChange={handleChange('phone')}
+                    placeholder="Phone number"
+                    className="w-full pl-10 pr-3 py-3 text-sm border border-gray-300 rounded-xl focus:border-gray-900 focus:outline-none transition-all bg-white"
+                    required
+                  />
+                </div>
+              </div>
+
+              {/* Email */}
+              <div className="relative">
+                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+                <input
+                  type="email"
+                  value={formData.email}
+                  onChange={handleChange('email')}
+                  placeholder="Email address"
+                  className="w-full pl-10 pr-3 py-3 text-sm border border-gray-300 rounded-xl focus:border-gray-900 focus:outline-none transition-all bg-white"
+                  required
+                />
+              </div>
+
+              {/* Submit Button */}
+              <button
+                type="submit"
+                className="w-full py-3.5 bg-gray-900 text-white rounded-xl text-sm font-medium hover:bg-gray-800 transition-colors shadow-md"
+              >
+                Get Your Free Estimate
+              </button>
+            </form>
+          </div>
         </div>
 
         {/* Investment Partner Link - Subtle */}
