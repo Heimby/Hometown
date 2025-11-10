@@ -55,6 +55,9 @@ function HomePage() {
 
       {/* Pioneer Benefits Section */}
       <PioneerBenefitsSection />
+
+      {/* Footer */}
+      <Footer />
     </>
   );
 }
