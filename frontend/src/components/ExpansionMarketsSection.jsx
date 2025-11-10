@@ -1,39 +1,25 @@
 import React from 'react';
+import { Globe } from 'lucide-react';
 
 const ExpansionMarketsSection = () => {
-  const countries = [
-    { flag: '🇳🇱', name: 'Netherlands' },
-    { flag: '🇩🇪', name: 'Germany' },
-    { flag: '🇫🇷', name: 'France' },
-    { flag: '🇫🇮', name: 'Finland' },
-  ];
-
   return (
     <section className="relative py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-white">
       <div className="max-w-4xl mx-auto">
         {/* Heading */}
-        <div className="text-center mb-8 sm:mb-10 space-y-2">
+        <div className="text-center mb-8 sm:mb-10 space-y-3">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
-            Expansion Markets
+            Expanding Across Europe
           </h2>
           <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
-            We're launching in the Netherlands, Germany, France, and Finland. Join as a pioneer.
+            We're bringing DigiHome to new markets across Europe. Join as a pioneer in your region and get exclusive founding member benefits.
           </p>
         </div>
 
-        {/* Country Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
-          {countries.map((country, index) => (
-            <div
-              key={index}
-              className="bg-gray-50 p-4 sm:p-6 rounded-xl hover:bg-gray-100 transition-colors border border-gray-200"
-            >
-              <div className="flex flex-col items-center space-y-2">
-                <span className="text-3xl sm:text-4xl">{country.flag}</span>
-                <p className="text-sm sm:text-base font-medium text-gray-900">{country.name}</p>
-              </div>
-            </div>
-          ))}
+        {/* Icon */}
+        <div className="flex justify-center mb-8">
+          <div className="bg-gray-50 p-6 rounded-full border border-gray-200">
+            <Globe className="w-12 h-12 text-gray-700" />
+          </div>
         </div>
 
         {/* CTA */}
@@ -41,6 +27,9 @@ const ExpansionMarketsSection = () => {
           <button className="inline-flex items-center px-6 sm:px-8 py-3 bg-gray-900 text-white rounded-full text-sm sm:text-base font-medium hover:bg-gray-800 transition-colors shadow-md">
             Join as Pioneer
           </button>
+          <p className="text-sm text-gray-500 mt-4">
+            Limited founding member spots available
+          </p>
         </div>
       </div>
     </section>
