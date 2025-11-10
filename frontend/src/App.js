@@ -13,6 +13,7 @@ import ProfessionalServicesSection from './components/ProfessionalServicesSectio
 import OurPresenceSection from './components/OurPresenceSection';
 import ExpansionMarketsSection from './components/ExpansionMarketsSection';
 import PioneerBenefitsSection from './components/PioneerBenefitsSection';
+import Footer from './components/Footer';
 import OwnerPortalDashboard from './components/OwnerPortalDashboard';
 import InvestorPage from './components/InvestorPage';
 
