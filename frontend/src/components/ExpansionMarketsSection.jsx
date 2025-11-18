@@ -28,7 +28,7 @@ const ExpansionMarketsSection = () => {
             Bli med som pioner
           </button>
           <p className="text-sm text-gray-500 mt-4">
-            Limited founding member spots available
+            Begrenset antall plasser for grunnleggere
           </p>
         </div>
       </div>
