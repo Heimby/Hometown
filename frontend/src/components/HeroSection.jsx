@@ -6,7 +6,7 @@ const HeroSection = () => {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src="https://customer-assets.emergentagent.com/job_neo-copier/artifacts/ccskjduo_a_bright_minimal_image%20%282%29.jpeg"
+          src="https://customer-assets.emergentagent.com/job_homeeasy-app/artifacts/mgfizfzg__repeat_3_extreme_image.jpeg"
           alt="Modern Property Management"
           className="w-full h-full object-cover hero-background-image"
         />
