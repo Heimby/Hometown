@@ -45,7 +45,7 @@ const ProfessionalServicesSection = () => {
     setCurrentIndex((prev) => (prev - 1 + services.length) % services.length);
   };
 
-  const visibleCards = 3;
+  const visibleCards = 4;
   const getVisibleServices = () => {
     const visible = [];
     for (let i = 0; i < visibleCards; i++) {
