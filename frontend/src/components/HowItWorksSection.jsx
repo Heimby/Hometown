@@ -56,11 +56,8 @@ const HowItWorksSection = () => {
         {/* Heading */}
         <div className="text-center mb-10 sm:mb-12 md:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-3 sm:mb-4">
-            Slik fungerer det
+            Lønnsom utleie uten jobb – vi får deg i gang umiddelbart.
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto px-4">
-            Fra null til inntekt på <span className="font-semibold text-gray-900">4 enkle steg</span>
-          </p>
         </div>
 
         {/* Steps Grid */}
