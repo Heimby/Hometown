@@ -19,10 +19,10 @@ const HeroSection = () => {
         <div className="text-center space-y-6 px-6 sm:px-8">
           <div className="space-y-3 sm:space-y-4">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-white tracking-tight leading-tight">
-              Let go of your rental headaches
+              Vi hjelper deg med å leie ut
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-white/90 font-light tracking-wide max-w-3xl mx-auto px-4">
-              DigiHome delivers data-driven property management with human service
+              Vi håndterer utleieprosessen fra A til Å, men du beholder all kontroll.
             </p>
           </div>
 
