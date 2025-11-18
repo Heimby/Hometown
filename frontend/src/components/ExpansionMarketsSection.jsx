@@ -25,7 +25,7 @@ const ExpansionMarketsSection = () => {
         {/* CTA */}
         <div className="text-center">
           <button className="inline-flex items-center px-6 sm:px-8 py-3 bg-gray-900 text-white rounded-full text-sm sm:text-base font-medium hover:bg-gray-800 transition-colors shadow-md">
-            Join as Pioneer
+            Bli med som pioner
           </button>
           <p className="text-sm text-gray-500 mt-4">
             Limited founding member spots available
