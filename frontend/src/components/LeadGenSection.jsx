@@ -133,13 +133,13 @@ const LeadGenSection = () => {
             <div className="bg-gray-50 rounded-3xl p-8 sm:p-10 md:p-12 shadow-lg border border-gray-200 max-w-5xl mx-auto">
               {/* Heading Section */}
               <div className="text-center mb-8 sm:mb-10 space-y-3 sm:space-y-4">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 tracking-tight">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-light text-gray-600 tracking-tight">
                   Eneste forvalter som håndterer både
                 </h2>
-                <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xl sm:text-2xl md:text-3xl font-medium">
-                  <span className="text-gray-900">airbnb & langtidsutleie</span>
+                <div className="flex flex-wrap items-center justify-center gap-2 text-base sm:text-lg text-gray-500">
+                  <span>airbnb & langtidsutleie</span>
                 </div>
-                <p className="text-base sm:text-lg text-gray-600 font-light pt-2 sm:pt-4">
+                <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-900 font-semibold pt-2 sm:pt-4">
                   Sjekk hvor mye du kan tjene med oss
                 </p>
               </div>
