@@ -7,7 +7,7 @@ import LeadGenSection from './components/LeadGenSection';
 import LeadGenSectionSecondary from './components/LeadGenSectionSecondary';
 import PricingSection from './components/PricingSection';
 import WhatWeAreSection from './components/WhatWeAreSection';
-import HowItWorksSection from './components/HowItWorksSection';
+import ProcessTimelineSection from './components/ProcessTimelineSection';
 import ResultsSection from './components/ResultsSection';
 import ProfessionalServicesSection from './components/ProfessionalServicesSection';
 import OurPresenceSection from './components/OurPresenceSection';
