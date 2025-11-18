@@ -99,7 +99,7 @@ const ProfessionalServicesSection = () => {
                 <div
                   key={index}
                   className="relative shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
-                  style={{ aspectRatio: '4/3' }}
+                  style={{ aspectRatio: '3/4' }}
                 >
                   {/* Background Image */}
                   <img
@@ -134,7 +134,7 @@ const ProfessionalServicesSection = () => {
                   className={`relative shadow-lg transition-all duration-300 overflow-hidden ${
                     index === currentIndex ? 'block' : 'hidden'
                   }`}
-                  style={{ aspectRatio: '4/3' }}
+                  style={{ aspectRatio: '3/4' }}
                 >
                   {/* Background Image */}
                   <img
