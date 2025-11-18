@@ -61,7 +61,7 @@ const LeadGenSectionSecondary = () => {
       }, 3000);
     } catch (err) {
       console.error('Error creating lead:', err);
-      setError('Failed to submit. Please try again.');
+      setError('Noe gikk galt. Vennligst prøv igjen.');
     }
   };
 
