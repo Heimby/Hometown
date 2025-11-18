@@ -194,7 +194,7 @@ const LeadGenSectionSecondary = () => {
           {/* Helper text */}
           {!isExpanded && (
             <p className="text-center text-sm text-gray-500 mt-4 animate-fade-in">
-              Start typing to see your potential earnings
+              Begynn å skrive for å se ditt inntektspotensial
             </p>
           )}
         </form>
