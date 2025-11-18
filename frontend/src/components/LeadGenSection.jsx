@@ -132,15 +132,13 @@ const LeadGenSection = () => {
             {/* Step 1: Lead Generation Form */}
             <div className="text-center mb-8 sm:mb-10 md:mb-12 space-y-3 sm:space-y-4">
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 tracking-tight px-2">
-                The only provider offering both
+                Eneste forvalter som håndterer både
               </h2>
               <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xl sm:text-2xl md:text-3xl font-medium px-2">
-                <span className="text-gray-900">Airbnb management</span>
-                <span className="text-gray-400">&</span>
-                <span className="text-gray-900">long-term rentals</span>
+                <span className="text-gray-900">airbnb & langtidsutleie</span>
               </div>
               <p className="text-base sm:text-lg text-gray-600 font-light pt-2 sm:pt-4 px-4">
-                Check how much you can earn with us
+                Sjekk hvor mye du kan tjene med oss
               </p>
             </div>
 
