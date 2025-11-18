@@ -6,7 +6,7 @@ const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
 
 const LeadGenSection = () => {
-  const [step, setStep] = useState(1); // 1: lead form, 2: owner portal, 3: loading, 4: success
+  const [step, setStep] = useState(1);
   const [isExpanded, setIsExpanded] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
@@ -20,15 +20,15 @@ const LeadGenSection = () => {
   });
 
   const countryCodes = [
-    { code: '+47', country: 'Norway', flag: '🇳🇴' },
+    { code: '+47', country: 'Norge', flag: '🇳🇴' },
     { code: '+1', country: 'USA/Canada', flag: '🇺🇸' },
     { code: '+44', country: 'UK', flag: '🇬🇧' },
-    { code: '+49', country: 'Germany', flag: '🇩🇪' },
-    { code: '+33', country: 'France', flag: '🇫🇷' },
-    { code: '+34', country: 'Spain', flag: '🇪🇸' },
-    { code: '+31', country: 'Netherlands', flag: '🇳🇱' },
-    { code: '+46', country: 'Sweden', flag: '🇸🇪' },
-    { code: '+45', country: 'Denmark', flag: '🇩🇰' },
+    { code: '+49', country: 'Tyskland', flag: '🇩🇪' },
+    { code: '+33', country: 'Frankrike', flag: '🇫🇷' },
+    { code: '+34', country: 'Spania', flag: '🇪🇸' },
+    { code: '+31', country: 'Nederland', flag: '🇳🇱' },
+    { code: '+46', country: 'Sverige', flag: '🇸🇪' },
+    { code: '+45', country: 'Danmark', flag: '🇩🇰' },
     { code: '+358', country: 'Finland', flag: '🇫🇮' },
   ];
 
@@ -48,7 +48,6 @@ const LeadGenSection = () => {
     setError('');
     
     try {
-      // Submit lead data to backend with country code
       const leadData = {
         address: formData.address,
         name: formData.name,
@@ -56,16 +55,13 @@ const LeadGenSection = () => {
         email: formData.email,
       };
       
-      const response = await axios.post(`${API}/leads`, leadData);
-      console.log('Lead created:', response.data);
+      await axios.post(`${API}/leads`, leadData);
       
-      // Transition to owner portal step
       setTimeout(() => {
         setStep(2);
       }, 300);
     } catch (err) {
-      console.error('Error creating lead:', err);
-      setError('Failed to submit. Please try again.');
+      setError('Kunne ikke sende inn. Vennligst prøv igjen.');
     }
   };
 
@@ -73,11 +69,9 @@ const LeadGenSection = () => {
     e.preventDefault();
     setError('');
     
-    // Show loading
     setStep(3);
     
     try {
-      // Create owner portal account with country code
       const ownerData = {
         address: formData.address,
         name: formData.name,
@@ -88,18 +82,14 @@ const LeadGenSection = () => {
       
       const response = await axios.post(`${API}/owner-portal`, ownerData, {
         validateStatus: function (status) {
-          return status >= 200 && status < 300; // Only accept 2xx status codes
+          return status >= 200 && status < 300;
         }
       });
       
-      console.log('Owner portal created:', response.data);
-      
-      // Check if response has the expected structure
       if (!response.data || !response.data.id) {
-        throw new Error('Invalid response from server');
+        throw new Error('Ugyldig svar fra serveren');
       }
       
-      // Save property data to localStorage
       localStorage.setItem('ownerProperty', JSON.stringify({
         address: formData.address,
         name: formData.name,
@@ -108,19 +98,16 @@ const LeadGenSection = () => {
         ownerId: response.data.id,
       }));
       
-      // After 1.5 seconds, show success
       setTimeout(() => {
         setStep(4);
       }, 1500);
     } catch (err) {
-      console.error('Error creating owner portal:', err);
-      setError(err.response?.data?.detail || err.message || 'Failed to create owner portal. Please try again.');
-      setStep(2); // Go back to form
+      setError(err.response?.data?.detail || err.message || 'Kunne ikke opprette eierportal. Vennligst prøv igjen.');
+      setStep(2);
     }
   };
 
   const handleGoToPortal = () => {
-    // Redirect to owner portal dashboard
     window.location.href = '/owner-portal';
   };
 
@@ -129,9 +116,7 @@ const LeadGenSection = () => {
       <div className="max-w-6xl mx-auto">
         {step === 1 ? (
           <>
-            {/* Grey Box Container - Wrapping Everything */}
             <div className="bg-gray-50 rounded-3xl p-8 sm:p-10 md:p-12 shadow-lg border border-gray-200 max-w-5xl mx-auto">
-              {/* Heading Section */}
               <div className="text-center mb-8 sm:mb-10 space-y-3 sm:space-y-4">
                 <h2 className="text-xl sm:text-2xl md:text-3xl font-light text-gray-600 tracking-tight">
                   Eneste som tilbyr både
@@ -144,7 +129,6 @@ const LeadGenSection = () => {
                 </p>
               </div>
 
-              {/* Form */}
               <form onSubmit={handleLeadSubmit} className="relative">
               {error && (
                 <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-xl text-red-600 text-sm">
@@ -161,7 +145,6 @@ const LeadGenSection = () => {
                   maxHeight: isExpanded ? '500px' : '80px',
                 }}
               >
-                {/* Address Field */}
                 <div
                   className={`relative ${
                     isExpanded ? 'md:col-span-2' : 'col-span-1'
@@ -180,7 +163,6 @@ const LeadGenSection = () => {
                   </div>
                 </div>
 
-                {/* Expanded Fields */}
                 {isExpanded && (
                   <>
                     <div className="relative animate-fade-in">
@@ -250,10 +232,9 @@ const LeadGenSection = () => {
                 )}
               </div>
 
-              {/* Helper text */}
               {!isExpanded && (
                 <p className="text-center text-sm text-gray-500 mt-4 animate-fade-in">
-                  Start typing to see your potential earnings
+                  Begynn å skrive for å se dine potensielle inntekter
                 </p>
               )}
               </form>
@@ -261,17 +242,16 @@ const LeadGenSection = () => {
           </>
         ) : step === 2 ? (
           <>
-            {/* Step 2: Owner Portal Creation */}
             <div className="animate-fade-in">
               <div className="text-center mb-12 space-y-4">
                 <h2 className="text-4xl md:text-5xl font-light text-gray-900 tracking-tight">
-                  Create Your Owner Portal
+                  Opprett Din Eierportal
                 </h2>
                 <p className="text-lg text-gray-600 font-light max-w-2xl mx-auto">
-                  We need a bit more information to accurately estimate your revenues.
+                  Vi trenger litt mer informasjon for å nøyaktig beregne inntektene dine.
                 </p>
                 <p className="text-base text-gray-500 font-light">
-                  → Sign up for your owner portal to access detailed revenue estimates and property insights.
+                  → Registrer deg for eierportalen din for å få tilgang til detaljerte inntektsestimater og eiendomsinnsikt.
                 </p>
               </div>
 
@@ -283,7 +263,7 @@ const LeadGenSection = () => {
                 )}
                 <div className="relative">
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Create Your Owner Portal Password
+                    Opprett Passord for Eierportalen Din
                   </label>
                   <div className="relative">
                     <Lock className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
@@ -291,7 +271,7 @@ const LeadGenSection = () => {
                       type={showPassword ? 'text' : 'password'}
                       value={formData.password}
                       onChange={handleChange('password')}
-                      placeholder="Enter a strong password"
+                      placeholder="Skriv inn et sterkt passord"
                       className="w-full pl-12 pr-12 py-4 text-base border-2 border-gray-200 rounded-2xl focus:border-gray-900 focus:outline-none transition-all duration-300 bg-gray-50 hover:bg-white"
                       required
                       minLength={8}
@@ -309,7 +289,7 @@ const LeadGenSection = () => {
                     </button>
                   </div>
                   <p className="text-sm text-gray-500 mt-2">
-                    Password must be at least 8 characters long
+                    Passordet må være minst 8 tegn langt
                   </p>
                 </div>
 
@@ -317,17 +297,16 @@ const LeadGenSection = () => {
                   type="submit"
                   className="w-full py-4 bg-gray-900 text-white rounded-2xl text-base font-medium hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                 >
-                  Create Owner Portal
+                  Opprett Eierportal
                 </button>
 
-                {/* Summary of provided info */}
                 <div className="mt-8 p-6 bg-gray-50 rounded-2xl space-y-2">
-                  <p className="text-sm font-medium text-gray-700">Your Information:</p>
+                  <p className="text-sm font-medium text-gray-700">Din Informasjon:</p>
                   <div className="space-y-1 text-sm text-gray-600">
-                    <p><span className="font-medium">Property:</span> {formData.address}</p>
-                    <p><span className="font-medium">Name:</span> {formData.name}</p>
-                    <p><span className="font-medium">Email:</span> {formData.email}</p>
-                    <p><span className="font-medium">Phone:</span> {formData.phone}</p>
+                    <p><span className="font-medium">Eiendom:</span> {formData.address}</p>
+                    <p><span className="font-medium">Navn:</span> {formData.name}</p>
+                    <p><span className="font-medium">E-post:</span> {formData.email}</p>
+                    <p><span className="font-medium">Telefon:</span> {formData.phone}</p>
                   </div>
                 </div>
               </form>
@@ -335,21 +314,19 @@ const LeadGenSection = () => {
           </>
         ) : step === 3 ? (
           <>
-            {/* Step 3: Loading */}
             <div className="text-center py-16 animate-fade-in">
               <div className="flex flex-col items-center space-y-6">
                 <div className="relative">
                   <div className="w-16 h-16 border-4 border-gray-200 border-t-gray-900 rounded-full animate-spin"></div>
                 </div>
                 <p className="text-lg text-gray-600 font-light">
-                  Creating your owner portal...
+                  Oppretter eierportalen din...
                 </p>
               </div>
             </div>
           </>
         ) : (
           <>
-            {/* Step 4: Success */}
             <div className="text-center py-8 animate-fade-in">
               <div className="flex flex-col items-center space-y-8">
                 <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center animate-scale-in">
@@ -358,10 +335,10 @@ const LeadGenSection = () => {
                 
                 <div className="space-y-3">
                   <h2 className="text-4xl md:text-5xl font-light text-gray-900 tracking-tight">
-                    Owner portal created
+                    Eierportal opprettet
                   </h2>
                   <p className="text-xl text-gray-600 font-light">
-                    Your account is ready.
+                    Kontoen din er klar.
                   </p>
                 </div>
 
@@ -369,12 +346,12 @@ const LeadGenSection = () => {
                   onClick={handleGoToPortal}
                   className="px-10 py-4 bg-gray-900 text-white rounded-2xl text-base font-medium hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                 >
-                  Go to Owner Portal
+                  Gå til Eierportal
                 </button>
 
                 <div className="mt-8 p-6 bg-gray-50 rounded-2xl max-w-md">
                   <p className="text-sm text-gray-600">
-                    A confirmation email has been sent to <span className="font-medium">{formData.email}</span>
+                    En bekreftelsese-post har blitt sendt til <span className="font-medium">{formData.email}</span>
                   </p>
                 </div>
               </div>
