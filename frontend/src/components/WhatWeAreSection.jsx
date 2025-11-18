@@ -1,6 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Plus, Minus } from 'lucide-react';
 
 const WhatWeAreSection = () => {
+  const [expandedIndex, setExpandedIndex] = useState(null);
+
+  const toggleExpand = (index) => {
+    setExpandedIndex(expandedIndex === index ? null : index);
+  };
+
+  const services = [
+    {
+      title: 'Airbnb-utleie',
+      description: 'Vi håndterer hele Airbnb-prosessen for deg: fra opprettelse av annonse med profesjonelle bilder, til prissetting, gjestekommunikasjon, og rengjøring etter hvert opphold. Du trenger ikke å bekymre deg for noe - vi sørger for at boligen din tjener best mulig mens gjestene får en perfekt opplevelse.'
+    },
+    {
+      title: 'Langtidsutleie',
+      description: 'Vi tar oss av alt ved langtidsutleie: annonsering, visninger, leietakersjekk, kontrakt, innflytting og løpende kommunikasjon med leietaker. Du får en trygg og problemfri utleiehverdag med faste månedlige inntekter, mens vi holder kontakten med leietaker og følger opp eventuelle behov.'
+    },
+    {
+      title: 'Dynamisk utleie (10-2)',
+      description: 'Vår unike 10-2 modell gir deg det beste fra begge verdener: 10 måneder langtidsutleie med stabil inntekt, og 2 måneder Airbnb i høysesongen for maksimal avkastning. Vi håndterer overgangen sømløst, slik at du får trygghet og forutsigbarhet kombinert med høyere inntjening når det er mest etterspørsel.'
+    }
+  ];
+
   return (
     <section className="relative py-0 px-6 bg-white">
       <div className="relative min-h-[600px] mx-auto" style={{ maxWidth: '95%' }}>
@@ -19,34 +41,39 @@ const WhatWeAreSection = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2">
             <div className="rounded-2xl shadow-2xl p-8 md:p-12 flex flex-col gap-6" style={{ backgroundColor: '#ededed' }}>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                What We Are
+                Vår metode
               </h2>
               
               <p className="text-lg text-gray-700 leading-relaxed">
-                DigiHome is Norway's only full-stack property management company offering both 
-                Airbnb management and long-term rental management under one roof.
+                DigiHome er Norges eneste utleiefirma som tilbyr både airbnb-utleie og langtidsutleie, 
+                slik at du kan velge det som passer best for boligen din. Vi tar oss av hele prosessen - 
+                fra visninger til vedlikehold. Du får en trygg, enkel og lønnsom utleiehverdag, 
+                uansett hvilken løsning du velger.
               </p>
 
-              <div className="space-y-6">
-                <div>
-                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
-                    Complete Management
-                  </h3>
-                  <p className="text-base text-gray-700 leading-relaxed">
-                    We handle pricing, guest communication, tenant management, and property care, 
-                    so owners earn more with less stress.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
-                    Full Transparency
-                  </h3>
-                  <p className="text-base text-gray-700 leading-relaxed">
-                    Everything is supported by a simple Owner Portal that keeps you fully informed 
-                    about your property performance and operations.
-                  </p>
-                </div>
+              <div className="space-y-3">
+                {services.map((service, index) => (
+                  <div key={index} className="border-b border-gray-300 pb-3">
+                    <button
+                      onClick={() => toggleExpand(index)}
+                      className="w-full flex items-center justify-between text-left py-2 hover:opacity-70 transition-opacity"
+                    >
+                      <span className="text-lg md:text-xl font-semibold text-gray-900">
+                        {service.title}
+                      </span>
+                      {expandedIndex === index ? (
+                        <Minus className="w-5 h-5 text-gray-700 flex-shrink-0" />
+                      ) : (
+                        <Plus className="w-5 h-5 text-gray-700 flex-shrink-0" />
+                      )}
+                    </button>
+                    {expandedIndex === index && (
+                      <div className="mt-3 text-base text-gray-700 leading-relaxed animate-fade-in">
+                        {service.description}
+                      </div>
+                    )}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
