@@ -27,7 +27,7 @@ const OurPresenceSection = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2">
             <div className="rounded-2xl shadow-2xl p-8 md:p-12 flex flex-col gap-6" style={{ backgroundColor: '#ededed' }}>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                Norges største tilstedeværelse innen eiendomsforvaltning
+                Norges største tilstedeværelse innen utleie
               </h2>
               
               <p className="text-lg text-gray-700 leading-relaxed">
