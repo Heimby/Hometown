@@ -5,19 +5,19 @@ const WhyOwnersChooseSection = () => {
   const benefits = [
     {
       icon: Shield,
-      title: 'Regulatory Compliance & Property Enhancement',
+      title: 'Regelverksoverholdelse & Eiendomsforbedring',
     },
     {
       icon: Users,
-      title: '24/7 Customer Support',
+      title: '24/7 Kundestøtte',
     },
     {
       icon: TrendingUp,
-      title: 'Revenue Maximization',
+      title: 'Inntektsmaksimering',
     },
     {
       icon: CheckCircle,
-      title: 'Routine Maintenance & Smart Energy Management',
+      title: 'Rutinemessig Vedlikehold & Smart Energistyring',
     },
   ];
 
@@ -25,18 +25,16 @@ const WhyOwnersChooseSection = () => {
     <section className="relative py-24 px-6 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left Side - Image */}
           <div className="relative">
             <div className="bg-gradient-to-br from-gray-50 to-white rounded-3xl overflow-hidden shadow-xl border border-gray-100">
               <img
                 src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1973&auto=format&fit=crop"
-                alt="Property Owner"
+                alt="Eiendomseier"
                 className="w-full h-[500px] object-cover"
               />
             </div>
           </div>
 
-          {/* Right Side - Benefits */}
           <div className="space-y-6">
             {benefits.map((benefit, index) => {
               const Icon = benefit.icon;
