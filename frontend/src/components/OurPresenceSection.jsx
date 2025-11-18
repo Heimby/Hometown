@@ -75,7 +75,7 @@ const OurPresenceSection = () => {
               </div>
 
               <p className="text-base text-gray-600 font-light italic mt-4">
-                Ekte lokale team. Virkelig lokal tilstedeværelse. Konsistent kvalitet overalt.
+                Lokale team. Lokal ekspertise. Konsistent kvalitet.
               </p>
             </div>
 
