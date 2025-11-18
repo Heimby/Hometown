@@ -8,7 +8,7 @@ const ProfessionalServicesSection = () => {
     {
       title: 'Certified Cleaners',
       description: 'Professionally trained, quality-controlled cleaners deliver consistent hotel-grade standards. Every clean is logged, photographed, and verified in our system for full transparency.',
-      image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&auto=format&fit=crop',
+      image: 'https://customer-assets.emergentagent.com/job_homeeasy-app/artifacts/vh2we7fs_a_candid_lifestyle_image%20%281%29.jpeg',
     },
     {
       title: 'Maintenance & Technical Services',
