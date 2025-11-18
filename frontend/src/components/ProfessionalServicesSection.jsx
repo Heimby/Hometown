@@ -33,7 +33,7 @@ const ProfessionalServicesSection = () => {
     {
       title: '24/7 Communication & Analytics',
       description: '24/7 communication, investment & pricing analysts ensure your property performs optimally with data-driven insights and constant support.',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop',
+      image: 'https://customer-assets.emergentagent.com/job_homeeasy-app/artifacts/eci7fzi0_a_candid_lifestyle_image%20%283%29.jpeg',
     },
   ];
 
