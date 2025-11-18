@@ -54,8 +54,8 @@ const WhatWeAreSection = () => {
                 </p>
               </div>
 
-              <div className="mt-4">
-                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
+              <div className="mt-6">
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">
                   Hvorfor velge DigiHome?
                 </h3>
                 <ul className="space-y-2 text-base text-gray-700">
