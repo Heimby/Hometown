@@ -21,6 +21,11 @@ const ProfessionalServicesSection = () => {
       image: 'https://customer-assets.emergentagent.com/job_homeeasy-app/artifacts/lmyvu6xn_a_candid_lifestyle_image%20%282%29.jpeg',
     },
     {
+      title: 'Linen & Laundry Logistics',
+      description: 'Forget the hassle of washing and folding. We manage the rotation of high-thread-count linens and plush towels, utilizing off-site professional laundering to ensure hotel-grade hygiene.',
+      image: 'https://customer-assets.emergentagent.com/job_homeeasy-app/artifacts/6z1bkvn0_a_candid_lifestyle_image%20%284%29.jpeg',
+    },
+    {
       title: 'Security & Safety Services',
       description: 'Integrated smart-lock systems, compliance checks, and safety inspections protect both your property and occupants. We partner with local security providers for rapid on-site response when needed.',
       image: 'https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=800&auto=format&fit=crop',
