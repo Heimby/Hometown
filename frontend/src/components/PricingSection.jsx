@@ -53,7 +53,7 @@ const PricingSection = () => {
       }, 3000);
     } catch (err) {
       console.error('Error creating lead:', err);
-      setError('Failed to submit. Please try again.');
+      setError('Noe gikk galt. Vennligst prøv igjen.');
     }
   };
 
@@ -63,10 +63,10 @@ const PricingSection = () => {
         {/* Heading */}
         <div className="text-center mb-10 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-            Simple, Transparent Pricing
+            Enkel, transparent prising
           </h2>
           <p className="text-base sm:text-lg text-gray-600">
-            No hidden fees. Pay only when you earn.
+            Ingen skjulte kostnader. Du betaler kun når du tjener.
           </p>
         </div>
 
@@ -74,14 +74,14 @@ const PricingSection = () => {
         <div className="bg-gray-50 rounded-2xl p-8 sm:p-10 md:p-12 border-2 border-gray-200 mb-6">
           <div className="text-center mb-6">
             <div className="inline-block px-4 py-1.5 bg-gray-900 text-white text-sm font-medium rounded-full mb-4">
-              Standard Rate
+              Standardpris
             </div>
             <div className="space-y-2">
               <div className="text-4xl sm:text-5xl font-bold text-gray-900">
                 15%
               </div>
               <p className="text-lg text-gray-600">
-                of rental income + VAT
+                av leieinntekt + MVA
               </p>
             </div>
           </div>
@@ -90,36 +90,36 @@ const PricingSection = () => {
             <div className="flex items-start gap-3">
               <CheckCircle className="w-5 h-5 text-gray-900 flex-shrink-0 mt-0.5" />
               <p className="text-base text-gray-700">
-                All direct operational costs are deducted from payout
+                Alle direkte driftskostnader trekkes fra utbetaling
               </p>
             </div>
             <div className="flex items-start gap-3">
               <CheckCircle className="w-5 h-5 text-gray-900 flex-shrink-0 mt-0.5" />
               <p className="text-base text-gray-700">
-                Full property management included
+                Full eiendomsforvaltning inkludert
               </p>
             </div>
             <div className="flex items-start gap-3">
               <CheckCircle className="w-5 h-5 text-gray-900 flex-shrink-0 mt-0.5" />
               <p className="text-base text-gray-700">
-                No upfront costs or subscription fees
+                Ingen forhåndskostnader eller abonnementsavgifter
               </p>
             </div>
           </div>
 
           <p className="text-sm text-gray-500 text-center mb-8">
-            Only pay when your property generates income
+            Du betaler kun når eiendommen genererer inntekt
           </p>
 
           {/* Inline Lead Gen Form */}
           <div className="border-t-2 border-gray-200 pt-8">
             <h3 className="text-lg font-semibold text-gray-900 text-center mb-6">
-              Get started today
+              Kom i gang i dag
             </h3>
 
             {success && (
               <div className="mb-4 p-3 bg-green-50 border border-green-200 rounded-xl text-green-600 text-sm text-center">
-                Thank you! We will contact you shortly.
+                Takk! Vi kontakter deg snart.
               </div>
             )}
 
@@ -139,7 +139,7 @@ const PricingSection = () => {
                     type="text"
                     value={formData.address}
                     onChange={handleChange('address')}
-                    placeholder="Property address"
+                    placeholder="Eiendomsadresse"
                     className="w-full pl-10 pr-3 py-3 text-sm border border-gray-300 rounded-xl focus:border-gray-900 focus:outline-none transition-all bg-white"
                     required
                   />
@@ -152,7 +152,7 @@ const PricingSection = () => {
                     type="text"
                     value={formData.name}
                     onChange={handleChange('name')}
-                    placeholder="Your name"
+                    placeholder="Ditt navn"
                     className="w-full pl-10 pr-3 py-3 text-sm border border-gray-300 rounded-xl focus:border-gray-900 focus:outline-none transition-all bg-white"
                     required
                   />
@@ -180,7 +180,7 @@ const PricingSection = () => {
                       type="tel"
                       value={formData.phone}
                       onChange={handleChange('phone')}
-                      placeholder="Phone number"
+                      placeholder="Telefonnummer"
                       className="w-full pl-10 pr-3 py-3 text-sm border border-gray-300 rounded-xl focus:border-gray-900 focus:outline-none transition-all bg-white"
                       required
                     />
@@ -194,7 +194,7 @@ const PricingSection = () => {
                     type="email"
                     value={formData.email}
                     onChange={handleChange('email')}
-                    placeholder="Email address"
+                    placeholder="E-postadresse"
                     className="w-full pl-10 pr-3 py-3 text-sm border border-gray-300 rounded-xl focus:border-gray-900 focus:outline-none transition-all bg-white"
                     required
                   />
@@ -206,7 +206,7 @@ const PricingSection = () => {
                 type="submit"
                 className="w-full py-3.5 bg-gray-900 text-white rounded-xl text-sm font-medium hover:bg-gray-800 transition-colors shadow-md"
               >
-                Get Your Free Estimate
+                Få gratis estimat
               </button>
             </form>
           </div>
@@ -218,7 +218,7 @@ const PricingSection = () => {
             to="/investors"
             className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-gray-900 transition-colors group"
           >
-            <span>Investment partner? Bigger property players can apply for a tailored offer</span>
+            <span>Investeringspartner? Store eiendomsaktører kan søke om skreddersydd tilbud</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
