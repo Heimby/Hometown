@@ -13,8 +13,8 @@ const OurPresenceSection = () => {
   ];
 
   const international = {
-    location: 'Costa del Sol, Spain',
-    description: 'Norwegian-quality management',
+    location: 'Costa del Sol, Spania',
+    description: 'Norsk-kvalitetsforvaltning',
   };
 
   return (
