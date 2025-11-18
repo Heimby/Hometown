@@ -93,12 +93,12 @@ const ProfessionalServicesSection = () => {
           </button>
 
           {/* Cards Container - Desktop */}
-          <div className="hidden md:grid md:grid-cols-3 gap-6 px-8">
+          <div className="hidden md:grid md:grid-cols-4 gap-4 px-8">
             {getVisibleServices().map((service, index) => {
               return (
                 <div
                   key={index}
-                  className="relative rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
+                  className="relative shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
                   style={{ aspectRatio: '4/3' }}
                 >
                   {/* Background Image */}
