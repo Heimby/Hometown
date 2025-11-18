@@ -255,7 +255,8 @@ const LeadGenSection = () => {
                   Start typing to see your potential earnings
                 </p>
               )}
-            </form>
+              </form>
+            </div>
           </>
         ) : step === 2 ? (
           <>
