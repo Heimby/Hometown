@@ -32,8 +32,8 @@ function HomePage() {
       {/* What We Are Section */}
       <WhatWeAreSection />
 
-      {/* How It Works Section */}
-      <HowItWorksSection />
+      {/* Process Timeline Section */}
+      <ProcessTimelineSection />
 
       {/* Results From Real Properties Section */}
       <ResultsSection />
