@@ -3,20 +3,20 @@ import React from 'react';
 const PioneerBenefitsSection = () => {
   const benefits = [
     {
-      title: 'Up to 40% Discount',
-      description: 'Exclusive first-year pricing',
+      title: 'Opptil 40% rabatt',
+      description: 'Eksklusiv førsteårspris',
     },
     {
-      title: 'Priority Support',
-      description: 'Dedicated onboarding',
+      title: 'Prioritert support',
+      description: 'Dedikert oppfølging',
     },
     {
-      title: 'Founding Member',
-      description: 'Lifetime recognition',
+      title: 'Grunnleggermedlem',
+      description: 'Livslang anerkjennelse',
     },
     {
-      title: 'Shape the Service',
-      description: 'Direct input on features',
+      title: 'Form tjenesten',
+      description: 'Direkte innflytelse på funksjoner',
     },
   ];
 
