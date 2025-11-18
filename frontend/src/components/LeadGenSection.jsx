@@ -129,21 +129,22 @@ const LeadGenSection = () => {
       <div className="max-w-6xl mx-auto">
         {step === 1 ? (
           <>
-            {/* Step 1: Lead Generation Form */}
-            <div className="text-center mb-8 sm:mb-10 md:mb-12 space-y-3 sm:space-y-4">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 tracking-tight px-2">
-                Eneste forvalter som håndterer både
-              </h2>
-              <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xl sm:text-2xl md:text-3xl font-medium px-2">
-                <span className="text-gray-900">airbnb & langtidsutleie</span>
+            {/* Grey Box Container - Wrapping Everything */}
+            <div className="bg-gray-50 rounded-3xl p-8 sm:p-10 md:p-12 shadow-lg border border-gray-200 max-w-5xl mx-auto">
+              {/* Heading Section */}
+              <div className="text-center mb-8 sm:mb-10 space-y-3 sm:space-y-4">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 tracking-tight">
+                  Eneste forvalter som håndterer både
+                </h2>
+                <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xl sm:text-2xl md:text-3xl font-medium">
+                  <span className="text-gray-900">airbnb & langtidsutleie</span>
+                </div>
+                <p className="text-base sm:text-lg text-gray-600 font-light pt-2 sm:pt-4">
+                  Sjekk hvor mye du kan tjene med oss
+                </p>
               </div>
-              <p className="text-base sm:text-lg text-gray-600 font-light pt-2 sm:pt-4 px-4">
-                Sjekk hvor mye du kan tjene med oss
-              </p>
-            </div>
 
-            {/* Grey Box Container */}
-            <div className="bg-gray-50 rounded-3xl p-6 sm:p-8 md:p-10 shadow-lg border border-gray-200 max-w-4xl mx-auto">
+              {/* Form */}
               <form onSubmit={handleLeadSubmit} className="relative">
               {error && (
                 <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-xl text-red-600 text-sm">
