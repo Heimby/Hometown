@@ -52,7 +52,7 @@ const PioneerBenefitsSection = () => {
         {/* Bottom tagline */}
         <div className="text-center mt-8">
           <p className="text-sm text-gray-500 italic">
-            Limited spots available
+            Begrenset antall plasser tilgjengelig
           </p>
         </div>
       </div>
