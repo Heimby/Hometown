@@ -40,7 +40,7 @@ const OurPresenceSection = () => {
               </h2>
               
               <p className="text-lg text-gray-700 leading-relaxed">
-                DigiHome er det største og mest utbredte eiendomsforvaltningsselskapet i Norge. Vi opererer med fulle, lokale team på bakken over hele landet.
+                DigiHome er det største og mest utbredte eiendomsforvaltningsselskapet i Norge. Vi har lokale team i alle våre markeder.
               </p>
 
               <div className="space-y-4">
