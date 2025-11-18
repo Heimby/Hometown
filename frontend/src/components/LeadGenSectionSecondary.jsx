@@ -88,7 +88,7 @@ const LeadGenSectionSecondary = () => {
           
           {success && (
             <div className="mb-4 p-4 bg-green-50 border border-green-200 rounded-xl text-green-600 text-sm text-center">
-              Thank you! We will contact you shortly.
+              Takk! Vi kontakter deg snart.
             </div>
           )}
 
