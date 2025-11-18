@@ -12,11 +12,6 @@ const OurPresenceSection = () => {
     'Haugesund',
   ];
 
-  const international = {
-    location: 'Costa del Sol, Spania',
-    description: 'Norsk-kvalitetsforvaltning',
-  };
-
   return (
     <section className="relative py-0 px-6 bg-white">
       <div className="relative min-h-[600px] mx-auto" style={{ maxWidth: '95%' }}>
