@@ -3,7 +3,7 @@ import { Globe } from 'lucide-react';
 
 const ExpansionMarketsSection = () => {
   return (
-    <section className="relative py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-white">
+    <section className="relative py-12 sm:py-16 md:py-20 px-4 sm:px-6" style={{ backgroundColor: '#F9F8F4' }}>
       <div className="max-w-4xl mx-auto">
         {/* Heading */}
         <div className="text-center mb-8 sm:mb-10 space-y-3">
