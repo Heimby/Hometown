@@ -51,7 +51,7 @@ const HowItWorksSection = () => {
   };
 
   return (
-    <section className="relative py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-b from-gray-50 to-white">
+    <section className="relative py-12 sm:py-16 md:py-20 px-4 sm:px-6" style={{ backgroundColor: '#F9F8F4' }}>
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
         <div className="text-center mb-10 sm:mb-12 md:mb-16">
