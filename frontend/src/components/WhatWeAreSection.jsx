@@ -46,7 +46,7 @@ const WhatWeAreSection = () => {
               
               <div className="space-y-4">
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  DigiHome kombinerer Airbnb- og langtidsutleie for å gi deg den mest lønnsomme løsningen for boligen din.
+                  DigiHome hjelper deg med å finne den mest lønnsomme løsningen for boligen din.
                 </p>
                 
                 <p className="text-lg text-gray-700 leading-relaxed">
