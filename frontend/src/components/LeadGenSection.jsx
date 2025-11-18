@@ -173,7 +173,7 @@ const LeadGenSection = () => {
                       value={formData.address}
                       onChange={handleAddressChange}
                       placeholder="Skriv inn adressen din"
-                      className="w-full pl-12 pr-4 py-4 text-base border-2 border-gray-200 rounded-2xl focus:border-gray-900 focus:outline-none transition-all duration-300 bg-gray-50 hover:bg-white"
+                      className="w-full pl-12 pr-4 py-4 text-base border-2 border-gray-200 rounded-2xl focus:border-gray-900 focus:outline-none transition-all duration-300 bg-white hover:border-gray-400"
                       required
                     />
                   </div>
@@ -190,7 +190,7 @@ const LeadGenSection = () => {
                           value={formData.name}
                           onChange={handleChange('name')}
                           placeholder="Ditt navn"
-                          className="w-full pl-12 pr-4 py-4 text-base border-2 border-gray-200 rounded-2xl focus:border-gray-900 focus:outline-none transition-all duration-300 bg-gray-50 hover:bg-white"
+                          className="w-full pl-12 pr-4 py-4 text-base border-2 border-gray-200 rounded-2xl focus:border-gray-900 focus:outline-none transition-all duration-300 bg-white hover:border-gray-400"
                           required
                         />
                       </div>
@@ -216,7 +216,7 @@ const LeadGenSection = () => {
                             value={formData.phone}
                             onChange={handleChange('phone')}
                             placeholder="Telefonnummer"
-                            className="w-full pl-12 pr-4 py-4 text-base border-2 border-gray-200 rounded-2xl focus:border-gray-900 focus:outline-none transition-all duration-300 bg-gray-50 hover:bg-white"
+                            className="w-full pl-12 pr-4 py-4 text-base border-2 border-gray-200 rounded-2xl focus:border-gray-900 focus:outline-none transition-all duration-300 bg-white hover:border-gray-400"
                             required
                           />
                         </div>
@@ -231,7 +231,7 @@ const LeadGenSection = () => {
                           value={formData.email}
                           onChange={handleChange('email')}
                           placeholder="E-postadresse"
-                          className="w-full pl-12 pr-4 py-4 text-base border-2 border-gray-200 rounded-2xl focus:border-gray-900 focus:outline-none transition-all duration-300 bg-gray-50 hover:bg-white"
+                          className="w-full pl-12 pr-4 py-4 text-base border-2 border-gray-200 rounded-2xl focus:border-gray-900 focus:outline-none transition-all duration-300 bg-white hover:border-gray-400"
                           required
                         />
                       </div>
