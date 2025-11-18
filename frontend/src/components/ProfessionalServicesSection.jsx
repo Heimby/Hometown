@@ -26,14 +26,9 @@ const ProfessionalServicesSection = () => {
       image: 'https://customer-assets.emergentagent.com/job_homeeasy-app/artifacts/6z1bkvn0_a_candid_lifestyle_image%20%284%29.jpeg',
     },
     {
-      title: 'Security & Safety Services',
-      description: 'Integrated smart-lock systems, compliance checks, and safety inspections protect both your property and occupants. We partner with local security providers for rapid on-site response when needed.',
-      image: 'https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=800&auto=format&fit=crop',
-    },
-    {
       title: 'Local Specialists in Every Market',
       description: 'From inspectors to photographers to linen suppliers, every partner is carefully vetted and continuously evaluated to maintain DigiHome\'s national standard.',
-      image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800&auto=format&fit=crop',
+      image: 'https://customer-assets.emergentagent.com/job_homeeasy-app/artifacts/jh9h3rva_a_candid_waist_up_image.jpeg',
     },
     {
       title: '24/7 Communication & Analytics',
