@@ -92,7 +92,10 @@ const HowItWorksSection = () => {
                   </div>
 
                   {/* Content */}
-                  <div>
+                  <div className="space-y-1.5 sm:space-y-2">
+                    <span className={`${colors.text} text-[10px] sm:text-xs font-semibold uppercase tracking-wider`}>
+                      {step.subtitle}
+                    </span>
                     <h3 className="text-lg sm:text-xl font-bold text-gray-900">
                       {step.title}
                     </h3>
