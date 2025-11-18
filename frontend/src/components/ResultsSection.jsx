@@ -45,20 +45,20 @@ const ResultsSection = () => {
               </h2>
 
               {/* Stats with clear visual hierarchy */}
-              <div className="space-y-6">
+              <div className="space-y-8">
                 {results.map((result, index) => (
-                  <div key={index} className="border-l-4 border-gray-900 pl-4 py-2">
-                    <div className="flex items-baseline gap-2 mb-1">
-                      <span className="text-4xl md:text-5xl font-bold text-gray-900">
+                  <div key={index} className="border-l-4 border-gray-900 pl-5 py-1">
+                    <div className="space-y-1">
+                      <div className="text-4xl md:text-5xl font-bold text-gray-900 leading-none">
                         {result.stat}
-                      </span>
-                      <span className="text-xl md:text-2xl font-semibold text-gray-900">
+                      </div>
+                      <div className="text-xl md:text-2xl font-semibold text-gray-900">
                         {result.label}
-                      </span>
+                      </div>
+                      <p className="text-sm md:text-base text-gray-600 pt-1">
+                        {result.description}
+                      </p>
                     </div>
-                    <p className="text-sm md:text-base text-gray-600">
-                      {result.description}
-                    </p>
                   </div>
                 ))}
               </div>
