@@ -50,7 +50,7 @@ const WhatWeAreSection = () => {
                 </p>
                 
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Vi tar oss av hele prosessen – du får en trygg og enkel utleiehverdag.
+                  Vi tar oss av hele prosessen – du får en trygg og enkel hverdag.
                 </p>
               </div>
 
