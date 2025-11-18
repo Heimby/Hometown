@@ -36,18 +36,18 @@ const OurPresenceSection = () => {
             {/* Content card on the left */}
             <div className="rounded-2xl shadow-2xl p-8 md:p-12 flex flex-col gap-6" style={{ backgroundColor: '#ededed' }}>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                Norway's Largest Presence in Property Management
+                Norges største tilstedeværelse innen eiendomsforvaltning
               </h2>
               
               <p className="text-lg text-gray-700 leading-relaxed">
-                DigiHome is the largest and most widely present property management company in Norway. We operate with full, on-the-ground local teams across the country.
+                DigiHome er det største og mest utbredte eiendomsforvaltningsselskapet i Norge. Vi opererer med fulle, lokale team på bakken over hele landet.
               </p>
 
               <div className="space-y-4">
                 <div>
                   <div className="flex items-center space-x-2 mb-3">
                     <span className="text-2xl">🇳🇴</span>
-                    <h3 className="text-xl font-bold text-gray-900">Norway</h3>
+                    <h3 className="text-xl font-bold text-gray-900">Norge</h3>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {norwayLocations.map((location, index) => (
@@ -65,7 +65,7 @@ const OurPresenceSection = () => {
                 <div>
                   <div className="flex items-center space-x-2 mb-3">
                     <span className="text-2xl">🇪🇸</span>
-                    <h3 className="text-xl font-bold text-gray-900">International</h3>
+                    <h3 className="text-xl font-bold text-gray-900">Internasjonalt</h3>
                   </div>
                   <div className="bg-white px-4 py-3 rounded-lg border border-gray-200">
                     <p className="text-base font-medium text-gray-900">{international.location}</p>
@@ -75,7 +75,7 @@ const OurPresenceSection = () => {
               </div>
 
               <p className="text-base text-gray-600 font-light italic mt-4">
-                Real local teams. True local presence. Consistent quality everywhere.
+                Ekte lokale team. Virkelig lokal tilstedeværelse. Konsistent kvalitet overalt.
               </p>
             </div>
 
