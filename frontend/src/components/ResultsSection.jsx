@@ -9,7 +9,7 @@ const ResultsSection = () => {
     },
     {
       stat: '0',
-      label: 'tid på leietakerhåndtering',
+      label: 'timer brukt på leietakere',
       description: 'Vi håndterer all kontakt med gjester og leietakere',
     },
     {
