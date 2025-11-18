@@ -114,7 +114,7 @@ const LeadGenSectionSecondary = () => {
                   type="text"
                   value={formData.address}
                   onChange={handleAddressChange}
-                  placeholder="Enter your property address"
+                  placeholder="Skriv inn adressen din"
                   className="w-full pl-12 pr-4 py-4 text-base border-2 border-gray-200 rounded-2xl focus:border-gray-900 focus:outline-none transition-all duration-300 bg-white hover:border-gray-300"
                   required
                 />
