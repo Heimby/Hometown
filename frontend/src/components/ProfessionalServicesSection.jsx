@@ -6,33 +6,33 @@ const ProfessionalServicesSection = () => {
 
   const services = [
     {
-      title: 'Certified Cleaners',
-      description: 'Professionally trained, quality-controlled cleaners deliver consistent hotel-grade standards. Every clean is logged, photographed, and verified in our system for full transparency.',
+      title: 'Sertifiserte renholdere',
+      description: 'Profesjonelt trente, kvalitetskontrollerte renholdere leverer konsistente hotellstandarder. Hver rengjøring logges, fotograferes og verifiseres i systemet vårt for full transparens.',
       image: 'https://customer-assets.emergentagent.com/job_homeeasy-app/artifacts/vh2we7fs_a_candid_lifestyle_image%20%281%29.jpeg',
     },
     {
-      title: 'Maintenance & Technical Services',
-      description: 'Licensed technicians handle everything from routine repairs to emergency callouts. Preventive maintenance schedules ensure properties stay in top condition and minimize downtime.',
+      title: 'Vedlikehold & Tekniske tjenester',
+      description: 'Lisensierte teknikere håndterer alt fra rutinereperasjoner til nødutrykkinger. Forebyggende vedlikeholdsplaner sikrer at eiendommene holder toppstandard og minimerer nedetid.',
       image: 'https://customer-assets.emergentagent.com/job_homeeasy-app/artifacts/i4c1bl7s_a_candid_lifestyle_image.jpeg',
     },
     {
-      title: 'Consumables & Supply Management',
-      description: 'Automated stock tracking and locally sourced suppliers keep every unit fully equipped with essentials. Owners never overpay and guests never run out.',
+      title: 'Forbruksvarer & Lagerstyring',
+      description: 'Automatisert lagersporing og lokale leverandører holder hver enhet fullt utstyrt med det nødvendige. Eiere betaler aldri for mye og gjester går aldri tom.',
       image: 'https://customer-assets.emergentagent.com/job_homeeasy-app/artifacts/lmyvu6xn_a_candid_lifestyle_image%20%282%29.jpeg',
     },
     {
-      title: 'Linen & Laundry Logistics',
-      description: 'Forget the hassle of washing and folding. We manage the rotation of high-thread-count linens and plush towels, utilizing off-site professional laundering to ensure hotel-grade hygiene.',
+      title: 'Sengetøy & Vaskerilogistikk',
+      description: 'Glem bryet med å vaske og brette. Vi håndterer rotasjon av sengetøy og håndklær med høy trådtetthet, ved bruk av profesjonell vaskeriservice utenfor stedet for å sikre hotellstandard hygiene.',
       image: 'https://customer-assets.emergentagent.com/job_homeeasy-app/artifacts/6z1bkvn0_a_candid_lifestyle_image%20%284%29.jpeg',
     },
     {
-      title: 'Local Specialists in Every Market',
-      description: 'From inspectors to photographers to linen suppliers, every partner is carefully vetted and continuously evaluated to maintain DigiHome\'s national standard.',
+      title: 'Lokale spesialister i hvert marked',
+      description: 'Fra inspektører til fotografer til sengetøyleverandører, hver partner er nøye vurdert og kontinuerlig evaluert for å opprettholde DigiHomes nasjonale standard.',
       image: 'https://customer-assets.emergentagent.com/job_homeeasy-app/artifacts/jh9h3rva_a_candid_waist_up_image.jpeg',
     },
     {
-      title: '24/7 Communication & Analytics',
-      description: '24/7 communication, investment & pricing analysts ensure your property performs optimally with data-driven insights and constant support.',
+      title: '24/7 Kommunikasjon & Analyse',
+      description: '24/7 kommunikasjon, investerings- og prisanalytikere sikrer at eiendommen din presterer optimalt med datadrevne innsikter og konstant støtte.',
       image: 'https://customer-assets.emergentagent.com/job_homeeasy-app/artifacts/eci7fzi0_a_candid_lifestyle_image%20%283%29.jpeg',
     },
   ];
