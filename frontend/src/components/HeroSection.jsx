@@ -22,7 +22,7 @@ const HeroSection = () => {
               Vi hjelper deg med å leie ut
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-white/90 font-light tracking-wide max-w-3xl mx-auto px-4">
-              Vi håndterer utleieprosessen fra A til Å, men du beholder all kontroll.
+              Vi håndterer alt fra A til Å, mens du beholder full kontroll.
             </p>
           </div>
 
