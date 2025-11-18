@@ -18,15 +18,15 @@ const PricingSection = () => {
   const [error, setError] = useState('');
 
   const countryCodes = [
-    { code: '+47', country: 'Norway', flag: '🇳🇴' },
+    { code: '+47', country: 'Norge', flag: '🇳🇴' },
     { code: '+1', country: 'USA/Canada', flag: '🇺🇸' },
     { code: '+44', country: 'UK', flag: '🇬🇧' },
-    { code: '+49', country: 'Germany', flag: '🇩🇪' },
-    { code: '+33', country: 'France', flag: '🇫🇷' },
-    { code: '+34', country: 'Spain', flag: '🇪🇸' },
-    { code: '+31', country: 'Netherlands', flag: '🇳🇱' },
-    { code: '+46', country: 'Sweden', flag: '🇸🇪' },
-    { code: '+45', country: 'Denmark', flag: '🇩🇰' },
+    { code: '+49', country: 'Tyskland', flag: '🇩🇪' },
+    { code: '+33', country: 'Frankrike', flag: '🇫🇷' },
+    { code: '+34', country: 'Spania', flag: '🇪🇸' },
+    { code: '+31', country: 'Nederland', flag: '🇳🇱' },
+    { code: '+46', country: 'Sverige', flag: '🇸🇪' },
+    { code: '+45', country: 'Danmark', flag: '🇩🇰' },
     { code: '+358', country: 'Finland', flag: '🇫🇮' },
   ];
 
@@ -52,7 +52,6 @@ const PricingSection = () => {
         setSuccess(false);
       }, 3000);
     } catch (err) {
-      console.error('Error creating lead:', err);
       setError('Noe gikk galt. Vennligst prøv igjen.');
     }
   };
@@ -60,7 +59,6 @@ const PricingSection = () => {
   return (
     <section className="relative py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-white">
       <div className="max-w-4xl mx-auto">
-        {/* Heading */}
         <div className="text-center mb-10 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3">
             Enkel, transparent prising
@@ -70,7 +68,6 @@ const PricingSection = () => {
           </p>
         </div>
 
-        {/* Standard Rate Card */}
         <div className="bg-gray-50 rounded-2xl p-8 sm:p-10 md:p-12 border-2 border-gray-200 mb-6">
           <div className="text-center mb-6">
             <div className="inline-block px-4 py-1.5 bg-gray-900 text-white text-sm font-medium rounded-full mb-4">
@@ -111,7 +108,6 @@ const PricingSection = () => {
             Du betaler kun når eiendommen genererer inntekt
           </p>
 
-          {/* Inline Lead Gen Form */}
           <div className="border-t-2 border-gray-200 pt-8">
             <h3 className="text-lg font-semibold text-gray-900 text-center mb-6">
               Kom i gang i dag
@@ -130,9 +126,7 @@ const PricingSection = () => {
             )}
 
             <form onSubmit={handleSubmit} className="space-y-3">
-              {/* Row 1: Address & Name */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {/* Address */}
                 <div className="relative">
                   <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
                   <input
@@ -145,7 +139,6 @@ const PricingSection = () => {
                   />
                 </div>
 
-                {/* Name */}
                 <div className="relative">
                   <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
                   <input
@@ -159,9 +152,7 @@ const PricingSection = () => {
                 </div>
               </div>
 
-              {/* Row 2: Phone & Email */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {/* Phone with Country Code */}
                 <div className="flex gap-2">
                   <select
                     value={countryCode}
@@ -187,7 +178,6 @@ const PricingSection = () => {
                   </div>
                 </div>
 
-                {/* Email */}
                 <div className="relative">
                   <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
                   <input
@@ -201,7 +191,6 @@ const PricingSection = () => {
                 </div>
               </div>
 
-              {/* Submit Button */}
               <button
                 type="submit"
                 className="w-full py-3.5 bg-gray-900 text-white rounded-xl text-sm font-medium hover:bg-gray-800 transition-colors shadow-md"
@@ -212,7 +201,6 @@ const PricingSection = () => {
           </div>
         </div>
 
-        {/* Investment Partner Link - Subtle */}
         <div className="text-center">
           <Link 
             to="/investors"

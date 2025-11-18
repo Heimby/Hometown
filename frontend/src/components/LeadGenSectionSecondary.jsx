@@ -18,15 +18,15 @@ const LeadGenSectionSecondary = () => {
   });
 
   const countryCodes = [
-    { code: '+47', country: 'Norway', flag: '🇳🇴' },
+    { code: '+47', country: 'Norge', flag: '🇳🇴' },
     { code: '+1', country: 'USA/Canada', flag: '🇺🇸' },
     { code: '+44', country: 'UK', flag: '🇬🇧' },
-    { code: '+49', country: 'Germany', flag: '🇩🇪' },
-    { code: '+33', country: 'France', flag: '🇫🇷' },
-    { code: '+34', country: 'Spain', flag: '🇪🇸' },
-    { code: '+31', country: 'Netherlands', flag: '🇳🇱' },
-    { code: '+46', country: 'Sweden', flag: '🇸🇪' },
-    { code: '+45', country: 'Denmark', flag: '🇩🇰' },
+    { code: '+49', country: 'Tyskland', flag: '🇩🇪' },
+    { code: '+33', country: 'Frankrike', flag: '🇫🇷' },
+    { code: '+34', country: 'Spania', flag: '🇪🇸' },
+    { code: '+31', country: 'Nederland', flag: '🇳🇱' },
+    { code: '+46', country: 'Sverige', flag: '🇸🇪' },
+    { code: '+45', country: 'Danmark', flag: '🇩🇰' },
     { code: '+358', country: 'Finland', flag: '🇫🇮' },
   ];
 
@@ -60,7 +60,6 @@ const LeadGenSectionSecondary = () => {
         setSuccess(false);
       }, 3000);
     } catch (err) {
-      console.error('Error creating lead:', err);
       setError('Noe gikk galt. Vennligst prøv igjen.');
     }
   };
@@ -68,7 +67,6 @@ const LeadGenSectionSecondary = () => {
   return (
     <section className="relative py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-gray-50">
       <div className="max-w-4xl mx-auto">
-        {/* Heading */}
         <div className="text-center mb-8 sm:mb-10 md:mb-12 space-y-3 sm:space-y-4">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 tracking-tight px-2">
             Klar til å maksimere leieinntektene dine?
@@ -78,7 +76,6 @@ const LeadGenSectionSecondary = () => {
           </p>
         </div>
 
-        {/* Form */}
         <form onSubmit={handleSubmit} className="relative">
           {error && (
             <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-xl text-red-600 text-sm text-center">
@@ -102,7 +99,6 @@ const LeadGenSectionSecondary = () => {
               maxHeight: isExpanded ? '500px' : '80px',
             }}
           >
-            {/* Address Field */}
             <div
               className={`relative ${
                 isExpanded ? 'md:col-span-2' : 'col-span-1'
@@ -121,7 +117,6 @@ const LeadGenSectionSecondary = () => {
               </div>
             </div>
 
-            {/* Expanded Fields */}
             {isExpanded && (
               <>
                 <div className="relative animate-fade-in">
@@ -191,7 +186,6 @@ const LeadGenSectionSecondary = () => {
             )}
           </div>
 
-          {/* Helper text */}
           {!isExpanded && (
             <p className="text-center text-sm text-gray-500 mt-4 animate-fade-in">
               Begynn å skrive for å se ditt inntektspotensial
