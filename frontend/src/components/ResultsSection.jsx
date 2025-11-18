@@ -3,16 +3,19 @@ import React from 'react';
 const ResultsSection = () => {
   const results = [
     {
-      title: '30% increased rent',
-      description: 'Smart pricing and dual-rental strategy maximizes your property income',
+      stat: '30%',
+      label: 'høyere leieinntekt',
+      description: 'Dobbel utleiestrategi maksimerer inntekten',
     },
     {
-      title: '100% less time spent on tenant management',
-      description: 'We handle all guest and tenant interactions, freeing your time completely',
+      stat: '0',
+      label: 'tid på leietakerhåndtering',
+      description: 'Vi håndterer all kontakt med gjester og leietakere',
     },
     {
-      title: 'Better overview on property costs',
-      description: 'Full transparency through your Owner Portal with detailed reporting',
+      stat: 'Full',
+      label: 'oversikt over kostnader',
+      description: 'Transparent rapportering i din Eierskapsportal',
     },
   ];
 
@@ -36,22 +39,24 @@ const ResultsSection = () => {
             <div></div>
             
             {/* Content card on the right */}
-            <div className="rounded-2xl shadow-2xl p-8 md:p-12 flex flex-col gap-6" style={{ backgroundColor: '#ededed' }}>
+            <div className="rounded-2xl shadow-2xl p-8 md:p-12 flex flex-col gap-8" style={{ backgroundColor: '#ededed' }}>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                Results From Real Properties
+                Resultater fra ekte boliger
               </h2>
-              
-              <p className="text-lg text-gray-700 leading-relaxed">
-                Our data-driven approach consistently delivers exceptional results for property owners across Norway.
-              </p>
 
+              {/* Stats with clear visual hierarchy */}
               <div className="space-y-6">
                 {results.map((result, index) => (
-                  <div key={index} className="space-y-2">
-                    <h3 className="text-xl md:text-2xl font-bold text-gray-900">
-                      {result.title}
-                    </h3>
-                    <p className="text-base text-gray-700 leading-relaxed">
+                  <div key={index} className="border-l-4 border-gray-900 pl-4 py-2">
+                    <div className="flex items-baseline gap-2 mb-1">
+                      <span className="text-4xl md:text-5xl font-bold text-gray-900">
+                        {result.stat}
+                      </span>
+                      <span className="text-xl md:text-2xl font-semibold text-gray-900">
+                        {result.label}
+                      </span>
+                    </div>
+                    <p className="text-sm md:text-base text-gray-600">
                       {result.description}
                     </p>
                   </div>
