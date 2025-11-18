@@ -13,7 +13,7 @@ const ProfessionalServicesSection = () => {
     {
       title: 'Maintenance & Technical Services',
       description: 'Licensed technicians handle everything from routine repairs to emergency callouts. Preventive maintenance schedules ensure properties stay in top condition and minimize downtime.',
-      image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=800&auto=format&fit=crop',
+      image: 'https://customer-assets.emergentagent.com/job_homeeasy-app/artifacts/i4c1bl7s_a_candid_lifestyle_image.jpeg',
     },
     {
       title: 'Consumables & Supply Management',
