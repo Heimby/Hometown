@@ -64,12 +64,12 @@ const OurPresenceSection = () => {
 
                 <div>
                   <div className="flex items-center space-x-2 mb-3">
-                    <span className="text-2xl">🇪🇸</span>
-                    <h3 className="text-xl font-bold text-gray-900">Internasjonalt</h3>
+                    <span className="text-2xl">🌍</span>
+                    <h3 className="text-xl font-bold text-gray-900">Ekspansjon</h3>
                   </div>
                   <div className="bg-white px-4 py-3 rounded-lg border border-gray-200">
-                    <p className="text-base font-medium text-gray-900">{international.location}</p>
-                    <p className="text-sm text-gray-600">{international.description}</p>
+                    <p className="text-base font-medium text-gray-900">Vi ser aktivt på muligheter i nye markeder</p>
+                    <p className="text-sm text-gray-600">Europeisk ekspansjon planlegges</p>
                   </div>
                 </div>
               </div>
