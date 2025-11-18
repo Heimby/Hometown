@@ -50,7 +50,11 @@ const ProcessTimelineSection = () => {
   ];
 
   return (
-    <section className="relative py-12 sm:py-16 md:py-24 px-4 sm:px-6" style={{ backgroundColor: '#F9F8F4' }}>
+    <section 
+      ref={sectionRef}
+      className="relative py-12 sm:py-16 md:py-24 px-4 sm:px-6" 
+      style={{ backgroundColor: '#F9F8F4' }}
+    >
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Left Content */}
@@ -61,7 +65,7 @@ const ProcessTimelineSection = () => {
               </div>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-8">
-              Hvordan vi gjør Airbnb enkelt for deg
+              Sett i gang raskt og enkelt
             </h2>
             <div className="flex items-center gap-4">
               <button className="px-6 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-colors">
@@ -76,8 +80,14 @@ const ProcessTimelineSection = () => {
 
           {/* Right Content - Timeline */}
           <div className="relative">
-            {/* Progress Bar */}
+            {/* Progress Bar Background */}
             <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gray-300"></div>
+            
+            {/* Animated Progress Bar */}
+            <div 
+              className="absolute left-6 top-0 w-0.5 bg-gray-900 transition-all duration-300 ease-out"
+              style={{ height: `${scrollProgress}%` }}
+            ></div>
 
             {/* Timeline Steps */}
             <div className="space-y-12">
