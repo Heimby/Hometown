@@ -8,10 +8,10 @@ const ExpansionMarketsSection = () => {
         {/* Heading */}
         <div className="text-center mb-8 sm:mb-10 space-y-3">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
-            Expanding Across Europe
+            Ekspanderer i Europa
           </h2>
           <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
-            We're bringing DigiHome to new markets across Europe. Join as a pioneer in your region and get exclusive founding member benefits.
+            Vi bringer DigiHome til nye markeder i Europa. Bli med som pioner i din region og få eksklusive grunnleggerfordeler.
           </p>
         </div>
 
