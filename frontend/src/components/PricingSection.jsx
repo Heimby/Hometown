@@ -57,7 +57,7 @@ const PricingSection = () => {
   };
 
   return (
-    <section className="relative py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-white">
+    <section className="relative py-16 sm:py-20 md:py-24 px-4 sm:px-6" style={{ backgroundColor: '#F9F8F4' }}>
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-10 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3">
