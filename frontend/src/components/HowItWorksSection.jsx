@@ -92,13 +92,10 @@ const HowItWorksSection = () => {
                   </div>
 
                   {/* Content */}
-                  <div className="space-y-2 sm:space-y-3">
+                  <div>
                     <h3 className="text-lg sm:text-xl font-bold text-gray-900">
                       {step.title}
                     </h3>
-                    <p className="text-sm text-gray-700 leading-relaxed">
-                      {step.description}
-                    </p>
                   </div>
                 </div>
               </div>
