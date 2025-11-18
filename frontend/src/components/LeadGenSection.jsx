@@ -126,7 +126,7 @@ const LeadGenSection = () => {
 
   return (
     <section className="relative py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-white">
-      <div className="mx-auto" style={{ maxWidth: '95%' }}>
+      <div className="max-w-6xl mx-auto">
         {step === 1 ? (
           <>
             {/* Step 1: Lead Generation Form */}
