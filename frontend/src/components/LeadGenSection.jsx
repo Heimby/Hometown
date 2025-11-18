@@ -134,10 +134,10 @@ const LeadGenSection = () => {
               {/* Heading Section */}
               <div className="text-center mb-8 sm:mb-10 space-y-3 sm:space-y-4">
                 <h2 className="text-xl sm:text-2xl md:text-3xl font-light text-gray-600 tracking-tight">
-                  Eneste forvalter som håndterer både
+                  Eneste som tilbyr både
                 </h2>
                 <div className="flex flex-wrap items-center justify-center gap-2 text-base sm:text-lg text-gray-500">
-                  <span>airbnb & langtidsutleie</span>
+                  <span>Airbnb og langtidsutleie</span>
                 </div>
                 <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-900 font-semibold pt-2 sm:pt-4">
                   Sjekk hvor mye du kan tjene med oss
