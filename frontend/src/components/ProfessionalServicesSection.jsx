@@ -55,7 +55,7 @@ const ProfessionalServicesSection = () => {
   };
 
   return (
-    <section className="relative py-24 px-6 bg-gray-50">
+    <section className="relative py-24 px-6" style={{ backgroundColor: '#F9F8F4' }}>
       <div className="mx-auto" style={{ maxWidth: '95%' }}>
         {/* Heading */}
         <div className="text-center mb-12 space-y-4 max-w-4xl mx-auto">
