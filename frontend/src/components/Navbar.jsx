@@ -69,7 +69,7 @@ const Navbar = ({ isDark = true }) => {
                   : 'text-white'
               }`}
             >
-              Log in
+              Logg inn
             </a>
 
             {/* Mobile Menu Button */}
@@ -108,7 +108,7 @@ const Navbar = ({ isDark = true }) => {
                 className="text-base font-medium text-gray-900 hover:text-gray-600 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Log in
+                Logg inn
               </a>
             </div>
           </div>
