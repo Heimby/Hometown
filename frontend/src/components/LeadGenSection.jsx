@@ -240,7 +240,7 @@ const LeadGenSection = () => {
                         type="submit"
                         className="w-full py-4 bg-gray-900 text-white rounded-2xl text-base font-medium hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                       >
-                        Calculate my earnings
+                        Beregn mine inntekter
                       </button>
                     </div>
                   </>
