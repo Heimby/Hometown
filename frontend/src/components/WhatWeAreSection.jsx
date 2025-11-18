@@ -18,7 +18,7 @@ const WhatWeAreSection = () => {
       description: 'Vi tar oss av alt ved langtidsutleie: annonsering, visninger, leietakersjekk, kontrakt, innflytting og løpende kommunikasjon med leietaker. Du får en trygg og problemfri utleiehverdag med faste månedlige inntekter, mens vi holder kontakten med leietaker og følger opp eventuelle behov.'
     },
     {
-      title: 'Dynamisk utleie (10-2)',
+      title: 'Dynamisk (10-2)',
       description: 'Vår unike 10-2 modell gir deg det beste fra begge verdener: 10 måneder langtidsutleie med stabil inntekt, og 2 måneder Airbnb i høysesongen for maksimal avkastning. Vi håndterer overgangen sømløst, slik at du får trygghet og forutsigbarhet kombinert med høyere inntjening når det er mest etterspørsel.'
     }
   ];
