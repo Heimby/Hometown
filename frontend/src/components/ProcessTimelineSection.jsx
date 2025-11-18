@@ -1,27 +1,51 @@
-import React from 'react';
-import { FileText, Image, Settings, BarChart3, ChevronRight } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+import { FileText, Image, Settings, Key, ChevronRight } from 'lucide-react';
 
 const ProcessTimelineSection = () => {
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!sectionRef.current) return;
+
+      const section = sectionRef.current;
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+      if (scrollPosition > sectionTop && scrollPosition < sectionTop + sectionHeight) {
+        const progress = ((scrollPosition - sectionTop) / sectionHeight) * 100;
+        setScrollProgress(Math.min(Math.max(progress, 0), 100));
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const steps = [
     {
       icon: FileText,
-      title: 'Et kort møte (ca. 30 min)',
-      description: 'Vi tar et kjapt Teams-møte der vi forklarer hvordan alt fungerer, og diskuterer hva som passer best for deg – om du vil ta renholdet selv, bruke lokale ungdommer eller et profesjonelt vaskefirma.\nVi ser også på praktiske løsninger som selvbetjent innsjekk og nøkkelhåndtering.',
+      title: 'Automatisk analyse',
+      description: 'Vi analyserer din bolig og gir deg umiddelbart innsikt i inntektspotensial og beste utleiestrategi.',
     },
     {
       icon: Image,
-      title: 'Du sender bilder – vi fikser resten',
-      description: 'Etter møtet sender du noen mobilbilder av boligen.\nVi redigerer bildene, skriver annonsen og setter opp en Airbnb-profil som ser profesjonell ut – klar for første gjest.',
+      title: 'Kort veiledningssamtale (hvis du trenger)',
+      description: 'Et raskt møte hvor vi forklarer hvordan alt fungerer og svarer på spørsmål du måtte ha.',
     },
     {
       icon: Settings,
-      title: 'Smart prising med AI',
-      description: 'Vi aktiverer AI-basert prising som automatisk justerer prisene etter etterspørsel og sesong, slik at du får mest mulig ut av utleien.',
+      title: 'Digital oppstart',
+      description: 'Vi setter opp alle systemer, annonser og bilder slik at alt er klart for første gjest.',
     },
     {
-      icon: BarChart3,
-      title: 'Trygg oppstart og støtte',
-      description: 'Vi følger deg tett i starten til du føler deg trygg på systemet og har full kontroll selv.\nEtter det kan du enkelt drifte alt videre – uten stress.',
+      icon: Key,
+      title: 'Nøkler levert og du kan lene deg tilbake',
+      description: 'Alt er på plass. Du trenger bare å levere nøklene, så tar vi oss av resten.',
     },
   ];
 
