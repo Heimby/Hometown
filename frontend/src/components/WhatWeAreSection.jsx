@@ -24,19 +24,16 @@ const WhatWeAreSection = () => {
   ];
 
   return (
-    <section className="relative py-0 px-6 bg-white">
+    <section className="relative py-0 px-6" style={{ backgroundColor: '#F9F8F4' }}>
       <div className="relative min-h-[600px] mx-auto" style={{ maxWidth: '95%' }}>
-        {/* Background Image */}
         <img
           src="https://customer-assets.emergentagent.com/job_neo-copier/artifacts/6utvdueb_the_image_carries_image.jpeg"
           alt="Property Management"
           className="absolute inset-0 w-full h-full object-cover"
         />
         
-        {/* Overlay */}
         <div className="absolute inset-0 bg-black/30"></div>
 
-        {/* Content */}
         <div className="relative max-w-6xl mx-auto py-16 px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2">
             <div className="rounded-2xl shadow-2xl p-8 md:p-12 flex flex-col gap-6" style={{ backgroundColor: '#ededed' }}>
