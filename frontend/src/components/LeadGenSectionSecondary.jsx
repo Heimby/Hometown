@@ -157,7 +157,7 @@ const LeadGenSectionSecondary = () => {
                         type="tel"
                         value={formData.phone}
                         onChange={handleChange('phone')}
-                        placeholder="Phone number"
+                        placeholder="Telefonnummer"
                         className="w-full pl-12 pr-4 py-4 text-base border-2 border-gray-200 rounded-2xl focus:border-gray-900 focus:outline-none transition-all duration-300 bg-white hover:border-gray-300"
                         required
                       />
