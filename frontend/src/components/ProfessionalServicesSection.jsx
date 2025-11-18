@@ -60,13 +60,13 @@ const ProfessionalServicesSection = () => {
         {/* Heading */}
         <div className="text-center mb-12 space-y-4 max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-light text-gray-900 tracking-tight">
-            DigiHome Økosystemet
+            DigiHomes økosystem
           </h2>
           <p className="text-xl text-gray-700 font-light">
             Et fullt integrert nettverk av lokale fagfolk som gir pålitelig eiendomsforvaltning
           </p>
           <p className="text-base text-gray-600 font-light leading-relaxed pt-4">
-            DigiHome Økosystemet sikrer at hver eiendom mottar den høyeste standarden av service, i hver by. 
+            DigiHomes økosystem sikrer at hver eiendom mottar den høyeste standarden av service, i hver by. 
             Vi kombinerer sertifiserte tjenesteleverandører, digital overvåking og lokale team på bakken til én 
             sømløs driftsmotor. Vår visjon er enkel: tilgang til profesjonelle eiendomstjenester skal 
             føles like enkelt som å bestille en Uber.
