@@ -44,12 +44,35 @@ const WhatWeAreSection = () => {
                 Vår metode
               </h2>
               
-              <p className="text-lg text-gray-700 leading-relaxed">
-                DigiHome er Norges eneste utleiefirma som tilbyr både airbnb-utleie og langtidsutleie, 
-                slik at du kan velge det som passer best for boligen din. Vi tar oss av hele prosessen - 
-                fra visninger til vedlikehold. Du får en trygg, enkel og lønnsom utleiehverdag, 
-                uansett hvilken løsning du velger.
-              </p>
+              <div className="space-y-4">
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  DigiHome kombinerer Airbnb- og langtidsutleie for å gi deg den mest lønnsomme løsningen for boligen din.
+                </p>
+                
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  Vi tar oss av hele prosessen – du får en trygg og enkel utleiehverdag.
+                </p>
+              </div>
+
+              <div className="mt-4">
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
+                  Hvorfor velge DigiHome?
+                </h3>
+                <ul className="space-y-2 text-base text-gray-700">
+                  <li className="flex items-start">
+                    <span className="mr-2">•</span>
+                    <span>Opp til 30% høyere leieinntekter</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2">•</span>
+                    <span>100% redusert tidsbruk</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2">•</span>
+                    <span>Mer data og oversikt</span>
+                  </li>
+                </ul>
+              </div>
 
               <div className="space-y-3">
                 {services.map((service, index) => (
