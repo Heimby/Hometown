@@ -44,17 +44,8 @@ function HomePage() {
       {/* Our Presence Section */}
       <OurPresenceSection />
 
-      {/* Second Lead Generation Section */}
-      <LeadGenSectionSecondary />
-
       {/* Pricing Section */}
       <PricingSection />
-
-      {/* Expansion Markets Section */}
-      <ExpansionMarketsSection />
-
-      {/* Pioneer Benefits Section */}
-      <PioneerBenefitsSection />
 
       {/* Footer */}
       <Footer />
