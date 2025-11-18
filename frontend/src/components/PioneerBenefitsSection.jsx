@@ -26,7 +26,7 @@ const PioneerBenefitsSection = () => {
         {/* Heading */}
         <div className="text-center mb-8 sm:mb-10">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
-            Pioneer Benefits
+            Pionerfordeler
           </h2>
         </div>
 
