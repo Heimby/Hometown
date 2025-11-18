@@ -131,7 +131,7 @@ const ProfessionalServicesSection = () => {
               return (
                 <div
                   key={index}
-                  className={`relative rounded-2xl shadow-lg transition-all duration-300 overflow-hidden ${
+                  className={`relative shadow-lg transition-all duration-300 overflow-hidden ${
                     index === currentIndex ? 'block' : 'hidden'
                   }`}
                   style={{ aspectRatio: '4/3' }}
