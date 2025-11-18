@@ -112,7 +112,7 @@ const LeadGenSection = () => {
   };
 
   return (
-    <section className="relative py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-white">
+    <section className="relative py-16 sm:py-20 md:py-24 px-4 sm:px-6" style={{ backgroundColor: '#F9F8F4' }}>
       <div className="max-w-6xl mx-auto">
         {step === 1 ? (
           <>
@@ -157,7 +157,8 @@ const LeadGenSection = () => {
                       value={formData.address}
                       onChange={handleAddressChange}
                       placeholder="Skriv inn adressen din"
-                      className="w-full pl-12 pr-4 py-4 text-base border-2 border-gray-200 rounded-2xl focus:border-gray-900 focus:outline-none transition-all duration-300 bg-white hover:border-gray-400"
+                      style={{ backgroundColor: '#FFFFFF' }}
+                      className="w-full pl-12 pr-4 py-4 text-base border-2 border-gray-200 rounded-2xl focus:border-gray-900 focus:outline-none transition-all duration-300 hover:border-gray-400"
                       required
                     />
                   </div>
@@ -173,7 +174,8 @@ const LeadGenSection = () => {
                           value={formData.name}
                           onChange={handleChange('name')}
                           placeholder="Ditt navn"
-                          className="w-full pl-12 pr-4 py-4 text-base border-2 border-gray-200 rounded-2xl focus:border-gray-900 focus:outline-none transition-all duration-300 bg-white hover:border-gray-400"
+                          style={{ backgroundColor: '#FFFFFF' }}
+                          className="w-full pl-12 pr-4 py-4 text-base border-2 border-gray-200 rounded-2xl focus:border-gray-900 focus:outline-none transition-all duration-300 hover:border-gray-400"
                           required
                         />
                       </div>
@@ -184,7 +186,8 @@ const LeadGenSection = () => {
                         <select
                           value={countryCode}
                           onChange={(e) => setCountryCode(e.target.value)}
-                          className="w-32 pl-3 pr-2 py-4 text-base border-2 border-gray-200 rounded-2xl focus:border-gray-900 focus:outline-none transition-all duration-300 bg-white hover:border-gray-400"
+                          style={{ backgroundColor: '#FFFFFF' }}
+                          className="w-32 pl-3 pr-2 py-4 text-base border-2 border-gray-200 rounded-2xl focus:border-gray-900 focus:outline-none transition-all duration-300 hover:border-gray-400"
                         >
                           {countryCodes.map((country) => (
                             <option key={country.code} value={country.code}>
@@ -199,7 +202,8 @@ const LeadGenSection = () => {
                             value={formData.phone}
                             onChange={handleChange('phone')}
                             placeholder="Telefonnummer"
-                            className="w-full pl-12 pr-4 py-4 text-base border-2 border-gray-200 rounded-2xl focus:border-gray-900 focus:outline-none transition-all duration-300 bg-white hover:border-gray-400"
+                            style={{ backgroundColor: '#FFFFFF' }}
+                            className="w-full pl-12 pr-4 py-4 text-base border-2 border-gray-200 rounded-2xl focus:border-gray-900 focus:outline-none transition-all duration-300 hover:border-gray-400"
                             required
                           />
                         </div>
@@ -214,7 +218,8 @@ const LeadGenSection = () => {
                           value={formData.email}
                           onChange={handleChange('email')}
                           placeholder="E-postadresse"
-                          className="w-full pl-12 pr-4 py-4 text-base border-2 border-gray-200 rounded-2xl focus:border-gray-900 focus:outline-none transition-all duration-300 bg-white hover:border-gray-400"
+                          style={{ backgroundColor: '#FFFFFF' }}
+                          className="w-full pl-12 pr-4 py-4 text-base border-2 border-gray-200 rounded-2xl focus:border-gray-900 focus:outline-none transition-all duration-300 hover:border-gray-400"
                           required
                         />
                       </div>
