@@ -15,9 +15,9 @@ const Navbar = ({ isDark = true }) => {
 
   const navLinks = [
     { name: 'AI', href: '#' },
-    { name: 'STORIES', href: '#' },
-    { name: 'CAREERS', href: '#' },
-    { name: 'ABOUT', href: '#' },
+    { name: 'HISTORIER', href: '#' },
+    { name: 'KARRIERE', href: '#' },
+    { name: 'OM OSS', href: '#' },
   ];
 
   return (
