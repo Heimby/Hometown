@@ -8,7 +8,6 @@ const HowItWorksSection = () => {
       icon: MapPin,
       title: 'Del din bolig',
       subtitle: 'Raskt & Enkelt',
-      description: 'Tell us your address and we will instantly analyze your earning potential.',
       color: 'gray',
     },
     {
@@ -16,7 +15,6 @@ const HowItWorksSection = () => {
       icon: Phone,
       title: 'Strategisamtale',
       subtitle: '15-minutters samtale',
-      description: 'We review your property and recommend the best rental strategy for maximum returns.',
       color: 'gray',
     },
     {
@@ -24,7 +22,6 @@ const HowItWorksSection = () => {
       icon: Zap,
       title: 'Rask digital oppstart',
       subtitle: 'Lansering samme uke',
-      description: 'Our local team handles photos, setup, and checks while you relax.',
       color: 'gray',
     },
     {
@@ -32,7 +29,6 @@ const HowItWorksSection = () => {
       icon: Shield,
       title: 'Vi håndterer alt',
       subtitle: 'Problemfri inntekt',
-      description: 'From guests to maintenance, we manage it all with local care and digital efficiency.',
       color: 'purple',
     },
   ];
