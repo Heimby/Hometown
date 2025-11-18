@@ -18,7 +18,7 @@ const ProfessionalServicesSection = () => {
     {
       title: 'Consumables & Supply Management',
       description: 'Automated stock tracking and locally sourced suppliers keep every unit fully equipped with essentials. Owners never overpay and guests never run out.',
-      image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=800&auto=format&fit=crop',
+      image: 'https://customer-assets.emergentagent.com/job_homeeasy-app/artifacts/lmyvu6xn_a_candid_lifestyle_image%20%282%29.jpeg',
     },
     {
       title: 'Security & Safety Services',
