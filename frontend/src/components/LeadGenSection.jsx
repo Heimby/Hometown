@@ -142,7 +142,9 @@ const LeadGenSection = () => {
               </p>
             </div>
 
-            <form onSubmit={handleLeadSubmit} className="relative">
+            {/* Grey Box Container */}
+            <div className="bg-gray-50 rounded-3xl p-6 sm:p-8 md:p-10 shadow-lg border border-gray-200 max-w-4xl mx-auto">
+              <form onSubmit={handleLeadSubmit} className="relative">
               {error && (
                 <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-xl text-red-600 text-sm">
                   {error}
