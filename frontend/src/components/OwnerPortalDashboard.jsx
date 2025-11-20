@@ -142,64 +142,62 @@ const OwnerPortalDashboard = () => {
           </div>
         </div>
 
-        <div className="bg-white rounded-xl border border-gray-200 shadow-sm">
-          <div className="grid grid-cols-12 gap-4 px-6 py-4 border-b border-gray-200 text-sm font-medium text-gray-600 uppercase tracking-wide">
+        <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
+          <div className="hidden lg:grid grid-cols-12 gap-4 px-6 py-4 border-b border-gray-200 text-sm font-medium text-gray-600 uppercase tracking-wide">
             <div className="col-span-6">Eiendom</div>
             <div className="col-span-3">Status</div>
             <div className="col-span-3 text-right">Handlinger</div>
           </div>
 
           {propertyData ? (
-            <div className="px-6 py-6">
-              <div className="flex items-center gap-6">
-                <div className="flex-shrink-0">
+            <div className="p-4 sm:p-6">
+              <div className="flex flex-col lg:flex-row items-start lg:items-center gap-4 lg:gap-6">
+                <div className="flex-shrink-0 w-full sm:w-auto">
                   <img
                     src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400&h=300&fit=crop"
                     alt="Eiendom"
-                    className="w-32 h-24 object-cover rounded-lg"
+                    className="w-full sm:w-32 h-48 sm:h-24 object-cover rounded-lg"
                   />
                 </div>
 
-                <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                <div className="flex-1 w-full">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
                     {propertyData.address?.split(',')[0] || 'Moderne Sentrumsbo'}
                   </h3>
-                  <p className="text-gray-600 mb-2 flex items-center gap-2">
+                  <p className="text-gray-600 mb-2 flex items-center gap-2 text-sm sm:text-base">
                     <Home size={16} />
-                    {propertyData.address || '123 Main Street, Austin, TX'}
+                    <span className="truncate">{propertyData.address || '123 Main Street, Austin, TX'}</span>
                   </p>
-                  <div className="flex items-center gap-4 text-gray-600 text-sm">
+                  <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-gray-600 text-xs sm:text-sm">
                     <span className="flex items-center gap-1">
-                      <Users size={16} />
+                      <Users size={14} className="sm:w-4 sm:h-4" />
                       4 gjester
                     </span>
                     <span className="flex items-center gap-1">
-                      <Bed size={16} />
+                      <Bed size={14} className="sm:w-4 sm:h-4" />
                       2 soverom
                     </span>
                     <span className="flex items-center gap-1">
-                      <Bath size={16} />
+                      <Bath size={14} className="sm:w-4 sm:h-4" />
                       2 bad
                     </span>
                   </div>
                 </div>
 
-                <div className="flex-shrink-0">
-                  <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-orange-100 text-orange-700 border border-orange-200">
+                <div className="flex flex-col sm:flex-row lg:flex-col items-stretch sm:items-center lg:items-end gap-3 w-full lg:w-auto">
+                  <span className="inline-flex items-center justify-center px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium bg-orange-100 text-orange-700 border border-orange-200 whitespace-nowrap">
                     ● Kladd
                   </span>
-                </div>
 
-                <div className="flex-shrink-0">
-                  <button className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-lg font-medium transition-colors whitespace-nowrap">
-                    Sjekk Hvor Mye Du Kan Tjene
+                  <button className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-medium transition-colors text-sm sm:text-base whitespace-nowrap">
+                    Sjekk Inntektspotensial
                   </button>
                 </div>
               </div>
             </div>
           ) : (
-            <div className="px-6 py-12 text-center text-gray-500">
-              <p>Ingen eiendommer funnet. Legg til din første eiendom for å komme i gang!</p>
+            <div className="px-4 sm:px-6 py-8 sm:py-12 text-center text-gray-500">
+              <p className="text-sm sm:text-base">Ingen eiendommer funnet. Legg til din første eiendom for å komme i gang!</p>
             </div>
           )}
         </div>
