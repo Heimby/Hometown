@@ -5,6 +5,20 @@ const ProcessTimelineSection = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const sectionRef = useRef(null);
 
+  const scrollToLeadGen = () => {
+    const leadGenSection = document.getElementById('lead-gen');
+    if (leadGenSection) {
+      leadGenSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  const scrollToPricing = () => {
+    const pricingSection = document.getElementById('pricing');
+    if (pricingSection) {
+      pricingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       if (!sectionRef.current) return;
