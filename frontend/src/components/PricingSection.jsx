@@ -46,6 +46,9 @@ const PricingSection = () => {
     e.preventDefault();
     setError('');
     
+    // Prevent scroll on mobile during transition
+    const currentScrollPos = window.scrollY;
+    
     try {
       const leadData = {
         address: formData.address,
@@ -55,6 +58,9 @@ const PricingSection = () => {
       };
       
       const response = await axios.post(`${API}/leads`, leadData);
+      
+      // Maintain scroll position
+      window.scrollTo(0, currentScrollPos);
       
       // Go directly to creating owner portal
       handleOwnerPortalCreation();
