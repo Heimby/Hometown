@@ -36,8 +36,15 @@ const OwnerPortalDashboard = () => {
     if (!hasCompletedOnboarding) {
       setShowOnboardingModal(true);
     } else {
-      // Navigate to property details
-      alert('Navigerer til eiendomsdetaljer...');
+      // Show verification modal for completed onboarding
+      setShowVerificationModal(true);
+    }
+  };
+
+  const handleFeatureClick = (e) => {
+    e.preventDefault();
+    if (hasCompletedOnboarding) {
+      setShowProfileVerificationModal(true);
     }
   };
 
