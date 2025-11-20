@@ -28,7 +28,7 @@ const MediaSection = () => {
     },
     {
       title: 'DigiSale-gruppen lanserer plattform for bilsalg og utleie av eiendom',
-      description: 'Firdaposten om grunnleggeren bak DigiHome og hans visjon for AI i eiendomsbransjen.',
+      description: 'Firdaposten skriver om lanseringen av DigiCar og DigiHome som søsterselskaper under en felles organisasjon.',
       image: 'https://customer-assets.emergentagent.com/job_property-onboard-1/artifacts/vtbnhq20_image.png',
       source: 'Firdaposten',
       url: 'https://www.firdaposten.no/njal-26-vil-selge-bilen-din-med-hjelp-av-ai/s/5-16-924719'
