@@ -345,6 +345,253 @@ const AdminDashboard = () => {
           </div>
         </div>
       </main>
+
+      {/* Owner Details Modal */}
+      {selectedOwner && (
+        <OwnerDetailsModal 
+          owner={selectedOwner} 
+          onClose={() => setSelectedOwner(null)} 
+        />
+      )}
+    </div>
+  );
+};
+
+// Owner Details Modal Component
+const OwnerDetailsModal = ({ owner, onClose }) => {
+  const data = owner.onboarding_data;
+
+  if (!data) {
+    return (
+      <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div className="bg-white rounded-xl max-w-2xl w-full p-8">
+          <div className="flex justify-between items-center mb-6">
+            <h2 className="text-2xl font-bold">Eierdetaljer</h2>
+            <button onClick={onClose} className="text-gray-400 hover:text-gray-600">
+              <X className="w-6 h-6" />
+            </button>
+          </div>
+          <p className="text-gray-500">Ingen onboarding-data tilgjengelig ennå.</p>
+        </div>
+      </div>
+    );
+  }
+
+  const getRoomCount = (roomType) => {
+    return data.rooms?.[roomType]?.length || 0;
+  };
+
+  const getTotalBeds = () => {
+    const bedrooms = data.rooms?.bedroom || [];
+    let total = 0;
+    bedrooms.forEach(room => {
+      if (room.furniture) {
+        room.furniture.forEach(f => {
+          if (f.type === 'bed') total++;
+        });
+      }
+    });
+    return total;
+  };
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 overflow-y-auto">
+      <div className="bg-white rounded-xl max-w-4xl w-full my-8">
+        <div className="p-6 border-b border-gray-200">
+          <div className="flex justify-between items-start">
+            <div>
+              <h2 className="text-2xl font-bold mb-2">{owner.name}</h2>
+              <div className="space-y-1 text-sm text-gray-600">
+                <div className="flex items-center gap-2">
+                  <Mail className="w-4 h-4" />
+                  {owner.email}
+                </div>
+                <div className="flex items-center gap-2">
+                  <Phone className="w-4 h-4" />
+                  {owner.phone}
+                </div>
+                <div className="flex items-center gap-2">
+                  <MapPin className="w-4 h-4" />
+                  {data.address}, {data.city}
+                </div>
+              </div>
+            </div>
+            <button onClick={onClose} className="text-gray-400 hover:text-gray-600">
+              <X className="w-6 h-6" />
+            </button>
+          </div>
+        </div>
+
+        <div className="p-6 space-y-6 max-h-[70vh] overflow-y-auto">
+          {/* Property Info */}
+          <div>
+            <h3 className="font-semibold text-lg mb-3 flex items-center gap-2">
+              <Home className="w-5 h-5 text-emerald-600" />
+              Eiendomsinformasjon
+            </h3>
+            <div className="grid grid-cols-2 gap-4 bg-gray-50 p-4 rounded-lg">
+              <div>
+                <span className="text-sm text-gray-500">Boligtype</span>
+                <p className="font-medium capitalize">{data.property_type === 'apartment' ? 'Leilighet' : 'Hus/Rekkehus'}</p>
+              </div>
+              <div>
+                <span className="text-sm text-gray-500">Eierform</span>
+                <p className="font-medium capitalize">{data.ownership_type}</p>
+              </div>
+              {data.unit && (
+                <div>
+                  <span className="text-sm text-gray-500">Bolignummer</span>
+                  <p className="font-medium">{data.unit}</p>
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Rental Strategy */}
+          <div>
+            <h3 className="font-semibold text-lg mb-3">Utleiestrategi</h3>
+            <div className="grid grid-cols-2 gap-4 bg-gray-50 p-4 rounded-lg">
+              <div>
+                <span className="text-sm text-gray-500">Strategi</span>
+                <p className="font-medium capitalize">
+                  {data.rental_strategy === 'airbnb' ? 'Airbnb' : 
+                   data.rental_strategy === 'long' ? 'Langtidsutleie' : 
+                   'Dynamisk Utleie'}
+                </p>
+              </div>
+              <div>
+                <span className="text-sm text-gray-500">Startdato</span>
+                <p className="font-medium">{data.start_date}</p>
+              </div>
+              {data.end_date && (
+                <div>
+                  <span className="text-sm text-gray-500">Sluttdato</span>
+                  <p className="font-medium">{data.end_date}</p>
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Rooms Summary */}
+          <div>
+            <h3 className="font-semibold text-lg mb-3">Rom og møblering</h3>
+            <div className="grid grid-cols-3 gap-4">
+              <div className="bg-blue-50 p-4 rounded-lg">
+                <div className="text-2xl font-bold text-blue-600">{getRoomCount('living')}</div>
+                <div className="text-sm text-gray-600">Stuer</div>
+              </div>
+              <div className="bg-purple-50 p-4 rounded-lg">
+                <div className="text-2xl font-bold text-purple-600">{getRoomCount('bedroom')}</div>
+                <div className="text-sm text-gray-600">Soverom</div>
+              </div>
+              <div className="bg-emerald-50 p-4 rounded-lg">
+                <div className="text-2xl font-bold text-emerald-600">{getRoomCount('bathroom')}</div>
+                <div className="text-sm text-gray-600">Bad</div>
+              </div>
+            </div>
+
+            {/* Detailed Rooms */}
+            <div className="mt-4 space-y-3">
+              {data.rooms?.living?.map((room, idx) => (
+                <div key={idx} className="border border-gray-200 rounded-lg p-3">
+                  <div className="font-medium mb-2">Stue {idx + 1}</div>
+                  {room.furniture && room.furniture.length > 0 && (
+                    <div className="text-sm text-gray-600 space-y-1">
+                      {room.furniture.map((f, i) => (
+                        <div key={i}>
+                          • {f.type === 'sofa' ? 'Sofa' : f.type === 'sofabed' ? 'Sovesofa' : f.type === 'dining' ? 'Spisebord' : f.type}
+                          {f.details.seats && ` (${f.details.seats} plasser)`}
+                          {f.details.width && ` (${f.details.width}cm)`}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+
+              {data.rooms?.bedroom?.map((room, idx) => (
+                <div key={idx} className="border border-gray-200 rounded-lg p-3">
+                  <div className="font-medium mb-2">Soverom {idx + 1}</div>
+                  {room.furniture && room.furniture.length > 0 && (
+                    <div className="text-sm text-gray-600 space-y-1">
+                      {room.furniture.map((f, i) => (
+                        <div key={i}>
+                          • Seng ({f.details.width}cm)
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+
+              {data.rooms?.bathroom?.map((room, idx) => (
+                <div key={idx} className="border border-gray-200 rounded-lg p-3">
+                  <div className="font-medium mb-2">Bad {idx + 1}</div>
+                  {room.amenities && room.amenities.length > 0 && (
+                    <div className="text-sm text-gray-600">
+                      {room.amenities.map(a => a.charAt(0).toUpperCase() + a.slice(1)).join(', ')}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Facilities */}
+          <div>
+            <h3 className="font-semibold text-lg mb-3">Fasiliteter</h3>
+            <div className="bg-gray-50 p-4 rounded-lg">
+              <div className="flex flex-wrap gap-2 mb-3">
+                {data.facilities && data.facilities.length > 0 ? (
+                  data.facilities.map((f, i) => (
+                    <span key={i} className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">
+                      {f.charAt(0).toUpperCase() + f.slice(1)}
+                    </span>
+                  ))
+                ) : (
+                  <span className="text-sm text-gray-500">Ingen ekstra fasiliteter</span>
+                )}
+              </div>
+              <div className="text-sm">
+                <span className="text-gray-500">Parkering: </span>
+                <span className="font-medium">
+                  {data.parking === 'none' ? 'Ingen' : 
+                   data.parking === 'free' ? 'Gratis' : 
+                   'Garasje'}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Photography & Cleaning */}
+          <div>
+            <h3 className="font-semibold text-lg mb-3">Tjenester</h3>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <div className="text-sm text-gray-500 mb-1">Fotografering</div>
+                <div className="font-medium">
+                  {data.photography === 'professional' ? 'Bestill Fotograf (2 500 kr)' : 'Last opp selv (Gratis)'}
+                </div>
+              </div>
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <div className="text-sm text-gray-500 mb-1">Utvask</div>
+                <div className="font-medium">
+                  {data.cleaning === 'self' ? 'Jeg vasker selv (Gratis)' : 'Bestill nedvask (3 500 kr)'}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="p-6 border-t border-gray-200 bg-gray-50">
+          <button
+            onClick={onClose}
+            className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 rounded-lg transition-colors"
+          >
+            Lukk
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
