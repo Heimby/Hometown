@@ -121,3 +121,30 @@ async def update_onboarding(owner_id: str, onboarding_data: OnboardingData):
         raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Failed to save onboarding data: {str(e)}")
+
+@router.put("/owners/{owner_id}/status")
+async def update_owner_status(owner_id: str, status: dict):
+    """
+    Update owner status
+    """
+    try:
+        owner = await db.owners.find_one({"id": owner_id}, {"_id": 0})
+        if not owner:
+            raise HTTPException(status_code=404, detail="Owner not found")
+        
+        valid_statuses = ["Ringt", "Sendt tilbud", "Onboarding", "Kontrakt", "Lost"]
+        new_status = status.get("status")
+        
+        if new_status not in valid_statuses:
+            raise HTTPException(status_code=400, detail=f"Invalid status. Must be one of: {valid_statuses}")
+        
+        await db.owners.update_one(
+            {"id": owner_id},
+            {"$set": {"status": new_status}}
+        )
+        
+        return {"message": "Status updated successfully", "owner_id": owner_id, "status": new_status}
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to update status: {str(e)}")
