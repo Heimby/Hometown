@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPin, User, Phone, Mail, Lock, Eye, EyeOff, CheckCircle } from 'lucide-react';
+import { MapPin, User, Phone, Mail, CheckCircle } from 'lucide-react';
 import axios from 'axios';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
