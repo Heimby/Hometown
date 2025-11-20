@@ -64,6 +64,7 @@ async def create_owner_portal(owner_data: OwnerCreate):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Failed to create owner portal: {str(e)}")
 
+@router.get("/owner-portal/all")
 @router.get("/owners")
 async def get_all_owners(skip: int = 0, limit: int = 100):
     """
