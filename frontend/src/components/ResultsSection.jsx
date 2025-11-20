@@ -20,8 +20,8 @@ const ResultsSection = () => {
   ];
 
   return (
-    <section className="relative py-0 px-6" style={{ backgroundColor: '#F9F8F4' }}>
-      <div className="relative min-h-[600px] mx-auto" style={{ maxWidth: '95%' }}>
+    <section className="relative py-0 px-0 sm:px-6" style={{ backgroundColor: '#F9F8F4' }}>
+      <div className="relative min-h-[600px] mx-auto" style={{ maxWidth: '100%' }}>
         <img
           src="https://customer-assets.emergentagent.com/job_neo-copier/artifacts/f0coiy18_image_of_a_norwegi_image.jpeg"
           alt="Property Results"
@@ -30,7 +30,7 @@ const ResultsSection = () => {
         
         <div className="absolute inset-0 bg-black/30"></div>
 
-        <div className="relative max-w-6xl mx-auto py-16 px-6">
+        <div className="relative max-w-6xl mx-auto py-16 px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2">
             <div></div>
             
