@@ -6,6 +6,7 @@ import HeroSection from './components/HeroSection';
 import LeadGenSection from './components/LeadGenSection';
 import PricingSection from './components/PricingSection';
 import MediaSection from './components/MediaSection';
+import JourneyBanner from './components/JourneyBanner';
 import WhatWeAreSection from './components/WhatWeAreSection';
 import ProcessTimelineSection from './components/ProcessTimelineSection';
 import ResultsSection from './components/ResultsSection';
