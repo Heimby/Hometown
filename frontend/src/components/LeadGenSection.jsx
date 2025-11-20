@@ -45,6 +45,9 @@ const LeadGenSection = () => {
     e.preventDefault();
     setError('');
     
+    // Prevent scroll on mobile during transition
+    const currentScrollPos = window.scrollY;
+    
     try {
       const leadData = {
         address: formData.address,
@@ -54,6 +57,9 @@ const LeadGenSection = () => {
       };
       
       const response = await axios.post(`${API}/leads`, leadData);
+      
+      // Maintain scroll position
+      window.scrollTo(0, currentScrollPos);
       
       // Go directly to creating owner portal (skip password step)
       handleOwnerPortalCreation();
