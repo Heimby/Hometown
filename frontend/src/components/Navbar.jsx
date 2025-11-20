@@ -37,27 +37,9 @@ const Navbar = ({ isDark = true }) => {
               />
             </a>
 
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-10">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className={`text-[11px] font-medium uppercase tracking-wider transition-all duration-300 relative group ${
-                    isScrolled
-                      ? 'text-gray-600 hover:text-black'
-                      : 'text-white/70 hover:text-white'
-                  }`}
-                >
-                  {link.name}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-current transition-all duration-300 group-hover:w-full"></span>
-                </a>
-              ))}
-            </div>
-
             {/* Desktop Login Button */}
             <a
-              href="#"
+              href="/login"
               className={`hidden sm:block text-[11px] font-medium uppercase tracking-wider transition-all duration-300 hover:opacity-50 ${
                 isScrolled
                   ? 'text-gray-900'
