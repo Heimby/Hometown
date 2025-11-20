@@ -52,6 +52,48 @@ const OwnerPortalDashboard = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* Welcome Modal */}
+      {showWelcomeModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl p-8 max-w-md w-full shadow-2xl animate-scale-in relative">
+            <button
+              onClick={handleCloseWelcome}
+              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
+            >
+              <X className="w-5 h-5" />
+            </button>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Home className="w-8 h-8 text-emerald-600" />
+              </div>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                Velkommen til DigiHome!
+              </h2>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Basert på lignende boliger i ditt område, anslår vi at vi kan utbetale{' '}
+                <span className="font-bold text-emerald-600">36 381 kr</span> i løpet av sommermånedene.
+              </p>
+              <p className="text-sm text-gray-500 mb-8">
+                Fyll ut "sjekk ditt inntektspotensial" for å få et mer nøyaktig estimat for hele året.
+              </p>
+              <button
+                onClick={handleCloseWelcome}
+                className="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-medium transition-colors"
+              >
+                Kom i gang
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Onboarding Modal */}
+      <PropertyOnboardingModal
+        isOpen={showOnboardingModal}
+        onClose={handleOnboardingComplete}
+        propertyData={propertyData}
+      />
       <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="px-4 sm:px-8 py-4">
           <div className="flex items-center justify-between">
