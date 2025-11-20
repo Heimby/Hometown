@@ -31,7 +31,10 @@ const HeroSection = () => {
           </div>
 
           <div className="space-y-3 pt-4">
-            <button className="group relative px-8 py-3.5 bg-white text-black rounded-full text-sm sm:text-base font-medium transition-all duration-300 hover:bg-gray-100 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1">
+            <button 
+              onClick={scrollToLeadGen}
+              className="group relative px-8 py-3.5 bg-white text-black rounded-full text-sm sm:text-base font-medium transition-all duration-300 hover:bg-gray-100 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1"
+            >
               <span className="relative z-10">Kom i gang</span>
             </button>
           </div>
