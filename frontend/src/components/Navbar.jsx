@@ -69,19 +69,8 @@ const Navbar = ({ isDark = true }) => {
           <div className="fixed inset-0 bg-black/50" onClick={() => setIsMobileMenuOpen(false)}></div>
           <div className="fixed top-[56px] right-0 bottom-0 w-64 bg-white shadow-xl">
             <div className="flex flex-col p-6 space-y-6">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="text-base font-medium text-gray-900 hover:text-gray-600 transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.name}
-                </a>
-              ))}
-              <hr className="border-gray-200" />
               <a
-                href="#"
+                href="/login"
                 className="text-base font-medium text-gray-900 hover:text-gray-600 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
