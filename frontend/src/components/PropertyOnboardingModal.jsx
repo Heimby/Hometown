@@ -572,12 +572,12 @@ const Step1 = ({ formData, updateFormData }) => {
 const Step2 = ({ formData, updateFormData }) => {
   return (
     <div>
-      <div className="mb-6">
-        <h2 className="text-3xl font-medium mb-2">Velg utleiestrategi</h2>
-        <p className="text-gray-500">Hvordan ønsker du å leie ut boligen?</p>
+      <div className="mb-4 sm:mb-6">
+        <h2 className="text-2xl sm:text-3xl font-medium mb-2">Velg utleiestrategi</h2>
+        <p className="text-sm sm:text-base text-gray-500">Hvordan ønsker du å leie ut boligen?</p>
       </div>
 
-      <div className="space-y-4 mb-8">
+      <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
         <StrategyCard
           selected={formData.rentalStrategy === 'airbnb'}
           onClick={() => updateFormData('rentalStrategy', 'airbnb')}
