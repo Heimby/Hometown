@@ -16,16 +16,33 @@ const LoginPage = () => {
     setError('');
     
     try {
-      // TODO: Implement magic link backend endpoint
-      // For now, just redirect to owner portal
-      const savedProperty = localStorage.getItem('ownerProperty');
-      if (savedProperty) {
+      // Call backend to check if owner exists
+      const response = await axios.post(`${API}/owners/login`, { email });
+      
+      if (response.data && response.data.id) {
+        // Save owner data to localStorage
+        localStorage.setItem('ownerProperty', JSON.stringify({
+          id: response.data.id,
+          address: response.data.address,
+          property_address: response.data.address,
+          name: response.data.name,
+          email: response.data.email,
+          phone: response.data.phone,
+          onboarding_completed: response.data.onboarding_completed,
+        }));
+        
+        // Redirect to owner portal
         window.location.href = '/owner-portal';
       } else {
-        setError('Ingen eierportal funnet. Vennligst registrer deg først.');
+        setError('Kunne ikke logge inn. Vennligst prøv igjen.');
       }
     } catch (err) {
-      setError('Kunne ikke logge inn. Vennligst prøv igjen.');
+      console.error('Login error:', err);
+      if (err.response && err.response.status === 404) {
+        setError('Ingen eierportal funnet. Vennligst registrer deg først.');
+      } else {
+        setError('Kunne ikke logge inn. Vennligst prøv igjen.');
+      }
     }
   };
 
