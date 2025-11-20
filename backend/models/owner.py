@@ -23,6 +23,7 @@ class Owner(BaseModel):
     properties: list = Field(default_factory=list)
     onboarding_completed: bool = Field(default=False)
     onboarding_data: Optional[Dict[str, Any]] = None
+    status: str = Field(default="Ringt")  # "Ringt", "Sendt tilbud", "Onboarding", "Kontrakt", "Lost"
 
 class OwnerResponse(BaseModel):
     id: str
