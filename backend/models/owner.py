@@ -1,5 +1,5 @@
 from pydantic import BaseModel, EmailStr, Field
-from typing import Optional
+from typing import Optional, Dict, Any
 from datetime import datetime
 import uuid
 
@@ -21,6 +21,8 @@ class Owner(BaseModel):
     created_at: datetime = Field(default_factory=datetime.utcnow)
     is_active: bool = Field(default=True)
     properties: list = Field(default_factory=list)
+    onboarding_completed: bool = Field(default=False)
+    onboarding_data: Optional[Dict[str, Any]] = None
 
 class OwnerResponse(BaseModel):
     id: str
@@ -29,3 +31,29 @@ class OwnerResponse(BaseModel):
     address: str
     created_at: datetime
     is_active: bool
+    onboarding_completed: bool = False
+    onboarding_data: Optional[Dict[str, Any]] = None
+
+class OnboardingData(BaseModel):
+    # Step 1: Address
+    address: str
+    city: str
+    unit: Optional[str] = None
+    property_type: str  # "apartment" or "house"
+    ownership_type: str  # "selveier" or "borettslag"
+    
+    # Step 2: Strategy
+    rental_strategy: str  # "short", "long", or "dynamic"
+    start_date: str
+    end_date: Optional[str] = None
+    
+    # Step 3: Details
+    rooms: Dict[str, Any]  # {living: [], bedroom: [], bathroom: []}
+    
+    # Step 4: Facilities
+    facilities: list  # ["balkong", "tørketrommel", "heis"]
+    parking: str  # "none", "free", "garage"
+    
+    # Step 5: Presentation
+    photography: str  # "professional" or "upload"
+    cleaning: str  # "self" or "service"

@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException
-from models.owner import Owner, OwnerCreate, OwnerResponse
+from models.owner import Owner, OwnerCreate, OwnerResponse, OnboardingData
 from motor.motor_asyncio import AsyncIOMotorClient
 import os
 from passlib.hash import bcrypt
@@ -57,7 +57,9 @@ async def create_owner_portal(owner_data: OwnerCreate):
             email=owner.email,
             address=owner.address,
             created_at=owner.created_at,
-            is_active=owner.is_active
+            is_active=owner.is_active,
+            onboarding_completed=owner.onboarding_completed,
+            onboarding_data=owner.onboarding_data
         )
     except HTTPException:
         raise
@@ -94,3 +96,28 @@ async def get_owner(owner_id: str):
         raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Failed to fetch owner: {str(e)}")
+
+@router.put("/owners/{owner_id}/onboarding")
+async def update_onboarding(owner_id: str, onboarding_data: OnboardingData):
+    """
+    Save onboarding data for an owner
+    """
+    try:
+        owner = await db.owners.find_one({"id": owner_id}, {"_id": 0})
+        if not owner:
+            raise HTTPException(status_code=404, detail="Owner not found")
+        
+        # Update owner with onboarding data
+        await db.owners.update_one(
+            {"id": owner_id},
+            {"$set": {
+                "onboarding_completed": True,
+                "onboarding_data": onboarding_data.dict()
+            }}
+        )
+        
+        return {"message": "Onboarding data saved successfully", "owner_id": owner_id}
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to save onboarding data: {str(e)}")
