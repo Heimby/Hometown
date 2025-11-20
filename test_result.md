@@ -135,6 +135,18 @@ backend:
         agent: "testing"
         comment: "✅ COMPREHENSIVE TESTING COMPLETE: POST /api/owner-portal endpoint working perfectly. Tests passed: (1) Valid owner creation with proper UUID, password hashing, no password_hash in response (2) Duplicate owner prevention - correctly returns 400 error (3) Missing password validation - properly rejects with 422 (4) GET /api/owners returns proper list without password_hash fields (5) Lead status conversion - correctly updates linked lead status to 'converted'. All security measures working correctly."
 
+  - task: "Owner onboarding flow API endpoint"
+    implemented: true
+    working: true
+    file: "/app/backend/routes/owners.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "✅ COMPLETE ONBOARDING FLOW TESTING SUCCESSFUL: End-to-end onboarding flow working perfectly. Tests passed: (1) Owner creation with test data (email: test-onboarding@digihome.no, ID: b205c5c2-7d5c-4f50-88ff-552f9c51b8b7) (2) PUT /api/owners/{owner_id}/onboarding successfully saves complete 5-step onboarding data including address, city, unit, property_type, ownership_type, rental_strategy, rooms (living/bedroom/bathroom with furniture details), facilities, parking, photography, cleaning preferences (3) Owner marked as onboarding_completed: true (4) All onboarding data correctly stored and retrievable via GET /api/owners/{owner_id} (5) Admin dashboard GET /api/owner-portal/all correctly shows onboarding status. All data validation, persistence, and retrieval working correctly."
+
   - task: "MongoDB connection and models"
     implemented: true
     working: true
