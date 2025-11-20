@@ -298,20 +298,22 @@ const PropertyOnboardingModal = ({ isOpen, onClose, propertyData }) => {
           <X className="w-6 h-6" />
         </button>
 
-        {/* Sidebar */}
-        <div className="w-full sm:w-[35%] bg-gray-50 p-6 sm:p-10 flex flex-col justify-between border-b sm:border-b-0 sm:border-r border-gray-200">
+        {/* Sidebar - Compact on mobile */}
+        <div className="w-full sm:w-[35%] bg-gray-50 p-4 sm:p-10 flex flex-col justify-between border-b sm:border-b-0 sm:border-r border-gray-200 flex-shrink-0">
           <div>
-            <div className="font-extrabold italic text-2xl mb-8 sm:mb-12">
+            <div className="font-extrabold italic text-xl sm:text-2xl mb-4 sm:mb-12">
               digihome
             </div>
 
-            {/* Dynamic Sidebar Content */}
-            <SidebarContent step={currentStep} />
+            {/* Dynamic Sidebar Content - Hidden text on small mobile */}
+            <div className="hidden sm:block">
+              <SidebarContent step={currentStep} />
+            </div>
           </div>
 
-          {/* Progress Bar */}
-          <div className="mt-6">
-            <div className="flex justify-between text-sm text-gray-500 mb-2">
+          {/* Progress Bar - Always visible */}
+          <div className="mt-3 sm:mt-6">
+            <div className="flex justify-between text-xs sm:text-sm text-gray-500 mb-2">
               <span>Steg {currentStep} av 5</span>
               <span>{progress}%</span>
             </div>
@@ -325,8 +327,8 @@ const PropertyOnboardingModal = ({ isOpen, onClose, propertyData }) => {
         </div>
 
         {/* Main Content */}
-        <div className="flex-1 flex flex-col">
-          <div className="flex-1 overflow-y-auto p-6 sm:p-12">
+        <div className="flex-1 flex flex-col min-h-0">
+          <div className="flex-1 overflow-y-auto p-4 sm:p-12">
             {currentStep === 1 && <Step1 formData={formData} updateFormData={updateFormData} />}
             {currentStep === 2 && <Step2 formData={formData} updateFormData={updateFormData} />}
             {currentStep === 3 && (
