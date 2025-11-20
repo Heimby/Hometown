@@ -40,19 +40,45 @@ const PricingSection = () => {
     
     try {
       const leadData = {
-        ...formData,
+        address: formData.address,
+        name: formData.name,
         phone: `${countryCode} ${formData.phone}`,
+        email: formData.email,
       };
       await axios.post(`${API}/leads`, leadData);
-      setSuccess(true);
-      setFormData({ address: '', name: '', phone: '', email: '' });
-      setCountryCode('+47');
       
-      setTimeout(() => {
-        setSuccess(false);
-      }, 3000);
+      // Create owner portal with temp password
+      const ownerData = {
+        ...leadData,
+        password: 'temp_password_' + Date.now(),
+      };
+      
+      const response = await axios.post(`${API}/owner-portal`, ownerData);
+      
+      // Check if user already exists
+      if (response.status === 400 || (response.data && response.data.detail && response.data.detail.includes('already exists'))) {
+        window.location.href = '/login';
+        return;
+      }
+      
+      if (response.data && response.data.id) {
+        localStorage.setItem('ownerProperty', JSON.stringify({
+          address: formData.address,
+          name: formData.name,
+          email: formData.email,
+          phone: `${countryCode} ${formData.phone}`,
+          ownerId: response.data.id,
+        }));
+        
+        // Redirect to owner portal
+        window.location.href = '/owner-portal';
+      }
     } catch (err) {
-      setError('Noe gikk galt. Vennligst prøv igjen.');
+      if (err.response && err.response.status === 400) {
+        window.location.href = '/login';
+      } else {
+        setError('Noe gikk galt. Vennligst prøv igjen.');
+      }
     }
   };
 
