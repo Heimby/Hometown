@@ -362,6 +362,153 @@ def test_lead_status_conversion():
         results.add_fail("Lead status conversion", f"Error: {str(e)}")
         return False
 
+def test_onboarding_flow():
+    """Test complete onboarding flow for DigiHome application"""
+    print("\n" + "="*60)
+    print("TESTING COMPLETE ONBOARDING FLOW")
+    print("="*60)
+    
+    # Step 1: Create a test owner first
+    onboarding_owner_data = {
+        "address": "Testveien 123, Bergen",
+        "name": "Test Eier",
+        "phone": "12345678",
+        "email": "test-onboarding@digihome.no",
+        "password": "testpass123"
+    }
+    
+    try:
+        print("Step 1: Creating test owner...")
+        owner_response = requests.post(f"{API_BASE}/owner-portal", json=onboarding_owner_data)
+        
+        if owner_response.status_code != 200:
+            results.add_fail("Onboarding - Owner creation", f"Status: {owner_response.status_code}, Response: {owner_response.text}")
+            return False
+        
+        owner_data = owner_response.json()
+        owner_id = owner_data['id']
+        print(f"✅ Owner created with ID: {owner_id}")
+        
+        # Step 2: Test the onboarding endpoint with complete data
+        onboarding_data = {
+            "address": "Testveien 123",
+            "city": "Bergen", 
+            "unit": "H0301",
+            "property_type": "apartment",
+            "ownership_type": "selveier",
+            "rental_strategy": "airbnb",
+            "start_date": "2025-11-20",
+            "end_date": None,
+            "rooms": {
+                "living": [{"id": 123, "type": "living", "furniture": [{"id": 1, "type": "sofa", "details": {"seats": 3}}]}],
+                "bedroom": [{"id": 124, "type": "bedroom", "furniture": [{"id": 2, "type": "bed", "details": {"width": 150}}]}],
+                "bathroom": [{"id": 125, "type": "bathroom", "amenities": ["dusj", "toalett"]}]
+            },
+            "facilities": ["balkong", "heis"],
+            "parking": "none",
+            "photography": "professional",
+            "cleaning": "self"
+        }
+        
+        print("Step 2: Submitting onboarding data...")
+        onboarding_response = requests.put(f"{API_BASE}/owners/{owner_id}/onboarding", json=onboarding_data)
+        
+        if onboarding_response.status_code != 200:
+            results.add_fail("Onboarding - Data submission", f"Status: {onboarding_response.status_code}, Response: {onboarding_response.text}")
+            return False
+        
+        onboarding_result = onboarding_response.json()
+        print(f"✅ Onboarding data submitted: {onboarding_result.get('message')}")
+        
+        # Step 3: Verify the data was saved
+        print("Step 3: Verifying onboarding data was saved...")
+        owner_check_response = requests.get(f"{API_BASE}/owners/{owner_id}")
+        
+        if owner_check_response.status_code != 200:
+            results.add_fail("Onboarding - Data verification", f"Status: {owner_check_response.status_code}")
+            return False
+        
+        updated_owner = owner_check_response.json()
+        
+        # Verify onboarding_completed is true
+        if not updated_owner.get('onboarding_completed'):
+            results.add_fail("Onboarding - Completion flag", f"onboarding_completed is {updated_owner.get('onboarding_completed')}")
+            return False
+        
+        print("✅ onboarding_completed is True")
+        
+        # Verify onboarding_data contains all submitted data
+        saved_data = updated_owner.get('onboarding_data', {})
+        
+        # Check key fields
+        required_fields = ['address', 'city', 'unit', 'property_type', 'ownership_type', 'rental_strategy', 'rooms', 'facilities', 'parking', 'photography', 'cleaning']
+        missing_fields = [field for field in required_fields if field not in saved_data]
+        
+        if missing_fields:
+            results.add_fail("Onboarding - Data completeness", f"Missing fields: {missing_fields}")
+            return False
+        
+        # Verify specific data values
+        if saved_data['city'] != 'Bergen':
+            results.add_fail("Onboarding - City data", f"Expected 'Bergen', got '{saved_data['city']}'")
+            return False
+        
+        if saved_data['unit'] != 'H0301':
+            results.add_fail("Onboarding - Unit data", f"Expected 'H0301', got '{saved_data['unit']}'")
+            return False
+        
+        if saved_data['property_type'] != 'apartment':
+            results.add_fail("Onboarding - Property type", f"Expected 'apartment', got '{saved_data['property_type']}'")
+            return False
+        
+        # Verify rooms data structure
+        rooms = saved_data.get('rooms', {})
+        if 'living' not in rooms or 'bedroom' not in rooms or 'bathroom' not in rooms:
+            results.add_fail("Onboarding - Rooms structure", f"Missing room types in: {list(rooms.keys())}")
+            return False
+        
+        # Verify facilities
+        facilities = saved_data.get('facilities', [])
+        if 'balkong' not in facilities or 'heis' not in facilities:
+            results.add_fail("Onboarding - Facilities data", f"Missing facilities in: {facilities}")
+            return False
+        
+        print("✅ All onboarding data correctly saved")
+        
+        # Step 4: Verify Admin Dashboard can see onboarding status
+        print("Step 4: Verifying admin dashboard visibility...")
+        admin_response = requests.get(f"{API_BASE}/owner-portal/all")
+        
+        if admin_response.status_code != 200:
+            results.add_fail("Onboarding - Admin dashboard", f"Status: {admin_response.status_code}")
+            return False
+        
+        all_owners = admin_response.json()
+        
+        # Find our test owner
+        test_owner = None
+        for owner in all_owners:
+            if owner.get('id') == owner_id:
+                test_owner = owner
+                break
+        
+        if not test_owner:
+            results.add_fail("Onboarding - Admin visibility", "Test owner not found in admin dashboard")
+            return False
+        
+        if not test_owner.get('onboarding_completed'):
+            results.add_fail("Onboarding - Admin status", f"Admin dashboard shows onboarding_completed as {test_owner.get('onboarding_completed')}")
+            return False
+        
+        print("✅ Admin dashboard correctly shows onboarding_completed: true")
+        
+        results.add_pass("Complete onboarding flow end-to-end")
+        return True
+        
+    except Exception as e:
+        results.add_fail("Onboarding flow", f"Error: {str(e)}")
+        return False
+
 # Run all tests
 def run_all_tests():
     print("Starting DigiHome Backend API Tests...")
