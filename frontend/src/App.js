@@ -48,6 +48,12 @@ function HomePage() {
       {/* Pricing Section */}
       <PricingSection />
 
+      {/* Media Section */}
+      <MediaSection />
+
+      {/* Stats Section */}
+      <StatsSection />
+
       {/* Footer */}
       <Footer />
     </>
