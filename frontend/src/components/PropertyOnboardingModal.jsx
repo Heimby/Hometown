@@ -472,12 +472,12 @@ const SidebarContent = ({ step }) => {
 const Step1 = ({ formData, updateFormData }) => {
   return (
     <div>
-      <div className="mb-6">
-        <h2 className="text-3xl font-medium mb-2">Bekreft adresse</h2>
-        <p className="text-gray-500">Sjekk at informasjonen stemmer.</p>
+      <div className="mb-4 sm:mb-6">
+        <h2 className="text-2xl sm:text-3xl font-medium mb-2">Bekreft adresse</h2>
+        <p className="text-sm sm:text-base text-gray-500">Sjekk at informasjonen stemmer.</p>
       </div>
 
-      <div className="space-y-5">
+      <div className="space-y-4 sm:space-y-5">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
             <label className="block text-sm font-semibold mb-2">Adresse</label>
