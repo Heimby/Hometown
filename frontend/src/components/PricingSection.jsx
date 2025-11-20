@@ -160,7 +160,7 @@ const PricingSection = () => {
   };
 
   return (
-    <section className="relative py-16 sm:py-20 md:py-24 px-4 sm:px-6" style={{ backgroundColor: '#F9F8F4' }}>
+    <section ref={sectionRef} className="relative py-16 sm:py-20 md:py-24 px-4 sm:px-6" style={{ backgroundColor: '#F9F8F4' }}>
       <div className="max-w-4xl mx-auto">
         {step === 1 ? (
           <>
