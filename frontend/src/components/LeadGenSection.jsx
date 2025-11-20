@@ -57,19 +57,15 @@ const LeadGenSection = () => {
       
       await axios.post(`${API}/leads`, leadData);
       
-      setTimeout(() => {
-        setStep(2);
-      }, 300);
+      // Go directly to creating owner portal (skip password step)
+      handleOwnerPortalCreation();
     } catch (err) {
       setError('Kunne ikke sende inn. Vennligst prøv igjen.');
     }
   };
 
-  const handleOwnerPortalSubmit = async (e) => {
-    e.preventDefault();
-    setError('');
-    
-    setStep(3);
+  const handleOwnerPortalCreation = async () => {
+    setStep(2); // Show loading
     
     try {
       const ownerData = {
@@ -77,14 +73,17 @@ const LeadGenSection = () => {
         name: formData.name,
         phone: `${countryCode} ${formData.phone}`,
         email: formData.email,
-        password: formData.password,
+        password: 'temp_password_' + Date.now(), // Generate temporary password for magic link
       };
       
-      const response = await axios.post(`${API}/owner-portal`, ownerData, {
-        validateStatus: function (status) {
-          return status >= 200 && status < 300;
-        }
-      });
+      const response = await axios.post(`${API}/owner-portal`, ownerData);
+      
+      // Check if user already exists
+      if (response.status === 400 || (response.data && response.data.detail && response.data.detail.includes('already exists'))) {
+        // Redirect to login page
+        window.location.href = '/login';
+        return;
+      }
       
       if (!response.data || !response.data.id) {
         throw new Error('Ugyldig svar fra serveren');
@@ -99,11 +98,16 @@ const LeadGenSection = () => {
       }));
       
       setTimeout(() => {
-        setStep(4);
+        setStep(3);
       }, 1500);
     } catch (err) {
-      setError(err.response?.data?.detail || err.message || 'Kunne ikke opprette eierportal. Vennligst prøv igjen.');
-      setStep(2);
+      // Check if error is about existing user
+      if (err.response && err.response.status === 400) {
+        window.location.href = '/login';
+      } else {
+        setError(err.response?.data?.detail || err.message || 'Kunne ikke opprette eierportal. Vennligst prøv igjen.');
+        setStep(1);
+      }
     }
   };
 
