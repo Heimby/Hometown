@@ -59,7 +59,18 @@ const LeadGenSection = () => {
       handleOwnerPortalCreation();
     } catch (err) {
       console.error('Lead submission error:', err);
-      const errorMessage = err.response?.data?.detail || err.message || 'Kunne ikke sende inn. Vennligst prøv igjen.';
+      let errorMessage = 'Kunne ikke sende inn. Vennligst prøv igjen.';
+      
+      if (err.response?.data?.detail) {
+        if (Array.isArray(err.response.data.detail)) {
+          errorMessage = err.response.data.detail.map(e => e.msg).join(', ');
+        } else if (typeof err.response.data.detail === 'string') {
+          errorMessage = err.response.data.detail;
+        }
+      } else if (err.message) {
+        errorMessage = err.message;
+      }
+      
       setError(errorMessage);
     }
   };
