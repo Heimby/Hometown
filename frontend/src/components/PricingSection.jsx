@@ -120,11 +120,12 @@ const PricingSection = () => {
       }
       
       localStorage.setItem('ownerProperty', JSON.stringify({
+        id: response.data.id,
         address: formData.address,
+        property_address: formData.address,
         name: formData.name,
         email: formData.email,
         phone: formData.phone,
-        ownerId: response.data.id,
       }));
       
       setTimeout(() => {
