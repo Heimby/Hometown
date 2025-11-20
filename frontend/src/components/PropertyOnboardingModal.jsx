@@ -359,7 +359,7 @@ const PropertyOnboardingModal = ({ isOpen, onClose, propertyData }) => {
             ) : currentStep > 1 && (
               <button
                 onClick={handleBack}
-                className="px-6 py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-900 rounded-lg font-semibold transition-colors"
+                className="px-4 sm:px-6 py-2 sm:py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-900 rounded-lg font-semibold transition-colors text-sm sm:text-base"
               >
                 Tilbake
               </button>
@@ -368,7 +368,7 @@ const PropertyOnboardingModal = ({ isOpen, onClose, propertyData }) => {
             <button
               onClick={handleNext}
               disabled={isSubmitting}
-              className={`px-6 py-2.5 rounded-lg font-semibold transition-all flex items-center gap-2 ${
+              className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg font-semibold transition-all flex items-center gap-2 text-sm sm:text-base ${
                 currentStep === 5
                   ? 'bg-emerald-500 hover:bg-emerald-600 text-white'
                   : 'bg-blue-600 hover:bg-blue-700 text-white'
