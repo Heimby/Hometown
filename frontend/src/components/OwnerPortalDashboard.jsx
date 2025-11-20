@@ -19,20 +19,20 @@ const OwnerPortalDashboard = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
-        <div className="px-8 py-4">
+        <div className="px-4 sm:px-8 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2 sm:gap-4">
               <img 
                 src="https://customer-assets.emergentagent.com/job_neo-copier/artifacts/ke4s6nwo_4633C819.svg" 
                 alt="DigiHome Logo" 
-                className="h-8"
+                className="h-6 sm:h-8"
               />
-              <span className="px-3 py-1 bg-emerald-50 text-emerald-700 rounded-md text-sm font-medium border border-emerald-200">
+              <span className="px-2 sm:px-3 py-1 bg-emerald-50 text-emerald-700 rounded-md text-xs sm:text-sm font-medium border border-emerald-200">
                 Eierportal
               </span>
             </div>
 
-            <nav className="flex items-center gap-6">
+            <nav className="hidden lg:flex items-center gap-6">
               <a href="/owner-portal" className="flex items-center gap-2 text-emerald-600 font-medium">
                 <Home size={18} />
                 <span>Eiendommer</span>
@@ -57,28 +57,38 @@ const OwnerPortalDashboard = () => {
                 <span>Logg Ut</span>
               </button>
             </nav>
+
+            {/* Mobile Sign Out Button */}
+            <button 
+              onClick={handleSignOut}
+              className="lg:hidden flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors text-sm"
+            >
+              <LogOut size={18} />
+              <span className="hidden sm:inline">Logg Ut</span>
+            </button>
           </div>
         </div>
       </header>
 
-      <main className="px-8 py-8">
-        <div className="mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">Dine Eiendommer</h1>
-          <p className="text-gray-600 text-lg">Administrer og overvåk dine Airbnb-annonser</p>
+      <main className="px-4 sm:px-8 py-6 sm:py-8">
+        <div className="mb-6 sm:mb-8">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2">Dine Eiendommer</h1>
+          <p className="text-gray-600 text-sm sm:text-base lg:text-lg">Administrer og overvåk dine Airbnb-annonser</p>
         </div>
 
-        <div className="flex items-center justify-between mb-8">
-          <div className="relative flex-1 max-w-md">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-6 sm:mb-8">
+          <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
             <input
               type="text"
-              placeholder="Søk etter eiendommer etter adresse eller navn..."
-              className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+              placeholder="Søk etter eiendommer..."
+              className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-sm sm:text-base"
             />
           </div>
-          <button className="ml-4 flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+          <button className="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-4 sm:px-6 py-3 rounded-lg font-medium transition-colors whitespace-nowrap text-sm sm:text-base">
             <Plus size={20} />
-            <span>Legg Til Ny Eiendom</span>
+            <span className="hidden sm:inline">Legg Til Ny Eiendom</span>
+            <span className="sm:hidden">Legg Til</span>
           </button>
         </div>
 
