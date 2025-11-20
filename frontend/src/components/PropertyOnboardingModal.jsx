@@ -1091,10 +1091,10 @@ const StrategyCard = ({ selected, onClick, icon, title, description, badge, isPu
     )}
     <div className="flex-shrink-0">{icon}</div>
     <div>
-      <div className={`font-semibold text-lg ${isPurple ? 'text-purple-600' : isAirbnb ? 'text-[#FF5A5F]' : ''}`}>
+      <div className={`font-semibold text-base sm:text-lg ${isPurple ? 'text-purple-600' : isAirbnb ? 'text-[#FF5A5F]' : ''}`}>
         {title}
       </div>
-      <div className="text-sm text-gray-500">{description}</div>
+      <div className="text-xs sm:text-sm text-gray-500">{description}</div>
     </div>
   </div>
 );
