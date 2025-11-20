@@ -1070,7 +1070,7 @@ const SelectionCard = ({ selected, onClick, icon, title }) => (
 const StrategyCard = ({ selected, onClick, icon, title, description, badge, isPurple, isAirbnb }) => (
   <div
     onClick={onClick}
-    className={`border rounded-xl p-5 cursor-pointer transition-all flex items-center gap-4 relative ${
+    className={`border rounded-xl p-3 sm:p-5 cursor-pointer transition-all flex items-center gap-3 sm:gap-4 relative ${
       isAirbnb
         ? selected
           ? 'bg-red-50 border-[#FF5A5F]'
