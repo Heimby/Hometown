@@ -116,13 +116,26 @@ const LeadGenSection = () => {
       }, 1500);
     } catch (err) {
       console.error('Owner portal creation error:', err);
+      let errorMessage = 'Kunne ikke opprette eierportal. Vennligst prøv igjen.';
+      
       // Check if error is about existing user
       if (err.response && err.response.status === 400) {
         window.location.href = '/login';
-      } else {
-        setError(err.response?.data?.detail || err.message || 'Kunne ikke opprette eierportal. Vennligst prøv igjen.');
-        setStep(1);
+        return;
       }
+      
+      if (err.response?.data?.detail) {
+        if (Array.isArray(err.response.data.detail)) {
+          errorMessage = err.response.data.detail.map(e => e.msg).join(', ');
+        } else if (typeof err.response.data.detail === 'string') {
+          errorMessage = err.response.data.detail;
+        }
+      } else if (err.message) {
+        errorMessage = err.message;
+      }
+      
+      setError(errorMessage);
+      setStep(1);
     }
   };
 
