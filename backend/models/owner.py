@@ -34,6 +34,7 @@ class OwnerResponse(BaseModel):
     is_active: bool
     onboarding_completed: bool = False
     onboarding_data: Optional[Dict[str, Any]] = None
+    status: str = "Ringt"
 
 class OnboardingData(BaseModel):
     # Step 1: Address
