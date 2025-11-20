@@ -13,12 +13,7 @@ const Navbar = ({ isDark = true }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
-    { name: 'AI', href: '#' },
-    { name: 'HISTORIER', href: '#' },
-    { name: 'KARRIERE', href: '#' },
-    { name: 'OM OSS', href: '#' },
-  ];
+  const navLinks = [];
 
   return (
     <>
