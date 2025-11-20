@@ -1058,12 +1058,12 @@ const Step5 = ({ formData, updateFormData }) => {
 const SelectionCard = ({ selected, onClick, icon, title }) => (
   <div
     onClick={onClick}
-    className={`border rounded-xl p-6 cursor-pointer transition-all flex flex-col items-center justify-center min-h-[140px] ${
+    className={`border rounded-xl p-4 sm:p-6 cursor-pointer transition-all flex flex-col items-center justify-center min-h-[100px] sm:min-h-[140px] ${
       selected ? 'border-2 border-gray-900' : 'border border-gray-300 hover:border-gray-900'
     }`}
   >
-    <div className="text-gray-500 mb-3">{icon}</div>
-    <div className="font-semibold text-lg">{title}</div>
+    <div className="text-gray-500 mb-2 sm:mb-3">{icon}</div>
+    <div className="font-semibold text-base sm:text-lg">{title}</div>
   </div>
 );
 
