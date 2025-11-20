@@ -13,6 +13,13 @@ const MediaSection = () => {
       url: 'https://www.estatenyheter.no/bergen-vest/ny-norsk-ai-aktor-vil-revolusjonere-eiendom/479002'
     },
     {
+      title: 'GuestyVal Mexico | Machine Earning: 10 AI Tactics Powering STR Profits',
+      description: 'DigiHome & EnsoConnect presenterer på GuestyVal Mexico om AI-drevet profittoptimalisering for korttidsutleie.',
+      image: 'https://customer-assets.emergentagent.com/job_property-onboard-1/artifacts/7tafy6d7_image.png',
+      source: 'GuestyVal Mexico',
+      url: 'https://www.youtube.com/watch?v=sT6i93KG8h0'
+    },
+    {
       title: 'Fra storbank til startup',
       description: 'Shifter skriver om hvordan DigiHome skal bygge skalerbare selskaper i tungrodd bransje.',
       image: 'https://customer-assets.emergentagent.com/job_property-onboard-1/artifacts/li1mznsy_image.png',
