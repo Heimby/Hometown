@@ -90,7 +90,7 @@ const PropertyOnboardingModal = ({ isOpen, onClose, propertyData }) => {
 
   const handleNext = () => {
     if (currentStep < 5) {
-      setCurrentStep(currentStep + 1);
+      setCurrentStep(prev => prev + 1);
     } else {
       handleSubmit();
     }
@@ -98,7 +98,7 @@ const PropertyOnboardingModal = ({ isOpen, onClose, propertyData }) => {
 
   const handleBack = () => {
     if (currentStep > 1) {
-      setCurrentStep(currentStep - 1);
+      setCurrentStep(prev => prev - 1);
     }
   };
 
