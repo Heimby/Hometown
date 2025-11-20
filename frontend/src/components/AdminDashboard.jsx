@@ -311,8 +311,8 @@ const AdminDashboard = () => {
                             <span className="line-clamp-2">{owner.address}</span>
                           </div>
                         </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                          {formatDate(owner.created_at)}
+                        <td className="px-6 py-4 whitespace-nowrap">
+                          <StatusDropdown owner={owner} onStatusChange={(newStatus) => handleStatusChange(owner.id, newStatus)} />
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap">
                           {owner.onboarding_completed ? (
