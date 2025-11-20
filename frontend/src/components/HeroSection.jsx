@@ -1,6 +1,13 @@
 import React from 'react';
 
 const HeroSection = () => {
+  const scrollToLeadGen = () => {
+    const leadGenSection = document.getElementById('lead-gen');
+    if (leadGenSection) {
+      leadGenSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <section className="relative h-screen w-full overflow-hidden">
       <div className="absolute inset-0">
