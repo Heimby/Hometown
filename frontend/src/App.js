@@ -13,6 +13,7 @@ import OurPresenceSection from './components/OurPresenceSection';
 import Footer from './components/Footer';
 import OwnerPortalDashboard from './components/OwnerPortalDashboard';
 import InvestorPage from './components/InvestorPage';
+import LoginPage from './components/LoginPage';
 
 function HomePage() {
   return (
