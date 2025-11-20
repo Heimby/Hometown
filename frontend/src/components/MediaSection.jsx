@@ -27,7 +27,7 @@ const MediaSection = () => {
       url: 'https://www.shifter.no/nyheter/fra-storbank-til-startup-skal-bygge-skalerbare-selskaper-i-tungrodde-bransjer/413476'
     },
     {
-      title: 'Njål (26) vil selge bilen din med hjelp av AI',
+      title: 'DigiSale-gruppen lanserer plattform for bilsalg og utleie av eiendom',
       description: 'Firdaposten om grunnleggeren bak DigiHome og hans visjon for AI i eiendomsbransjen.',
       image: 'https://customer-assets.emergentagent.com/job_property-onboard-1/artifacts/vtbnhq20_image.png',
       source: 'Firdaposten',
