@@ -346,8 +346,8 @@ const PropertyOnboardingModal = ({ isOpen, onClose, propertyData }) => {
             {currentStep === 5 && <Step5 formData={formData} updateFormData={updateFormData} />}
           </div>
 
-          {/* Footer */}
-          <div className="border-t border-gray-200 p-4 sm:p-6 flex items-center justify-end gap-4 bg-white">
+          {/* Footer - Always visible and sticky */}
+          <div className="border-t border-gray-200 p-3 sm:p-6 flex items-center justify-end gap-3 sm:gap-4 bg-white flex-shrink-0">
             {currentStep === 5 ? (
               <button
                 onClick={handleBack}
