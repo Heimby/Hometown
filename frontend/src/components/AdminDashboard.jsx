@@ -370,6 +370,32 @@ const AdminDashboard = () => {
   );
 };
 
+// Status Dropdown Component
+const StatusDropdown = ({ owner, onStatusChange }) => {
+  const statuses = ["Ringt", "Sendt tilbud", "Onboarding", "Kontrakt", "Lost"];
+  const currentStatus = owner.status || "Ringt";
+  
+  const statusColors = {
+    "Ringt": "bg-blue-100 text-blue-800",
+    "Sendt tilbud": "bg-purple-100 text-purple-800",
+    "Onboarding": "bg-orange-100 text-orange-800",
+    "Kontrakt": "bg-emerald-100 text-emerald-800",
+    "Lost": "bg-red-100 text-red-800"
+  };
+
+  return (
+    <select
+      value={currentStatus}
+      onChange={(e) => onStatusChange(e.target.value)}
+      className={`px-3 py-1 rounded-full text-xs font-semibold border-0 cursor-pointer ${statusColors[currentStatus]}`}
+    >
+      {statuses.map(status => (
+        <option key={status} value={status}>{status}</option>
+      ))}
+    </select>
+  );
+};
+
 // Owner Details Modal Component
 const OwnerDetailsModal = ({ owner, onClose }) => {
   const data = owner.onboarding_data;
