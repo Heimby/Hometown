@@ -105,7 +105,7 @@ const PropertyOnboardingModal = ({ isOpen, onClose, propertyData }) => {
   const handleSubmit = async () => {
     setIsSubmitting(true);
     try {
-      const ownerId = propertyData?.id;
+      const ownerId = propertyData?.id || propertyData?.ownerId;
       
       if (!ownerId) {
         console.error('No owner ID found in propertyData:', propertyData);
