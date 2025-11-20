@@ -1,15 +1,49 @@
 import React, { useState, useEffect } from 'react';
-import { Home, TrendingUp, Calendar, Settings, LogOut, Plus, Search, Users, Bed, Bath } from 'lucide-react';
+import { Home, TrendingUp, Calendar, Settings, LogOut, Plus, Search, Users, Bed, Bath, X } from 'lucide-react';
+import PropertyOnboardingModal from './PropertyOnboardingModal';
 
 const OwnerPortalDashboard = () => {
   const [propertyData, setPropertyData] = useState(null);
+  const [showWelcomeModal, setShowWelcomeModal] = useState(false);
+  const [showOnboardingModal, setShowOnboardingModal] = useState(false);
+  const [hasCompletedOnboarding, setHasCompletedOnboarding] = useState(false);
 
   useEffect(() => {
     const savedProperty = localStorage.getItem('ownerProperty');
+    const hasSeenWelcome = localStorage.getItem('hasSeenWelcome');
+    const completedOnboarding = localStorage.getItem('completedOnboarding');
+    
     if (savedProperty) {
       setPropertyData(JSON.parse(savedProperty));
     }
+    
+    // Show welcome modal only on first visit
+    if (!hasSeenWelcome && savedProperty) {
+      setShowWelcomeModal(true);
+    }
+    
+    setHasCompletedOnboarding(!!completedOnboarding);
   }, []);
+
+  const handleCloseWelcome = () => {
+    setShowWelcomeModal(false);
+    localStorage.setItem('hasSeenWelcome', 'true');
+  };
+
+  const handlePropertyClick = () => {
+    if (!hasCompletedOnboarding) {
+      setShowOnboardingModal(true);
+    } else {
+      // Navigate to property details
+      alert('Navigerer til eiendomsdetaljer...');
+    }
+  };
+
+  const handleOnboardingComplete = () => {
+    setShowOnboardingModal(false);
+    setHasCompletedOnboarding(true);
+    localStorage.setItem('completedOnboarding', 'true');
+  };
 
   const handleSignOut = () => {
     localStorage.removeItem('ownerProperty');
