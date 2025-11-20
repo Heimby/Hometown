@@ -77,10 +77,14 @@ const PricingSection = () => {
         password: 'temp_password_' + Date.now(),
       };
       
-      const response = await axios.post(`${API}/owner-portal`, ownerData);
+      const response = await axios.post(`${API}/owner-portal`, ownerData, {
+        validateStatus: function (status) {
+          return status < 500; // Don't throw for 4xx errors
+        }
+      });
       
       // Check if user already exists
-      if (response.status === 400 || (response.data && response.data.detail && response.data.detail.includes('already exists'))) {
+      if (response.status === 400) {
         window.location.href = '/login';
         return;
       }
@@ -101,6 +105,7 @@ const PricingSection = () => {
         setStep(3);
       }, 1500);
     } catch (err) {
+      console.error('Owner portal creation error:', err);
       if (err.response && err.response.status === 400) {
         window.location.href = '/login';
       } else {
