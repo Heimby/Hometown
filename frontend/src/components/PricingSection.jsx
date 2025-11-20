@@ -7,6 +7,8 @@ const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
 
 const PricingSection = () => {
+  const [step, setStep] = useState(1); // 1: form, 2: loading, 3: success
+  const [isExpanded, setIsExpanded] = useState(false);
   const [countryCode, setCountryCode] = useState('+47');
   const [formData, setFormData] = useState({
     address: '',
@@ -14,7 +16,6 @@ const PricingSection = () => {
     phone: '',
     email: '',
   });
-  const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
 
   const countryCodes = [
