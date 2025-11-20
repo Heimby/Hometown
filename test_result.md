@@ -195,6 +195,18 @@ frontend:
       - working: true
         agent: "testing"
         comment: "✅ COMPREHENSIVE E2E TESTING COMPLETE: Owner Portal Dashboard working perfectly. Tests passed: (1) Password field accepts input and creates owner portal via backend API (2) Loading animation displays during portal creation (3) Success message 'Owner portal created' appears (4) 'Go to Owner Portal' button redirects to /owner-portal route (5) Dashboard displays all header elements: DigiHome logo, Owner Portal tag, navigation menu (Properties, Analytics, Calendar, Settings, Sign Out) (6) Summary metrics correctly show: Total Properties: 1, Active Listings: 0, Monthly Revenue: $0, Total Bookings: 0 (7) Property listing displays with address '123 Main Street, Oslo, Norway', Draft status (orange badge), property image, and 'Check How Much You Can Earn' button (8) Search bar functional (9) 'Add New Property' button visible (10) 'Sign Out' button redirects to homepage. All localStorage integration and UI elements working correctly."
+
+  - task: "Property Onboarding Modal Mobile Flow"
+    implemented: true
+    working: false
+    file: "/app/frontend/src/components/PropertyOnboardingModal.jsx"
+    stuck_count: 1
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: false
+        agent: "testing"
+        comment: "❌ CRITICAL MOBILE ONBOARDING ISSUE: Tested complete property onboarding flow on mobile (iPhone SE 375x667px). MAJOR ISSUE: Modal is stuck on Step 1 ('Bekreft adresse') and does not progress through the 5 steps despite clicking 'Neste' buttons. Step 1 elements work correctly (address field pre-filled with 'Mobiltest 123', city field shows 'Bergen', unit field accepts input, property type selection visible, 'Neste' button within viewport and clickable). However, modal never transitions to Step 2 (Velg utleiestrategi), Step 3 (Detaljer om boligen), Step 4 (Nøkkelfasiliteter), or Step 5 (Presentasjon & Klargjøring). This completely blocks mobile users from completing onboarding. Mobile responsive design works (no horizontal scrolling, modal fits viewport), but step progression logic is broken. URGENT: Fix step transition functionality in PropertyOnboardingModal.jsx."
   
   - task: "Global Presence Section Image Update"
     implemented: true
