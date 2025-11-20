@@ -122,15 +122,27 @@ const OwnerPortalDashboard = () => {
                 <Home size={18} />
                 <span>Eiendommer</span>
               </a>
-              <a href="#" className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors">
+              <a 
+                href="#" 
+                onClick={handleFeatureClick}
+                className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
+              >
                 <TrendingUp size={18} />
                 <span>Analyser</span>
               </a>
-              <a href="#" className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors">
+              <a 
+                href="#" 
+                onClick={handleFeatureClick}
+                className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
+              >
                 <Calendar size={18} />
                 <span>Kalender</span>
               </a>
-              <a href="#" className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors">
+              <a 
+                href="#" 
+                onClick={handleFeatureClick}
+                className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
+              >
                 <Settings size={18} />
                 <span>Innstillinger</span>
               </a>
