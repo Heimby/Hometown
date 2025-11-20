@@ -122,6 +122,29 @@ async def update_onboarding(owner_id: str, onboarding_data: OnboardingData):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Failed to save onboarding data: {str(e)}")
 
+@router.post("/owners/login")
+async def owner_login(email_data: dict):
+    """
+    Login endpoint - checks if owner exists with given email
+    """
+    try:
+        email = email_data.get("email")
+        if not email:
+            raise HTTPException(status_code=400, detail="Email is required")
+        
+        # Check if owner exists
+        owner = await db.owners.find_one({"email": email}, {"_id": 0})
+        if not owner:
+            raise HTTPException(status_code=404, detail="Ingen eierportal funnet. Vennligst registrer deg først.")
+        
+        # Return owner data (without password hash)
+        owner.pop('password_hash', None)
+        return owner
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Login failed: {str(e)}")
+
 @router.put("/owners/{owner_id}/status")
 async def update_owner_status(owner_id: str, status: dict):
     """
