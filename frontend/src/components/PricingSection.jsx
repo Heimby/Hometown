@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { CheckCircle, ArrowRight, MapPin, User, Phone, Mail } from 'lucide-react';
 import axios from 'axios';
@@ -17,6 +17,21 @@ const PricingSection = () => {
     email: '',
   });
   const [error, setError] = useState('');
+  const sectionRef = useRef(null);
+
+  // Scroll to center of section when step changes
+  useEffect(() => {
+    if (step === 2 || step === 3) {
+      setTimeout(() => {
+        if (sectionRef.current) {
+          sectionRef.current.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'center' 
+          });
+        }
+      }, 100);
+    }
+  }, [step]);
 
   const countryCodes = [
     { code: '+47', country: 'Norge', flag: '🇳🇴' },
