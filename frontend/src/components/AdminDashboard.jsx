@@ -280,7 +280,11 @@ const AdminDashboard = () => {
                     </tr>
                   ) : (
                     filteredOwners.map((owner) => (
-                      <tr key={owner.id} className="hover:bg-gray-50">
+                      <tr 
+                        key={owner.id} 
+                        className="hover:bg-gray-50 cursor-pointer"
+                        onClick={() => setSelectedOwner(owner)}
+                      >
                         <td className="px-6 py-4 whitespace-nowrap">
                           <div className="flex items-center">
                             <div className="flex-shrink-0 h-10 w-10 bg-emerald-100 rounded-full flex items-center justify-center">
@@ -312,9 +316,20 @@ const AdminDashboard = () => {
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap">
                           {owner.onboarding_completed ? (
-                            <span className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-emerald-100 text-emerald-800">
-                              ✓ Fullført
-                            </span>
+                            <div className="flex items-center gap-2">
+                              <span className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-emerald-100 text-emerald-800">
+                                ✓ Fullført
+                              </span>
+                              <button
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  setSelectedOwner(owner);
+                                }}
+                                className="text-blue-600 hover:text-blue-800 text-xs font-medium"
+                              >
+                                Se detaljer →
+                              </button>
+                            </div>
                           ) : (
                             <span className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-orange-100 text-orange-800">
                               Venter
