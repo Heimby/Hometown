@@ -551,6 +551,13 @@ def run_all_tests():
     
     print()
     
+    # Test onboarding flow
+    print("Testing Onboarding Flow:")
+    print("-" * 25)
+    test_onboarding_flow()
+    
+    print()
+    
     return results.summary()
 
 if __name__ == "__main__":
