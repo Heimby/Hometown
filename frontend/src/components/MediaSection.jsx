@@ -48,7 +48,7 @@ const MediaSection = () => {
       url: 'https://www.tv2.no/nyheter/innenriks/her-far-du-ikke-lov-til-a-bo-om-sommeren/17777568/'
     },
     {
-      title: 'Startup-podden med Njål E. Liasson',
+      title: 'Startup-podden med Njål Eliasson',
       description: 'Spotify-podcast om grunnleggeren av DigiHome og hans reise i startup-verden.',
       image: 'https://customer-assets.emergentagent.com/job_property-onboard-1/artifacts/rcwr411d_image.png',
       source: 'Spotify',
@@ -56,9 +56,9 @@ const MediaSection = () => {
     },
     {
       title: 'Utleieaktører satser i Stavanger',
-      description: 'Råstavanger om hvordan DigiHome ekspanderer til nye markeder i Norge.',
+      description: 'RA Stavanger om hvordan DigiHome ekspanderer til nye markeder i Norge.',
       image: 'https://customer-assets.emergentagent.com/job_property-onboard-1/artifacts/qulqoemu_image.png',
-      source: 'Råstavanger',
+      source: 'RA Stavanger',
       url: 'https://www.rastavanger.no/utleieaktorer-satser-i-stavanger/s/5-165-48584'
     },
   ];
