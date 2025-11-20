@@ -648,9 +648,9 @@ const Step2 = ({ formData, updateFormData }) => {
 const Step3 = ({ formData, addRoom, removeRoom, addFurniture, removeFurniture, updateFurniture, toggleAmenity }) => {
   return (
     <div>
-      <div className="mb-6">
-        <h2 className="text-3xl font-medium mb-2">Detaljer om boligen</h2>
-        <p className="text-gray-500">Beskriv rommene og møblene i boligen.</p>
+      <div className="mb-4 sm:mb-6">
+        <h2 className="text-2xl sm:text-3xl font-medium mb-2">Detaljer om boligen</h2>
+        <p className="text-sm sm:text-base text-gray-500">Beskriv rommene og møblene i boligen.</p>
       </div>
 
       {/* Living Rooms */}
