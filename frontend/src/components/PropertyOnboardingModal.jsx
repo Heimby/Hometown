@@ -351,7 +351,7 @@ const PropertyOnboardingModal = ({ isOpen, onClose, propertyData }) => {
             {currentStep === 5 ? (
               <button
                 onClick={handleBack}
-                className="flex items-center gap-2 text-gray-500 hover:text-gray-700 transition-colors"
+                className="flex items-center gap-2 text-gray-500 hover:text-gray-700 transition-colors text-sm sm:text-base"
               >
                 <ChevronLeft className="w-4 h-4" />
                 Tilbake
