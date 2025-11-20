@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Users, Home, TrendingUp, Mail, Phone, MapPin, Calendar, ArrowLeft, Search, Filter } from 'lucide-react';
+import { Users, Home, TrendingUp, Mail, Phone, MapPin, Calendar, ArrowLeft, Search, Filter, X } from 'lucide-react';
 import axios from 'axios';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
