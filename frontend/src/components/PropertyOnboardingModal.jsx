@@ -989,9 +989,9 @@ const Step4 = ({ formData, toggleFacility, updateFormData }) => {
 const Step5 = ({ formData, updateFormData }) => {
   return (
     <div>
-      <div className="mb-6">
-        <h2 className="text-3xl font-medium mb-2">Presentasjon & Klargjøring</h2>
-        <p className="text-gray-500">Gjør boligen klar for markedet.</p>
+      <div className="mb-4 sm:mb-6">
+        <h2 className="text-2xl sm:text-3xl font-medium mb-2">Presentasjon & Klargjøring</h2>
+        <p className="text-sm sm:text-base text-gray-500">Gjør boligen klar for markedet.</p>
       </div>
 
       <div className="space-y-8">
