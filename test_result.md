@@ -200,13 +200,16 @@ frontend:
     implemented: true
     working: false
     file: "/app/frontend/src/components/PropertyOnboardingModal.jsx"
-    stuck_count: 1
+    stuck_count: 2
     priority: "high"
     needs_retesting: false
     status_history:
       - working: false
         agent: "testing"
         comment: "❌ CRITICAL MOBILE ONBOARDING ISSUE: Tested complete property onboarding flow on mobile (iPhone SE 375x667px). MAJOR ISSUE: Modal is stuck on Step 1 ('Bekreft adresse') and does not progress through the 5 steps despite clicking 'Neste' buttons. Step 1 elements work correctly (address field pre-filled with 'Mobiltest 123', city field shows 'Bergen', unit field accepts input, property type selection visible, 'Neste' button within viewport and clickable). However, modal never transitions to Step 2 (Velg utleiestrategi), Step 3 (Detaljer om boligen), Step 4 (Nøkkelfasiliteter), or Step 5 (Presentasjon & Klargjøring). This completely blocks mobile users from completing onboarding. Mobile responsive design works (no horizontal scrolling, modal fits viewport), but step progression logic is broken. URGENT: Fix step transition functionality in PropertyOnboardingModal.jsx."
+      - working: false
+        agent: "testing"
+        comment: "❌ RE-TESTED AFTER FRONTEND RESTART - ISSUE PERSISTS: Comprehensive mobile testing on iPhone SE (375x667px) confirms the critical step progression bug still exists. DETAILED FINDINGS: (1) Modal opens correctly when clicking 'Fullfør registrering' ✅ (2) Step 1 displays properly with 'Bekreft adresse' header and pre-filled address 'Testveien 999' ✅ (3) 'Neste' button is visible, enabled, and has onclick handler ✅ (4) CRITICAL FAILURE: Clicking 'Neste' button does NOT progress to Step 2 - step indicator remains 'Steg 1 av 5' and header stays 'Bekreft adresse' ❌ (5) React state (currentStep) is not updating despite handleNext function being called ❌ (6) No console errors detected, button is properly wired to handleNext function ❌ ROOT CAUSE: React state management issue in PropertyOnboardingModal.jsx - the setCurrentStep(currentStep + 1) call in handleNext function is not updating the component state. This completely blocks the 5-step onboarding flow on mobile devices. URGENT FIX REQUIRED: Debug React state updates in handleNext function."
   
   - task: "Global Presence Section Image Update"
     implemented: true
