@@ -230,8 +230,10 @@ metadata:
   run_ui: true
 
 test_plan:
-  current_focus: []
-  stuck_tasks: []
+  current_focus:
+    - "Property Onboarding Modal Mobile Flow"
+  stuck_tasks:
+    - "Property Onboarding Modal Mobile Flow"
   test_all: false
   test_priority: "high_first"
 
