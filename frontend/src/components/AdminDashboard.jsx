@@ -20,6 +20,19 @@ const AdminDashboard = () => {
     todayOwners: 0,
   });
 
+  const handleStatusChange = async (ownerId, newStatus) => {
+    try {
+      await axios.put(`${API_URL}/api/owners/${ownerId}/status`, { status: newStatus });
+      // Update local state
+      setOwners(owners.map(owner => 
+        owner.id === ownerId ? { ...owner, status: newStatus } : owner
+      ));
+    } catch (error) {
+      console.error('Failed to update status:', error);
+      alert('Kunne ikke oppdatere status');
+    }
+  };
+
   useEffect(() => {
     fetchData();
   }, []);
