@@ -182,7 +182,10 @@ const OwnerPortalDashboard = () => {
               className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-sm sm:text-base"
             />
           </div>
-          <button className="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-4 sm:px-6 py-3 rounded-lg font-medium transition-colors whitespace-nowrap text-sm sm:text-base">
+          <button 
+            onClick={handleFeatureClick}
+            className="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-4 sm:px-6 py-3 rounded-lg font-medium transition-colors whitespace-nowrap text-sm sm:text-base"
+          >
             <Plus size={20} />
             <span className="hidden sm:inline">Legg Til Ny Eiendom</span>
             <span className="sm:hidden">Legg Til</span>
