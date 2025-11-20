@@ -31,6 +31,13 @@ const PricingSection = () => {
     { code: '+358', country: 'Finland', flag: '🇫🇮' },
   ];
 
+  const handleAddressChange = (e) => {
+    setFormData({ ...formData, address: e.target.value });
+    if (e.target.value && !isExpanded) {
+      setIsExpanded(true);
+    }
+  };
+
   const handleChange = (field) => (e) => {
     setFormData({ ...formData, [field]: e.target.value });
   };
@@ -46,11 +53,25 @@ const PricingSection = () => {
         phone: `${countryCode} ${formData.phone}`,
         email: formData.email,
       };
+      
       await axios.post(`${API}/leads`, leadData);
       
-      // Create owner portal with temp password
+      // Go directly to creating owner portal
+      handleOwnerPortalCreation();
+    } catch (err) {
+      setError('Kunne ikke sende inn. Vennligst prøv igjen.');
+    }
+  };
+
+  const handleOwnerPortalCreation = async () => {
+    setStep(2); // Show loading
+    
+    try {
       const ownerData = {
-        ...leadData,
+        address: formData.address,
+        name: formData.name,
+        phone: `${countryCode} ${formData.phone}`,
+        email: formData.email,
         password: 'temp_password_' + Date.now(),
       };
       
@@ -62,25 +83,33 @@ const PricingSection = () => {
         return;
       }
       
-      if (response.data && response.data.id) {
-        localStorage.setItem('ownerProperty', JSON.stringify({
-          address: formData.address,
-          name: formData.name,
-          email: formData.email,
-          phone: `${countryCode} ${formData.phone}`,
-          ownerId: response.data.id,
-        }));
-        
-        // Redirect to owner portal
-        window.location.href = '/owner-portal';
+      if (!response.data || !response.data.id) {
+        throw new Error('Ugyldig svar fra serveren');
       }
+      
+      localStorage.setItem('ownerProperty', JSON.stringify({
+        address: formData.address,
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        ownerId: response.data.id,
+      }));
+      
+      setTimeout(() => {
+        setStep(3);
+      }, 1500);
     } catch (err) {
       if (err.response && err.response.status === 400) {
         window.location.href = '/login';
       } else {
-        setError('Noe gikk galt. Vennligst prøv igjen.');
+        setError(err.response?.data?.detail || err.message || 'Kunne ikke opprette eierportal. Vennligst prøv igjen.');
+        setStep(1);
       }
     }
+  };
+
+  const handleGoToPortal = () => {
+    window.location.href = '/owner-portal';
   };
 
   return (
