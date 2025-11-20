@@ -51,6 +51,9 @@ function HomePage() {
       {/* Media Section */}
       <MediaSection />
 
+      {/* Journey Banner */}
+      <JourneyBanner />
+
       {/* Footer */}
       <Footer />
     </>
