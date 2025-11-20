@@ -92,51 +92,51 @@ const OwnerPortalDashboard = () => {
           </button>
         </div>
 
-        <div className="grid grid-cols-4 gap-6 mb-8">
-          <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
-            <div className="flex items-center justify-between">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 mb-6 sm:mb-8">
+          <div className="bg-white rounded-xl p-4 sm:p-6 border border-gray-200 shadow-sm">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center sm:justify-between gap-3">
               <div>
-                <p className="text-gray-600 text-sm mb-1">Totalt Eiendommer</p>
-                <p className="text-4xl font-bold text-gray-900">1</p>
+                <p className="text-gray-600 text-xs sm:text-sm mb-1">Totalt Eiendommer</p>
+                <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">1</p>
               </div>
-              <div className="bg-emerald-100 p-3 rounded-lg">
-                <Home size={24} className="text-emerald-600" />
+              <div className="bg-emerald-100 p-2 sm:p-3 rounded-lg">
+                <Home size={20} className="text-emerald-600 sm:w-6 sm:h-6" />
               </div>
             </div>
           </div>
 
-          <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
-            <div className="flex items-center justify-between">
+          <div className="bg-white rounded-xl p-4 sm:p-6 border border-gray-200 shadow-sm">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center sm:justify-between gap-3">
               <div>
-                <p className="text-gray-600 text-sm mb-1">Aktive Annonser</p>
-                <p className="text-4xl font-bold text-gray-900">0</p>
+                <p className="text-gray-600 text-xs sm:text-sm mb-1">Aktive Annonser</p>
+                <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">0</p>
               </div>
-              <div className="bg-blue-100 p-3 rounded-lg">
-                <TrendingUp size={24} className="text-blue-600" />
+              <div className="bg-blue-100 p-2 sm:p-3 rounded-lg">
+                <TrendingUp size={20} className="text-blue-600 sm:w-6 sm:h-6" />
               </div>
             </div>
           </div>
 
-          <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
-            <div className="flex items-center justify-between">
+          <div className="bg-white rounded-xl p-4 sm:p-6 border border-gray-200 shadow-sm">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center sm:justify-between gap-3">
               <div>
-                <p className="text-gray-600 text-sm mb-1">Månedlige Inntekter</p>
-                <p className="text-4xl font-bold text-gray-900">0 kr</p>
+                <p className="text-gray-600 text-xs sm:text-sm mb-1">Månedlige Inntekter</p>
+                <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">0 kr</p>
               </div>
-              <div className="bg-yellow-100 p-3 rounded-lg">
-                <span className="text-2xl font-bold text-yellow-600">kr</span>
+              <div className="bg-yellow-100 p-2 sm:p-3 rounded-lg">
+                <span className="text-xl sm:text-2xl font-bold text-yellow-600">kr</span>
               </div>
             </div>
           </div>
 
-          <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
-            <div className="flex items-center justify-between">
+          <div className="bg-white rounded-xl p-4 sm:p-6 border border-gray-200 shadow-sm">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center sm:justify-between gap-3">
               <div>
-                <p className="text-gray-600 text-sm mb-1">Totalt Bookinger</p>
-                <p className="text-4xl font-bold text-gray-900">0</p>
+                <p className="text-gray-600 text-xs sm:text-sm mb-1">Totalt Bookinger</p>
+                <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">0</p>
               </div>
-              <div className="bg-purple-100 p-3 rounded-lg">
-                <Calendar size={24} className="text-purple-600" />
+              <div className="bg-purple-100 p-2 sm:p-3 rounded-lg">
+                <Calendar size={20} className="text-purple-600 sm:w-6 sm:h-6" />
               </div>
             </div>
           </div>
