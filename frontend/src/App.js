@@ -48,11 +48,11 @@ function HomePage() {
       {/* Pricing Section */}
       <PricingSection />
 
-      {/* Media Section */}
-      <MediaSection />
-
       {/* Journey Banner */}
       <JourneyBanner />
+
+      {/* Media Section */}
+      <MediaSection />
 
       {/* Footer */}
       <Footer />
