@@ -82,10 +82,16 @@ const ProcessTimelineSection = () => {
               Sett i gang raskt og enkelt
             </h2>
             <div className="flex items-center gap-4">
-              <button className="px-6 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-colors">
+              <button 
+                onClick={scrollToLeadGen}
+                className="px-6 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-colors"
+              >
                 Start
               </button>
-              <button className="flex items-center gap-2 text-gray-900 font-medium hover:opacity-70 transition-opacity">
+              <button 
+                onClick={scrollToPricing}
+                className="flex items-center gap-2 text-gray-900 font-medium hover:opacity-70 transition-opacity"
+              >
                 <span>Mer</span>
                 <ChevronRight className="w-4 h-4" />
               </button>
