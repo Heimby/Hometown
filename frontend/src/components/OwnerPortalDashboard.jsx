@@ -322,6 +322,85 @@ const OwnerPortalDashboard = () => {
           )}
         </div>
       </main>
+
+      {/* Verification in Progress Modal (after completing onboarding) */}
+      {showVerificationModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl p-8 max-w-lg w-full shadow-2xl animate-scale-in relative">
+            <button
+              onClick={() => setShowVerificationModal(false)}
+              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
+            >
+              <X className="w-5 h-5" />
+            </button>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <TrendingUp className="w-8 h-8 text-blue-600 animate-pulse" />
+              </div>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                Vi analyserer din eiendom
+              </h2>
+              <p className="text-gray-600 mb-4 leading-relaxed">
+                Vårt team holder på å verifisere detaljene du har lagt inn og analysere hva vi tror boligen din kan tjene.
+              </p>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Dette er en del av vår pre-launch-fase hvor vi kartlegger interessen for tjenesten i Norge. Du vil motta en e-post med et detaljert inntektsestimat innen <span className="font-semibold">24-48 timer</span>.
+              </p>
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+                <p className="text-sm text-blue-800">
+                  <strong>Hva skjer nå?</strong><br />
+                  • Vi verifiserer eiendommens detaljer<br />
+                  • Vi analyserer markedsdata i ditt område<br />
+                  • Vi beregner inntektspotensial basert på lignende boliger<br />
+                  • Du får en komplett rapport på e-post
+                </p>
+              </div>
+              <button
+                onClick={() => setShowVerificationModal(false)}
+                className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
+              >
+                Forstått
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Profile Verification Modal (for other features) */}
+      {showProfileVerificationModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl p-8 max-w-md w-full shadow-2xl animate-scale-in relative">
+            <button
+              onClick={() => setShowProfileVerificationModal(false)}
+              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
+            >
+              <X className="w-5 h-5" />
+            </button>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Settings className="w-8 h-8 text-orange-600 animate-spin" style={{ animationDuration: '3s' }} />
+              </div>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                Vi holder på å verifisere din profil
+              </h2>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Denne funksjonen vil bli tilgjengelig når verifiseringen av eiendommen din er fullført. Du vil motta en e-post når alt er klart!
+              </p>
+              <p className="text-sm text-gray-500 mb-6">
+                Dette er en del av vår pre-launch-fase. Vi sørger for at alt er satt opp riktig før du får tilgang til alle funksjoner.
+              </p>
+              <button
+                onClick={() => setShowProfileVerificationModal(false)}
+                className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
+              >
+                OK
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
