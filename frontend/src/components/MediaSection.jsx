@@ -8,35 +8,35 @@ const MediaSection = () => {
     {
       title: 'Ny norsk AI-aktør vil revolusjonere eiendom',
       description: 'DigiHome får oppmerksomhet i Estatenyheter for sin innovative tilnærming til eiendomsforvaltning med kunstig intelligens.',
-      image: 'https://customer-assets.emergentagent.com/job_homeeasy-app/artifacts/vh2we7fs_a_candid_lifestyle_image%20%281%29.jpeg',
+      image: 'https://customer-assets.emergentagent.com/job_property-onboard-1/artifacts/qcxh4qha_image.png',
       source: 'Estatenyheter',
       url: 'https://www.estatenyheter.no/bergen-vest/ny-norsk-ai-aktor-vil-revolusjonere-eiendom/479002'
     },
     {
       title: 'Fra storbank til startup',
       description: 'Shifter skriver om hvordan DigiHome skal bygge skalerbare selskaper i tungrodd bransje.',
-      image: 'https://customer-assets.emergentagent.com/job_homeeasy-app/artifacts/i4c1bl7s_a_candid_lifestyle_image.jpeg',
+      image: 'https://customer-assets.emergentagent.com/job_property-onboard-1/artifacts/li1mznsy_image.png',
       source: 'Shifter',
       url: 'https://www.shifter.no/nyheter/fra-storbank-til-startup-skal-bygge-skalerbare-selskaper-i-tungrodde-bransjer/413476'
     },
     {
       title: 'Njål (26) vil selge bilen din med hjelp av AI',
       description: 'Firdaposten om grunnleggeren bak DigiHome og hans visjon for AI i eiendomsbransjen.',
-      image: 'https://customer-assets.emergentagent.com/job_homeeasy-app/artifacts/lmyvu6xn_a_candid_lifestyle_image%20%282%29.jpeg',
+      image: 'https://customer-assets.emergentagent.com/job_property-onboard-1/artifacts/vtbnhq20_image.png',
       source: 'Firdaposten',
       url: 'https://www.firdaposten.no/njal-26-vil-selge-bilen-din-med-hjelp-av-ai/s/5-16-924719'
     },
     {
       title: 'Njål (25) er blitt stor på utleigeforvalting',
       description: 'Firdaposten skriver om vekstreisen til DigiHome og hvordan de revolusjonerer utleieforvaltning.',
-      image: 'https://customer-assets.emergentagent.com/job_homeeasy-app/artifacts/6z1bkvn0_a_candid_lifestyle_image%20%284%29.jpeg',
+      image: 'https://customer-assets.emergentagent.com/job_property-onboard-1/artifacts/yie0f2k1_image.png',
       source: 'Firdaposten',
       url: 'https://www.firdaposten.no/njal-25-fra-floro-er-blitt-stor-pa-utleigeforvalting-eg-jobbar-fulltid-pa-fritida/s/5-16-852639'
     },
     {
       title: 'Studenter må flytte ut om sommeren',
       description: 'NRK Vestland rapporterer om Airbnb-ifisering av utleiemarkedet og DigiHomes rolle.',
-      image: 'https://customer-assets.emergentagent.com/job_homeeasy-app/artifacts/jh9h3rva_a_candid_waist_up_image.jpeg',
+      image: 'https://customer-assets.emergentagent.com/job_property-onboard-1/artifacts/7kb7sk85_image.png',
       source: 'NRK Vestland',
       url: 'https://www.nrk.no/vestland/studenter-ma-flytte-ut-om-sommeren-_-advarer-mot-_airbnb-ifisering_-av-utleiemarkedet-1.17437819'
     },
