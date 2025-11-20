@@ -6,9 +6,8 @@ const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
 
 const LeadGenSection = () => {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(1); // 1: form, 2: loading, 3: success
   const [isExpanded, setIsExpanded] = useState(false);
-  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const [countryCode, setCountryCode] = useState('+47');
   const [formData, setFormData] = useState({
@@ -16,7 +15,6 @@ const LeadGenSection = () => {
     name: '',
     phone: '',
     email: '',
-    password: '',
   });
 
   const countryCodes = [
