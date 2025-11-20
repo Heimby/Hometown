@@ -12,6 +12,7 @@ const AdminDashboard = () => {
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState('leads'); // 'leads' or 'owners'
   const [searchTerm, setSearchTerm] = useState('');
+  const [selectedOwner, setSelectedOwner] = useState(null);
   const [stats, setStats] = useState({
     totalLeads: 0,
     totalOwners: 0,
