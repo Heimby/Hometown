@@ -267,12 +267,13 @@ const AdminDashboard = () => {
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Kontakt</th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Adresse</th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Dato</th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Onboarding</th>
                   </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
                   {filteredOwners.length === 0 ? (
                     <tr>
-                      <td colSpan="4" className="px-6 py-12 text-center text-gray-500">
+                      <td colSpan="5" className="px-6 py-12 text-center text-gray-500">
                         Ingen eierportaler funnet
                       </td>
                     </tr>
@@ -307,6 +308,17 @@ const AdminDashboard = () => {
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                           {formatDate(owner.created_at)}
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap">
+                          {owner.onboarding_completed ? (
+                            <span className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-emerald-100 text-emerald-800">
+                              ✓ Fullført
+                            </span>
+                          ) : (
+                            <span className="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-orange-100 text-orange-800">
+                              Venter
+                            </span>
+                          )}
                         </td>
                       </tr>
                     ))
