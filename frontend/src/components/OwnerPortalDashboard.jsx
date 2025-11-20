@@ -7,6 +7,8 @@ const OwnerPortalDashboard = () => {
   const [showWelcomeModal, setShowWelcomeModal] = useState(false);
   const [showOnboardingModal, setShowOnboardingModal] = useState(false);
   const [hasCompletedOnboarding, setHasCompletedOnboarding] = useState(false);
+  const [showVerificationModal, setShowVerificationModal] = useState(false);
+  const [showProfileVerificationModal, setShowProfileVerificationModal] = useState(false);
 
   useEffect(() => {
     const savedProperty = localStorage.getItem('ownerProperty');
