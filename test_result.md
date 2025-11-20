@@ -147,6 +147,18 @@ backend:
         agent: "testing"
         comment: "✅ COMPLETE ONBOARDING FLOW TESTING SUCCESSFUL: End-to-end onboarding flow working perfectly. Tests passed: (1) Owner creation with test data (email: test-onboarding@digihome.no, ID: b205c5c2-7d5c-4f50-88ff-552f9c51b8b7) (2) PUT /api/owners/{owner_id}/onboarding successfully saves complete 5-step onboarding data including address, city, unit, property_type, ownership_type, rental_strategy, rooms (living/bedroom/bathroom with furniture details), facilities, parking, photography, cleaning preferences (3) Owner marked as onboarding_completed: true (4) All onboarding data correctly stored and retrievable via GET /api/owners/{owner_id} (5) Admin dashboard GET /api/owner-portal/all correctly shows onboarding status. All data validation, persistence, and retrieval working correctly."
 
+  - task: "Owner authentication flow (registration and login)"
+    implemented: true
+    working: true
+    file: "/app/backend/routes/owners.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "✅ COMPLETE OWNER AUTHENTICATION FLOW TESTING SUCCESSFUL: All 3 test scenarios passed perfectly. (1) NEW USER REGISTRATION AND LOGIN: Created new owner via POST /api/owner-portal (email: uniquetestc38f77a7@test.com, ID: 4757b3c3-c75c-4c1e-821c-cc03c1e81258), verified response contains valid UUID id field, successfully logged in via POST /api/owners/login with same email, confirmed login returns same owner data with matching ID, verified password_hash not exposed in responses. (2) LOGIN WITH NON-EXISTENT EMAIL: Correctly returns 404 status with Norwegian error message 'Ingen eierportal funnet. Vennligst registrer deg først.' when attempting login with 'doesnotexist@test.com'. (3) DUPLICATE REGISTRATION PREVENTION: Correctly returns 400 status with error message 'Owner portal already exists for this email' when attempting to register with existing email. All security measures, data validation, and error handling working correctly. Created comprehensive test suite at /app/owner_auth_test.py for authentication flow testing."
+
   - task: "MongoDB connection and models"
     implemented: true
     working: true
