@@ -1,13 +1,71 @@
 import React, { useState } from 'react';
-import { X, Check } from 'lucide-react';
+import { X, Check, Plus } from 'lucide-react';
 
 const PropertyOnboardingModal = ({ isOpen, onClose, propertyData }) => {
   const [currentStep, setCurrentStep] = useState(1);
   const totalSteps = 5;
+  
+  // Form state
+  const [propertyType, setPropertyType] = useState('apartment'); // 'apartment' or 'house'
+  const [ownershipType, setOwnershipType] = useState('selveier'); // 'selveier' or 'borettslag'
+  const [rentalStrategy, setRentalStrategy] = useState('dynamic'); // 'short', 'long', 'dynamic'
+  const [facilities, setFacilities] = useState({
+    balcony: false,
+    dryer: false,
+    elevator: false,
+  });
+  const [parking, setParking] = useState('none'); // 'none', 'free', 'garage'
+  const [photography, setPhotography] = useState('');  // 'professional' or 'self'
+  const [cleaning, setCleaning] = useState(''); // 'self' or 'service'
+  
+  // Step 3: Rooms state
+  const [rooms, setRooms] = useState({
+    living: [{ id: 1, furniture: [{ type: 'sofabed', width: 140, seats: 3 }] }],
+    bedroom: [{ id: 1, furniture: [{ type: 'bed', width: 150 }] }],
+    bathroom: [{ id: 1, amenities: { shower: true, bathtub: false, toilet: true, sink: false, mirror: false, storage: false } }],
+  });
 
   if (!isOpen) return null;
 
   const progressPercent = (currentStep / totalSteps) * 100;
+  
+  const addRoom = (type) => {
+    const newId = rooms[type].length + 1;
+    let newRoom = { id: newId };
+    
+    if (type === 'bathroom') {
+      newRoom.amenities = { shower: true, bathtub: false, toilet: true, sink: false, mirror: false, storage: false };
+    } else {
+      newRoom.furniture = [];
+    }
+    
+    setRooms({ ...rooms, [type]: [...rooms[type], newRoom] });
+  };
+  
+  const removeRoom = (type, id) => {
+    setRooms({ ...rooms, [type]: rooms[type].filter(r => r.id !== id) });
+  };
+  
+  const addFurniture = (roomType, roomId, furnitureType) => {
+    const updatedRooms = { ...rooms };
+    const room = updatedRooms[roomType].find(r => r.id === roomId);
+    
+    let newFurniture = { type: furnitureType };
+    if (furnitureType === 'dining') newFurniture.seats = 4;
+    else if (furnitureType === 'sofabed') { newFurniture.width = 140; newFurniture.seats = 3; }
+    else if (furnitureType === 'sofa') newFurniture.seats = 3;
+    else if (furnitureType === 'bed') newFurniture.width = 150;
+    
+    room.furniture.push(newFurniture);
+    setRooms(updatedRooms);
+  };
+  
+  const removeFurniture = (roomType, roomId, furnitureIndex) => {
+    const updatedRooms = { ...rooms };
+    const room = updatedRooms[roomType].find(r => r.id === roomId);
+    room.furniture.splice(furnitureIndex, 1);
+    setRooms(updatedRooms);
+  };
 
   const handleNext = () => {
     if (currentStep < totalSteps) {
