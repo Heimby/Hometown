@@ -43,21 +43,21 @@ const MediaSection = () => {
     {
       title: 'Her får du ikke lov til å bo om sommeren',
       description: 'TV2 dekker hvordan korttidsutleie påvirker boligmarkedet i Norge.',
-      image: 'https://customer-assets.emergentagent.com/job_homeeasy-app/artifacts/eci7fzi0_a_candid_lifestyle_image%20%283%29.jpeg',
+      image: 'https://customer-assets.emergentagent.com/job_property-onboard-1/artifacts/92oj9f0r_image.png',
       source: 'TV2',
       url: 'https://www.tv2.no/nyheter/innenriks/her-far-du-ikke-lov-til-a-bo-om-sommeren/17777568/'
     },
     {
       title: 'Startup-podden med Njål E. Liasson',
       description: 'Spotify-podcast om grunnleggeren av DigiHome og hans reise i startup-verden.',
-      image: 'https://customer-assets.emergentagent.com/job_homeeasy-app/artifacts/vh2we7fs_a_candid_lifestyle_image%20%281%29.jpeg',
+      image: 'https://customer-assets.emergentagent.com/job_property-onboard-1/artifacts/rcwr411d_image.png',
       source: 'Spotify',
       url: 'https://open.spotify.com/episode/7GcqJMfBqogJvAZa4eRqUJ'
     },
     {
       title: 'Utleieaktører satser i Stavanger',
       description: 'Råstavanger om hvordan DigiHome ekspanderer til nye markeder i Norge.',
-      image: 'https://customer-assets.emergentagent.com/job_homeeasy-app/artifacts/i4c1bl7s_a_candid_lifestyle_image.jpeg',
+      image: 'https://customer-assets.emergentagent.com/job_property-onboard-1/artifacts/qulqoemu_image.png',
       source: 'Råstavanger',
       url: 'https://www.rastavanger.no/utleieaktorer-satser-i-stavanger/s/5-165-48584'
     },
