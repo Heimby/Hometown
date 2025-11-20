@@ -227,13 +227,23 @@ const OwnerPortalDashboard = () => {
 
           {propertyData ? (
             <div className="p-4 sm:p-6">
-              <div className="flex flex-col lg:flex-row items-start lg:items-center gap-4 lg:gap-6">
-                <div className="flex-shrink-0 w-full sm:w-auto">
+              <div 
+                onClick={handlePropertyClick}
+                className={`flex flex-col lg:flex-row items-start lg:items-center gap-4 lg:gap-6 cursor-pointer transition-all ${
+                  !hasCompletedOnboarding ? 'hover:bg-gray-50 rounded-xl p-4 -m-4 animate-pulse-slow' : ''
+                }`}
+              >
+                <div className="flex-shrink-0 w-full sm:w-auto relative">
                   <img
                     src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400&h=300&fit=crop"
                     alt="Eiendom"
                     className="w-full sm:w-32 h-48 sm:h-24 object-cover rounded-lg"
                   />
+                  {!hasCompletedOnboarding && (
+                    <div className="absolute -top-2 -right-2 w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center animate-bounce">
+                      <span className="text-white text-xs font-bold">!</span>
+                    </div>
+                  )}
                 </div>
 
                 <div className="flex-1 w-full">
@@ -265,8 +275,18 @@ const OwnerPortalDashboard = () => {
                     ● Kladd
                   </span>
 
-                  <button className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-medium transition-colors text-sm sm:text-base whitespace-nowrap">
-                    Sjekk Inntektspotensial
+                  <button 
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handlePropertyClick();
+                    }}
+                    className={`px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-medium transition-all text-sm sm:text-base whitespace-nowrap ${
+                      !hasCompletedOnboarding 
+                        ? 'bg-emerald-600 hover:bg-emerald-700 text-white animate-pulse-slow' 
+                        : 'bg-emerald-600 hover:bg-emerald-700 text-white'
+                    }`}
+                  >
+                    {!hasCompletedOnboarding ? 'Fullfør registrering' : 'Sjekk Inntektspotensial'}
                   </button>
                 </div>
               </div>
