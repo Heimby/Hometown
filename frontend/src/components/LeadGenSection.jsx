@@ -53,12 +53,14 @@ const LeadGenSection = () => {
         email: formData.email,
       };
       
-      await axios.post(`${API}/leads`, leadData);
+      const response = await axios.post(`${API}/leads`, leadData);
       
       // Go directly to creating owner portal (skip password step)
       handleOwnerPortalCreation();
     } catch (err) {
-      setError('Kunne ikke sende inn. Vennligst prøv igjen.');
+      console.error('Lead submission error:', err);
+      const errorMessage = err.response?.data?.detail || err.message || 'Kunne ikke sende inn. Vennligst prøv igjen.';
+      setError(errorMessage);
     }
   };
 
