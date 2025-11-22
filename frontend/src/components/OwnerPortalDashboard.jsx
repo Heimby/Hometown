@@ -245,6 +245,9 @@ const OwnerPortalDashboard = () => {
           </div>
         </div>
 
+        {/* Properties Section Title - Mobile only */}
+        <h2 className="text-2xl font-bold text-gray-900 mb-4 lg:hidden">Mine Eiendommer</h2>
+
         <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
           <div className="hidden lg:grid grid-cols-12 gap-4 px-6 py-4 border-b border-gray-200 text-sm font-medium text-gray-600 uppercase tracking-wide">
             <div className="col-span-6">Eiendom</div>
