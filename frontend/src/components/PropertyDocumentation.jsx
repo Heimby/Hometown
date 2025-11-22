@@ -507,8 +507,8 @@ const PropertyDocumentation = () => {
 
         {/* Content */}
         {activeTab === 'overview' && propertyData && (
-          <div className="max-w-4xl">
-            <div className="bg-white rounded-xl p-8 border border-gray-200 shadow-sm">
+          <div className="w-full max-w-4xl">
+            <div className="bg-white rounded-xl p-4 sm:p-6 md:p-8 border border-gray-200 shadow-sm">
               <div className="flex justify-between items-center mb-6">
                 <h2 className="text-2xl font-bold">Eiendomsinformasjon</h2>
                 {!editingOverview ? (
