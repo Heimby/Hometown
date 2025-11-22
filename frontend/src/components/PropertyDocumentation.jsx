@@ -565,7 +565,7 @@ const PropertyDocumentation = () => {
               {propertyData.onboarding_data && (
                 <div className="mb-8">
                   <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">Eiendomsdetaljer</h3>
-                  <div className="grid grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <p className="text-sm text-gray-600 mb-1">Type eiendom</p>
                       <p className="font-semibold capitalize">{propertyData.onboarding_data.property_type === 'apartment' ? 'Leilighet' : 'Hus'}</p>
