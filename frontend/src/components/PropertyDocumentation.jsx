@@ -500,6 +500,43 @@ const PropertyDocumentation = () => {
                 </div>
               </div>
 
+              {/* Onboarding Data */}
+              {propertyData.onboarding_data && (
+                <div className="mb-8">
+                  <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">Eiendomsdetaljer</h3>
+                  <div className="grid grid-cols-2 gap-6">
+                    <div>
+                      <p className="text-sm text-gray-600 mb-1">Type eiendom</p>
+                      <p className="font-semibold capitalize">{propertyData.onboarding_data.property_type === 'apartment' ? 'Leilighet' : 'Hus'}</p>
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-600 mb-1">Eierform</p>
+                      <p className="font-semibold capitalize">{propertyData.onboarding_data.ownership_type}</p>
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-600 mb-1">Utleiestrategi</p>
+                      <p className="font-semibold">{propertyData.onboarding_data.rental_strategy === 'short' ? 'Korttidsutleie' : propertyData.onboarding_data.rental_strategy === 'long' ? 'Langtidsutleie' : 'Dynamisk'}</p>
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-600 mb-1">Parkering</p>
+                      <p className="font-semibold capitalize">{propertyData.onboarding_data.parking === 'none' ? 'Ingen' : propertyData.onboarding_data.parking === 'free' ? 'Gratis' : 'Garasje'}</p>
+                    </div>
+                    {propertyData.onboarding_data.rooms && (
+                      <>
+                        <div>
+                          <p className="text-sm text-gray-600 mb-1">Soverom</p>
+                          <p className="font-semibold">{propertyData.onboarding_data.rooms.bedroom?.length || 0} stk</p>
+                        </div>
+                        <div>
+                          <p className="text-sm text-gray-600 mb-1">Bad</p>
+                          <p className="font-semibold">{propertyData.onboarding_data.rooms.bathroom?.length || 0} stk</p>
+                        </div>
+                      </>
+                    )}
+                  </div>
+                </div>
+              )}
+
               {/* WiFi Info */}
               <div className="mb-8">
                 <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">WiFi-informasjon</h3>
