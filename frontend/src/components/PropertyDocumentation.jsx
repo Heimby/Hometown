@@ -440,6 +440,7 @@ const PropertyDocumentation = () => {
                 case 'electronics': return 'Elektronikk & Hvitevarer';
                 case 'furniture': return 'Møbler & Utstyr';
                 case 'instructions': return 'Instruksjoner & Manualer';
+                case 'floor-plan': return 'Planløsning';
                 case '3d-map': return '3D Romkart';
                 case 'database': return 'Objektdatabase';
                 default: return 'Oversikt';
@@ -450,11 +451,12 @@ const PropertyDocumentation = () => {
             {(() => {
               switch(activeTab) {
                 case 'overview': return 'All informasjon om eiendommen';
-                case 'access': return 'Administrer adgangskoder, nøkler og låsesystemer';
+                case 'access': return 'Komplett dokumentasjon av innlåsingsmetoder og navigasjon';
                 case 'security': return 'Klikk på et system for å legge til informasjon';
                 case 'electronics': return 'Oversikt over elektroniske enheter og hvitevarer';
                 case 'furniture': return 'Inventar og utstyr i eiendommen';
                 case 'instructions': return 'Brukermanualer og instruksjoner';
+                case 'floor-plan': return 'Last opp planløsning og legg til kommentarer';
                 case '3d-map': return 'Interaktivt 3D-kart over eiendommen';
                 case 'database': return 'Søkbar database over alle objekter';
                 default: return 'All informasjon om eiendommen';
