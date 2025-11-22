@@ -235,13 +235,13 @@ const FurnitureEquipmentTab = ({ ownerId }) => {
       {/* Add Item Section */}
       <div
         onClick={handleAddItem}
-        className="bg-white border-2 border-dashed border-gray-300 rounded-xl p-6 mb-8 text-center cursor-pointer hover:border-blue-500 hover:bg-gray-50 transition-all"
+        className="bg-white border-2 border-dashed border-gray-300 rounded-xl p-4 sm:p-6 mb-6 sm:mb-8 text-center cursor-pointer hover:border-blue-500 hover:bg-gray-50 transition-all max-w-full"
       >
-        <h3 className="font-semibold text-gray-900 mb-2 flex items-center justify-center gap-2">
-          <Plus className="w-5 h-5" />
+        <h3 className="font-semibold text-gray-900 mb-2 flex items-center justify-center gap-2 text-sm sm:text-base">
+          <Plus className="w-4 h-4 sm:w-5 sm:h-5" />
           Legg til nytt inventar
         </h3>
-        <p className="text-sm text-gray-600">
+        <p className="text-xs sm:text-sm text-gray-600">
           Klikk her for å legge til ekstra møbler eller utstyr som ikke er på listen
         </p>
       </div>
