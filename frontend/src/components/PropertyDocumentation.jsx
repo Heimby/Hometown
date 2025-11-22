@@ -65,11 +65,16 @@ const PropertyDocumentation = () => {
     <div className="min-h-screen bg-gray-50 flex">
       {/* Sidebar */}
       <aside className="w-64 bg-white border-r border-gray-200 fixed h-screen">
-        <div className="p-6 border-b border-gray-200 flex items-center gap-3">
-          <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-            <Activity className="w-6 h-6 text-white" />
+        <div className="p-6 border-b border-gray-200">
+          <div className="flex items-center gap-3 mb-2">
+            <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+              <Activity className="w-6 h-6 text-white" />
+            </div>
+            <span className="font-bold text-xl">DigiHome</span>
           </div>
-          <span className="font-bold text-xl">Property Pulse</span>
+          <p className="text-sm text-gray-600 mt-2">
+            {propertyData?.address || 'Laster adresse...'}
+          </p>
         </div>
 
         <nav className="p-4">
