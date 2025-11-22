@@ -640,6 +640,109 @@ const PropertyDocumentation = () => {
             )}
           </div>
         )}
+
+        {/* Access & Locks Tab */}
+        {activeTab === 'access' && (
+          <div className="max-w-4xl">
+            <div className="bg-white rounded-xl p-8 border border-gray-200 shadow-sm">
+              <div className="text-center py-12">
+                <svg className="w-16 h-16 text-gray-400 mx-auto mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path>
+                </svg>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Adgang & Låser</h3>
+                <p className="text-gray-600 mb-4">Denne seksjonen er under utvikling</p>
+                <p className="text-sm text-gray-500">Her vil du kunne administrere adgangskoder, nøkler og låsesystemer</p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Electronics & Appliances Tab */}
+        {activeTab === 'electronics' && (
+          <div className="max-w-4xl">
+            <div className="bg-white rounded-xl p-8 border border-gray-200 shadow-sm">
+              <div className="text-center py-12">
+                <svg className="w-16 h-16 text-gray-400 mx-auto mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                  <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                  <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                  <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                </svg>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Elektronikk & Hvitevarer</h3>
+                <p className="text-gray-600 mb-4">Denne seksjonen er under utvikling</p>
+                <p className="text-sm text-gray-500">Her vil du kunne administrere elektroniske enheter og hvitevarer</p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Furniture & Equipment Tab */}
+        {activeTab === 'furniture' && (
+          <div className="max-w-4xl">
+            <div className="bg-white rounded-xl p-8 border border-gray-200 shadow-sm">
+              <div className="text-center py-12">
+                <svg className="w-16 h-16 text-gray-400 mx-auto mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M20 9v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9"/><path d="M9 22V12h6v10M2 10.6L12 2l10 8.6"/>
+                </svg>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Møbler & Utstyr</h3>
+                <p className="text-gray-600 mb-4">Denne seksjonen er under utvikling</p>
+                <p className="text-sm text-gray-500">Her vil du kunne administrere inventar og utstyr i eiendommen</p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Instructions & Manuals Tab */}
+        {activeTab === 'instructions' && (
+          <div className="max-w-4xl">
+            <div className="bg-white rounded-xl p-8 border border-gray-200 shadow-sm">
+              <div className="text-center py-12">
+                <svg className="w-16 h-16 text-gray-400 mx-auto mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Instruksjoner & Manualer</h3>
+                <p className="text-gray-600 mb-4">Denne seksjonen er under utvikling</p>
+                <p className="text-sm text-gray-500">Her vil du kunne finne brukermanualer og instruksjoner</p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* 3D Map Tab */}
+        {activeTab === '3d-map' && (
+          <div className="max-w-4xl">
+            <div className="bg-white rounded-xl p-8 border border-gray-200 shadow-sm">
+              <div className="text-center py-12">
+                <svg className="w-16 h-16 text-gray-400 mx-auto mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon>
+                </svg>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">3D Romkart</h3>
+                <p className="text-gray-600 mb-4">Denne seksjonen er under utvikling</p>
+                <p className="text-sm text-gray-500">Her vil du kunne utforske et interaktivt 3D-kart over eiendommen</p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Database Tab */}
+        {activeTab === 'database' && (
+          <div className="max-w-4xl">
+            <div className="bg-white rounded-xl p-8 border border-gray-200 shadow-sm">
+              <div className="text-center py-12">
+                <svg className="w-16 h-16 text-gray-400 mx-auto mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                </svg>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Objektdatabase</h3>
+                <p className="text-gray-600 mb-4">Denne seksjonen er under utvikling</p>
+                <p className="text-sm text-gray-500">Her vil du kunne søke i en database over alle objekter</p>
+              </div>
+            </div>
+          </div>
+        )}
       </main>
 
       {/* System Detail Modal */}
