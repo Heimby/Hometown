@@ -10,6 +10,16 @@ body {
         sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body, #root {
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 code {
