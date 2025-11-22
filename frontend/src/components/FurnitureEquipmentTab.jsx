@@ -174,10 +174,10 @@ const FurnitureEquipmentTab = ({ ownerId }) => {
       </div>
 
       {/* Progress Section */}
-      <div className="bg-white rounded-xl p-6 border border-gray-200 mb-8">
+      <div className="bg-white rounded-xl p-4 sm:p-6 border border-gray-200 mb-6 sm:mb-8 max-w-full">
         <div className="flex justify-between items-center mb-3">
-          <h3 className="font-bold text-lg">Fremdrift sjekkliste</h3>
-          <span className="text-3xl font-bold text-green-600">{progress.percentage}%</span>
+          <h3 className="font-bold text-base sm:text-lg">Fremdrift sjekkliste</h3>
+          <span className="text-2xl sm:text-3xl font-bold text-green-600">{progress.percentage}%</span>
         </div>
         <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden mb-4">
           <div
