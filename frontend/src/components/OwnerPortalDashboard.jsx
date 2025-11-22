@@ -38,8 +38,8 @@ const OwnerPortalDashboard = () => {
     if (!hasCompletedOnboarding) {
       setShowOnboardingModal(true);
     } else {
-      // Navigate to documentation platform for completed onboarding
-      navigate('/owner-portal/documentation');
+      // Show verification modal with option to go to documentation
+      setShowVerificationModal(true);
     }
   };
 
