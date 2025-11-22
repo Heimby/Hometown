@@ -102,9 +102,24 @@ const PropertyDocumentation = () => {
     if (savedProperty) {
       const data = JSON.parse(savedProperty);
       setPropertyData(data);
+      fetchOwnerData(data.id);
       initializeStandardSystems(data.id);
     }
   }, []);
+
+  const fetchOwnerData = async (ownerId) => {
+    try {
+      const response = await axios.get(`${API}/owners/${ownerId}`);
+      if (response.data.onboarding_data) {
+        setPropertyData(prev => ({
+          ...prev,
+          onboarding_data: response.data.onboarding_data
+        }));
+      }
+    } catch (error) {
+      console.error('Failed to fetch owner data:', error);
+    }
+  };
 
   const initializeStandardSystems = async (ownerId) => {
     try {
