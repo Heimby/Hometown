@@ -144,23 +144,7 @@ const PropertyView = () => {
         </div>
       </nav>
 
-      {/* Mobile Header */}
-      <div className="lg:hidden bg-white border-b border-gray-200 px-4 py-3 fixed top-0 left-0 right-0 z-30">
-        <button
-          onClick={() => navigate('/owner-portal')}
-          className="flex items-center gap-2 text-gray-600"
-        >
-          <ArrowLeft className="w-5 h-5" />
-          <span className="font-medium">Tilbake</span>
-        </button>
-        {propertyData && (
-          <div className="mt-2">
-            <h2 className="font-semibold text-gray-900 text-sm">
-              {propertyData.address?.split(',')[0] || 'Min Eiendom'}
-            </h2>
-          </div>
-        )}
-      </div>
+      {/* Mobile Header - REMOVED to avoid conflict with PropertyDocumentation's own header */}
 
       {/* Main Content */}
       <main className="pt-0 mt-20 lg:mt-20">
