@@ -634,9 +634,9 @@ const PropertyDocumentation = () => {
               </div>
 
               {/* Bank Info */}
-              <div className="mb-8">
-                <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">Bankinformasjon</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="mb-6 sm:mb-8">
+                <h3 className="text-xs sm:text-sm font-bold text-gray-500 uppercase tracking-wider mb-3 sm:mb-4">Bankinformasjon</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                   <div>
                     <label className="text-sm text-gray-600 mb-1 block">Kontonummer for utbetaling</label>
                     {editingOverview ? (
