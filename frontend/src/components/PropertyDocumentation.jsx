@@ -293,7 +293,10 @@ const PropertyDocumentation = () => {
             </li>
             <li>
               <button
-                onClick={() => setActiveTab('overview')}
+                onClick={() => {
+                  setActiveTab('overview');
+                  setSidebarOpen(false);
+                }}
                 className={`w-full flex items-center gap-3 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                   activeTab === 'overview'
                     ? 'bg-blue-50 text-blue-600'
