@@ -80,6 +80,11 @@ api_router.include_router(documentation_router, tags=["documentation"])
 # Include the router in the main app
 app.include_router(api_router)
 
+# Mount uploads directory for static file serving
+UPLOAD_DIR = Path("/app/uploads")
+UPLOAD_DIR.mkdir(exist_ok=True)
+app.mount("/uploads", StaticFiles(directory=str(UPLOAD_DIR)), name="uploads")
+
 app.add_middleware(
     CORSMiddleware,
     allow_credentials=True,
