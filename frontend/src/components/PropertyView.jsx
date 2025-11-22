@@ -95,7 +95,7 @@ const PropertyView = () => {
   return (
     <div className="min-h-screen bg-gray-50 pb-20 lg:pb-0">
       {/* Top Navigation - Desktop */}
-      <nav className="hidden lg:flex items-center justify-between bg-white border-b border-gray-200 px-8 py-4">
+      <nav className="hidden lg:flex items-center justify-between bg-white border-b border-gray-200 px-8 py-4 fixed top-0 left-0 right-0 z-40">
         <div className="flex items-center gap-6">
           <button
             onClick={() => navigate('/owner-portal')}
