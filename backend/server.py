@@ -78,6 +78,8 @@ async def get_status_checks():
 api_router.include_router(leads_router, tags=["leads"])
 api_router.include_router(owners_router, tags=["owners"])
 api_router.include_router(documentation_router, tags=["documentation"])
+api_router.include_router(access_locks_router, tags=["access-locks"])
+api_router.include_router(floor_plan_router, tags=["floor-plan"])
 
 # Include the router in the main app
 app.include_router(api_router)
