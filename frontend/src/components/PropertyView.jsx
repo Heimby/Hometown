@@ -163,7 +163,7 @@ const PropertyView = () => {
       </div>
 
       {/* Main Content */}
-      <main className="pt-0 lg:pt-0 mt-20 lg:mt-0">
+      <main className="pt-0 mt-20 lg:mt-20">
         {renderTabContent()}
       </main>
 
