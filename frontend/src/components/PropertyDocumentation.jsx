@@ -298,10 +298,7 @@ const PropertyDocumentation = () => {
             </li>
             <li>
               <button
-                onClick={() => {
-                  setActiveTab('overview');
-                  setSidebarOpen(false);
-                }}
+                onClick={() => handleTabChange('overview')}
                 className={`w-full flex items-center gap-3 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                   activeTab === 'overview'
                     ? 'bg-blue-50 text-blue-600'
@@ -324,7 +321,7 @@ const PropertyDocumentation = () => {
             </li>
             <li>
               <button
-                onClick={() => setActiveTab('access')}
+                onClick={() => handleTabChange('access')}
                 className={`w-full flex items-center gap-3 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                   activeTab === 'access'
                     ? 'bg-blue-50 text-blue-600'
@@ -339,7 +336,7 @@ const PropertyDocumentation = () => {
             </li>
             <li>
               <button
-                onClick={() => setActiveTab('security')}
+                onClick={() => handleTabChange('security')}
                 className={`w-full flex items-center gap-3 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                   activeTab === 'security'
                     ? 'bg-blue-50 text-blue-600'
@@ -352,7 +349,7 @@ const PropertyDocumentation = () => {
             </li>
             <li>
               <button
-                onClick={() => setActiveTab('electronics')}
+                onClick={() => handleTabChange('electronics')}
                 className={`w-full flex items-center gap-3 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                   activeTab === 'electronics'
                     ? 'bg-blue-50 text-blue-600'
@@ -375,7 +372,7 @@ const PropertyDocumentation = () => {
             </li>
             <li>
               <button
-                onClick={() => setActiveTab('furniture')}
+                onClick={() => handleTabChange('furniture')}
                 className={`w-full flex items-center gap-3 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                   activeTab === 'furniture'
                     ? 'bg-blue-50 text-blue-600'
@@ -390,7 +387,7 @@ const PropertyDocumentation = () => {
             </li>
             <li>
               <button
-                onClick={() => setActiveTab('instructions')}
+                onClick={() => handleTabChange('instructions')}
                 className={`w-full flex items-center gap-3 px-4 py-2 rounded-lg text-sm font-medium transition-colors text-left ${
                   activeTab === 'instructions'
                     ? 'bg-blue-50 text-blue-600'
@@ -412,7 +409,7 @@ const PropertyDocumentation = () => {
             </li>
             <li>
               <button
-                onClick={() => setActiveTab('floor-plan')}
+                onClick={() => handleTabChange('floor-plan')}
                 className={`w-full flex items-center gap-3 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                   activeTab === 'floor-plan'
                     ? 'bg-blue-50 text-blue-600'
@@ -429,7 +426,7 @@ const PropertyDocumentation = () => {
             </li>
             <li>
               <button
-                onClick={() => setActiveTab('3d-map')}
+                onClick={() => handleTabChange('3d-map')}
                 className={`w-full flex items-center gap-3 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                   activeTab === '3d-map'
                     ? 'bg-blue-50 text-blue-600'
@@ -444,7 +441,7 @@ const PropertyDocumentation = () => {
             </li>
             <li>
               <button
-                onClick={() => setActiveTab('database')}
+                onClick={() => handleTabChange('database')}
                 className={`w-full flex items-center gap-3 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                   activeTab === 'database'
                     ? 'bg-blue-50 text-blue-600'
