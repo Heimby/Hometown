@@ -461,7 +461,7 @@ const PropertyDocumentation = () => {
       </aside>
 
       {/* Main Content */}
-      <main className="ml-64 flex-1 p-8">
+      <main className="flex-1 p-4 lg:p-8 lg:ml-64 pt-16 lg:pt-8">
         {/* Header */}
         <div className="mb-8">
           <button
