@@ -203,11 +203,11 @@ const FurnitureEquipmentTab = ({ ownerId }) => {
       </div>
 
       {/* Comments Section */}
-      <div className="bg-white rounded-xl p-6 border border-gray-200 mb-8">
+      <div className="bg-white rounded-xl p-4 sm:p-6 border border-gray-200 mb-6 sm:mb-8 max-w-full">
         <div className="flex justify-between items-center mb-4">
-          <h3 className="font-bold text-lg flex items-center gap-2">
-            <MessageSquare className="w-5 h-5" />
-            Generelle kommentarer og avvik
+          <h3 className="font-bold text-base sm:text-lg flex items-center gap-2">
+            <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5" />
+            <span className="text-sm sm:text-base">Generelle kommentarer og avvik</span>
           </h3>
           <button
             onClick={handleSaveComments}
