@@ -238,8 +238,41 @@ const PropertyDocumentation = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 flex">
+      {/* Mobile Overlay */}
+      {sidebarOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
+          onClick={() => setSidebarOpen(false)}
+        />
+      )}
+
+      {/* Mobile Menu Toggle Button */}
+      <button
+        onClick={() => setSidebarOpen(!sidebarOpen)}
+        className="fixed top-4 left-4 z-50 lg:hidden bg-white p-2 rounded-lg shadow-lg border border-gray-200"
+      >
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          {sidebarOpen ? (
+            <>
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </>
+          ) : (
+            <>
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </>
+          )}
+        </svg>
+      </button>
+
       {/* Sidebar */}
-      <aside className="w-64 bg-white border-r border-gray-200 fixed h-screen overflow-y-auto">
+      <aside className={`
+        w-64 bg-white border-r border-gray-200 fixed h-screen overflow-y-auto z-50 transition-transform duration-300
+        ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}
+        lg:translate-x-0
+      `}>
         <div className="p-6 border-b border-gray-200">
           <div className="flex items-center gap-3 mb-2">
             <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
