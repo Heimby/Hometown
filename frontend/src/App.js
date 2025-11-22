@@ -74,6 +74,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/owner-portal" element={<OwnerPortalDashboard />} />
+          <Route path="/owner-portal/property" element={<PropertyView />} />
           <Route path="/owner-portal/documentation" element={<PropertyDocumentation />} />
           <Route path="/investors" element={<InvestorPage />} />
           <Route path="/login" element={<LoginPage />} />
