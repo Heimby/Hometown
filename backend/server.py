@@ -81,6 +81,7 @@ api_router.include_router(owners_router, tags=["owners"])
 api_router.include_router(documentation_router, tags=["documentation"])
 api_router.include_router(access_locks_router, tags=["access-locks"])
 api_router.include_router(floor_plan_router, tags=["floor-plan"])
+api_router.include_router(furniture_equipment_router, tags=["furniture-equipment"])
 
 # Include the router in the main app
 app.include_router(api_router)
