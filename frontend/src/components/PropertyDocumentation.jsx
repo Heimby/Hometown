@@ -710,6 +710,11 @@ const PropertyDocumentation = () => {
           <FloorPlanTab ownerId={propertyData.id} />
         )}
 
+        {/* Furniture & Equipment Tab */}
+        {activeTab === 'furniture' && propertyData && (
+          <FurnitureEquipmentTab ownerId={propertyData.id} />
+        )}
+
         {/* Electronics & Appliances Tab */}
         {activeTab === 'electronics' && (
           <div className="max-w-4xl">
