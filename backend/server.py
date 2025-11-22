@@ -15,6 +15,8 @@ from datetime import datetime, timezone
 from routes.leads import router as leads_router
 from routes.owners import router as owners_router
 from routes.documentation import router as documentation_router
+from routes.access_locks import router as access_locks_router
+from routes.floor_plan import router as floor_plan_router
 
 
 ROOT_DIR = Path(__file__).parent
