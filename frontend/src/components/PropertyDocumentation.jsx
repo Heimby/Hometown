@@ -91,6 +91,7 @@ const PropertyDocumentation = () => {
   const [loading, setLoading] = useState(true);
   const [editMode, setEditMode] = useState(false);
   const [editData, setEditData] = useState({});
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   // Overview data state
   const [overviewData, setOverviewData] = useState({
