@@ -260,52 +260,54 @@ const FurnitureEquipmentTab = ({ ownerId }) => {
               <p className="text-sm text-gray-600">{getCategoryDescription(category)}</p>
             </div>
             
-            <table className="w-full">
-              <thead className="bg-gray-50 border-b-2 border-gray-200">
-                <tr>
-                  <th className="w-16 px-5 py-4 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">
-                    ✓
-                  </th>
-                  <th className="px-5 py-4 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">
-                    Inventar
-                  </th>
-                  <th className="w-48 px-5 py-4 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">
-                    Antall
-                  </th>
-                  <th className="px-5 py-4 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">
-                    Kommentar
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {items.map((item, index) => (
-                  <tr
-                    key={item.id}
-                    className={`border-b border-gray-200 hover:bg-gray-50 transition-colors ${
-                      index === items.length - 1 ? 'border-b-0' : ''
-                    }`}
-                  >
-                    <td className="px-5 py-4 text-center">
-                      <input
-                        type="checkbox"
-                        checked={item.checked}
-                        onChange={() => handleCheckboxChange(item.id)}
-                        className="w-5 h-5 cursor-pointer accent-green-600"
-                      />
-                    </td>
-                    <td className="px-5 py-4 font-medium text-gray-900">
-                      {item.name}
-                    </td>
-                    <td className="px-5 py-4 font-semibold text-gray-900">
-                      {item.quantity}
-                    </td>
-                    <td className="px-5 py-4 text-sm text-gray-600">
-                      {item.comment || '—'}
-                    </td>
+            <div className="overflow-x-auto">
+              <table className="w-full min-w-full">
+                <thead className="bg-gray-50 border-b-2 border-gray-200">
+                  <tr>
+                    <th className="w-12 px-2 sm:px-5 py-3 sm:py-4 text-left text-xs font-bold text-gray-600 uppercase">
+                      ✓
+                    </th>
+                    <th className="px-2 sm:px-5 py-3 sm:py-4 text-left text-xs font-bold text-gray-600 uppercase">
+                      Inventar
+                    </th>
+                    <th className="px-2 sm:px-5 py-3 sm:py-4 text-left text-xs font-bold text-gray-600 uppercase whitespace-nowrap">
+                      Antall
+                    </th>
+                    <th className="hidden sm:table-cell px-5 py-4 text-left text-xs font-bold text-gray-600 uppercase">
+                      Kommentar
+                    </th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {items.map((item, index) => (
+                    <tr
+                      key={item.id}
+                      className={`border-b border-gray-200 hover:bg-gray-50 transition-colors ${
+                        index === items.length - 1 ? 'border-b-0' : ''
+                      }`}
+                    >
+                      <td className="px-2 sm:px-5 py-3 sm:py-4 text-center">
+                        <input
+                          type="checkbox"
+                          checked={item.checked}
+                          onChange={() => handleCheckboxChange(item.id)}
+                          className="w-5 h-5 cursor-pointer accent-green-600"
+                        />
+                      </td>
+                      <td className="px-2 sm:px-5 py-3 sm:py-4 font-medium text-gray-900 text-sm sm:text-base">
+                        {item.name}
+                      </td>
+                      <td className="px-2 sm:px-5 py-3 sm:py-4 font-semibold text-gray-900 text-sm sm:text-base whitespace-nowrap">
+                        {item.quantity}
+                      </td>
+                      <td className="hidden sm:table-cell px-5 py-4 text-sm text-gray-600">
+                        {item.comment || '—'}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         );
       })}
