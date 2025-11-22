@@ -601,7 +601,7 @@ const PropertyDocumentation = () => {
               {/* WiFi Info */}
               <div className="mb-8">
                 <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">WiFi-informasjon</h3>
-                <div className="grid grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="text-sm text-gray-600 mb-1 block">WiFi-navn</label>
                     {editingOverview ? (
