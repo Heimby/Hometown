@@ -250,16 +250,20 @@ const PropertyDocumentation = () => {
 
         <nav className="p-4">
           <ul className="space-y-1">
+            {/* DASHBOARD */}
+            <li className="px-2 py-2">
+              <p className="text-xs font-bold text-gray-400 uppercase tracking-wider">Dashboard</p>
+            </li>
             <li>
               <button
                 onClick={() => setActiveTab('overview')}
-                className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg font-medium transition-colors ${
+                className={`w-full flex items-center gap-3 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                   activeTab === 'overview'
                     ? 'bg-blue-50 text-blue-600'
                     : 'text-gray-600 hover:bg-gray-50'
                 }`}
               >
-                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <rect x="3" y="3" width="7" height="7"></rect>
                   <rect x="14" y="3" width="7" height="7"></rect>
                   <rect x="14" y="14" width="7" height="7"></rect>
@@ -268,17 +272,129 @@ const PropertyDocumentation = () => {
                 Oversikt
               </button>
             </li>
+
+            {/* INFRASTRUKTUR */}
+            <li className="px-2 py-2 mt-4">
+              <p className="text-xs font-bold text-gray-400 uppercase tracking-wider">Infrastruktur</p>
+            </li>
+            <li>
+              <button
+                onClick={() => setActiveTab('access')}
+                className={`w-full flex items-center gap-3 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                  activeTab === 'access'
+                    ? 'bg-blue-50 text-blue-600'
+                    : 'text-gray-600 hover:bg-gray-50'
+                }`}
+              >
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path>
+                </svg>
+                Adgang & Låser
+              </button>
+            </li>
             <li>
               <button
                 onClick={() => setActiveTab('security')}
-                className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg font-medium transition-colors ${
+                className={`w-full flex items-center gap-3 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                   activeTab === 'security'
                     ? 'bg-blue-50 text-blue-600'
                     : 'text-gray-600 hover:bg-gray-50'
                 }`}
               >
-                <Shield className="w-5 h-5" />
-                Sikkerhet og Systemer
+                <Shield className="w-4 h-4" />
+                Sikkerhet & Systemer
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={() => setActiveTab('electronics')}
+                className={`w-full flex items-center gap-3 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                  activeTab === 'electronics'
+                    ? 'bg-blue-50 text-blue-600'
+                    : 'text-gray-600 hover:bg-gray-50'
+                }`}
+              >
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                  <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                  <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                  <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                </svg>
+                Elektronikk & Hvitevarer
+              </button>
+            </li>
+
+            {/* INVENTAR */}
+            <li className="px-2 py-2 mt-4">
+              <p className="text-xs font-bold text-gray-400 uppercase tracking-wider">Inventar</p>
+            </li>
+            <li>
+              <button
+                onClick={() => setActiveTab('furniture')}
+                className={`w-full flex items-center gap-3 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                  activeTab === 'furniture'
+                    ? 'bg-blue-50 text-blue-600'
+                    : 'text-gray-600 hover:bg-gray-50'
+                }`}
+              >
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M20 9v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9"/><path d="M9 22V12h6v10M2 10.6L12 2l10 8.6"/>
+                </svg>
+                Møbler & Utstyr
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={() => setActiveTab('instructions')}
+                className={`w-full flex items-center gap-3 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                  activeTab === 'instructions'
+                    ? 'bg-blue-50 text-blue-600'
+                    : 'text-gray-600 hover:bg-gray-50'
+                }`}
+              >
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                Instruksjoner & Manualer
+              </button>
+            </li>
+
+            {/* DIGITAL INTERFACE */}
+            <li className="px-2 py-2 mt-4">
+              <p className="text-xs font-bold text-gray-400 uppercase tracking-wider">Digital Interface</p>
+            </li>
+            <li>
+              <button
+                onClick={() => setActiveTab('3d-map')}
+                className={`w-full flex items-center gap-3 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                  activeTab === '3d-map'
+                    ? 'bg-blue-50 text-blue-600'
+                    : 'text-gray-600 hover:bg-gray-50'
+                }`}
+              >
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon>
+                </svg>
+                3D Romkart
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={() => setActiveTab('database')}
+                className={`w-full flex items-center gap-3 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                  activeTab === 'database'
+                    ? 'bg-blue-50 text-blue-600'
+                    : 'text-gray-600 hover:bg-gray-50'
+                }`}
+              >
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                </svg>
+                Objektdatabase
               </button>
             </li>
           </ul>
