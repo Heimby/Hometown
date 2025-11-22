@@ -236,6 +236,11 @@ const PropertyDocumentation = () => {
     return { iconBg: system.iconBg, iconColor: system.iconColor };
   };
 
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+    setSidebarOpen(false);
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 flex">
       {/* Mobile Overlay */}
