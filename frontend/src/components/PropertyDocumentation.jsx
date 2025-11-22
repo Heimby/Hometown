@@ -110,9 +110,11 @@ const PropertyDocumentation = () => {
     try {
       const response = await axios.get(`${API}/owners/${ownerId}/documentation/security-systems`);
       
-      // If no systems exist, create standard ones
-      if (response.data.length === 0) {
-        const standardSystemsData = STANDARD_SYSTEMS.map(sys => ({
+      // Check which standard systems are missing
+      const existingSystemNames = response.data.map(sys => sys.name);
+      const missingSystemsData = STANDARD_SYSTEMS
+        .filter(sys => !existingSystemNames.includes(sys.name))
+        .map(sys => ({
           name: sys.name,
           category: 'security_systems',
           location: '',
@@ -123,13 +125,14 @@ const PropertyDocumentation = () => {
           description: '',
           notes: ''
         }));
-        
-        // Create all standard systems
-        for (const system of standardSystemsData) {
+      
+      // Only create missing systems
+      if (missingSystemsData.length > 0) {
+        for (const system of missingSystemsData) {
           await axios.post(`${API}/owners/${ownerId}/documentation/security-systems`, system);
         }
         
-        // Fetch again to get the created systems
+        // Fetch again to get all systems including newly created ones
         const newResponse = await axios.get(`${API}/owners/${ownerId}/documentation/security-systems`);
         setSecuritySystems(newResponse.data);
       } else {
