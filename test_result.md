@@ -186,6 +186,18 @@ backend:
         agent: "testing"
         comment: "🎯 COMPREHENSIVE REVIEW REQUEST TESTING COMPLETE - ALL BACKEND SYSTEMS FULLY OPERATIONAL: Successfully completed comprehensive testing of all authentication, onboarding, and admin flows as requested in the review. PERFECT RESULTS: All 24 test cases passed across 5 test suites plus security checks. TEST SUITE 1 (NEW USER SIGN UP): ✅ Lead creation with unique email, owner portal creation with UUID, lead status conversion to 'converted', duplicate email prevention (400 error). TEST SUITE 2 (USER LOGIN): ✅ Existing owner login with secure response, non-existent email returns 404 with Norwegian message, invalid email format handling. TEST SUITE 3 (ONBOARDING DATA): ✅ Complete 5-step onboarding data submission, onboarding_completed flag set to true, all data stored correctly, multiple updates work. TEST SUITE 4 (ADMIN DASHBOARD): ✅ All owner list endpoints secure (no password hashes), specific owner retrieval, all valid status updates ('Ringt', 'Sendt tilbud', 'Onboarding', 'Kontrakt', 'Lost'), invalid status rejection (400), non-existent owner handling (404). TEST SUITE 5 (LEAD MANAGEMENT): ✅ Lead list retrieval, status tracking, converted leads verification. SECURITY CHECKS: ✅ No password hash exposure, Norwegian error messages, proper HTTP status codes (200/400/404/422), required field validation. Created comprehensive test suite at /app/comprehensive_auth_test.py. ALL BACKEND APIS ARE PRODUCTION-READY AND FULLY FUNCTIONAL."
 
+  - task: "Onboarding_completed Flag Verification Testing"
+    implemented: true
+    working: true
+    file: "/app/onboarding_flag_test.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "🎯 ONBOARDING_COMPLETED FLAG VERIFICATION COMPLETE - CRITICAL FUNCTIONALITY CONFIRMED: Successfully completed focused testing of onboarding_completed flag behavior as specifically requested in the review. PERFECT RESULTS: All 5 critical test cases passed. TEST FLOW VERIFIED: (1) ✅ New owner creation via POST /api/owner-portal with unique email (testonboardingf26d60b1@test.com, ID: 8b4fbc60-bcd9-44f2-bc4b-419ba8237422) correctly returns onboarding_completed: false in response (2) ✅ GET /api/owners/{owner_id} correctly shows onboarding_completed: false for new owner (3) ✅ PUT /api/owners/{owner_id}/onboarding successfully saves complete onboarding data (13 fields including address, city, unit, property_type, ownership_type, rental_strategy, rooms, facilities, parking, photography, cleaning) (4) ✅ Final GET /api/owners/{owner_id} correctly shows onboarding_completed: true after onboarding completion (5) ✅ Onboarding data persistence verified with all submitted data correctly stored. CRITICAL USER FLOW CONFIRMED: New owners default to onboarding_completed: false, and flag correctly updates to true after onboarding completion. Created focused test suite at /app/onboarding_flag_test.py. ONBOARDING FLAG BEHAVIOR IS PRODUCTION-READY AND FULLY FUNCTIONAL."
+
 frontend:
   - task: "Lead generation multi-step form"
     implemented: true
