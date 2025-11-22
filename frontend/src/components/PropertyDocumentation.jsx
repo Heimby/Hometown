@@ -700,19 +700,13 @@ const PropertyDocumentation = () => {
         )}
 
         {/* Access & Locks Tab */}
-        {activeTab === 'access' && (
-          <div className="max-w-4xl">
-            <div className="bg-white rounded-xl p-8 border border-gray-200 shadow-sm">
-              <div className="text-center py-12">
-                <svg className="w-16 h-16 text-gray-400 mx-auto mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path>
-                </svg>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Adgang & Låser</h3>
-                <p className="text-gray-600 mb-4">Denne seksjonen er under utvikling</p>
-                <p className="text-sm text-gray-500">Her vil du kunne administrere adgangskoder, nøkler og låsesystemer</p>
-              </div>
-            </div>
-          </div>
+        {activeTab === 'access' && propertyData && (
+          <AccessAndLocksTab ownerId={propertyData.id} />
+        )}
+
+        {/* Floor Plan Tab */}
+        {activeTab === 'floor-plan' && propertyData && (
+          <FloorPlanTab ownerId={propertyData.id} />
         )}
 
         {/* Electronics & Appliances Tab */}
