@@ -150,13 +150,14 @@ const FurnitureEquipmentTab = ({ ownerId }) => {
   return (
     <div>
       {/* Action Buttons */}
-      <div className="flex justify-end gap-3 mb-8">
+      <div className="flex justify-end gap-3 mb-8 px-4 sm:px-0">
         <button
           onClick={handleConfirmChecklist}
-          className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+          className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 sm:px-6 py-3 rounded-lg font-medium transition-colors text-sm sm:text-base"
         >
-          <CheckCircle2 className="w-5 h-5" />
-          Bekreft Sjekkliste
+          <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5" />
+          <span className="hidden sm:inline">Bekreft Sjekkliste</span>
+          <span className="sm:hidden">Bekreft</span>
         </button>
       </div>
 
