@@ -125,6 +125,7 @@ const LeadGenSection = () => {
         name: formData.name,
         email: formData.email,
         phone: formData.phone,
+        onboarding_completed: response.data.onboarding_completed || false,
       }));
       
       setTimeout(() => {
