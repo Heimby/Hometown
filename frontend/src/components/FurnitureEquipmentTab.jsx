@@ -148,7 +148,7 @@ const FurnitureEquipmentTab = ({ ownerId }) => {
   const progress = calculateProgress();
 
   return (
-    <div>
+    <div className="max-w-full overflow-x-hidden">
       {/* Action Buttons */}
       <div className="flex justify-end gap-3 mb-8 px-4 sm:px-0">
         <button
