@@ -172,10 +172,10 @@ const OwnerPortalDashboard = () => {
       <main className="px-4 sm:px-8 py-6 sm:py-8">
         <div className="mb-6 sm:mb-8">
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2">Dine Eiendommer</h1>
-          <p className="text-gray-600 text-sm sm:text-base lg:text-lg">Administrer og overvåk dine Airbnb-annonser</p>
+          <p className="hidden lg:block text-gray-600 text-lg">Administrer og overvåk dine Airbnb-annonser</p>
         </div>
 
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-6 sm:mb-8">
+        <div className="flex items-center gap-3 mb-6 sm:mb-8">
           <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
             <input
@@ -186,11 +186,11 @@ const OwnerPortalDashboard = () => {
           </div>
           <button 
             onClick={handleFeatureClick}
-            className="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-4 sm:px-6 py-3 rounded-lg font-medium transition-colors whitespace-nowrap text-sm sm:text-base"
+            className="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-3 sm:px-6 py-3 rounded-lg font-medium transition-colors whitespace-nowrap text-sm"
           >
-            <Plus size={20} />
-            <span className="hidden sm:inline">Legg Til Ny Eiendom</span>
-            <span className="sm:hidden">Legg Til</span>
+            <Plus size={18} />
+            <span className="lg:hidden">Legg til ny</span>
+            <span className="hidden lg:inline">Legg Til Ny Eiendom</span>
           </button>
         </div>
 
