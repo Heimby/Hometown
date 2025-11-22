@@ -252,12 +252,12 @@ const FurnitureEquipmentTab = ({ ownerId }) => {
         if (items.length === 0 && category === 'other') return null;
         
         return (
-          <div key={category} className="bg-white rounded-xl border border-gray-200 overflow-hidden mb-8">
-            <div className="bg-gradient-to-r from-gray-50 to-gray-100 px-6 py-5 border-b-2 border-gray-200">
-              <h2 className="text-xl font-bold text-gray-900 mb-1">
+          <div key={category} className="bg-white rounded-xl border border-gray-200 overflow-hidden mb-8 max-w-full">
+            <div className="bg-gradient-to-r from-gray-50 to-gray-100 px-4 sm:px-6 py-4 sm:py-5 border-b-2 border-gray-200">
+              <h2 className="text-lg sm:text-xl font-bold text-gray-900 mb-1">
                 {getCategoryTitle(category)}
               </h2>
-              <p className="text-sm text-gray-600">{getCategoryDescription(category)}</p>
+              <p className="text-xs sm:text-sm text-gray-600">{getCategoryDescription(category)}</p>
             </div>
             
             <div className="overflow-x-auto">
