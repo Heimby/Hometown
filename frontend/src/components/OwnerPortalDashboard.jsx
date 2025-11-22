@@ -358,12 +358,24 @@ const OwnerPortalDashboard = () => {
                   • Du får en komplett rapport på e-post
                 </p>
               </div>
-              <button
-                onClick={() => setShowVerificationModal(false)}
-                className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
-              >
-                Forstått
-              </button>
+              
+              <div className="space-y-3">
+                <button
+                  onClick={() => {
+                    setShowVerificationModal(false);
+                    navigate('/owner-portal/documentation');
+                  }}
+                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
+                >
+                  Begynn å dokumentere eiendommen
+                </button>
+                <button
+                  onClick={() => setShowVerificationModal(false)}
+                  className="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold py-3 px-6 rounded-lg transition-colors"
+                >
+                  Lukk
+                </button>
+              </div>
             </div>
           </div>
         </div>
