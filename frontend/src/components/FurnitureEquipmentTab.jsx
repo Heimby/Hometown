@@ -162,11 +162,11 @@ const FurnitureEquipmentTab = ({ ownerId }) => {
       </div>
 
       {/* Info Box */}
-      <div className="bg-blue-50 border border-blue-200 rounded-xl p-5 mb-8 flex gap-4">
-        <Info className="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" />
+      <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 sm:p-5 mb-6 sm:mb-8 flex gap-3 sm:gap-4 max-w-full">
+        <Info className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600 flex-shrink-0 mt-0.5" />
         <div>
-          <h3 className="font-bold text-blue-900 mb-1">📋 Obligatorisk Sjekkliste</h3>
-          <p className="text-sm text-blue-800">
+          <h3 className="font-bold text-blue-900 mb-1 text-sm sm:text-base">📋 Obligatorisk Sjekkliste</h3>
+          <p className="text-xs sm:text-sm text-blue-800">
             Alle elementer i denne listen må være tilstede og i funksjonell stand før boligen kan leies ut. 
             Huk av for hvert element når det er bekreftet tilgjengelig og i god stand.
           </p>
