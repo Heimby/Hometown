@@ -367,11 +367,11 @@ const OwnerPortalDashboard = () => {
                 <button
                   onClick={() => {
                     setShowVerificationModal(false);
-                    navigate('/owner-portal/documentation');
+                    navigate('/owner-portal/property');
                   }}
                   className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
                 >
-                  Begynn å dokumentere eiendommen
+                  Åpne eiendom
                 </button>
                 <button
                   onClick={() => setShowVerificationModal(false)}
