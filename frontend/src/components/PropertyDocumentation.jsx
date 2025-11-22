@@ -539,22 +539,22 @@ const PropertyDocumentation = () => {
               </div>
 
               {/* Basic Info */}
-              <div className="mb-8">
-                <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">Grunnleggende informasjon</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
+              <div className="mb-6 sm:mb-8">
+                <h3 className="text-xs sm:text-sm font-bold text-gray-500 uppercase tracking-wider mb-3 sm:mb-4">Grunnleggende informasjon</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                  <div className="min-w-0">
                     <p className="text-sm text-gray-600 mb-1">Adresse</p>
-                    <p className="font-semibold">{propertyData.address}</p>
+                    <p className="font-semibold break-words">{propertyData.address}</p>
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <p className="text-sm text-gray-600 mb-1">Eier</p>
-                    <p className="font-semibold">{propertyData.name}</p>
+                    <p className="font-semibold break-words">{propertyData.name}</p>
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <p className="text-sm text-gray-600 mb-1">E-post</p>
-                    <p className="font-semibold">{propertyData.email}</p>
+                    <p className="font-semibold break-all text-sm">{propertyData.email}</p>
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <p className="text-sm text-gray-600 mb-1">Telefon</p>
                     <p className="font-semibold">{propertyData.phone}</p>
                   </div>
