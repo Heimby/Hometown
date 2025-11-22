@@ -14,6 +14,7 @@ import ProfessionalServicesSection from './components/ProfessionalServicesSectio
 import OurPresenceSection from './components/OurPresenceSection';
 import Footer from './components/Footer';
 import OwnerPortalDashboard from './components/OwnerPortalDashboard';
+import PropertyDocumentation from './components/PropertyDocumentation';
 import InvestorPage from './components/InvestorPage';
 import LoginPage from './components/LoginPage';
 import AdminDashboard from './components/AdminDashboard';
