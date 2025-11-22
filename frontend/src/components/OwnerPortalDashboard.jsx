@@ -4,6 +4,7 @@ import { Home, TrendingUp, Calendar, Settings, LogOut, Plus, Search, Users, Bed,
 import PropertyOnboardingModal from './PropertyOnboardingModal';
 
 const OwnerPortalDashboard = () => {
+  const navigate = useNavigate();
   const [propertyData, setPropertyData] = useState(null);
   const [showWelcomeModal, setShowWelcomeModal] = useState(false);
   const [showOnboardingModal, setShowOnboardingModal] = useState(false);
