@@ -413,13 +413,34 @@ const PropertyDocumentation = () => {
             Tilbake til eiendommer
           </button>
           <h1 className="text-4xl font-bold text-gray-900">
-            {activeTab === 'overview' ? 'Oversikt' : 'Sikkerhet og Systemer'}
+            {(() => {
+              switch(activeTab) {
+                case 'overview': return 'Oversikt';
+                case 'access': return 'Adgang & Låser';
+                case 'security': return 'Sikkerhet & Systemer';
+                case 'electronics': return 'Elektronikk & Hvitevarer';
+                case 'furniture': return 'Møbler & Utstyr';
+                case 'instructions': return 'Instruksjoner & Manualer';
+                case '3d-map': return '3D Romkart';
+                case 'database': return 'Objektdatabase';
+                default: return 'Oversikt';
+              }
+            })()}
           </h1>
           <p className="text-gray-600 mt-2">
-            {activeTab === 'overview' 
-              ? 'All informasjon om eiendommen'
-              : 'Klikk på et system for å legge til informasjon'
-            }
+            {(() => {
+              switch(activeTab) {
+                case 'overview': return 'All informasjon om eiendommen';
+                case 'access': return 'Administrer adgangskoder, nøkler og låsesystemer';
+                case 'security': return 'Klikk på et system for å legge til informasjon';
+                case 'electronics': return 'Oversikt over elektroniske enheter og hvitevarer';
+                case 'furniture': return 'Inventar og utstyr i eiendommen';
+                case 'instructions': return 'Brukermanualer og instruksjoner';
+                case '3d-map': return 'Interaktivt 3D-kart over eiendommen';
+                case 'database': return 'Søkbar database over alle objekter';
+                default: return 'All informasjon om eiendommen';
+              }
+            })()}
           </p>
         </div>
 
