@@ -288,7 +288,7 @@ const PropertyOnboardingModal = ({ isOpen, onClose, propertyData }) => {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-0 sm:p-4">
-      <div className="bg-white w-full h-full sm:h-[90vh] sm:max-h-[800px] sm:max-w-[1100px] sm:rounded-2xl flex flex-col overflow-hidden shadow-2xl">
+      <div className="bg-white w-full h-full sm:h-[90vh] sm:max-h-[800px] sm:max-w-[1100px] sm:w-[90vw] sm:rounded-2xl flex flex-col sm:flex-row overflow-hidden shadow-2xl relative">
         
         {/* Close Button */}
         <button
