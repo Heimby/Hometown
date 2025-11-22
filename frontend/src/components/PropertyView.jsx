@@ -147,7 +147,7 @@ const PropertyView = () => {
       {/* Mobile Header - REMOVED to avoid conflict with PropertyDocumentation's own header */}
 
       {/* Main Content */}
-      <main className="pt-0 mt-20 lg:mt-20">
+      <main className="pt-0 lg:mt-20">
         {renderTabContent()}
       </main>
 
