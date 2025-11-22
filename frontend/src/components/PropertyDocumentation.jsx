@@ -509,28 +509,28 @@ const PropertyDocumentation = () => {
         {activeTab === 'overview' && propertyData && (
           <div className="w-full max-w-4xl">
             <div className="bg-white rounded-xl p-4 sm:p-6 md:p-8 border border-gray-200 shadow-sm">
-              <div className="flex justify-between items-center mb-6">
-                <h2 className="text-2xl font-bold">Eiendomsinformasjon</h2>
+              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-6">
+                <h2 className="text-xl sm:text-2xl font-bold">Eiendomsinformasjon</h2>
                 {!editingOverview ? (
                   <button
                     onClick={() => setEditingOverview(true)}
-                    className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium"
+                    className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium text-sm whitespace-nowrap"
                   >
                     <Edit2 className="w-4 h-4" />
                     Rediger
                   </button>
                 ) : (
-                  <div className="flex gap-2">
+                  <div className="flex gap-2 w-full sm:w-auto">
                     <button
                       onClick={handleSaveOverview}
-                      className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium"
+                      className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-lg font-medium text-sm flex-1 sm:flex-initial"
                     >
                       <Save className="w-4 h-4" />
                       Lagre
                     </button>
                     <button
                       onClick={() => setEditingOverview(false)}
-                      className="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg font-medium"
+                      className="px-3 py-2 text-gray-600 hover:bg-gray-100 rounded-lg font-medium text-sm flex-1 sm:flex-initial"
                     >
                       Avbryt
                     </button>
