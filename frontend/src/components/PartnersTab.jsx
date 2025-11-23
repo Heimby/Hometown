@@ -177,6 +177,146 @@ const PartnersTab = () => {
     setSidebarOpen(false);
   };
 
+  // Standard DigiHome sertifiserte partnere
+  const standardPartners = [
+    // Daglig drift
+    { 
+      id: 'standard-renhold', 
+      category: 'daglig-drift', 
+      subcategory: 'renhold',
+      name: 'Nordisk Renhold AS', 
+      service: 'Profesjonell rengjøring og vedlikehold',
+      phone: '+47 22 00 00 00',
+      email: 'kontakt@nordiskrenhold.no',
+      status: 'DigiHome Sertifisert',
+      notes: 'Erfaring med korttidsutleie',
+      isStandard: true
+    },
+    { 
+      id: 'standard-vaktmester', 
+      category: 'daglig-drift', 
+      subcategory: 'vaktmester',
+      name: 'Oslo Vaktmestertjenester', 
+      service: 'Vaktmester og driftsassistanse',
+      phone: '+47 22 00 00 01',
+      email: 'service@oslovaktmester.no',
+      status: 'DigiHome Sertifisert',
+      notes: 'Tilgjengelig 24/7',
+      isStandard: true
+    },
+    { 
+      id: 'standard-sengetoy', 
+      category: 'daglig-drift', 
+      subcategory: 'sengetoy',
+      name: 'Premium Tekstil AS', 
+      service: 'Sengetøy og håndklær',
+      phone: '+47 22 00 00 02',
+      email: 'ordre@premiumtekstil.no',
+      status: 'DigiHome Sertifisert',
+      notes: 'Kvalitetstekstiler for utleie',
+      isStandard: true
+    },
+    // Profesjonelle tjenester
+    { 
+      id: 'standard-fotografer', 
+      category: 'profesjonelle', 
+      subcategory: 'fotografer',
+      name: 'Studio Nordic', 
+      service: 'Eiendomsfotografering',
+      phone: '+47 22 00 00 03',
+      email: 'booking@studionordic.no',
+      status: 'DigiHome Sertifisert',
+      notes: 'Spesialisert på Airbnb-annonser',
+      isStandard: true
+    },
+    { 
+      id: 'standard-interiordesign', 
+      category: 'profesjonelle', 
+      subcategory: 'interiordesign',
+      name: 'Scandinavian Interiors', 
+      service: 'Interiørdesign og styling',
+      phone: '+47 22 00 00 04',
+      email: 'post@scandinavianinteriors.no',
+      status: 'DigiHome Sertifisert',
+      notes: 'Moderne skandinavisk design',
+      isStandard: true
+    },
+    // Vedlikehold
+    { 
+      id: 'standard-rorlegger', 
+      category: 'vedlikehold', 
+      subcategory: 'rorlegger',
+      name: 'Akutt Rør Service', 
+      service: 'Rørlegger og VVS-tjenester',
+      phone: '+47 22 00 00 05',
+      email: 'akutt@rorservice.no',
+      status: 'DigiHome Sertifisert',
+      notes: 'Akuttutrykning 24/7',
+      isStandard: true
+    },
+    { 
+      id: 'standard-elektriker', 
+      category: 'vedlikehold', 
+      subcategory: 'elektriker',
+      name: 'Elektro Eksperten AS', 
+      service: 'Elektriker og elektroinstallasjon',
+      phone: '+47 22 00 00 06',
+      email: 'service@elektroeksperten.no',
+      status: 'DigiHome Sertifisert',
+      notes: 'Autorisert elektroinstallatør',
+      isStandard: true
+    },
+    { 
+      id: 'standard-snekker', 
+      category: 'vedlikehold', 
+      subcategory: 'snekker',
+      name: 'Mester Snekker', 
+      service: 'Snekker og tømrertjenester',
+      phone: '+47 22 00 00 07',
+      email: 'post@mestersnekker.no',
+      status: 'DigiHome Sertifisert',
+      notes: 'Større og mindre reparasjoner',
+      isStandard: true
+    },
+    { 
+      id: 'standard-lasesmed', 
+      category: 'vedlikehold', 
+      subcategory: 'lasesmed',
+      name: 'Sikker Lås & Nøkkel', 
+      service: 'Låsesmed og sikkerhetstjenester',
+      phone: '+47 22 00 00 08',
+      email: 'hjelp@sikkerlås.no',
+      status: 'DigiHome Sertifisert',
+      notes: 'Akuttutrykning og låsbytte',
+      isStandard: true
+    },
+    // Spesialiserte
+    { 
+      id: 'standard-hagearbeid', 
+      category: 'spesialiserte', 
+      subcategory: 'hagearbeid',
+      name: 'Grønt Miljø AS', 
+      service: 'Hagearbeid og uteområder',
+      phone: '+47 22 00 00 09',
+      email: 'post@grontmiljo.no',
+      status: 'DigiHome Sertifisert',
+      notes: 'Vedlikehold av hage og uteplasser',
+      isStandard: true
+    },
+    { 
+      id: 'standard-juridisk', 
+      category: 'spesialiserte', 
+      subcategory: 'juridisk',
+      name: 'Eiendomsadvokaten', 
+      service: 'Juridisk rådgivning for utleie',
+      phone: '+47 22 00 00 10',
+      email: 'advokat@eiendomsadvokaten.no',
+      status: 'DigiHome Sertifisert',
+      notes: 'Spesialist på utleierett',
+      isStandard: true
+    }
+  ];
+
   const categories = [
     {
       id: 'daglig-drift',
