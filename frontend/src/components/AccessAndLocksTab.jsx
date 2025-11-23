@@ -441,8 +441,8 @@ const AccessAndLocksTab = ({ ownerId }) => {
         </div>
       </div>
 
-      {/* Category Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* Category List */}
+      <div className="flex flex-col gap-4">
         {categories.map((category) => {
           const IconComponent = category.icon;
           const data = category.getData();
@@ -455,31 +455,47 @@ const AccessAndLocksTab = ({ ownerId }) => {
             <div
               key={category.id}
               onClick={() => openCategoryModal(category)}
-              className="bg-white rounded-xl p-6 border border-gray-200 cursor-pointer hover:shadow-lg hover:border-blue-500 transition-all group"
+              className="bg-white rounded-xl p-4 border border-gray-200 cursor-pointer hover:shadow-md hover:border-blue-500 transition-all group"
             >
-              <div className="flex justify-between items-start mb-4">
-                <div className={`w-14 h-14 ${category.iconBg} rounded-lg flex items-center justify-center`}>
-                  <IconComponent className={`w-7 h-7 ${category.iconColor}`} />
+              <div className="flex flex-col md:flex-row md:items-center gap-4">
+                {/* Icon Section */}
+                <div className={`w-12 h-12 ${category.iconBg} rounded-lg flex items-center justify-center flex-shrink-0`}>
+                  <IconComponent className={`w-6 h-6 ${category.iconColor}`} />
                 </div>
-                {category.badge && (
-                  <span className="bg-blue-50 text-blue-600 text-xs px-2 py-1 rounded font-semibold">
-                    {category.badge}
-                  </span>
-                )}
-              </div>
-              <h3 className="font-bold text-lg mb-4">{category.title}</h3>
-              <div className="space-y-2 text-sm">
-                {preview.map((item, idx) => (
-                  <div key={idx} className="flex justify-between py-1.5 border-b border-gray-100 last:border-0">
-                    <span className="text-gray-600">{item.label}</span>
-                    <span className="font-medium text-right">{item.value}</span>
+
+                {/* Main Content Section */}
+                <div className="flex-1 min-w-0">
+                  {/* Title & Badge Row */}
+                  <div className="flex items-center gap-3 mb-2">
+                    <h3 className="font-bold text-lg text-gray-900">{category.title}</h3>
+                    {category.badge && (
+                      <span className="bg-blue-50 text-blue-600 text-xs px-2 py-0.5 rounded font-semibold border border-blue-100">
+                        {category.badge}
+                      </span>
+                    )}
                   </div>
-                ))}
-              </div>
-              <div className="mt-4 text-center">
-                <span className="text-blue-600 text-sm font-semibold group-hover:underline">
-                  {hasData ? 'Se detaljer' : 'Legg til info'} →
-                </span>
+
+                  {/* Data Grid (4 Columns) */}
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-2 text-sm">
+                    {preview.map((item, idx) => (
+                      <div key={idx} className="min-w-0">
+                        <span className="text-gray-500 text-xs block">{item.label}</span>
+                        <span className="font-medium truncate block">{item.value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Action Button Section */}
+                <div className="flex-shrink-0 mt-2 md:mt-0">
+                  <span className="text-blue-600 text-sm font-semibold group-hover:underline flex items-center gap-1">
+                    {hasData ? 'Se detaljer' : 'Legg til info'}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M5 12h14"></path>
+                      <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
           );
