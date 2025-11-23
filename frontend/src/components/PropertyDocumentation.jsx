@@ -678,9 +678,24 @@ const PropertyDocumentation = () => {
               )}
             </div>
           </div>
-        )}
+          )}
+        </section>
 
-        {activeTab === 'security' && (
+        <hr className="border-gray-200" />
+
+        {/* SECTION 2: ADGANG & LÅSER */}
+        <section id="access" className="scroll-mt-24">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Adgang & Låser</h2>
+          {propertyData && <AccessAndLocksTab ownerId={propertyData.id} />}
+        </section>
+
+        <hr className="border-gray-200" />
+
+        {/* SECTION 3: SIKKERHET & SYSTEMER */}
+        <section id="security" className="scroll-mt-24">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Sikkerhet & Systemer</h2>
+          <p className="text-gray-600 mb-6">Klikk på et system for å legge til informasjon</p>
+          {(
           <div className="flex flex-col gap-4">
             {loading ? (
               <div className="text-center py-12">
