@@ -412,9 +412,9 @@ const PropertyDocumentation = () => {
             </li>
             <li>
               <button
-                onClick={() => handleTabChange('furniture')}
+                onClick={() => scrollToSection('furniture')}
                 className={`w-full flex items-center gap-3 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  activeTab === 'furniture'
+                  activeSection === 'furniture'
                     ? 'bg-blue-50 text-blue-600'
                     : 'text-gray-600 hover:bg-gray-50'
                 }`}
@@ -427,9 +427,9 @@ const PropertyDocumentation = () => {
             </li>
             <li>
               <button
-                onClick={() => handleTabChange('instructions')}
+                onClick={() => scrollToSection('instructions')}
                 className={`w-full flex items-center gap-3 px-4 py-2 rounded-lg text-sm font-medium transition-colors text-left ${
-                  activeTab === 'instructions'
+                  activeSection === 'instructions'
                     ? 'bg-blue-50 text-blue-600'
                     : 'text-gray-600 hover:bg-gray-50'
                 }`}
