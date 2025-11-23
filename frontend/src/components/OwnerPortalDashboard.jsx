@@ -419,6 +419,37 @@ const OwnerPortalDashboard = () => {
           </div>
         </div>
       )}
+
+      {/* Bottom Navigation - Mobile Only */}
+      <nav className="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-40" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
+        <div className="grid grid-cols-3 gap-1">
+          {/* Eiendommer */}
+          <button
+            className="flex flex-col items-center justify-center py-3 px-2 text-xs font-medium transition-colors text-blue-600 bg-blue-50"
+          >
+            <Home className="w-6 h-6 mb-1" />
+            <span>Eiendommer</span>
+          </button>
+
+          {/* Analyser */}
+          <button
+            onClick={handleFeatureClick}
+            className="flex flex-col items-center justify-center py-3 px-2 text-xs font-medium transition-colors text-gray-600"
+          >
+            <TrendingUp className="w-6 h-6 mb-1" />
+            <span>Analyser</span>
+          </button>
+
+          {/* Innstillinger */}
+          <button
+            onClick={handleFeatureClick}
+            className="flex flex-col items-center justify-center py-3 px-2 text-xs font-medium transition-colors text-gray-600"
+          >
+            <Settings className="w-6 h-6 mb-1" />
+            <span>Innstillinger</span>
+          </button>
+        </div>
+      </nav>
     </div>
   );
 };
