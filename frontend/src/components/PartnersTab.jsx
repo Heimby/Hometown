@@ -280,7 +280,7 @@ const PartnersTab = () => {
 
       {/* Sidebar */}
       <aside className={`
-        w-64 bg-white border-r border-gray-200 fixed top-0 bottom-0 overflow-y-auto z-40 transition-transform duration-300
+        w-64 bg-white border-r border-gray-200 fixed top-0 lg:top-[73px] bottom-0 overflow-y-auto z-40 transition-transform duration-300
         ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}
         lg:translate-x-0
       `}>
