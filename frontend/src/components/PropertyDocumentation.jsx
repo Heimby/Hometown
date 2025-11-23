@@ -817,7 +817,16 @@ const PropertyDocumentation = () => {
 
         <hr className="border-gray-200" />
 
-        {/* SECTION 7: INSTRUKSJONER & MANUALER */}
+        {/* SECTION 5: MØBLER & UTSTYR */}
+        <section id="furniture" className="scroll-mt-24">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Møbler & Utstyr</h2>
+          <p className="text-gray-600 mb-6">Inventar og utstyr i eiendommen</p>
+          {propertyData && <FurnitureEquipmentTab ownerId={propertyData.id} />}
+        </section>
+
+        <hr className="border-gray-200" />
+
+        {/* SECTION 6: INSTRUKSJONER & MANUALER */}
         <section id="instructions" className="scroll-mt-24">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Instruksjoner & Manualer</h2>
           <p className="text-gray-600 mb-6">Brukermanualer og instruksjoner</p>
