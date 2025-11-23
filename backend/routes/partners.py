@@ -29,8 +29,8 @@ async def create_partner(owner_id: str, partner: PartnerCreate):
         partner_dict = partner.dict()
         partner_dict["id"] = str(uuid4())
         partner_dict["owner_id"] = owner_id
-        partner_dict["created_at"] = datetime.utcnow().isoformat()
-        partner_dict["updated_at"] = datetime.utcnow().isoformat()
+        partner_dict["created_at"] = datetime.now(timezone.utc).isoformat()
+        partner_dict["updated_at"] = datetime.now(timezone.utc).isoformat()
         
         await db.partners.insert_one(partner_dict)
         return partner_dict
