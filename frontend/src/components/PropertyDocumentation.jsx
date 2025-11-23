@@ -915,6 +915,24 @@ const PropertyDocumentation = () => {
           </div>
         </section>
 
+        <hr className="border-gray-200" />
+
+        {/* SECTION 10: SAMARBEIDSPARTNERE */}
+        <section id="partners" className="scroll-mt-24">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Samarbeidspartnere</h2>
+          <p className="text-gray-600 mb-6">Oversikt over håndverkere og servicepartnere tilknyttet eiendommen</p>
+          <div className="max-w-4xl">
+            <div className="bg-white rounded-xl p-8 border border-gray-200 shadow-sm">
+              <div className="text-center py-12">
+                <Users className="w-16 h-16 text-gray-400 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Samarbeidspartnere</h3>
+                <p className="text-gray-600 mb-4">Denne seksjonen er under utvikling</p>
+                <p className="text-sm text-gray-500">Her vil du kunne administrere kontaktinformasjon for håndverkere, vaktmestere og andre servicepartnere</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         </div>
       </main>
 
