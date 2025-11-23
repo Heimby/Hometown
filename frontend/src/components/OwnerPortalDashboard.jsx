@@ -437,13 +437,27 @@ const OwnerPortalDashboard = () => {
 
       {/* Bottom Navigation - Mobile Only */}
       <nav className="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-40" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
-        <div className="grid grid-cols-3 gap-1">
+        <div className="grid grid-cols-4 gap-1">
           {/* Eiendommer */}
           <button
-            className="flex flex-col items-center justify-center py-3 px-2 text-xs font-medium transition-colors text-blue-600 bg-blue-50"
+            onClick={() => setActiveTab('properties')}
+            className={`flex flex-col items-center justify-center py-3 px-2 text-xs font-medium transition-colors ${
+              activeTab === 'properties' ? 'text-blue-600 bg-blue-50' : 'text-gray-600'
+            }`}
           >
             <Home className="w-6 h-6 mb-1" />
             <span>Eiendommer</span>
+          </button>
+
+          {/* Samarbeidspartnere */}
+          <button
+            onClick={() => setActiveTab('partners')}
+            className={`flex flex-col items-center justify-center py-3 px-2 text-xs font-medium transition-colors ${
+              activeTab === 'partners' ? 'text-blue-600 bg-blue-50' : 'text-gray-600'
+            }`}
+          >
+            <Users className="w-6 h-6 mb-1" />
+            <span>Partnere</span>
           </button>
 
           {/* Analyser */}
