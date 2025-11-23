@@ -42,7 +42,7 @@ async def update_partner(owner_id: str, partner_id: str, partner_update: Partner
     """Update a partner"""
     try:
         update_data = {k: v for k, v in partner_update.dict().items() if v is not None}
-        update_data["updated_at"] = datetime.utcnow().isoformat()
+        update_data["updated_at"] = datetime.now(timezone.utc).isoformat()
         
         result = await db.partners.find_one_and_update(
             {"id": partner_id, "owner_id": owner_id},
