@@ -185,7 +185,7 @@ const OwnerPortalDashboard = () => {
         </div>
       </header>
 
-      <main className="px-4 sm:px-8 py-6 sm:py-8">
+      <main className={activeTab === 'partners' ? '' : 'px-4 sm:px-8 py-6 sm:py-8'}>
         {activeTab === 'properties' && (
           <>
         <div className="mb-6 sm:mb-8">
