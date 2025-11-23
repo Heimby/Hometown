@@ -778,25 +778,34 @@ const PropertyDocumentation = () => {
               })
             )}
           </div>
-        )}
+          )}
+        </section>
 
-        {/* Access & Locks Tab */}
-        {activeTab === 'access' && propertyData && (
-          <AccessAndLocksTab ownerId={propertyData.id} />
-        )}
+        <hr className="border-gray-200" />
 
-        {/* Floor Plan Tab */}
-        {activeTab === 'floor-plan' && propertyData && (
-          <FloorPlanTab ownerId={propertyData.id} />
-        )}
+        {/* SECTION 4: PLANLØSNING */}
+        <section id="floor-plan" className="scroll-mt-24">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Planløsning</h2>
+          <p className="text-gray-600 mb-6">Last opp planløsning og legg til kommentarer</p>
+          {propertyData && <FloorPlanTab ownerId={propertyData.id} />}
+        </section>
 
-        {/* Furniture & Equipment Tab */}
-        {activeTab === 'furniture' && propertyData && (
-          <FurnitureEquipmentTab ownerId={propertyData.id} />
-        )}
+        <hr className="border-gray-200" />
 
-        {/* Electronics & Appliances Tab */}
-        {activeTab === 'electronics' && (
+        {/* SECTION 5: MØBLER & UTSTYR */}
+        <section id="furniture" className="scroll-mt-24">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Møbler & Utstyr</h2>
+          <p className="text-gray-600 mb-6">Inventar og utstyr i eiendommen</p>
+          {propertyData && <FurnitureEquipmentTab ownerId={propertyData.id} />}
+        </section>
+
+        <hr className="border-gray-200" />
+
+        {/* SECTION 6: ELEKTRONIKK & HVITEVARER */}
+        <section id="electronics" className="scroll-mt-24">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Elektronikk & Hvitevarer</h2>
+          <p className="text-gray-600 mb-6">Oversikt over elektroniske enheter og hvitevarer</p>
+          {(
           <div className="max-w-4xl">
             <div className="bg-white rounded-xl p-8 border border-gray-200 shadow-sm">
               <div className="text-center py-12">
