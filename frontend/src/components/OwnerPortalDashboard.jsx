@@ -107,7 +107,7 @@ const OwnerPortalDashboard = () => {
         onClose={handleOnboardingComplete}
         propertyData={propertyData}
       />
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
+      <header className="bg-white border-b border-gray-200 sticky top-0 z-50 lg:fixed lg:top-0 lg:left-0 lg:right-0">
         <div className="px-4 sm:px-8 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2 sm:gap-4">
