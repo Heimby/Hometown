@@ -248,7 +248,7 @@ const PartnersTab = () => {
   }));
 
   return (
-    <div className="min-h-screen bg-gray-50 flex">
+    <div className="flex bg-gray-50">
       {/* Mobile Overlay */}
       {sidebarOpen && (
         <div
@@ -260,7 +260,7 @@ const PartnersTab = () => {
       {/* Mobile Menu Toggle Button */}
       <button
         onClick={() => setSidebarOpen(!sidebarOpen)}
-        className="fixed top-4 left-4 z-50 lg:hidden bg-white p-2 rounded-lg shadow-lg border border-gray-200"
+        className="fixed top-20 left-4 z-50 lg:hidden bg-white p-2 rounded-lg shadow-lg border border-gray-200"
       >
         <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           {sidebarOpen ? (
@@ -280,7 +280,7 @@ const PartnersTab = () => {
 
       {/* Sidebar */}
       <aside className={`
-        w-64 bg-white border-r border-gray-200 fixed h-screen overflow-y-auto z-50 transition-transform duration-300
+        w-64 bg-white border-r border-gray-200 fixed top-0 bottom-0 overflow-y-auto z-40 transition-transform duration-300
         ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}
         lg:translate-x-0
       `}>
