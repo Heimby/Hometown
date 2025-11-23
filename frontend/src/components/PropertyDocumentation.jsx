@@ -845,10 +845,16 @@ const PropertyDocumentation = () => {
               </div>
             </div>
           </div>
-        )}
+          )}
+        </section>
 
-        {/* 3D Map Tab */}
-        {activeTab === '3d-map' && (
+        <hr className="border-gray-200" />
+
+        {/* SECTION 8: 3D ROMKART */}
+        <section id="3d-map" className="scroll-mt-24">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">3D Romkart</h2>
+          <p className="text-gray-600 mb-6">Interaktivt 3D-kart over eiendommen</p>
+          {(
           <div className="max-w-4xl">
             <div className="bg-white rounded-xl p-8 border border-gray-200 shadow-sm">
               <div className="text-center py-12">
