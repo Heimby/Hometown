@@ -56,6 +56,10 @@ const OwnerPortalDashboard = () => {
     setShowOnboardingModal(false);
     setHasCompletedOnboarding(true);
     localStorage.setItem('completedOnboarding', 'true');
+    // Automatically show verification modal after onboarding
+    setTimeout(() => {
+      setShowVerificationModal(true);
+    }, 500);
   };
 
   const handleSignOut = () => {
