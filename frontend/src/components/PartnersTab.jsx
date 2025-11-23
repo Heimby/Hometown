@@ -355,7 +355,7 @@ const PartnersTab = () => {
       </aside>
 
       {/* Main Content */}
-      <main className="flex-1 lg:ml-64 p-4 sm:p-8 pt-16 lg:pt-8">
+      <main className="flex-1 lg:ml-64 p-4 sm:p-8 pt-16 lg:pt-4">
         <div className="max-w-7xl mx-auto">
           <div className="mb-6 sm:mb-8">
             <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">DigiHome Sertifiserte Partnere</h1>
