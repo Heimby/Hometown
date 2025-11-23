@@ -579,22 +579,24 @@ const PartnersTab = () => {
                                 </div>
                               </div>
 
-                              <div className="flex items-center gap-2 flex-shrink-0 mt-2 md:mt-0">
-                                <button
-                                  onClick={() => openEditModal(partner)}
-                                  className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
-                                  title="Rediger"
-                                >
-                                  <Edit2 className="w-5 h-5" />
-                                </button>
-                                <button
-                                  onClick={() => handleDeletePartner(partner.id)}
-                                  className="p-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors"
-                                  title="Slett"
-                                >
-                                  <Trash2 className="w-5 h-5" />
-                                </button>
-                              </div>
+                              {!partner.isStandard && (
+                                <div className="flex items-center gap-2 flex-shrink-0 mt-2 md:mt-0">
+                                  <button
+                                    onClick={() => openEditModal(partner)}
+                                    className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                                    title="Rediger"
+                                  >
+                                    <Edit2 className="w-5 h-5" />
+                                  </button>
+                                  <button
+                                    onClick={() => handleDeletePartner(partner.id)}
+                                    className="p-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+                                    title="Slett"
+                                  >
+                                    <Trash2 className="w-5 h-5" />
+                                  </button>
+                                </div>
+                              )}
                             </div>
                           </div>
                         );
