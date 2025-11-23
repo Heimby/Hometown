@@ -666,14 +666,14 @@ const PropertyDocumentation = () => {
         )}
 
         {activeTab === 'security' && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="flex flex-col gap-4">
             {loading ? (
-              <div className="col-span-full text-center py-12">
+              <div className="text-center py-12">
                 <div className="animate-spin w-8 h-8 border-4 border-blue-600 border-t-transparent rounded-full mx-auto"></div>
                 <p className="text-gray-600 mt-4">Laster systemer...</p>
               </div>
             ) : securitySystems.length === 0 ? (
-              <div className="col-span-full text-center py-12 bg-white rounded-xl border-2 border-dashed border-gray-300">
+              <div className="text-center py-12 bg-white rounded-xl border-2 border-dashed border-gray-300">
                 <Shield className="w-16 h-16 text-gray-400 mx-auto mb-4" />
                 <p className="text-gray-600">Ingen sikkerhetssystemer funnet</p>
               </div>
@@ -687,50 +687,61 @@ const PropertyDocumentation = () => {
                   <div
                     key={item.id}
                     onClick={() => openItemModal(item)}
-                    className="bg-white rounded-xl p-6 border border-gray-200 cursor-pointer hover:shadow-lg hover:border-blue-500 transition-all group relative"
+                    className="bg-white rounded-xl p-4 border border-gray-200 cursor-pointer hover:shadow-md hover:border-blue-500 transition-all group"
                   >
-                    <div className="flex justify-between items-start mb-4">
-                      <div className={`w-12 h-12 ${colors.iconBg} rounded-lg flex items-center justify-center`}>
+                    <div className="flex flex-col md:flex-row md:items-center gap-4">
+                      {/* Icon Section */}
+                      <div className={`w-12 h-12 ${colors.iconBg} rounded-lg flex items-center justify-center flex-shrink-0`}>
                         <IconComponent className={`w-6 h-6 ${colors.iconColor}`} />
                       </div>
-                      {item.documents && item.documents.length > 0 && (
-                        <span className="bg-blue-50 text-blue-600 text-xs px-2 py-1 rounded font-semibold">
-                          {item.documents.length} Dok
+
+                      {/* Main Content Section */}
+                      <div className="flex-1 min-w-0">
+                        {/* Title & Badge Row */}
+                        <div className="flex items-center gap-3 mb-2">
+                          <h3 className="font-bold text-lg text-gray-900">{item.name}</h3>
+                          {item.documents && item.documents.length > 0 && (
+                            <span className="bg-blue-50 text-blue-600 text-xs px-2 py-0.5 rounded font-semibold border border-blue-100">
+                              {item.documents.length} Dok
+                            </span>
+                          )}
+                        </div>
+
+                        {/* Data Grid */}
+                        {hasData ? (
+                          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-2 text-sm">
+                            <div className="min-w-0">
+                              <span className="text-gray-500 text-xs block">Plassering</span>
+                              <span className="font-medium truncate block">{item.location || 'Ikke angitt'}</span>
+                            </div>
+                            <div className="min-w-0">
+                              <span className="text-gray-500 text-xs block">Type</span>
+                              <span className="font-medium truncate block">{item.system_type || 'Ikke angitt'}</span>
+                            </div>
+                            <div className="min-w-0">
+                              <span className="text-gray-500 text-xs block">Installatør</span>
+                              <span className="font-medium truncate block">{item.installer || 'Ikke angitt'}</span>
+                            </div>
+                            <div className="min-w-0">
+                              <span className="text-gray-500 text-xs block">Sist kontrollert</span>
+                              <span className="font-medium truncate block">{item.last_checked || 'Ikke angitt'}</span>
+                            </div>
+                          </div>
+                        ) : (
+                          <p className="text-gray-400 text-sm">Ingen informasjon lagt til</p>
+                        )}
+                      </div>
+
+                      {/* Action Button Section */}
+                      <div className="flex-shrink-0 mt-2 md:mt-0">
+                        <span className="text-blue-600 text-sm font-semibold group-hover:underline flex items-center gap-1">
+                          {hasData ? 'Se detaljer' : 'Legg til info'}
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M5 12h14"></path>
+                            <path d="m12 5 7 7-7 7"></path>
+                          </svg>
                         </span>
-                      )}
-                    </div>
-                    <h3 className="font-bold text-lg mb-4">{item.name}</h3>
-                    {hasData ? (
-                      <div className="space-y-2 text-sm">
-                        {item.location && (
-                          <div className="flex justify-between py-2 border-b border-gray-100">
-                            <span className="text-gray-600">Plassering</span>
-                            <span className="font-medium">{item.location}</span>
-                          </div>
-                        )}
-                        {item.system_type && (
-                          <div className="flex justify-between py-2 border-b border-gray-100">
-                            <span className="text-gray-600">Type</span>
-                            <span className="font-medium">{item.system_type}</span>
-                          </div>
-                        )}
-                        {item.last_checked && (
-                          <div className="flex justify-between py-2">
-                            <span className="text-gray-600">Sist kontrollert</span>
-                            <span className="font-medium">{item.last_checked}</span>
-                          </div>
-                        )}
                       </div>
-                    ) : (
-                      <div className="text-center py-4">
-                        <p className="text-gray-400 text-sm">Ingen informasjon lagt til</p>
-                        <p className="text-blue-600 text-xs mt-2">Klikk for å legge til</p>
-                      </div>
-                    )}
-                    <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity">
-                      <span className="text-blue-600 text-sm font-semibold">
-                        {hasData ? 'Se detaljer' : 'Legg til info'} →
-                      </span>
                     </div>
                   </div>
                 );
