@@ -344,6 +344,29 @@ const OwnerPortalDashboard = () => {
             </div>
           )}
         </div>
+        </>
+        )}
+
+        {activeTab === 'partners' && (
+          <div className="max-w-6xl mx-auto">
+            <div className="mb-6 sm:mb-8">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2">Samarbeidspartnere</h1>
+              <p className="text-gray-600 text-base sm:text-lg">Administrer kontakter til håndverkere og servicepartnere</p>
+            </div>
+
+            <div className="bg-white rounded-xl p-6 sm:p-8 border border-gray-200 shadow-sm">
+              <div className="text-center py-12 sm:py-16">
+                <Users className="w-16 h-16 sm:w-20 sm:h-20 text-gray-400 mx-auto mb-4" />
+                <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-2">Samarbeidspartnere</h3>
+                <p className="text-gray-600 mb-4 text-sm sm:text-base">Denne seksjonen er under utvikling</p>
+                <p className="text-xs sm:text-sm text-gray-500 max-w-md mx-auto">
+                  Her vil du kunne administrere kontaktinformasjon for håndverkere, vaktmestere, 
+                  rørleggere, elektrikere og andre servicepartnere tilknyttet dine eiendommer.
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
       </main>
 
       {/* Verification in Progress Modal (after completing onboarding) */}
