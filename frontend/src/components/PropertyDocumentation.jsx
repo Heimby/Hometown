@@ -111,8 +111,7 @@ const PropertyDocumentation = () => {
     'instructions',
     'floor-plan',
     '3d-map',
-    'database',
-    'partners'
+    'database'
   ];
 
   useEffect(() => {
