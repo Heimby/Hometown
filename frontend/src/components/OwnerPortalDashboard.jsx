@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Home, TrendingUp, Calendar, Settings, LogOut, Plus, Search, Users, Bed, Bath, X } from 'lucide-react';
 import PropertyOnboardingModal from './PropertyOnboardingModal';
+import PartnersTab from './PartnersTab';
 
 const OwnerPortalDashboard = () => {
   const navigate = useNavigate();
