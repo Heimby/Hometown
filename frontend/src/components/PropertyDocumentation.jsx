@@ -84,7 +84,7 @@ const STANDARD_SYSTEMS = [
 const PropertyDocumentation = () => {
   const navigate = useNavigate();
   const [propertyData, setPropertyData] = useState(null);
-  const [activeTab, setActiveTab] = useState('overview');
+  const [activeSection, setActiveSection] = useState('overview');
   const [securitySystems, setSecuritySystems] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null);
   const [showModal, setShowModal] = useState(false);
@@ -100,6 +100,19 @@ const PropertyDocumentation = () => {
     accountNumber: ''
   });
   const [editingOverview, setEditingOverview] = useState(false);
+
+  // Section IDs for navigation
+  const sectionIds = [
+    'overview',
+    'access',
+    'security',
+    'electronics',
+    'furniture',
+    'instructions',
+    'floor-plan',
+    '3d-map',
+    'database'
+  ];
 
   useEffect(() => {
     const savedProperty = localStorage.getItem('ownerProperty');
