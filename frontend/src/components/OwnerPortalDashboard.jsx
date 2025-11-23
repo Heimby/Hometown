@@ -11,6 +11,7 @@ const OwnerPortalDashboard = () => {
   const [hasCompletedOnboarding, setHasCompletedOnboarding] = useState(false);
   const [showVerificationModal, setShowVerificationModal] = useState(false);
   const [showProfileVerificationModal, setShowProfileVerificationModal] = useState(false);
+  const [activeTab, setActiveTab] = useState('properties');
 
   useEffect(() => {
     const savedProperty = localStorage.getItem('ownerProperty');
