@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { 
   ArrowLeft, Shield, Download, Plus, X, Upload, File, 
   Image as ImageIcon, Trash2, Activity, Edit2, Save, Zap,
-  Droplet, Flame, Clock, Settings, AlertTriangle, DoorOpen
+  Droplet, Flame, Clock, Settings, AlertTriangle, DoorOpen, Users
 } from 'lucide-react';
 import axios from 'axios';
 import AccessAndLocksTab from './AccessAndLocksTab';
