@@ -867,10 +867,15 @@ const PropertyDocumentation = () => {
               </div>
             </div>
           </div>
-        )}
+          )}
+        </section>
 
-        {/* Database Tab */}
-        {activeTab === 'database' && (
+        <hr className="border-gray-200" />
+
+        {/* SECTION 9: OBJEKTDATABASE */}
+        <section id="database" className="scroll-mt-24">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Objektdatabase</h2>
+          <p className="text-gray-600 mb-6">Søkbar database over alle objekter</p>
           <div className="max-w-4xl">
             <div className="bg-white rounded-xl p-8 border border-gray-200 shadow-sm">
               <div className="text-center py-12">
@@ -885,7 +890,9 @@ const PropertyDocumentation = () => {
               </div>
             </div>
           </div>
-        )}
+        </section>
+
+        </div>
       </main>
 
       {/* System Detail Modal */}
