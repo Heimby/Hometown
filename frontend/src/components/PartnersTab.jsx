@@ -407,7 +407,9 @@ const PartnersTab = () => {
 
                               <div className="flex-1 min-w-0">
                                 <div className="flex items-center gap-3 mb-2 flex-wrap">
-                                  <h3 className="font-bold text-base sm:text-lg text-gray-900">{partner.name}</h3>
+                                  <h3 className="font-bold text-base sm:text-lg text-gray-900">
+                                    <span className="text-blue-600">DigiHome sertifisert</span> {partner.name}
+                                  </h3>
                                   <span className="bg-green-50 text-green-600 text-xs px-2 py-0.5 rounded font-semibold border border-green-100">
                                     {partner.status}
                                   </span>
