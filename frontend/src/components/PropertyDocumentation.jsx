@@ -792,25 +792,7 @@ const PropertyDocumentation = () => {
 
         <hr className="border-gray-200" />
 
-        {/* SECTION 4: PLANLØSNING */}
-        <section id="floor-plan" className="scroll-mt-24">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Planløsning</h2>
-          <p className="text-gray-600 mb-6">Last opp planløsning og legg til kommentarer</p>
-          {propertyData && <FloorPlanTab ownerId={propertyData.id} />}
-        </section>
-
-        <hr className="border-gray-200" />
-
-        {/* SECTION 5: MØBLER & UTSTYR */}
-        <section id="furniture" className="scroll-mt-24">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Møbler & Utstyr</h2>
-          <p className="text-gray-600 mb-6">Inventar og utstyr i eiendommen</p>
-          {propertyData && <FurnitureEquipmentTab ownerId={propertyData.id} />}
-        </section>
-
-        <hr className="border-gray-200" />
-
-        {/* SECTION 6: ELEKTRONIKK & HVITEVARER */}
+        {/* SECTION 4: ELEKTRONIKK & HVITEVARER */}
         <section id="electronics" className="scroll-mt-24">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Elektronikk & Hvitevarer</h2>
           <p className="text-gray-600 mb-6">Oversikt over elektroniske enheter og hvitevarer</p>
