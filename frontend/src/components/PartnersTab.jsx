@@ -382,10 +382,15 @@ const PartnersTab = () => {
     return colors[index % colors.length];
   };
 
-  const groupedPartners = categories.map(cat => ({
-    ...cat,
-    partners: partners.filter(p => p.category === cat.id)
-  }));
+  // Kombiner standard partnere med brukerens egne partnere
+  const groupedPartners = categories.map(cat => {
+    const userPartners = partners.filter(p => p.category === cat.id);
+    const defaultPartners = standardPartners.filter(p => p.category === cat.id);
+    return {
+      ...cat,
+      partners: [...defaultPartners, ...userPartners]
+    };
+  });
 
   return (
     <div className="flex bg-gray-50">
