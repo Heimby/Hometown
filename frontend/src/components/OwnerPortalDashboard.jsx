@@ -185,6 +185,8 @@ const OwnerPortalDashboard = () => {
       </header>
 
       <main className="px-4 sm:px-8 py-6 sm:py-8">
+        {activeTab === 'properties' && (
+          <>
         <div className="mb-6 sm:mb-8">
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2">Dine Eiendommer</h1>
           <p className="hidden lg:block text-gray-600 text-lg">Administrer og overvåk dine Airbnb-annonser</p>
