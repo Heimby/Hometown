@@ -124,6 +124,30 @@ const PropertyDocumentation = () => {
     }
   }, []);
 
+  // Scroll Spy - tracks which section is currently visible
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        rootMargin: '-20% 0px -80% 0px',
+        threshold: 0.1
+      }
+    );
+
+    sectionIds.forEach((id) => {
+      const element = document.getElementById(id);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, [propertyData]);
+
   const fetchOwnerData = async (ownerId) => {
     try {
       const response = await axios.get(`${API}/owners/${ownerId}`);
