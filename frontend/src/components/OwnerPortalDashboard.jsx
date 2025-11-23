@@ -121,10 +121,24 @@ const OwnerPortalDashboard = () => {
             </div>
 
             <nav className="hidden lg:flex items-center gap-6">
-              <a href="/owner-portal" className="flex items-center gap-2 text-emerald-600 font-medium">
+              <button 
+                onClick={() => setActiveTab('properties')}
+                className={`flex items-center gap-2 font-medium transition-colors ${
+                  activeTab === 'properties' ? 'text-emerald-600' : 'text-gray-600 hover:text-gray-900'
+                }`}
+              >
                 <Home size={18} />
                 <span>Eiendommer</span>
-              </a>
+              </button>
+              <button 
+                onClick={() => setActiveTab('partners')}
+                className={`flex items-center gap-2 font-medium transition-colors ${
+                  activeTab === 'partners' ? 'text-emerald-600' : 'text-gray-600 hover:text-gray-900'
+                }`}
+              >
+                <Users size={18} />
+                <span>Samarbeidspartnere</span>
+              </button>
               <a 
                 href="#" 
                 onClick={handleFeatureClick}
