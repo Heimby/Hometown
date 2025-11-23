@@ -821,26 +821,16 @@ const PropertyDocumentation = () => {
               </div>
             </div>
           </div>
-        )}
+          )}
+        </section>
 
-        {/* Furniture & Equipment Tab */}
-        {activeTab === 'furniture' && (
-          <div className="max-w-4xl">
-            <div className="bg-white rounded-xl p-8 border border-gray-200 shadow-sm">
-              <div className="text-center py-12">
-                <svg className="w-16 h-16 text-gray-400 mx-auto mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M20 9v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9"/><path d="M9 22V12h6v10M2 10.6L12 2l10 8.6"/>
-                </svg>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Møbler & Utstyr</h3>
-                <p className="text-gray-600 mb-4">Denne seksjonen er under utvikling</p>
-                <p className="text-sm text-gray-500">Her vil du kunne administrere inventar og utstyr i eiendommen</p>
-              </div>
-            </div>
-          </div>
-        )}
+        <hr className="border-gray-200" />
 
-        {/* Instructions & Manuals Tab */}
-        {activeTab === 'instructions' && (
+        {/* SECTION 7: INSTRUKSJONER & MANUALER */}
+        <section id="instructions" className="scroll-mt-24">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Instruksjoner & Manualer</h2>
+          <p className="text-gray-600 mb-6">Brukermanualer og instruksjoner</p>
+          {(
           <div className="max-w-4xl">
             <div className="bg-white rounded-xl p-8 border border-gray-200 shadow-sm">
               <div className="text-center py-12">
