@@ -1,11 +1,17 @@
 from fastapi import APIRouter, HTTPException
 from typing import List
 from uuid import uuid4
-from datetime import datetime
+from datetime import datetime, timezone
 from models.partner import Partner, PartnerCreate, PartnerUpdate
-from database import db
+from motor.motor_asyncio import AsyncIOMotorClient
+import os
 
 router = APIRouter()
+
+# MongoDB connection
+mongo_url = os.environ.get('MONGO_URL')
+client = AsyncIOMotorClient(mongo_url)
+db = client[os.environ.get('DB_NAME', 'digihome')]
 
 @router.get("/api/partners/{owner_id}", response_model=List[Partner])
 async def get_partners(owner_id: str):
