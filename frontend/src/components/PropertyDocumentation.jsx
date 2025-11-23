@@ -519,8 +519,10 @@ const PropertyDocumentation = () => {
         <div className="max-w-5xl mx-auto space-y-16 pb-20">
         
         {/* SECTION 1: OVERSIKT */}
-        {activeTab === 'overview' && propertyData && (
-          <div className="w-full max-w-4xl">
+        <section id="overview" className="scroll-mt-24">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Oversikt</h2>
+          {propertyData && (
+          <div className="w-full">
             <div className="bg-white rounded-xl p-4 sm:p-6 md:p-8 border border-gray-200 shadow-sm">
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-6">
                 <h2 className="text-xl sm:text-2xl font-bold">Eiendomsinformasjon</h2>
