@@ -128,25 +128,34 @@ const PropertyDocumentation = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
+        // Find the entry with the largest intersection ratio
+        const visibleEntries = entries.filter(entry => entry.isIntersecting);
+        
+        if (visibleEntries.length > 0) {
+          // Sort by intersection ratio and pick the most visible one
+          const mostVisible = visibleEntries.sort((a, b) => 
+            b.intersectionRatio - a.intersectionRatio
+          )[0];
+          
+          setActiveSection(mostVisible.target.id);
+        }
       },
       {
-        rootMargin: '-20% 0px -80% 0px',
-        threshold: 0.1
+        rootMargin: '-100px 0px -66% 0px',
+        threshold: [0, 0.1, 0.25, 0.5, 0.75, 1]
       }
     );
 
-    sectionIds.forEach((id) => {
-      const element = document.getElementById(id);
-      if (element) observer.observe(element);
-    });
+    // Wait for elements to be rendered
+    setTimeout(() => {
+      sectionIds.forEach((id) => {
+        const element = document.getElementById(id);
+        if (element) observer.observe(element);
+      });
+    }, 500);
 
     return () => observer.disconnect();
-  }, [propertyData]);
+  }, []);
 
   const fetchOwnerData = async (ownerId) => {
     try {
