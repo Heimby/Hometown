@@ -273,8 +273,11 @@ const PropertyDocumentation = () => {
     return { iconBg: system.iconBg, iconColor: system.iconColor };
   };
 
-  const handleTabChange = (tab) => {
-    setActiveTab(tab);
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
     setSidebarOpen(false);
   };
 
