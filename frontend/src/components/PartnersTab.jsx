@@ -40,6 +40,9 @@ const PartnersTab = () => {
     
     if (ownerId) {
       fetchPartners();
+    } else {
+      // Even without ownerId, show standard partners
+      setLoading(false);
     }
   }, [ownerId]);
 
