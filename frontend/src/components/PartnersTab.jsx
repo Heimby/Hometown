@@ -342,8 +342,8 @@ const PartnersTab = () => {
                         onClick={() => scrollToSection(category.id)}
                         className="w-full flex items-center gap-3 px-4 py-2 rounded-lg text-sm font-medium transition-colors text-gray-600 hover:bg-gray-50"
                       >
-                        <Icon className="w-4 h-4 flex-shrink-0" />
-                        <span className="text-left">DigiHome sertifisert {item.label}</span>
+                        <Icon className="w-4 h-4" />
+                        {item.label}
                       </button>
                     </li>
                   );
