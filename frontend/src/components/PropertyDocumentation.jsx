@@ -850,6 +850,15 @@ const PropertyDocumentation = () => {
 
         <hr className="border-gray-200" />
 
+        {/* SECTION 7: PLANLØSNING */}
+        <section id="floor-plan" className="scroll-mt-24">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Planløsning</h2>
+          <p className="text-gray-600 mb-6">Last opp planløsning og legg til kommentarer</p>
+          {propertyData && <FloorPlanTab ownerId={propertyData.id} />}
+        </section>
+
+        <hr className="border-gray-200" />
+
         {/* SECTION 8: 3D ROMKART */}
         <section id="3d-map" className="scroll-mt-24">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">3D Romkart</h2>
