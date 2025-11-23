@@ -361,9 +361,9 @@ const PropertyDocumentation = () => {
             </li>
             <li>
               <button
-                onClick={() => handleTabChange('access')}
+                onClick={() => scrollToSection('access')}
                 className={`w-full flex items-center gap-3 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  activeTab === 'access'
+                  activeSection === 'access'
                     ? 'bg-blue-50 text-blue-600'
                     : 'text-gray-600 hover:bg-gray-50'
                 }`}
@@ -376,9 +376,9 @@ const PropertyDocumentation = () => {
             </li>
             <li>
               <button
-                onClick={() => handleTabChange('security')}
+                onClick={() => scrollToSection('security')}
                 className={`w-full flex items-center gap-3 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  activeTab === 'security'
+                  activeSection === 'security'
                     ? 'bg-blue-50 text-blue-600'
                     : 'text-gray-600 hover:bg-gray-50'
                 }`}
@@ -389,9 +389,9 @@ const PropertyDocumentation = () => {
             </li>
             <li>
               <button
-                onClick={() => handleTabChange('electronics')}
+                onClick={() => scrollToSection('electronics')}
                 className={`w-full flex items-center gap-3 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  activeTab === 'electronics'
+                  activeSection === 'electronics'
                     ? 'bg-blue-50 text-blue-600'
                     : 'text-gray-600 hover:bg-gray-50'
                 }`}
