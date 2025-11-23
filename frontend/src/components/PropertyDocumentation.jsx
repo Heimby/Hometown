@@ -449,9 +449,9 @@ const PropertyDocumentation = () => {
             </li>
             <li>
               <button
-                onClick={() => handleTabChange('floor-plan')}
+                onClick={() => scrollToSection('floor-plan')}
                 className={`w-full flex items-center gap-3 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  activeTab === 'floor-plan'
+                  activeSection === 'floor-plan'
                     ? 'bg-blue-50 text-blue-600'
                     : 'text-gray-600 hover:bg-gray-50'
                 }`}
@@ -466,9 +466,9 @@ const PropertyDocumentation = () => {
             </li>
             <li>
               <button
-                onClick={() => handleTabChange('3d-map')}
+                onClick={() => scrollToSection('3d-map')}
                 className={`w-full flex items-center gap-3 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  activeTab === '3d-map'
+                  activeSection === '3d-map'
                     ? 'bg-blue-50 text-blue-600'
                     : 'text-gray-600 hover:bg-gray-50'
                 }`}
@@ -481,9 +481,9 @@ const PropertyDocumentation = () => {
             </li>
             <li>
               <button
-                onClick={() => handleTabChange('database')}
+                onClick={() => scrollToSection('database')}
                 className={`w-full flex items-center gap-3 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  activeTab === 'database'
+                  activeSection === 'database'
                     ? 'bg-blue-50 text-blue-600'
                     : 'text-gray-600 hover:bg-gray-50'
                 }`}
