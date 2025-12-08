@@ -27,13 +27,10 @@ const Navbar = ({ isDark = true }) => {
             {/* Logo */}
             <a href="/" className="flex items-center h-full py-3">
               <img 
-                src="/heimby-logo.svg"
+                src={isScrolled ? "/heimby-logo-black.svg" : "/heimby-logo.svg"}
                 alt="Heimby Logo"
-                className="h-full w-auto transition-transform duration-300 hover:scale-110"
-                style={{
-                  filter: isScrolled ? 'none' : 'brightness(0) invert(1)',
-                  transform: 'scale(0.7)'
-                }}
+                className="h-full w-auto transition-all duration-300 hover:scale-110"
+                style={{ transform: 'scale(0.7)' }}
               />
             </a>
 
