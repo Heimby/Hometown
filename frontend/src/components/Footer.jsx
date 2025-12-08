@@ -1,33 +1,33 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import React from "react";
+import { Link } from "react-router-dom";
+import { Mail, MapPin } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = {
     company: [
-      { name: 'Om Oss', href: '#' },
-      { name: 'Hvordan Det Virker', href: '#' },
-      { name: 'Karrierer', href: '#' },
-      { name: 'Kontakt', href: '#' },
+      // { name: 'Om Oss', href: '#' },
+      // { name: 'Hvordan Det Virker', href: '#' },
+      // { name: 'Karrierer', href: '#' },
+      // { name: 'Kontakt', href: '#' },
     ],
     services: [
-      { name: 'Airbnb-Forvaltning', href: '#' },
-      { name: 'Langtidsutleie', href: '#' },
-      { name: 'Profesjonelle Tjenester', href: '#' },
-      { name: 'Eierportal', href: '/owner-portal' },
+      { name: "Airbnb-Forvaltning", href: "#" },
+      { name: "Langtidsutleie", href: "#" },
+      { name: "Profesjonelle Tjenester", href: "#" },
+      // { name: 'Eierportal', href: '/owner-portal' },
     ],
     resources: [
-      { name: 'Investeringspartnere', href: '/investors' },
-      { name: 'Priser', href: '#' },
-      { name: 'Ofte Stilte Spørsmål', href: '#' },
-      { name: 'Blogg', href: '#' },
+      // { name: 'Investeringspartnere', href: '/investors' },
+      // { name: 'Priser', href: '#' },
+      // { name: 'Ofte Stilte Spørsmål', href: '#' },
+      // { name: 'Blogg', href: '#' },
     ],
     legal: [
-      { name: 'Personvern', href: '#' },
-      { name: 'Vilkår for Bruk', href: '#' },
-      { name: 'Informasjonskapsler', href: '#' },
+      // { name: 'Personvern', href: '#' },
+      // { name: 'Vilkår for Bruk', href: '#' },
+      // { name: 'Informasjonskapsler', href: '#' },
     ],
   };
 
@@ -36,34 +36,39 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
           <div className="lg:col-span-2">
-            <img 
+            <img
               src="/heimby-logo.svg"
               alt="Heimby Logo"
               className="h-8 mb-4"
-              style={{ filter: 'brightness(0) invert(1)' }}
+              style={{ filter: "brightness(0) invert(1)" }}
             />
             <p className="text-sm text-gray-400 mb-6 max-w-sm">
-              Datadrevet eiendomsforvaltning med menneskelig service. Maksimerer dine leieinntekter på tvers av Airbnb og langtidsutleie.
+              Datadrevet eiendomsforvaltning med menneskelig service. Maksimerer
+              dine leieinntekter på tvers av Airbnb og langtidsutleie.
             </p>
-            
+
             <div className="space-y-3">
               <div className="flex items-center gap-2 text-sm">
                 <Mail className="w-4 h-4 text-gray-400" />
-                <a href="mailto:hello@heimby.com" className="hover:text-white transition-colors">
-                  hello@heimby.com
+                <a
+                  href="mailto:hello@heimby.com"
+                  className="hover:text-white transition-colors"
+                >
+                  njal.eliasson@heimby.com
                 </a>
               </div>
-              <div className="flex items-center gap-2 text-sm">
+              {/* <div className="flex items-center gap-2 text-sm">
                 <Phone className="w-4 h-4 text-gray-400" />
-                <a href="tel:+4712345678" className="hover:text-white transition-colors">
+                <a
+                  href="tel:+4712345678"
+                  className="hover:text-white transition-colors"
+                >
                   +47 123 45 678
                 </a>
-              </div>
+              </div> */}
               <div className="flex items-start gap-2 text-sm">
                 <MapPin className="w-4 h-4 text-gray-400 mt-0.5 flex-shrink-0" />
-                <span className="text-gray-400">
-                  Oslo, Norge
-                </span>
+                <span className="text-gray-400">Bergen, Norge</span>
               </div>
             </div>
           </div>
@@ -93,7 +98,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
-                  {link.href.startsWith('/') ? (
+                  {link.href.startsWith("/") ? (
                     <Link
                       to={link.href}
                       className="text-sm hover:text-white transition-colors"
@@ -120,7 +125,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.resources.map((link) => (
                 <li key={link.name}>
-                  {link.href.startsWith('/') ? (
+                  {link.href.startsWith("/") ? (
                     <Link
                       to={link.href}
                       className="text-sm hover:text-white transition-colors"
