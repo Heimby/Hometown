@@ -1,22 +1,8 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import { CheckCircle } from "lucide-react";
 
 const PricingSection = () => {
   const sectionRef = useRef(null);
-
-  // Scroll to center of section when step changes
-  useEffect(() => {
-    if (step === 2 || step === 3) {
-      setTimeout(() => {
-        if (sectionRef.current) {
-          sectionRef.current.scrollIntoView({
-            behavior: "smooth",
-            block: "center",
-          });
-        }
-      }, 100);
-    }
-  }, [step]);
 
   return (
     <section
