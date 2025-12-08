@@ -105,7 +105,7 @@ const AdminDashboard = () => {
               </Link>
               <img 
                 src="https://customer-assets.emergentagent.com/job_neo-copier/artifacts/ke4s6nwo_4633C819.svg" 
-                alt="DigiHome Logo" 
+                alt="Heimby Logo" 
                 className="h-8"
               />
               <span className="px-3 py-1 bg-purple-50 text-purple-700 rounded-md text-sm font-medium border border-purple-200">

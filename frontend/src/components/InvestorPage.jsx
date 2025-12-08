@@ -90,7 +90,7 @@ const InvestorPage = () => {
             </Link>
             <img 
               src="https://customer-assets.emergentagent.com/job_neo-copier/artifacts/ke4s6nwo_4633C819.svg"
-              alt="DigiHome Logo"
+              alt="Heimby Logo"
               className="h-8"
             />
           </div>

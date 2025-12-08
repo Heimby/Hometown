@@ -72,7 +72,7 @@ const LeadGenSectionSecondary = () => {
             Klar til å maksimere leieinntektene dine?
           </h2>
           <p className="text-base sm:text-lg text-gray-600 font-light max-w-2xl mx-auto px-4">
-            Finn ut hvor mye du kan tjene med DigiHome
+            Finn ut hvor mye du kan tjene med Heimby
           </p>
         </div>
 

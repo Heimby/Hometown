@@ -28,7 +28,7 @@ const Navbar = ({ isDark = true }) => {
             <a href="/" className="flex items-center h-full py-3">
               <img 
                 src="https://customer-assets.emergentagent.com/job_neo-copier/artifacts/ke4s6nwo_4633C819.svg"
-                alt="DigiHome Logo"
+                alt="Heimby Logo"
                 className="h-full w-auto transition-transform duration-300 hover:scale-110"
                 style={{
                   filter: isScrolled ? 'none' : 'brightness(0) invert(1)',

@@ -31,7 +31,7 @@ const PartnersTab = () => {
   const ownerId = JSON.parse(localStorage.getItem('ownerProperty') || '{}').id;
 
   useEffect(() => {
-    const hasSeenOnboarding = localStorage.getItem('digihome_partners_onboarding_seen');
+    const hasSeenOnboarding = localStorage.getItem('heimby_partners_onboarding_seen');
     if (!hasSeenOnboarding) {
       setTimeout(() => {
         setShowOnboarding(true);
@@ -161,7 +161,7 @@ const PartnersTab = () => {
 
   const closeOnboarding = () => {
     setShowOnboarding(false);
-    localStorage.setItem('digihome_partners_onboarding_seen', 'true');
+    localStorage.setItem('heimby_partners_onboarding_seen', 'true');
   };
 
   const nextStep = () => {
@@ -180,7 +180,7 @@ const PartnersTab = () => {
     setSidebarOpen(false);
   };
 
-  // Standard DigiHome sertifiserte partnere
+  // Standard Heimby sertifiserte partnere
   const standardPartners = [
     // Daglig drift
     { 
@@ -191,7 +191,7 @@ const PartnersTab = () => {
       service: 'Profesjonell rengjøring og vedlikehold',
       phone: '+47 22 00 00 00',
       email: 'kontakt@nordiskrenhold.no',
-      status: 'DigiHome Sertifisert',
+      status: 'Heimby Sertifisert',
       notes: 'Erfaring med korttidsutleie',
       isStandard: true
     },
@@ -203,7 +203,7 @@ const PartnersTab = () => {
       service: 'Vaktmester og driftsassistanse',
       phone: '+47 22 00 00 01',
       email: 'service@oslovaktmester.no',
-      status: 'DigiHome Sertifisert',
+      status: 'Heimby Sertifisert',
       notes: 'Tilgjengelig 24/7',
       isStandard: true
     },
@@ -215,7 +215,7 @@ const PartnersTab = () => {
       service: 'Sengetøy og håndklær',
       phone: '+47 22 00 00 02',
       email: 'ordre@premiumtekstil.no',
-      status: 'DigiHome Sertifisert',
+      status: 'Heimby Sertifisert',
       notes: 'Kvalitetstekstiler for utleie',
       isStandard: true
     },
@@ -228,7 +228,7 @@ const PartnersTab = () => {
       service: 'Eiendomsfotografering',
       phone: '+47 22 00 00 03',
       email: 'booking@studionordic.no',
-      status: 'DigiHome Sertifisert',
+      status: 'Heimby Sertifisert',
       notes: 'Spesialisert på Airbnb-annonser',
       isStandard: true
     },
@@ -240,7 +240,7 @@ const PartnersTab = () => {
       service: 'Interiørdesign og styling',
       phone: '+47 22 00 00 04',
       email: 'post@scandinavianinteriors.no',
-      status: 'DigiHome Sertifisert',
+      status: 'Heimby Sertifisert',
       notes: 'Moderne skandinavisk design',
       isStandard: true
     },
@@ -253,7 +253,7 @@ const PartnersTab = () => {
       service: 'Rørlegger og VVS-tjenester',
       phone: '+47 22 00 00 05',
       email: 'akutt@rorservice.no',
-      status: 'DigiHome Sertifisert',
+      status: 'Heimby Sertifisert',
       notes: 'Akuttutrykning 24/7',
       isStandard: true
     },
@@ -265,7 +265,7 @@ const PartnersTab = () => {
       service: 'Elektriker og elektroinstallasjon',
       phone: '+47 22 00 00 06',
       email: 'service@elektroeksperten.no',
-      status: 'DigiHome Sertifisert',
+      status: 'Heimby Sertifisert',
       notes: 'Autorisert elektroinstallatør',
       isStandard: true
     },
@@ -277,7 +277,7 @@ const PartnersTab = () => {
       service: 'Snekker og tømrertjenester',
       phone: '+47 22 00 00 07',
       email: 'post@mestersnekker.no',
-      status: 'DigiHome Sertifisert',
+      status: 'Heimby Sertifisert',
       notes: 'Større og mindre reparasjoner',
       isStandard: true
     },
@@ -289,7 +289,7 @@ const PartnersTab = () => {
       service: 'Låsesmed og sikkerhetstjenester',
       phone: '+47 22 00 00 08',
       email: 'hjelp@sikkerlås.no',
-      status: 'DigiHome Sertifisert',
+      status: 'Heimby Sertifisert',
       notes: 'Akuttutrykning og låsbytte',
       isStandard: true
     },
@@ -302,7 +302,7 @@ const PartnersTab = () => {
       service: 'Hagearbeid og uteområder',
       phone: '+47 22 00 00 09',
       email: 'post@grontmiljo.no',
-      status: 'DigiHome Sertifisert',
+      status: 'Heimby Sertifisert',
       notes: 'Vedlikehold av hage og uteplasser',
       isStandard: true
     },
@@ -314,7 +314,7 @@ const PartnersTab = () => {
       service: 'Juridisk rådgivning for utleie',
       phone: '+47 22 00 00 10',
       email: 'advokat@eiendomsadvokaten.no',
-      status: 'DigiHome Sertifisert',
+      status: 'Heimby Sertifisert',
       notes: 'Spesialist på utleierett',
       isStandard: true
     }
@@ -439,7 +439,7 @@ const PartnersTab = () => {
                 <path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"></path>
               </svg>
             </div>
-            <span className="font-bold text-xl">DigiHome</span>
+            <span className="font-bold text-xl">Heimby</span>
           </div>
           <p className="text-sm text-gray-600 mt-2">Partnerportal</p>
         </div>
@@ -506,7 +506,7 @@ const PartnersTab = () => {
       <main className="flex-1 lg:ml-64 p-4 sm:p-8 pt-16 lg:pt-4">
         <div className="max-w-7xl mx-auto">
           <div className="mb-6 sm:mb-8">
-            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">DigiHome Sertifiserte Partnere</h1>
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">Heimby Sertifiserte Partnere</h1>
             <p className="text-gray-600 mt-2 text-sm sm:text-base">Oversikt over alle våre kvalitetssikrede samarbeidspartnere</p>
           </div>
 
@@ -556,7 +556,7 @@ const PartnersTab = () => {
                               <div className="flex-1 min-w-0">
                                 <div className="flex items-center gap-3 mb-2 flex-wrap">
                                   <h3 className="font-bold text-base sm:text-lg text-gray-900">
-                                    <span className="text-blue-600">DigiHome sertifisert</span> {partner.name}
+                                    <span className="text-blue-600">Heimby sertifisert</span> {partner.name}
                                   </h3>
                                   <span className="bg-green-50 text-green-600 text-xs px-2 py-0.5 rounded font-semibold border border-green-100">
                                     {partner.status}
@@ -741,7 +741,7 @@ const PartnersTab = () => {
                 </div>
                 <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">Velkommen til vår partnerportal</h2>
                 <p className="text-gray-600 mb-8 leading-relaxed text-sm sm:text-base">
-                  Her har du oversikt over alle DigiHome-tjenester som vi leverer. Ved å bruke digihome sine sertifiserte leverandører, så har du ekstra garantier som renholdsgaranti og vedlikeholdsgaranti.
+                  Her har du oversikt over alle Heimby-tjenester som vi leverer. Ved å bruke heimby sine sertifiserte leverandører, så har du ekstra garantier som renholdsgaranti og vedlikeholdsgaranti.
                 </p>
                 <button onClick={nextStep} className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-xl transition-colors shadow-lg">
                   Neste

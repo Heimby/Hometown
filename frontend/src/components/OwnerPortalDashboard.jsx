@@ -85,7 +85,7 @@ const OwnerPortalDashboard = () => {
                 <Home className="w-8 h-8 text-emerald-600" />
               </div>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                Velkommen til DigiHome!
+                Velkommen til Heimby!
               </h2>
               <p className="text-gray-600 mb-6 leading-relaxed">
                 Basert på lignende boliger i ditt område, anslår vi at vi kan utbetale{' '}
@@ -117,7 +117,7 @@ const OwnerPortalDashboard = () => {
             <div className="flex items-center gap-2 sm:gap-4">
               <img 
                 src="https://customer-assets.emergentagent.com/job_neo-copier/artifacts/ke4s6nwo_4633C819.svg" 
-                alt="DigiHome Logo" 
+                alt="Heimby Logo" 
                 className="h-6 sm:h-8"
               />
               <span className="px-2 sm:px-3 py-1 bg-emerald-50 text-emerald-700 rounded-md text-xs sm:text-sm font-medium border border-emerald-200">

@@ -302,7 +302,7 @@ const PropertyOnboardingModal = ({ isOpen, onClose, propertyData }) => {
         <div className="w-full sm:w-[35%] bg-gray-50 p-4 sm:p-10 flex flex-col justify-between border-b sm:border-b-0 sm:border-r border-gray-200 flex-shrink-0">
           <div>
             <div className="font-extrabold italic text-xl sm:text-2xl mb-4 sm:mb-12">
-              digihome
+              heimby
             </div>
 
             {/* Dynamic Sidebar Content - Hidden text on small mobile */}

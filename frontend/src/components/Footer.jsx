@@ -38,7 +38,7 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <img 
               src="https://customer-assets.emergentagent.com/job_neo-copier/artifacts/ke4s6nwo_4633C819.svg"
-              alt="DigiHome Logo"
+              alt="Heimby Logo"
               className="h-8 mb-4"
               style={{ filter: 'brightness(0) invert(1)' }}
             />
@@ -49,8 +49,8 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center gap-2 text-sm">
                 <Mail className="w-4 h-4 text-gray-400" />
-                <a href="mailto:hello@digihome.com" className="hover:text-white transition-colors">
-                  hello@digihome.com
+                <a href="mailto:hello@heimby.com" className="hover:text-white transition-colors">
+                  hello@heimby.com
                 </a>
               </div>
               <div className="flex items-center gap-2 text-sm">
@@ -146,7 +146,7 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-sm text-gray-400">
-              © {currentYear} DigiHome. Alle rettigheter reservert.
+              © {currentYear} Heimby. Alle rettigheter reservert.
             </p>
 
             <div className="flex flex-wrap justify-center gap-6">

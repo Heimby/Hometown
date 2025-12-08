@@ -6,7 +6,7 @@ const JourneyBanner = () => {
       <div className="relative mx-auto" style={{ maxWidth: '100%' }}>
         <img
           src="https://customer-assets.emergentagent.com/job_rental-wizard-7/artifacts/eok2rvtr_image.png"
-          alt="DigiHome - Vår reise hittil"
+          alt="Heimby - Vår reise hittil"
           className="w-full h-auto object-contain"
           style={{ display: 'block' }}
         />

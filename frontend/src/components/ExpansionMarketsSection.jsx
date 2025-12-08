@@ -11,7 +11,7 @@ const ExpansionMarketsSection = () => {
             Ekspanderer i Europa
           </h2>
           <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
-            Vi bringer DigiHome til nye markeder i Europa. Bli med som pioner i din region og få eksklusive grunnleggerfordeler.
+            Vi bringer Heimby til nye markeder i Europa. Bli med som pioner i din region og få eksklusive grunnleggerfordeler.
           </p>
         </div>
 

@@ -7,42 +7,42 @@ const MediaSection = () => {
   const mediaArticles = [
     {
       title: 'Ny norsk AI-aktør vil revolusjonere eiendom',
-      description: 'DigiHome får oppmerksomhet i Estatenyheter for sin innovative tilnærming til eiendomsforvaltning med kunstig intelligens.',
+      description: 'Heimby får oppmerksomhet i Estatenyheter for sin innovative tilnærming til eiendomsforvaltning med kunstig intelligens.',
       image: 'https://customer-assets.emergentagent.com/job_property-onboard-1/artifacts/qcxh4qha_image.png',
       source: 'Estatenyheter',
       url: 'https://www.estatenyheter.no/bergen-vest/ny-norsk-ai-aktor-vil-revolusjonere-eiendom/479002'
     },
     {
       title: 'GuestyVal Mexico | Machine Earning: 10 AI Tactics Powering STR Profits',
-      description: 'DigiHome & EnsoConnect presenterer på GuestyVal Mexico om AI-drevet profittoptimalisering for korttidsutleie.',
+      description: 'Heimby & EnsoConnect presenterer på GuestyVal Mexico om AI-drevet profittoptimalisering for korttidsutleie.',
       image: 'https://customer-assets.emergentagent.com/job_property-onboard-1/artifacts/7tafy6d7_image.png',
       source: 'GuestyVal Mexico',
       url: 'https://www.youtube.com/watch?v=sT6i93KG8h0'
     },
     {
       title: 'Fra storbank til startup',
-      description: 'Shifter skriver om hvordan DigiHome skal bygge skalerbare selskaper i tungrodd bransje.',
+      description: 'Shifter skriver om hvordan Heimby skal bygge skalerbare selskaper i tungrodd bransje.',
       image: 'https://customer-assets.emergentagent.com/job_property-onboard-1/artifacts/li1mznsy_image.png',
       source: 'Shifter',
       url: 'https://www.shifter.no/nyheter/fra-storbank-til-startup-skal-bygge-skalerbare-selskaper-i-tungrodde-bransjer/413476'
     },
     {
       title: 'DigiSale-gruppen lanserer plattform for bilsalg og utleie av eiendom',
-      description: 'Firdaposten skriver om lanseringen av DigiCar og DigiHome som søsterselskaper under en felles organisasjon.',
+      description: 'Firdaposten skriver om lanseringen av DigiCar og Heimby som søsterselskaper under en felles organisasjon.',
       image: 'https://customer-assets.emergentagent.com/job_property-onboard-1/artifacts/vtbnhq20_image.png',
       source: 'Firdaposten',
       url: 'https://www.firdaposten.no/njal-26-vil-selge-bilen-din-med-hjelp-av-ai/s/5-16-924719'
     },
     {
       title: 'Njål (25) er blitt stor på utleigeforvalting',
-      description: 'Firdaposten skriver om vekstreisen til DigiHome og hvordan de revolusjonerer utleieforvaltning.',
+      description: 'Firdaposten skriver om vekstreisen til Heimby og hvordan de revolusjonerer utleieforvaltning.',
       image: 'https://customer-assets.emergentagent.com/job_property-onboard-1/artifacts/yie0f2k1_image.png',
       source: 'Firdaposten',
       url: 'https://www.firdaposten.no/njal-25-fra-floro-er-blitt-stor-pa-utleigeforvalting-eg-jobbar-fulltid-pa-fritida/s/5-16-852639'
     },
     {
       title: 'Studenter må flytte ut om sommeren',
-      description: 'NRK Vestland rapporterer om Airbnb-ifisering av utleiemarkedet og DigiHomes rolle.',
+      description: 'NRK Vestland rapporterer om Airbnb-ifisering av utleiemarkedet og Heimbys rolle.',
       image: 'https://customer-assets.emergentagent.com/job_property-onboard-1/artifacts/7kb7sk85_image.png',
       source: 'NRK Vestland',
       url: 'https://www.nrk.no/vestland/studenter-ma-flytte-ut-om-sommeren-_-advarer-mot-_airbnb-ifisering_-av-utleiemarkedet-1.17437819'
@@ -56,14 +56,14 @@ const MediaSection = () => {
     },
     {
       title: 'Startup-podden med Njål Eliasson',
-      description: 'Spotify-podcast om grunnleggeren av DigiHome og hans reise i startup-verden.',
+      description: 'Spotify-podcast om grunnleggeren av Heimby og hans reise i startup-verden.',
       image: 'https://customer-assets.emergentagent.com/job_property-onboard-1/artifacts/rcwr411d_image.png',
       source: 'Spotify',
       url: 'https://open.spotify.com/episode/7GcqJMfBqogJvAZa4eRqUJ'
     },
     {
       title: 'Utleieaktører satser i Stavanger',
-      description: 'RA Stavanger om hvordan DigiHome ekspanderer til nye markeder i Norge.',
+      description: 'RA Stavanger om hvordan Heimby ekspanderer til nye markeder i Norge.',
       image: 'https://customer-assets.emergentagent.com/job_property-onboard-1/artifacts/qulqoemu_image.png',
       source: 'RA Stavanger',
       url: 'https://www.rastavanger.no/utleieaktorer-satser-i-stavanger/s/5-165-48584'
@@ -93,13 +93,13 @@ const MediaSection = () => {
         {/* Heading */}
         <div className="text-center mb-12 space-y-4 max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-light text-gray-900 tracking-tight">
-            DigiHome i media
+            Heimby i media
           </h2>
           <p className="text-xl text-gray-700 font-light">
             Oppmerksomhet i ledende medier for innovasjon innen eiendomsforvaltning
           </p>
           <p className="text-base text-gray-600 font-light leading-relaxed pt-4">
-            DigiHome får anerkjennelse i både lokale og nasjonale medier for vår innovative tilnærming 
+            Heimby får anerkjennelse i både lokale og nasjonale medier for vår innovative tilnærming 
             til eiendomsforvaltning. Fra AI-drevet teknologi til profesjonell service – vi setter nye 
             standarder i bransjen. Les hva mediene skriver om oss og vår reise mot å revolusjonere 
             utleiemarkedet i Norge.
