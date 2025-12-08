@@ -37,7 +37,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
           <div className="lg:col-span-2">
             <img 
-              src="https://customer-assets.emergentagent.com/job_neo-copier/artifacts/ke4s6nwo_4633C819.svg"
+              src="/heimby-logo.svg"
               alt="Heimby Logo"
               className="h-8 mb-4"
               style={{ filter: 'brightness(0) invert(1)' }}

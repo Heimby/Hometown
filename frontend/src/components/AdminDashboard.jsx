@@ -104,7 +104,7 @@ const AdminDashboard = () => {
                 <ArrowLeft className="w-5 h-5" />
               </Link>
               <img 
-                src="https://customer-assets.emergentagent.com/job_neo-copier/artifacts/ke4s6nwo_4633C819.svg" 
+                src="/heimby-logo.svg" 
                 alt="Heimby Logo" 
                 className="h-8"
               />

@@ -116,7 +116,7 @@ const OwnerPortalDashboard = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2 sm:gap-4">
               <img 
-                src="https://customer-assets.emergentagent.com/job_neo-copier/artifacts/ke4s6nwo_4633C819.svg" 
+                src="/heimby-logo.svg" 
                 alt="Heimby Logo" 
                 className="h-6 sm:h-8"
               />
