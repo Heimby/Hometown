@@ -1,9 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { MapPin, User, Phone, Mail, CheckCircle } from "lucide-react";
 import axios from "axios";
-
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+import useGeocoding from "../hooks/useGeocoding";
 
 const LeadGenSection = () => {
   const [step, setStep] = useState(1); // 1: form, 2: loading, 3: success
@@ -17,7 +15,21 @@ const LeadGenSection = () => {
     name: "",
     phone: "",
     email: "",
+    additionalData: {
+      interests: ["Korttid", "Heimby"],
+      mapbox: null,
+    },
   });
+  const [addressFocused, setAddressFocused] = useState(false);
+  const [selectedIndex, setSelectedIndex] = useState(-1);
+
+  const {
+    suggestions,
+    isLoading: geoLoading,
+    error: geoError,
+    searchAddress,
+    clearSuggestions,
+  } = useGeocoding({ limit: 5, debounceMs: 300, country: "no" });
   const sectionRef = useRef(null);
 
   // Scroll to center of section when step changes
@@ -56,7 +68,7 @@ const LeadGenSection = () => {
         phone: "",
         note: "",
         source: getUtmSource(),
-        additionalData: {
+        additionalData: formData.additionalData || {
           interests: ["Korttid", "Heimby"],
         },
       };
@@ -87,13 +99,13 @@ const LeadGenSection = () => {
         phone: formData.phone ? `${countryCode} ${formData.phone}` : "",
         note: "",
         source: getUtmSource(),
-        additionalData: {
+        additionalData: formData.additionalData || {
           interests: ["Korttid", "Heimby"],
         },
       };
 
-      await axios.put(
-        `https://api.proptonomy.ai/api/leads/${leadId}`,
+      await axios.patch(
+        `https://api.proptonomy.ai/api/leads/${leadId}/update`,
         leadData
       );
 
@@ -105,15 +117,82 @@ const LeadGenSection = () => {
   };
 
   const handleAddressChange = (e) => {
-    setFormData({ ...formData, address: e.target.value });
-    if (e.target.value && !isExpanded) {
+    const value = e.target.value;
+    setFormData({ ...formData, address: value });
+    if (value && !isExpanded) {
       setIsExpanded(true);
     }
+    searchAddress(value);
+    setSelectedIndex(-1);
   };
 
   const handleAddressBlur = async () => {
+    setAddressFocused(false);
+    // Delay to allow click on suggestion before clearing
+    setTimeout(() => {
+      clearSuggestions();
+      setSelectedIndex(-1);
+    }, 150);
     if (formData.address && !leadId) {
       await createInitialLead(formData.address);
+    }
+  };
+
+  const handleAddressFocus = () => {
+    setAddressFocused(true);
+  };
+
+  const handleSuggestionSelect = (s) => {
+    const addressText = s?.raw?.properties?.full_address || s?.label || "";
+    const props = s?.raw?.properties;
+
+    // Extract only the necessary data from Mapbox response
+    const mapboxData = props
+      ? {
+          full_address: props.full_address,
+          coordinates: props.coordinates
+            ? {
+                longitude: props.coordinates.longitude,
+                latitude: props.coordinates.latitude,
+                accuracy: props.coordinates.accuracy,
+              }
+            : null,
+          place: props.context?.place?.name || null,
+          region: props.context?.region?.name || null,
+        }
+      : null;
+
+    const updatedAdditional = {
+      ...(formData.additionalData || {}),
+      mapbox: mapboxData,
+    };
+    setFormData((prev) => ({
+      ...prev,
+      address: addressText,
+      additionalData: updatedAdditional,
+    }));
+    clearSuggestions();
+    setSelectedIndex(-1);
+    if (!isExpanded) setIsExpanded(true);
+  };
+
+  const handleAddressKeyDown = (e) => {
+    if (suggestions.length === 0) return;
+
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      setSelectedIndex((prev) =>
+        prev < suggestions.length - 1 ? prev + 1 : prev
+      );
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      setSelectedIndex((prev) => (prev > 0 ? prev - 1 : -1));
+    } else if (e.key === "Enter" && selectedIndex >= 0) {
+      e.preventDefault();
+      handleSuggestionSelect(suggestions[selectedIndex]);
+    } else if (e.key === "Escape") {
+      clearSuggestions();
+      setSelectedIndex(-1);
     }
   };
 
@@ -173,58 +252,32 @@ const LeadGenSection = () => {
         note: "",
         source: getUtmSource(),
         submittedAt: new Date().toISOString(),
-        additionalData: {
+        additionalData: formData.additionalData || {
           interests: ["Korttid", "Heimby"],
         },
       };
 
-      // If we already have a lead ID, update it with final submission
-      if (leadId) {
-        const response = await axios.put(
-          `https://api.proptonomy.ai/api/Leads/${leadId}`,
-          leadData
-        );
+      // Final submission - always POST with submittedAt
+      const response = await axios.post(
+        `https://api.proptonomy.ai/api/leads`,
+        leadData
+      );
 
-        if (response.status >= 200 && response.status < 300) {
-          console.debug("Lead successfully submitted:", leadId);
-          setSuccess(true);
-          // Reset form after 5 seconds
-          setTimeout(() => {
-            setSuccess(false);
-            setFormData({
-              address: "",
-              name: "",
-              phone: "",
-              email: "",
-            });
-            setIsExpanded(false);
-            setLeadId(null);
-          }, 5000);
-        }
-      } else {
-        // Fallback: create new lead if somehow we don't have one
-        const response = await axios.post(
-          `
-https://api.proptonomy.ai/api/Leads`,
-          leadData
-        );
-
-        if (response.status >= 200 && response.status < 300) {
-          console.debug("Lead gen successfully posted");
-          setSuccess(true);
-          // Reset form after 5 seconds
-          setTimeout(() => {
-            setSuccess(false);
-            setFormData({
-              address: "",
-              name: "",
-              phone: "",
-              email: "",
-            });
-            setIsExpanded(false);
-            setLeadId(null);
-          }, 5000);
-        }
+      if (response.status >= 200 && response.status < 300) {
+        console.debug("Lead successfully submitted");
+        setSuccess(true);
+        // Reset form after 5 seconds
+        setTimeout(() => {
+          setSuccess(false);
+          setFormData({
+            address: "",
+            name: "",
+            phone: "",
+            email: "",
+          });
+          setIsExpanded(false);
+          setLeadId(null);
+        }, 5000);
       }
     } catch (err) {
       console.error("Lead submission error:", err);
@@ -373,12 +426,52 @@ https://api.proptonomy.ai/api/Leads`,
                         type="text"
                         value={formData.address}
                         onChange={handleAddressChange}
+                        onFocus={handleAddressFocus}
                         onBlur={handleAddressBlur}
+                        onKeyDown={handleAddressKeyDown}
                         placeholder="Skriv inn adressen din"
                         style={{ backgroundColor: "#FFFFFF" }}
                         className="w-full pl-12 pr-4 py-4 text-base border-2 border-gray-200 rounded-2xl focus:border-gray-900 focus:outline-none transition-all duration-300 hover:border-gray-400"
                         required
                       />
+                      {(addressFocused || formData.address) &&
+                        suggestions.length > 0 && (
+                          <div className="absolute left-0 right-0 mt-2 z-20 bg-white border border-gray-200 rounded-xl shadow-lg max-h-64 overflow-auto">
+                            {suggestions.map((s, index) => (
+                              <button
+                                type="button"
+                                key={s.id}
+                                onMouseDown={(e) => e.preventDefault()}
+                                onClick={() => handleSuggestionSelect(s)}
+                                onMouseEnter={() => setSelectedIndex(index)}
+                                className={`w-full text-left px-4 py-3 transition-colors ${
+                                  index === selectedIndex
+                                    ? "bg-gray-100"
+                                    : "hover:bg-gray-50"
+                                }`}
+                              >
+                                <div className="text-sm text-gray-900">
+                                  {s.label}
+                                </div>
+                                {s.secondary ? (
+                                  <div className="text-xs text-gray-500 mt-0.5">
+                                    {s.secondary}
+                                  </div>
+                                ) : null}
+                              </button>
+                            ))}
+                            {geoLoading && (
+                              <div className="px-4 py-3 text-sm text-gray-500">
+                                Søker adresser…
+                              </div>
+                            )}
+                            {geoError && !geoLoading && (
+                              <div className="px-4 py-3 text-sm text-red-600">
+                                {geoError}
+                              </div>
+                            )}
+                          </div>
+                        )}
                     </div>
                   </div>
 
