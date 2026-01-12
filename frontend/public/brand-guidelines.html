@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heimby - Brand Guidelines</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-beige: #F9F8F4;
+            --brand-dark: #111827;
+            --brand-text: #111827;
+            --brand-muted: #4B5563;
+            --brand-accent: #ededed;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: var(--brand-text);
+            background-color: white;
+        }
+
+        .bg-beige {
+            background-color: var(--brand-beige);
+        }
+
+        .bg-dark {
+            background-color: var(--brand-dark);
+        }
+
+        .bg-accent-box {
+            background-color: var(--brand-accent);
+        }
+    </style>
+</head>
+
+<body class="antialiased font-['Inter']">
+    <!-- Header -->
+    <header class="py-12 px-8 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto flex justify-between items-end">
+            <div>
+                <div class="flex items-center gap-2 mb-4">
+                    <img src="/heimby-logo-black.svg" alt="Heimby Logo" class="h-8">
+                </div>
+                <h1 class="text-4xl font-bold tracking-tight">Brand Identity</h1>
+                <p class="text-gray-500 mt-2 text-lg">Visual language and design system for Heimby.</p>
+            </div>
+            <div class="hidden md:block text-right text-sm text-gray-400">
+                Created: Jan 2026<br>
+                v1.2
+            </div>
+        </div>
+    </header>
+
+    <!-- Colors Section -->
+    <section class="py-20 px-8 bg-beige">
+        <div class="max-w-7xl mx-auto">
+            <h2
+                class="text-sm font-semibold uppercase tracking-widest text-gray-400 mb-12 border-b border-gray-200 pb-2">
+                Color Palette</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="space-y-4">
+                    <div class="h-48 bg-dark rounded-2xl shadow-sm"></div>
+                    <div>
+                        <h3 class="font-bold text-xl">Brand Dark</h3>
+                        <p class="text-gray-500">primary-dark / #111827</p>
+                        <p class="text-xs text-gray-400 mt-2">Used for headers, primary buttons, and dark sections.</p>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="h-48 bg-beige rounded-2xl border border-gray-200 shadow-sm"></div>
+                    <div>
+                        <h3 class="font-bold text-xl">Brand Beige</h3>
+                        <p class="text-gray-500">background-beige / #F9F8F4</p>
+                        <p class="text-xs text-gray-400 mt-2">The core section background color for a warm, domestic
+                            feel.</p>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="h-48 bg-accent-box rounded-2xl shadow-sm"></div>
+                    <div>
+                        <h3 class="font-bold text-xl">Brand Accent</h3>
+                        <p class="text-gray-500">accent-gray / #EDEDED</p>
+                        <p class="text-xs text-gray-400 mt-2">Used for content boxes and subtle contrast highlights.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Typography Section -->
+    <section class="py-20 px-8">
+        <div class="max-w-7xl mx-auto">
+            <h2
+                class="text-sm font-semibold uppercase tracking-widest text-gray-400 mb-12 border-b border-gray-100 pb-2">
+                Typography</h2>
+            <div class="space-y-16">
+                <div>
+                    <p class="text-xs text-gray-400 mb-4 font-mono uppercase text-[10px]">Header 1 / Bold / Tight</p>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 leading-[1.1] tracking-tight">Sett i gang
+                        raskt og enkelt</h2>
+                </div>
+                <div>
+                    <p class="text-xs text-gray-400 mb-4 font-mono uppercase text-[10px]">Header 2 / Medium</p>
+                    <h3 class="text-2xl font-medium text-gray-900">Vår metode fanger verdien i din bolig</h3>
+                </div>
+                <div class="max-w-2xl">
+                    <p class="text-xs text-gray-400 mb-4 font-mono uppercase text-[10px]">Body / Regular / Relaxed</p>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        Heimby hjelper deg med å finne den mest lønnsomme løsningen for boligen din.
+                        Vi tar oss av hele prosessen – du får en trygg og enkel hverdag.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- UI Elements -->
+    <section class="py-20 px-8 bg-beige">
+        <div class="max-w-7xl mx-auto">
+            <h2
+                class="text-sm font-semibold uppercase tracking-widest text-gray-400 mb-12 border-b border-gray-200 pb-2">
+                UI Components</h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Timeline Example -->
+                <div class="space-y-8">
+                    <h3 class="text-xs font-bold text-gray-400 uppercase tracking-widest">Process Timeline</h3>
+                    <div class="relative space-y-12">
+                        <!-- Line -->
+                        <div class="absolute left-[24px] top-4 bottom-4 w-0.5 bg-gray-900/10"></div>
+
+                        <div class="relative flex items-start gap-6">
+                            <div
+                                class="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center z-10 shrink-0">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1 leading-tight text-gray-900">Automatisk analyse</h4>
+                                <p class="text-sm text-gray-500 leading-relaxed">Vi analyserer din bolig og gir deg
+                                    umiddelbart innsikt i inntektspotensial.</p>
+                            </div>
+                        </div>
+
+                        <div class="relative flex items-start gap-6">
+                            <div
+                                class="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center z-10 shrink-0">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1 leading-tight text-gray-900">Digital oppstart</h4>
+                                <p class="text-sm text-gray-500 leading-relaxed">Vi setter opp alle systemer, annonser
+                                    og bilder slik at alt er klart.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats/Results Example -->
+                <div class="space-y-8">
+                    <h3 class="text-xs font-bold text-gray-400 uppercase tracking-widest">Result Cards</h3>
+                    <div class="bg-accent-box p-8 rounded-2xl space-y-8 shadow-sm">
+                        <h4 class="text-2xl font-bold text-gray-900 mb-4">Resultater fra ekte boliger</h4>
+                        <div class="border-l-4 border-gray-900 pl-5 space-y-1">
+                            <div class="text-5xl font-bold text-gray-900 leading-none">30%</div>
+                            <div class="text-xl font-semibold text-gray-900">høyere leieinntekt</div>
+                            <p class="text-sm text-gray-500 leading-relaxed pt-1 font-medium">Dobbel utleiestrategi
+                                maksimerer inntekten</p>
+                        </div>
+                        <div class="border-l-4 border-gray-900 pl-5 space-y-1">
+                            <div class="text-5xl font-bold text-gray-900 leading-none">0</div>
+                            <div class="text-xl font-semibold text-gray-900">timer brukt på leietakere</div>
+                            <p class="text-sm text-gray-500 leading-relaxed pt-1 font-medium">Vi håndterer all kontakt
+                                med gjester og leietakere.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactions -->
+    <section class="py-20 px-8">
+        <div class="max-w-7xl mx-auto">
+            <h2
+                class="text-sm font-semibold uppercase tracking-widest text-gray-400 mb-12 border-b border-gray-100 pb-2">
+                Interactions & Icons</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                <div class="space-y-8">
+                    <h3 class="text-xs font-bold text-gray-400 uppercase tracking-widest">Buttons</h3>
+                    <div class="flex flex-wrap gap-8 items-center">
+                        <div class="space-y-3">
+                            <button
+                                class="px-8 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-colors shadow-lg shadow-gray-900/10">
+                                Start
+                            </button>
+                            <p class="text-[10px] text-gray-400 font-mono text-center">PRIMARY / ROUNDED-LG</p>
+                        </div>
+                        <div class="space-y-3">
+                            <button
+                                class="flex items-center gap-2 text-gray-900 font-medium hover:translate-x-1 transition-transform">
+                                <span>Mer</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </button>
+                            <p class="text-[10px] text-gray-400 font-mono text-center">GHOST / ICON-LINK</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-8">
+                    <h3 class="text-xs font-bold text-gray-400 uppercase tracking-widest">Feature Icons</h3>
+                    <div class="flex gap-4">
+                        <div class="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                            </svg>
+                        </div>
+                        <div class="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                    <p class="text-[10px] text-gray-400 font-mono">LUCIDE-STYLE / WHITE-ON-DARK / ROUNDED-XL</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-16 bg-dark text-gray-500 text-sm">
+        <div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-4">
+                <img src="/heimby-logo.svg" alt="Heimby Logo" class="h-6 filter brightness-0 invert opacity-50">
+                <span class="border-l border-gray-700 pl-4">Design System Documentation</span>
+            </div>
+            <p>&copy; 2026 Heimby. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
