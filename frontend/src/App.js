@@ -1,24 +1,25 @@
-import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './App.css';
-import Navbar from './components/Navbar';
-import HeroSection from './components/HeroSection';
-import LeadGenSection from './components/LeadGenSection';
-import PricingSection from './components/PricingSection';
-import MediaSection from './components/MediaSection';
-import JourneyBanner from './components/JourneyBanner';
-import WhatWeAreSection from './components/WhatWeAreSection';
-import ProcessTimelineSection from './components/ProcessTimelineSection';
-import ResultsSection from './components/ResultsSection';
-import ProfessionalServicesSection from './components/ProfessionalServicesSection';
-import OurPresenceSection from './components/OurPresenceSection';
-import Footer from './components/Footer';
-import OwnerPortalDashboard from './components/OwnerPortalDashboard';
-import PropertyDocumentation from './components/PropertyDocumentation';
-import PropertyView from './components/PropertyView';
-import InvestorPage from './components/InvestorPage';
-import LoginPage from './components/LoginPage';
-import AdminDashboard from './components/AdminDashboard';
+import React, { useEffect } from "react";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import "./App.css";
+import AdminDashboard from "./components/AdminDashboard";
+import CityPage from "./components/CityPage";
+import Footer from "./components/Footer";
+import HeroSection from "./components/HeroSection";
+import InvestorPage from "./components/InvestorPage";
+import JourneyBanner from "./components/JourneyBanner";
+import LeadGenSection from "./components/LeadGenSection";
+import LoginPage from "./components/LoginPage";
+import MediaSection from "./components/MediaSection";
+import Navbar from "./components/Navbar";
+import OurPresenceSection from "./components/OurPresenceSection";
+import OwnerPortalDashboard from "./components/OwnerPortalDashboard";
+import PricingSection from "./components/PricingSection";
+import ProcessTimelineSection from "./components/ProcessTimelineSection";
+import ProfessionalServicesSection from "./components/ProfessionalServicesSection";
+import PropertyDocumentation from "./components/PropertyDocumentation";
+import PropertyView from "./components/PropertyView";
+import ResultsSection from "./components/ResultsSection";
+import WhatWeAreSection from "./components/WhatWeAreSection";
 
 function HomePage() {
   return (
@@ -65,7 +66,7 @@ function HomePage() {
 function App() {
   useEffect(() => {
     // Smooth scroll behavior
-    document.documentElement.style.scrollBehavior = 'smooth';
+    document.documentElement.style.scrollBehavior = "smooth";
   }, []);
 
   return (
@@ -75,10 +76,23 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/owner-portal" element={<OwnerPortalDashboard />} />
           <Route path="/owner-portal/property" element={<PropertyView />} />
-          <Route path="/owner-portal/documentation" element={<PropertyDocumentation />} />
+          <Route
+            path="/owner-portal/documentation"
+            element={<PropertyDocumentation />}
+          />
           <Route path="/investors" element={<InvestorPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/admin" element={<AdminDashboard />} />
+
+          {/* City-specific landing pages */}
+          <Route path="/korttidsutleie-i-oslo" element={<CityPage />} />
+          <Route path="/korttidsutleie-i-bergen" element={<CityPage />} />
+          <Route path="/korttidsutleie-i-stavanger" element={<CityPage />} />
+          <Route path="/korttidsutleie-i-haugesund" element={<CityPage />} />
+          <Route path="/korttidsutleie-i-tromso" element={<CityPage />} />
+          <Route path="/korttidsutleie-i-kristiansand" element={<CityPage />} />
+          <Route path="/korttidsutleie-i-trondheim" element={<CityPage />} />
+          <Route path="/korttidsutleie-i/:city" element={<CityPage />} />
         </Routes>
       </div>
     </Router>
