@@ -11,6 +11,7 @@ const LeadGenSection = () => {
 	const [error, setError] = useState("");
 	const [success, setSuccess] = useState(false);
 	const [leadId, setLeadId] = useState(null);
+	const [isSubmitting, setIsSubmitting] = useState(false);
 	const [countryCode, setCountryCode] = useState("+47");
 	const [formData, setFormData] = useState({
 		address: "",
@@ -206,7 +207,7 @@ const LeadGenSection = () => {
 		setFormData({ ...formData, [field]: newValue });
 	};
 
-	const handleFieldBlur = () => async () => {
+	const handleFieldBlur = async () => {
 		if (leadId) {
 			await updateLead();
 		}
@@ -245,6 +246,10 @@ const LeadGenSection = () => {
 
 	const handleLeadSubmit = async (e) => {
 		e.preventDefault();
+		
+		// Prevent multiple submissions
+		if (isSubmitting) return;
+		setIsSubmitting(true);
 		setError("");
 		setSuccess(false);
 
@@ -263,11 +268,19 @@ const LeadGenSection = () => {
 				organizationId: ORGANIZATION_ID,
 			};
 
-			// Final submission - always POST with submittedAt
-			const response = await axios.post(
-				`https://api.proptonomy.ai/api/leads`,
-				leadData,
-			);
+			let response;
+			// If we already have a lead, update it instead of creating a new one
+			if (leadId) {
+				response = await axios.patch(
+					`https://api.proptonomy.ai/api/leads/${leadId}/update`,
+					leadData,
+				);
+			} else {
+				response = await axios.post(
+					`https://api.proptonomy.ai/api/leads`,
+					leadData,
+				);
+			}
 
 			if (response.status >= 200 && response.status < 300) {
 				console.debug("Lead successfully submitted");
@@ -283,6 +296,7 @@ const LeadGenSection = () => {
 					});
 					setIsExpanded(false);
 					setLeadId(null);
+					setIsSubmitting(false);
 				}, 5000);
 			}
 		} catch (err) {
@@ -300,6 +314,7 @@ const LeadGenSection = () => {
 			}
 
 			setError(errorMessage);
+			setIsSubmitting(false);
 		}
 	};
 
@@ -548,9 +563,14 @@ const LeadGenSection = () => {
 											<div className="md:col-span-2 animate-fade-in">
 												<button
 													type="submit"
-													className="w-full py-4 bg-gray-900 text-white rounded-2xl text-base font-medium hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+													disabled={isSubmitting}
+													className={`w-full py-4 bg-gray-900 text-white rounded-2xl text-base font-medium transition-all duration-300 shadow-lg transform ${
+														isSubmitting
+															? "opacity-50 cursor-not-allowed"
+															: "hover:bg-gray-800 hover:shadow-xl hover:-translate-y-0.5"
+													}`}
 												>
-													Beregn mine inntekter
+													{isSubmitting ? "Sender..." : "Beregn mine inntekter"}
 												</button>
 											</div>
 										</>
