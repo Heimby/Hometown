@@ -207,7 +207,7 @@ const LeadGenSection = () => {
 		setFormData({ ...formData, [field]: newValue });
 	};
 
-	const handleFieldBlur = async () => {
+	const handleFieldBlur = () => async () => {
 		if (leadId) {
 			await updateLead();
 		}
