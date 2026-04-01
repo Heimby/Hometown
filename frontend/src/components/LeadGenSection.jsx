@@ -1,6 +1,6 @@
 import axios from "axios";
 import { CheckCircle, Mail, MapPin, Phone, User } from "lucide-react";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import useGeocoding from "../hooks/useGeocoding";
 
 const ORGANIZATION_ID = "7b6adf42-78a8-47cd-92d0-4aa7bbd8c090";
@@ -246,12 +246,18 @@ const LeadGenSection = () => {
 
 	const handleLeadSubmit = async (e) => {
 		e.preventDefault();
-		
+
 		// Prevent multiple submissions
 		if (isSubmitting) return;
 		setIsSubmitting(true);
 		setError("");
 		setSuccess(false);
+
+		try {
+			window.fbq("track", "CompleteRegistration");
+		} catch (error) {
+			console.error("Unable to submit meta pixel track", error);
+		}
 
 		try {
 			const leadData = {
@@ -317,80 +323,6 @@ const LeadGenSection = () => {
 			setIsSubmitting(false);
 		}
 	};
-
-	// const handleOwnerPortalCreation = async () => {
-	//   setStep(2); // Show loading
-
-	//   try {
-	//     const ownerData = {
-	//       address: formData.address,
-	//       name: formData.name,
-	//       phone: `${countryCode} ${formData.phone}`,
-	//       email: formData.email,
-	//       password: "temp_password_" + Date.now(), // Generate temporary password for magic link
-	//     };
-
-	//     const response = await axios.post(`${API}/owner-portal`, ownerData, {
-	//       validateStatus: function (status) {
-	//         return status < 500; // Don't throw for 4xx errors
-	//       },
-	//     });
-
-	//     // Check if user already exists
-	//     if (response.status === 400) {
-	//       window.location.href = "/login";
-	//       return;
-	//     }
-
-	//     if (!response.data || !response.data.id) {
-	//       throw new Error("Ugyldig svar fra serveren");
-	//     }
-
-	//     localStorage.setItem(
-	//       "ownerProperty",
-	//       JSON.stringify({
-	//         id: response.data.id,
-	//         address: formData.address,
-	//         property_address: formData.address,
-	//         name: formData.name,
-	//         email: formData.email,
-	//         phone: formData.phone,
-	//         onboarding_completed: response.data.onboarding_completed || false,
-	//       })
-	//     );
-
-	//     setTimeout(() => {
-	//       setStep(3);
-	//     }, 1500);
-	//   } catch (err) {
-	//     console.error("Owner portal creation error:", err);
-	//     let errorMessage =
-	//       "Kunne ikke opprette eierportal. Vennligst prøv igjen.";
-
-	//     // Check if error is about existing user
-	//     if (err.response && err.response.status === 400) {
-	//       window.location.href = "/login";
-	//       return;
-	//     }
-
-	//     if (err.response?.data?.detail) {
-	//       if (Array.isArray(err.response.data.detail)) {
-	//         errorMessage = err.response.data.detail.map((e) => e.msg).join(", ");
-	//       } else if (typeof err.response.data.detail === "string") {
-	//         errorMessage = err.response.data.detail;
-	//       }
-	//     } else if (err.message) {
-	//       errorMessage = err.message;
-	//     }
-
-	//     setError(errorMessage);
-	//     setStep(1);
-	//   }
-	// };
-
-	// const handleGoToPortal = () => {
-	//   window.location.href = "/owner-portal";
-	// };
 
 	return (
 		<section
@@ -570,7 +502,9 @@ const LeadGenSection = () => {
 															: "hover:bg-gray-800 hover:shadow-xl hover:-translate-y-0.5"
 													}`}
 												>
-													{isSubmitting ? "Sender..." : "Beregn mine inntekter"}
+													{isSubmitting
+														? "Sender..."
+														: "Kom i gang med utleie i dag, kontakter deg"}
 												</button>
 											</div>
 										</>
