@@ -254,7 +254,16 @@ const LeadGenSection = () => {
 		setSuccess(false);
 
 		try {
-			window.fbq("track", "CompleteRegistration");
+			const phone = formData.phone ? `${countryCode} ${formData.phone}` : "";
+			window.fbq(
+				"track",
+				"CompleteRegistration",
+				{ content_name: "Lead registrert" },
+				{
+					em: formData.email?.toLowerCase().trim() || "",
+					ph: phone.trim(),
+				},
+			);
 		} catch (error) {
 			console.error("Unable to submit meta pixel track", error);
 		}
