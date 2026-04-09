@@ -504,7 +504,7 @@ const LeadGenSection = () => {
 												>
 													{isSubmitting
 														? "Sender..."
-														: "Kom i gang med utleie i dag, kontakter deg"}
+														: "Kom i gang med korttidsutleie i dag"}
 												</button>
 											</div>
 										</>
