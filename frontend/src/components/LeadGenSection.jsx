@@ -255,15 +255,14 @@ const LeadGenSection = () => {
 
 		try {
 			const phone = formData.phone ? `${countryCode} ${formData.phone}` : "";
-			window.fbq(
-				"track",
-				"CompleteRegistration",
-				{ content_name: "Lead registrert" },
-				{
-					em: formData.email?.toLowerCase().trim() || "",
-					ph: phone.trim(),
-				},
-			);
+			// The 227xx id is our facebook pixel workspace id
+			window.fbq("init", "2272981473189377", {
+				em: formData.email?.toLowerCase().trim() || "",
+				ph: phone.trim(),
+			});
+			window.fbq("track", "CompleteRegistration", {
+				content_name: "Lead registrert",
+			});
 		} catch (error) {
 			console.error("Unable to submit meta pixel track", error);
 		}
